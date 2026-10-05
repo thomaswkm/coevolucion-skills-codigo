@@ -5,7 +5,12 @@ paper/
 .venv/
 __pycache__/
 *.py[cod]
+.pytest_cache/
 
 # Generated extraction data and repository clones
 data/extraction/
 repositories/
+
+# Generated figures (the Stage 2 guidelines require the students to produce
+# their own tables and figures)
+figures/

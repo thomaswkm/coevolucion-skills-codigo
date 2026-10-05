@@ -1,0 +1,4 @@
+category,n_repositories,zero_count,median,q1,q3,iqr,minimum,maximum,mean,total,repos_with_largest
+skill,10,3,5.0,0.5,13.0,12.5,0,15,6.5,65,2
+production,10,1,27.0,11.0,48.5,37.5,0,211,53.6,536,8
+test,10,1,12.0,3.5,47.75,44.25,0,97,27.6,276,2

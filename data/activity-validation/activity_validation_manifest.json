@@ -1,0 +1,36 @@
+{
+  "activity_validation_protocol_version": "1",
+  "activity_validation_seed": "20261004:activity-validation:1",
+  "category_distribution": {
+    "other": 10,
+    "production": 10,
+    "skill": 10,
+    "test": 10
+  },
+  "created_at_utc": "2026-10-05T07:37:27.671287Z",
+  "input_sha256": {
+    "file_changes": "1b1ef7a502ccad748bda8da4d4ec237f3023f245271f1682cd0c9218597d35ab",
+    "processing_manifest": "ef0304e69f1559c0426808ad30f0db5437825b4e2606b024ce7df6ed8a682c65",
+    "selected_repositories": "2a083fb04832c30ed806e268c17c2c671aeb817955390705b7a3021086582fe3"
+  },
+  "maximum_per_category": 10,
+  "processing_protocol_version": "1",
+  "sample_counts": {
+    "other": 10,
+    "production": 10,
+    "skill": 10,
+    "test": 10
+  },
+  "sampling_method": "SHA-256 ordering within effective category; guarantee one deletion and one rename per category when present; cover each repository once; then fill",
+  "selected_repository_count": 10,
+  "status_distribution": {
+    "A": 8,
+    "D": 7,
+    "M": 21,
+    "R": 4
+  },
+  "tool_versions": {
+    "git": "git version 2.53.0",
+    "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]"
+  }
+}

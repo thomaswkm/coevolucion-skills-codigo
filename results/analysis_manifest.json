@@ -1,0 +1,53 @@
+{
+  "analysis_protocol_version": "1",
+  "configuration": {
+    "extraction": {
+      "artifact_parts": 31,
+      "checkout_selected": true,
+      "clone_timeout_seconds": 1800,
+      "command_timeout_seconds": 300,
+      "dataset_repository": "mvaccargiu/gitskills",
+      "dataset_revision": "ebab17454a7c236f8f26b183567f1a126f42e3f8",
+      "history_cutoff_utc": "2026-10-04T23:59:59Z",
+      "output_directory": "/home/thomas/dev/coevolution-skills-code/data/extraction",
+      "repository_directory": "/home/thomas/dev/coevolution-skills-code/repositories",
+      "retry_count": 3,
+      "seed": "20261004",
+      "target_count": 10,
+      "window_days": 60
+    },
+    "output_directory": "/home/thomas/dev/coevolution-skills-code/results",
+    "processed_directory": "/home/thomas/dev/coevolution-skills-code/data/processed",
+    "rq1_categories": [
+      "skill",
+      "production",
+      "test"
+    ],
+    "rq1_period": "post",
+    "rq2_categories": [
+      "production",
+      "test"
+    ],
+    "rq2_difference_definition": "post - pre"
+  },
+  "created_at_utc": "2026-10-05T07:55:39.118050Z",
+  "inferential_tests": false,
+  "input_sha256": {
+    "activity_counts": "069818418905a03f52929865e9f680119587972e83883caa51a8a7cfe62df177",
+    "human_activity_review_checksums": "63c28d95c1547db9e1ca9038ceca028a1a3537932f8d6e71a6d00b27ab2f7577",
+    "processing_manifest": "ef0304e69f1559c0426808ad30f0db5437825b4e2606b024ce7df6ed8a682c65"
+  },
+  "quantile_method": "linear interpolation: rank = q * (n - 1)",
+  "repository_count": 10,
+  "row_counts": {
+    "rq1_repository_counts": 10,
+    "rq1_summary": 3,
+    "rq2_repository_differences": 10,
+    "rq2_summary": 2
+  },
+  "tie_repository_count": 1,
+  "tool_versions": {
+    "git": "git version 2.53.0",
+    "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]"
+  }
+}

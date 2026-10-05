@@ -4,23 +4,244 @@ from __future__ import annotations
 
 import argparse
 import csv
+import json
 import shlex
+from datetime import timedelta
 from pathlib import Path, PurePosixPath
 from typing import Any
 
 from .extract import (
     SKILL_ROOTS,
     Config,
+    file_sha256,
     git_bytes_output,
     git_output,
     load_config,
+    parse_datetime,
     tree_paths,
+)
+from .validation import (
+    ADOPTION_REVIEW_FIELDS,
+    PATH_REVIEW_FIELDS,
+    REVIEW_CATEGORIES,
+    display_path,
 )
 
 
-def load_rows(path: Path) -> list[dict[str, str]]:
+ADOPTION_DECISIONS = {"valid", "invalid", "ambiguous"}
+YES_NO = {"yes", "no"}
+AUTOMATED_CHECK_FIELDS = (
+    "sample_position",
+    "repo_full_name",
+    "check",
+    "passed",
+    "observed",
+    "expected",
+)
+
+
+class ReviewValidationError(ValueError):
+    """A human-review form is malformed, inconsistent, or incomplete."""
+
+
+def load_rows(
+    path: Path, expected_fields: tuple[str, ...] | None = None
+) -> list[dict[str, str]]:
     with path.open(newline="", encoding="utf-8") as handle:
-        return list(csv.DictReader(handle))
+        reader = csv.DictReader(handle, strict=True)
+        if expected_fields is not None and tuple(reader.fieldnames or ()) != expected_fields:
+            raise ReviewValidationError(
+                f"{path}: expected exactly {len(expected_fields)} columns in this order: "
+                f"{', '.join(expected_fields)}"
+            )
+        rows = list(reader)
+    if any(None in row for row in rows):
+        raise ReviewValidationError(f"{path}: at least one row has extra or shifted fields")
+    return rows
+
+
+def _require_choice(
+    row: dict[str, str], field: str, choices: set[str], location: str
+) -> None:
+    if row[field] not in choices:
+        allowed = ", ".join(sorted(choices))
+        raise ReviewValidationError(
+            f"{location}: {field} must be one of {allowed}; got {row[field]!r}"
+        )
+
+
+def _require_text(row: dict[str, str], field: str, location: str) -> None:
+    if not row[field].strip():
+        raise ReviewValidationError(f"{location}: {field} is required")
+
+
+def _require_utc(row: dict[str, str], field: str, location: str) -> None:
+    _require_text(row, field, location)
+    try:
+        parsed = parse_datetime(row[field])
+    except ValueError as error:
+        raise ReviewValidationError(f"{location}: invalid {field}: {error}") from error
+    if parsed.isoformat().replace("+00:00", "Z") != row[field]:
+        raise ReviewValidationError(
+            f"{location}: {field} must use normalized UTC form ending in Z"
+        )
+
+
+def _contiguous_positions(
+    rows: list[dict[str, str]], field: str, expected_count: int, path: Path
+) -> None:
+    if len(rows) != expected_count:
+        raise ReviewValidationError(
+            f"{path}: expected {expected_count} data rows, found {len(rows)}"
+        )
+    try:
+        positions = [int(row[field]) for row in rows]
+    except ValueError as error:
+        raise ReviewValidationError(f"{path}: {field} must contain integers") from error
+    expected = list(range(1, expected_count + 1))
+    if positions != expected:
+        raise ReviewValidationError(
+            f"{path}: {field} must be unique and contiguous; got {positions}"
+        )
+
+
+def _selected_rows(config: Config) -> list[dict[str, str]]:
+    path = config.output_directory / "selected_repositories.csv"
+    rows = load_rows(path)
+    if len(rows) != config.target_count:
+        raise ReviewValidationError(
+            f"{path}: expected {config.target_count} selected repositories, found {len(rows)}"
+        )
+    return rows
+
+
+def validate_review_package(
+    validation_directory: Path, config: Config
+) -> tuple[list[dict[str, str]], list[dict[str, str]]]:
+    """Validate exact schemas, preserved evidence, and completed human fields."""
+    adoption_path = validation_directory / "adoption_review.csv"
+    path_review_path = validation_directory / "path_review.csv"
+    adoption_rows = load_rows(adoption_path, ADOPTION_REVIEW_FIELDS)
+    path_rows = load_rows(path_review_path, PATH_REVIEW_FIELDS)
+    selected = _selected_rows(config)
+
+    manifest_path = validation_directory / "validation_manifest.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    selected_path = config.output_directory / "selected_repositories.csv"
+    extraction_manifest_path = config.output_directory / "run_manifest.json"
+    for field, path in (
+        ("selected_repositories_sha256", selected_path),
+        ("extraction_manifest_sha256", extraction_manifest_path),
+    ):
+        if manifest[field] != file_sha256(path):
+            raise ReviewValidationError(
+                f"{manifest_path}: {field} does not match {path}"
+            )
+
+    automated_path = validation_directory / "automated_checks.csv"
+    automated_rows = load_rows(automated_path, AUTOMATED_CHECK_FIELDS)
+    expected_check_count = int(manifest["automatic_check_count"])
+    if len(automated_rows) != expected_check_count:
+        raise ReviewValidationError(
+            f"{automated_path}: expected {expected_check_count} checks, "
+            f"found {len(automated_rows)}"
+        )
+    passed_count = sum(row["passed"] == "true" for row in automated_rows)
+    if passed_count != int(manifest["automatic_checks_passed"]):
+        raise ReviewValidationError(
+            f"{automated_path}: passed count does not match the manifest"
+        )
+    if passed_count != len(automated_rows):
+        raise ReviewValidationError(f"{automated_path}: not every automatic check passed")
+
+    expected_adoptions = int(manifest["selected_repository_count"])
+    expected_paths = sum(int(value) for value in manifest["sample_counts"].values())
+    _contiguous_positions(adoption_rows, "sample_position", expected_adoptions, adoption_path)
+    _contiguous_positions(path_rows, "review_position", expected_paths, path_review_path)
+
+    selected_by_repo = {row["repo_full_name"]: row for row in selected}
+    for row, source in zip(adoption_rows, selected, strict=True):
+        location = f"{adoption_path}: row {row['sample_position']}"
+        expected_values = {
+            "sample_position": source["sample_position"],
+            "repo_full_name": source["repo_full_name"],
+            "repository_directory": display_path(
+                config.repository_directory / source["repo_full_name"].replace("/", "__")
+            ),
+            "cutoff_commit": source["cutoff_commit"],
+            "adoption_commit": source["adoption_commit"],
+            "adoption_at_utc": source["adoption_at_utc"],
+            "valid_skills_after": source["valid_skill_paths"],
+        }
+        adoption_at = parse_datetime(source["adoption_at_utc"])
+        expected_values["pre_window_boundary_utc"] = (
+            adoption_at - timedelta(days=config.window_days)
+        ).isoformat().replace("+00:00", "Z")
+        expected_values["post_window_boundary_utc"] = (
+            adoption_at + timedelta(days=config.window_days)
+        ).isoformat().replace("+00:00", "Z")
+        for field, expected in expected_values.items():
+            if row[field] != expected:
+                raise ReviewValidationError(
+                    f"{location}: preserved {field} does not match extraction evidence"
+                )
+        if row["valid_skills_before"]:
+            raise ReviewValidationError(
+                f"{location}: valid_skills_before must be empty for an adoption"
+            )
+        for field in ("first_parent", "skill_location_diff"):
+            _require_text(row, field, location)
+        _require_choice(row, "human_adoption_decision", ADOPTION_DECISIONS, location)
+        _require_choice(row, "human_rename_only", YES_NO, location)
+        _require_choice(row, "human_frontmatter_and_paths_valid", YES_NO, location)
+        _require_text(row, "reviewer", location)
+        _require_utc(row, "reviewed_at_utc", location)
+        if (
+            row["human_adoption_decision"] != "valid"
+            or row["human_rename_only"] != "no"
+            or row["human_frontmatter_and_paths_valid"] != "yes"
+        ):
+            _require_text(row, "human_notes", location)
+
+    category_counts = {category: 0 for category in REVIEW_CATEGORIES}
+    for row in path_rows:
+        location = f"{path_review_path}: row {row['review_position']}"
+        source = selected_by_repo.get(row["repo_full_name"])
+        if source is None:
+            raise ReviewValidationError(f"{location}: repository is not in the selected sample")
+        expected_directory = display_path(
+            config.repository_directory / row["repo_full_name"].replace("/", "__")
+        )
+        if row["repository_directory"] != expected_directory:
+            raise ReviewValidationError(
+                f"{location}: repository_directory does not match extraction evidence"
+            )
+        if row["commit"] != source["adoption_commit"]:
+            raise ReviewValidationError(
+                f"{location}: commit does not match the preserved adoption commit"
+            )
+        _require_choice(row, "automatic_category", set(REVIEW_CATEGORIES), location)
+        _require_choice(row, "human_category", set(REVIEW_CATEGORIES), location)
+        _require_choice(row, "agreement", YES_NO, location)
+        _require_text(row, "classification_rule", location)
+        _require_text(row, "ordering_hash", location)
+        _require_text(row, "reviewer", location)
+        _require_utc(row, "reviewed_at_utc", location)
+        agrees = row["human_category"] == row["automatic_category"]
+        if (row["agreement"] == "yes") != agrees:
+            raise ReviewValidationError(
+                f"{location}: agreement conflicts with automatic and human categories"
+            )
+        if row["agreement"] == "no":
+            _require_text(row, "human_notes", location)
+        category_counts[row["automatic_category"]] += 1
+    expected_counts = {key: int(value) for key, value in manifest["sample_counts"].items()}
+    if category_counts != expected_counts:
+        raise ReviewValidationError(
+            f"{path_review_path}: category counts {category_counts} do not match manifest "
+            f"{expected_counts}"
+        )
+    return adoption_rows, path_rows
 
 
 def select_row(rows: list[dict[str, str]], field: str, position: int) -> dict[str, str]:
@@ -231,9 +452,9 @@ def review_path(row: dict[str, str], config: Config, commands_only: bool) -> Non
     print("\nComplete the human_* fields in data/validation/path_review.csv.")
 
 
-def list_progress(validation_directory: Path) -> None:
-    adoption_rows = load_rows(validation_directory / "adoption_review.csv")
-    path_rows = load_rows(validation_directory / "path_review.csv")
+def list_progress(
+    adoption_rows: list[dict[str, str]], path_rows: list[dict[str, str]]
+) -> None:
     print("Adoption reviews:")
     for row in adoption_rows:
         decision = row["human_adoption_decision"] or "pending"
@@ -262,6 +483,7 @@ def argument_parser() -> argparse.ArgumentParser:
     )
     subparsers = parser.add_subparsers(dest="action", required=True)
     subparsers.add_parser("list", help="List review positions and completion status")
+    subparsers.add_parser("validate", help="Validate both completed review forms")
     adoption = subparsers.add_parser("adoption", help="Review one adoption event")
     adoption.add_argument("position", type=int)
     path = subparsers.add_parser("path", help="Review one sampled path")
@@ -272,21 +494,29 @@ def argument_parser() -> argparse.ArgumentParser:
 def main() -> None:
     args = argument_parser().parse_args()
     validation_directory = args.validation_directory.resolve()
-    if args.action == "list":
-        list_progress(validation_directory)
-        return
     config = load_config(args.config)
+    try:
+        adoption_rows, path_rows = validate_review_package(validation_directory, config)
+    except (OSError, KeyError, ValueError, json.JSONDecodeError) as error:
+        raise SystemExit(f"Invalid validation package: {error}") from error
+    if args.action == "list":
+        list_progress(adoption_rows, path_rows)
+        return
+    if args.action == "validate":
+        print(
+            f"Validation package is complete: {len(adoption_rows)} adoptions, "
+            f"{len(path_rows)} paths."
+        )
+        return
     if args.action == "adoption":
-        rows = load_rows(validation_directory / "adoption_review.csv")
         review_adoption(
-            select_row(rows, "sample_position", args.position),
+            select_row(adoption_rows, "sample_position", args.position),
             config,
             args.commands_only,
         )
     elif args.action == "path":
-        rows = load_rows(validation_directory / "path_review.csv")
         review_path(
-            select_row(rows, "review_position", args.position),
+            select_row(path_rows, "review_position", args.position),
             config,
             args.commands_only,
         )

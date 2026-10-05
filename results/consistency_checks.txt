@@ -1,0 +1,41 @@
+Consistency checks for the descriptive RQ1/RQ2 analysis
+
+repositories: 10
+repositories with a tie for the largest post category: 1
+
+RQ1 reconstructed from activity_counts.csv (post period):
+  OK  marisa901225-cmyk/personal-portfolio: {'skill': 0, 'production': 47, 'test': 54} (expected {'skill': 0, 'production': 47, 'test': 54})
+  OK  surus-lat/benchy: {'skill': 15, 'production': 18, 'test': 16} (expected {'skill': 15, 'production': 18, 'test': 16})
+  OK  tylertjburns/coopstorage: {'skill': 0, 'production': 11, 'test': 5} (expected {'skill': 0, 'production': 11, 'test': 5})
+  OK  LyonMoncef/SamsungHealth: {'skill': 2, 'production': 11, 'test': 8} (expected {'skill': 2, 'production': 11, 'test': 8})
+  OK  speechpro/inex-launcher: {'skill': 4, 'production': 3, 'test': 3} (expected {'skill': 4, 'production': 3, 'test': 3})
+  OK  Harmeet10000/AgentNexus-LangChain-FastAPI: {'skill': 6, 'production': 36, 'test': 2} (expected {'skill': 6, 'production': 36, 'test': 2})
+  OK  hanzoai/insights: {'skill': 14, 'production': 211, 'test': 97} (expected {'skill': 14, 'production': 211, 'test': 97})
+  OK  stharrold/stharrold-templates: {'skill': 10, 'production': 49, 'test': 41} (expected {'skill': 10, 'production': 49, 'test': 41})
+  OK  pinchbench/skill: {'skill': 0, 'production': 0, 'test': 0} (expected {'skill': 0, 'production': 0, 'test': 0})
+  OK  perrymanuk/radbot: {'skill': 14, 'production': 150, 'test': 50} (expected {'skill': 14, 'production': 150, 'test': 50})
+
+RQ2 differences reconstructed from activity_counts.csv:
+  OK  marisa901225-cmyk/personal-portfolio production difference -108
+  OK  marisa901225-cmyk/personal-portfolio test difference -87
+  OK  surus-lat/benchy production difference 9
+  OK  surus-lat/benchy test difference 8
+  OK  tylertjburns/coopstorage production difference -73
+  OK  tylertjburns/coopstorage test difference -25
+  OK  LyonMoncef/SamsungHealth production difference 10
+  OK  LyonMoncef/SamsungHealth test difference 6
+  OK  speechpro/inex-launcher production difference 3
+  OK  speechpro/inex-launcher test difference 3
+  OK  Harmeet10000/AgentNexus-LangChain-FastAPI production difference 29
+  OK  Harmeet10000/AgentNexus-LangChain-FastAPI test difference 2
+  OK  hanzoai/insights production difference 211
+  OK  hanzoai/insights test difference 97
+  OK  stharrold/stharrold-templates production difference 42
+  OK  stharrold/stharrold-templates test difference 38
+  OK  pinchbench/skill production difference -57
+  OK  pinchbench/skill test difference -8
+  OK  perrymanuk/radbot production difference 95
+  OK  perrymanuk/radbot test difference 35
+
+No inferential test, confidence interval or population generalization
+was computed in this stage.

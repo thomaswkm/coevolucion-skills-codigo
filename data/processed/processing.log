@@ -1,0 +1,22 @@
+2026-10-05T07:06:40Z INFO Validating preserved extraction and human-review inputs
+2026-10-05T07:06:40Z INFO Processing repository 1: marisa901225-cmyk/personal-portfolio
+2026-10-05T07:06:41Z INFO marisa901225-cmyk/personal-portfolio: 294 commits in windows, 0 merges excluded
+2026-10-05T07:06:41Z INFO Processing repository 2: surus-lat/benchy
+2026-10-05T07:06:41Z INFO surus-lat/benchy: 66 commits in windows, 1 merges excluded
+2026-10-05T07:06:41Z INFO Processing repository 3: tylertjburns/coopstorage
+2026-10-05T07:06:42Z INFO tylertjburns/coopstorage: 153 commits in windows, 26 merges excluded
+2026-10-05T07:06:42Z INFO Processing repository 4: LyonMoncef/SamsungHealth
+2026-10-05T07:06:42Z INFO LyonMoncef/SamsungHealth: 72 commits in windows, 17 merges excluded
+2026-10-05T07:06:42Z INFO Processing repository 5: speechpro/inex-launcher
+2026-10-05T07:06:42Z INFO speechpro/inex-launcher: 11 commits in windows, 1 merges excluded
+2026-10-05T07:06:42Z INFO Processing repository 6: Harmeet10000/AgentNexus-LangChain-FastAPI
+2026-10-05T07:06:43Z INFO Harmeet10000/AgentNexus-LangChain-FastAPI: 46 commits in windows, 0 merges excluded
+2026-10-05T07:06:43Z INFO Processing repository 7: hanzoai/insights
+2026-10-05T07:06:47Z INFO hanzoai/insights: 633 commits in windows, 85 merges excluded
+2026-10-05T07:06:47Z INFO Processing repository 8: stharrold/stharrold-templates
+2026-10-05T07:06:48Z INFO stharrold/stharrold-templates: 310 commits in windows, 102 merges excluded
+2026-10-05T07:06:48Z INFO Processing repository 9: pinchbench/skill
+2026-10-05T07:06:49Z INFO pinchbench/skill: 242 commits in windows, 102 merges excluded
+2026-10-05T07:06:49Z INFO Processing repository 10: perrymanuk/radbot
+2026-10-05T07:06:50Z INFO perrymanuk/radbot: 327 commits in windows, 29 merges excluded
+2026-10-05T07:06:50Z INFO Processing complete: 3170 commit-category rows, 76809 file changes, 80 counts

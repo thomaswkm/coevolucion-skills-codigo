@@ -1,0 +1,131 @@
+{
+  "configuration": {
+    "adoption_policy": "exclude t0 and use committer timestamps normalized to UTC",
+    "categories": [
+      "skill",
+      "production",
+      "test",
+      "other"
+    ],
+    "config_path": "/home/thomas/dev/coevolution-skills-code/extraction.toml",
+    "extraction": {
+      "artifact_parts": 31,
+      "checkout_selected": true,
+      "clone_timeout_seconds": 1800,
+      "command_timeout_seconds": 300,
+      "dataset_repository": "mvaccargiu/gitskills",
+      "dataset_revision": "ebab17454a7c236f8f26b183567f1a126f42e3f8",
+      "history_cutoff_utc": "2026-10-04T23:59:59Z",
+      "output_directory": "/home/thomas/dev/coevolution-skills-code/data/extraction",
+      "repository_directory": "/home/thomas/dev/coevolution-skills-code/repositories",
+      "retry_count": 3,
+      "seed": "20261004",
+      "target_count": 10,
+      "window_days": 60
+    },
+    "merge_policy": "exclude commits with more than one parent",
+    "output_directory": "/home/thomas/dev/coevolution-skills-code/data/processed",
+    "periods": [
+      "pre",
+      "post"
+    ]
+  },
+  "created_at_utc": "2026-10-05T07:06:50.710640Z",
+  "input_sha256": {
+    "adoption_review": "ad73908d573c51994829d9cd7dd8257f973a92b3aa46b7ec898c2f82f193e37b",
+    "automated_checks": "3e883f683da0a480d8013c35da642753edb827a5da04f6665a78c4656980e024",
+    "configuration": "e81be37f11c02a0d554f9d81b0315539a392a6af4510d16142fc1e5edc28d097",
+    "extraction_manifest": "f8536787557532c1bd58b429d8ed5b5bf072994bf0df38d5ef82dfeedcaa8f5e",
+    "human_review_checksums": "e84f7b33cee263abb192c647ab17c0f22dffc766c3c6a1b18443783e12ac4031",
+    "path_review": "1bd0ca307ae0aa1a727826b9a0a91e89cf818ee11e0984403e94156d97f54319",
+    "selected_repositories": "2a083fb04832c30ed806e268c17c2c671aeb817955390705b7a3021086582fe3",
+    "validation_manifest": "525eeb40f51bcaf2cb4c1179af4ba9ee6ed3e2b081531b8177d6043a5fc42b5a"
+  },
+  "output_sha256": {
+    "activity_counts": "069818418905a03f52929865e9f680119587972e83883caa51a8a7cfe62df177",
+    "commit_activity": "32af2457c6e3ddae09dfd74517356c5c3a9383fd0a16ae9c4ad21f7aba2af58c",
+    "file_changes": "1b1ef7a502ccad748bda8da4d4ec237f3023f245271f1682cd0c9218597d35ab"
+  },
+  "processing_protocol_version": "1",
+  "repositories": [
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 294,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 0,
+      "repo_full_name": "marisa901225-cmyk/personal-portfolio"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 66,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 1,
+      "repo_full_name": "surus-lat/benchy"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 153,
+      "default_branch_ref": "refs/heads/master",
+      "merge_commits_excluded": 26,
+      "repo_full_name": "tylertjburns/coopstorage"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 72,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 17,
+      "repo_full_name": "LyonMoncef/SamsungHealth"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 11,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 1,
+      "repo_full_name": "speechpro/inex-launcher"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 46,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 0,
+      "repo_full_name": "Harmeet10000/AgentNexus-LangChain-FastAPI"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 633,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 85,
+      "repo_full_name": "hanzoai/insights"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 310,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 102,
+      "repo_full_name": "stharrold/stharrold-templates"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 242,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 102,
+      "repo_full_name": "pinchbench/skill"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 327,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 29,
+      "repo_full_name": "perrymanuk/radbot"
+    }
+  ],
+  "row_counts": {
+    "activity_counts": 80,
+    "commit_activity": 3170,
+    "file_changes": 76809
+  },
+  "tool_versions": {
+    "git": "git version 2.53.0",
+    "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]"
+  }
+}

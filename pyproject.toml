@@ -13,6 +13,17 @@ dependencies = [
 extract-repositories = "coevolution_skills.extract:main"
 prepare-validation = "coevolution_skills.validation:main"
 review-validation = "coevolution_skills.reviewer:main"
+process-activity = "coevolution_skills.process:main"
+prepare-activity-validation = "coevolution_skills.activity_validation:prepare_main"
+review-activity-validation = "coevolution_skills.activity_validation:review_main"
+analyze-results = "coevolution_skills.analyze:main"
+
+[dependency-groups]
+dev = ["pytest>=8,<9", "matplotlib>=3.8,<4"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
 
 [build-system]
 requires = ["hatchling"]

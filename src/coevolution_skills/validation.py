@@ -7,6 +7,7 @@ import csv
 import hashlib
 import json
 import logging
+import sys
 import time
 from dataclasses import dataclass
 from datetime import timedelta
@@ -22,6 +23,7 @@ from .extract import (
     file_sha256,
     git_bytes_output,
     git_output,
+    git_version,
     load_config,
     parse_datetime,
     tree_paths,
@@ -29,11 +31,47 @@ from .extract import (
     valid_skill_document,
     valid_skills_at,
     write_csv_atomic,
+    serializable_config,
 )
 
 
 VALIDATION_PROTOCOL_VERSION = "2"
 REVIEW_CATEGORIES = ("skill", "production", "test", "other")
+ADOPTION_REVIEW_FIELDS = (
+    "sample_position",
+    "repo_full_name",
+    "repository_directory",
+    "cutoff_commit",
+    "adoption_commit",
+    "first_parent",
+    "adoption_at_utc",
+    "pre_window_boundary_utc",
+    "post_window_boundary_utc",
+    "valid_skills_before",
+    "valid_skills_after",
+    "skill_location_diff",
+    "human_adoption_decision",
+    "human_rename_only",
+    "human_frontmatter_and_paths_valid",
+    "human_notes",
+    "reviewer",
+    "reviewed_at_utc",
+)
+PATH_REVIEW_FIELDS = (
+    "review_position",
+    "repo_full_name",
+    "repository_directory",
+    "commit",
+    "path",
+    "automatic_category",
+    "classification_rule",
+    "ordering_hash",
+    "human_category",
+    "agreement",
+    "human_notes",
+    "reviewer",
+    "reviewed_at_utc",
+)
 
 
 @dataclass(frozen=True)
@@ -471,9 +509,8 @@ def execute(config: Config, output_directory: Path, maximum_per_category: int) -
         "expected",
     ]
     write_csv_atomic(output_directory / "automated_checks.csv", check_fields, checks)
-    adoption_fields = list(adoption_rows[0])
     write_csv_atomic(
-        output_directory / "adoption_review.csv", adoption_fields, adoption_rows
+        output_directory / "adoption_review.csv", ADOPTION_REVIEW_FIELDS, adoption_rows
     )
     path_rows = []
     for review_position, item in enumerate(sampled, start=1):
@@ -487,22 +524,7 @@ def execute(config: Config, output_directory: Path, maximum_per_category: int) -
             "reviewed_at_utc": "",
         }
         path_rows.append(row)
-    path_fields = [
-        "review_position",
-        "repo_full_name",
-        "repository_directory",
-        "commit",
-        "path",
-        "automatic_category",
-        "classification_rule",
-        "ordering_hash",
-        "human_category",
-        "agreement",
-        "human_notes",
-        "reviewer",
-        "reviewed_at_utc",
-    ]
-    write_csv_atomic(output_directory / "path_review.csv", path_fields, path_rows)
+    write_csv_atomic(output_directory / "path_review.csv", PATH_REVIEW_FIELDS, path_rows)
     write_review_instructions(
         output_directory / "README.md", len(selected), sample_counts
     )
@@ -510,6 +532,15 @@ def execute(config: Config, output_directory: Path, maximum_per_category: int) -
     manifest = {
         "created_at_utc": utc_now(),
         "validation_protocol_version": VALIDATION_PROTOCOL_VERSION,
+        "configuration": {
+            "extraction": serializable_config(config),
+            "output_directory": str(output_directory.resolve()),
+            "maximum_paths_per_category": maximum_per_category,
+        },
+        "tool_versions": {
+            "git": git_version(config),
+            "python": sys.version,
+        },
         "validation_seed": validation_seed,
         "maximum_paths_per_category": maximum_per_category,
         "sample_counts": sample_counts,
