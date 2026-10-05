@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "2026-01-17T00:29:06Z",
+  "adoption_commit": "d2ab8d40622fc4b129f5a75e1e46ab50fd90f6e3",
+  "candidate_position": 8,
+  "cutoff_commit": "1cae16ea3d7a51cb289a305286625ca972e34998",
+  "default_branch": "main",
+  "detail": "No reachable commit exists at least 60 days before adoption",
+  "exclusion_reason": "insufficient_pre_window",
+  "ordering_hash": "002b0eb387baf8c3d3fb2ad14772cc826489ad521ff55a7f50a3157175582627",
+  "production_python_count": 0,
+  "repo_full_name": "joaovjo/ai-prompts",
+  "repository_url": "https://github.com/joaovjo/ai-prompts.git",
+  "retrieved_at_utc": "2026-10-05T05:10:07.624548Z",
+  "status": "excluded",
+  "test_python_count": 0,
+  "valid_skill_paths": ".github/skills/brand-guidelines/SKILL.md;.github/skills/doc-coauthoring/SKILL.md;.github/skills/frontend-design/SKILL.md;.github/skills/internal-comms/SKILL.md;.github/skills/skill-creator/SKILL.md;.github/skills/theme-factory/SKILL.md"
+}

@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "2026-05-22T15:54:52Z",
+  "adoption_commit": "819384ae830492365b8363fc26bc2602e73f216d",
+  "candidate_position": 60,
+  "cutoff_commit": "819384ae830492365b8363fc26bc2602e73f216d",
+  "default_branch": "main",
+  "detail": "All inclusion criteria passed",
+  "exclusion_reason": "",
+  "ordering_hash": "00c38ecd96924530a24af964b5e1c7d2da281f39be0ddb865ad002a14e4363ff",
+  "production_python_count": 16,
+  "repo_full_name": "pinchbench/skill",
+  "repository_url": "https://github.com/pinchbench/skill.git",
+  "retrieved_at_utc": "2026-10-05T05:19:25.602710Z",
+  "status": "eligible",
+  "test_python_count": 4,
+  "valid_skill_paths": ".agents/skills/building-dashboards/SKILL.md;.agents/skills/query-metrics/SKILL.md"
+}

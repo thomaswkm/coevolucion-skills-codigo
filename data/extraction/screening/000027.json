@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "2026-04-29T22:00:54Z",
+  "adoption_commit": "94bdfcac55de1cbdc86a43e25a8ffaf44501b789",
+  "candidate_position": 27,
+  "cutoff_commit": "e1e9d86c0891dbe8dc24c88952a74a3cdf11e4dc",
+  "default_branch": "main",
+  "detail": "All inclusion criteria passed",
+  "exclusion_reason": "",
+  "ordering_hash": "0059e04f43274dc9f0322584484bcf59f62776918b5a551807e1ad0335c10d3b",
+  "production_python_count": 81,
+  "repo_full_name": "LyonMoncef/SamsungHealth",
+  "repository_url": "https://github.com/LyonMoncef/SamsungHealth.git",
+  "retrieved_at_utc": "2026-10-05T05:13:14.522822Z",
+  "status": "eligible",
+  "test_python_count": 70,
+  "valid_skill_paths": ".claude/skills/align/SKILL.md;.claude/skills/anchor-review/SKILL.md;.claude/skills/annotate/SKILL.md;.claude/skills/impl/SKILL.md;.claude/skills/sync-coverage/SKILL.md;.claude/skills/sync-vault/SKILL.md;.claude/skills/tdd/SKILL.md"
+}

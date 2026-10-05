@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "2026-06-01T22:40:40Z",
+  "adoption_commit": "a2677fa35f0ff6c7fc6df17cb6af479aa09417e1",
+  "candidate_position": 40,
+  "cutoff_commit": "70f13f5755c485486c9e98f1007a4fdacad74a9e",
+  "default_branch": "main",
+  "detail": "No reachable commit exists at least 60 days before adoption",
+  "exclusion_reason": "insufficient_pre_window",
+  "ordering_hash": "008d77c9e0a9239770eb31799865fdc488aae2cb91817576e4fcfb6d0d8c3a9d",
+  "production_python_count": 0,
+  "repo_full_name": "Bullish-Design/templateer_v2",
+  "repository_url": "https://github.com/Bullish-Design/templateer_v2.git",
+  "retrieved_at_utc": "2026-10-05T05:14:47.007260Z",
+  "status": "excluded",
+  "test_python_count": 0,
+  "valid_skill_paths": ".agents/skills/allium-cli-agent-runbooks/SKILL.md;.agents/skills/allium-cli-analyse/SKILL.md;.agents/skills/allium-cli-check/SKILL.md;.agents/skills/allium-cli-ci-and-quality-gates/SKILL.md;.agents/skills/allium-cli-command-reference/SKILL.md;.agents/skills/allium-cli-diagnostics-repair/SKILL.md;.agents/skills/allium-cli-model/SKILL.md;.agents/skills/allium-cli-output-interpretation/SKILL.md;.agents/skills/allium-cli-overview/SKILL.md;.agents/skills/allium-cli-parse/SKILL.md;.agents/skills/allium-cli-plan/SKILL.md;.agents/skills/allium-cli-project-conventions/SKILL.md;.agents/skills/allium-entrypoint/SKILL.md;.agents/skills/allium/SKILL.md;.agents/skills/distill/SKILL.md;.agents/skills/elicit/SKILL.md;.agents/skills/propagate/SKILL.md;.agents/skills/tend/SKILL.md;.agents/skills/weed/SKILL.md"
+}

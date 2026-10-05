@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "2026-05-07T21:59:31Z",
+  "adoption_commit": "0b2579441454932dac3422ab1d3eeb14bc57dfcb",
+  "candidate_position": 26,
+  "cutoff_commit": "455a7b6520b4d36c1a7f13083a1c0461c814112f",
+  "default_branch": "master",
+  "detail": "All inclusion criteria passed",
+  "exclusion_reason": "",
+  "ordering_hash": "0056a4380b7dc3b00f6191c19d4c07dd361816b53ef31fe92823629dd29b6376",
+  "production_python_count": 44,
+  "repo_full_name": "tylertjburns/coopstorage",
+  "repository_url": "https://github.com/tylertjburns/coopstorage.git",
+  "retrieved_at_utc": "2026-10-05T05:13:09.717839Z",
+  "status": "eligible",
+  "test_python_count": 8,
+  "valid_skill_paths": ".github/skills/git-branch-workflow/SKILL.md"
+}

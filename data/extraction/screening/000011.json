@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "2026-07-07T07:40:53Z",
+  "adoption_commit": "b26c1b34be0fd9b18556de11d741d06b5532bbdd",
+  "candidate_position": 11,
+  "cutoff_commit": "19fd8f8d7ff3c5382624037d9ddb959691208538",
+  "default_branch": "master",
+  "detail": "No reachable commit exists at least 60 days before adoption",
+  "exclusion_reason": "insufficient_pre_window",
+  "ordering_hash": "0032c2f3d64ef6a89535def58ce0c1b825474f04890bef20ab628056da18aeb0",
+  "production_python_count": 0,
+  "repo_full_name": "b76182342-source/tuwen-agent",
+  "repository_url": "https://github.com/b76182342-source/tuwen-agent.git",
+  "retrieved_at_utc": "2026-10-05T05:10:36.559199Z",
+  "status": "excluded",
+  "test_python_count": 0,
+  "valid_skill_paths": ".agents/skills/gsap-animate/SKILL.md;.agents/skills/gsap-canvas/SKILL.md;.agents/skills/gsap-core/SKILL.md;.agents/skills/gsap-cursor/SKILL.md;.agents/skills/gsap-frameworks/SKILL.md;.agents/skills/gsap-interact/SKILL.md;.agents/skills/gsap-optimise/SKILL.md;.agents/skills/gsap-performance/SKILL.md;.agents/skills/gsap-plugins/SKILL.md;.agents/skills/gsap-react/SKILL.md;.agents/skills/gsap-scroll/SKILL.md;.agents/skills/gsap-scrolltrigger/SKILL.md;.agents/skills/gsap-setup/SKILL.md;.agents/skills/gsap-showcase/SKILL.md;.agents/skills/gsap-svg/SKILL.md;.agents/skills/gsap-test/SKILL.md;.agents/skills/gsap-text/SKILL.md;.agents/skills/gsap-timeline/SKILL.md;.agents/skills/gsap-utils/SKILL.md;.agents/skills/gsap-vfx/SKILL.md;.claude/skills/gsap-animate/SKILL.md;.claude/skills/gsap-canvas/SKILL.md;.claude/skills/gsap-core/SKILL.md;.claude/skills/gsap-cursor/SKILL.md;.claude/skills/gsap-frameworks/SKILL.md;.claude/skills/gsap-interact/SKILL.md;.claude/skills/gsap-optimise/SKILL.md;.claude/skills/gsap-performance/SKILL.md;.claude/skills/gsap-plugins/SKILL.md;.claude/skills/gsap-react/SKILL.md;.claude/skills/gsap-scroll/SKILL.md;.claude/skills/gsap-scrolltrigger/SKILL.md;.claude/skills/gsap-setup/SKILL.md;.claude/skills/gsap-showcase/SKILL.md;.claude/skills/gsap-svg/SKILL.md;.claude/skills/gsap-test/SKILL.md;.claude/skills/gsap-text/SKILL.md;.claude/skills/gsap-timeline/SKILL.md;.claude/skills/gsap-utils/SKILL.md;.claude/skills/gsap-vfx/SKILL.md"
+}

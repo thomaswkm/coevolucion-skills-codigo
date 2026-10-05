@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "2026-04-02T20:08:07Z",
+  "adoption_commit": "d5c68373fd79430855c4108f2224a22c734602d2",
+  "candidate_position": 53,
+  "cutoff_commit": "0104d9fc93789a7d71a80d71aead7d9ae90e6d6b",
+  "default_branch": "main",
+  "detail": "No reachable commit exists at least 60 days before adoption",
+  "exclusion_reason": "insufficient_pre_window",
+  "ordering_hash": "00abb13b834a76c3b38aa0fa6c168a1ed4d6999c1d8a2e35ed9c388f890f9027",
+  "production_python_count": 0,
+  "repo_full_name": "sanchitmoh/GSTENV",
+  "repository_url": "https://github.com/sanchitmoh/GSTENV.git",
+  "retrieved_at_utc": "2026-10-05T05:17:40.320091Z",
+  "status": "excluded",
+  "test_python_count": 0,
+  "valid_skill_paths": ".agents/skills/ai-engineer/SKILL.md;.agents/skills/ai-rag-pipeline/SKILL.md;.agents/skills/architecture-blueprint-generator/SKILL.md;.agents/skills/context-map/SKILL.md;.agents/skills/enhance-prompt/SKILL.md;.agents/skills/langchain-rag/SKILL.md;.agents/skills/machine-learning-engineer/SKILL.md"
+}

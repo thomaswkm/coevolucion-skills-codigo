@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "2026-04-11T16:28:39Z",
+  "adoption_commit": "28dc88a1d864ebb99ac3fd768135965bcabb7e6c",
+  "candidate_position": 41,
+  "cutoff_commit": "56f056275f60b98952c57b995ac41ad5eaf0c105",
+  "default_branch": "main",
+  "detail": "No reachable commit exists at least 60 days before adoption",
+  "exclusion_reason": "insufficient_pre_window",
+  "ordering_hash": "008f4486f039f03cd66bc01dbb17120833dc060dc000f9e3e9fc0ec81d43abbf",
+  "production_python_count": 0,
+  "repo_full_name": "arcnode-io/dlr-pcb",
+  "repository_url": "https://github.com/arcnode-io/dlr-pcb.git",
+  "retrieved_at_utc": "2026-10-05T05:15:03.503420Z",
+  "status": "excluded",
+  "test_python_count": 0,
+  "valid_skill_paths": ".claude/skills/layout-pcb/SKILL.md"
+}

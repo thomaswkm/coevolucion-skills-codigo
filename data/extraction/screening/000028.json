@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "2026-04-02T10:56:06Z",
+  "adoption_commit": "c244227970c66c4f91121e1cacc9e192056793bd",
+  "candidate_position": 28,
+  "cutoff_commit": "fe4746b9f07e6c7c2b6d3932002183af9b9f6fa2",
+  "default_branch": "main",
+  "detail": "No reachable commit exists at least 60 days before adoption",
+  "exclusion_reason": "insufficient_pre_window",
+  "ordering_hash": "005b4fb3d2ea8eacccb24948642e0f813cf60ba55c3004ecee8af48332baec67",
+  "production_python_count": 0,
+  "repo_full_name": "dyCuong03/unity-agent-team",
+  "repository_url": "https://github.com/dyCuong03/unity-agent-team.git",
+  "retrieved_at_utc": "2026-10-05T05:13:35.169054Z",
+  "status": "excluded",
+  "test_python_count": 0,
+  "valid_skill_paths": ".claude/skills/editor-data-tools/SKILL.md;.claude/skills/qa-validation/SKILL.md;.claude/skills/start-unity-dots-team/SKILL.md;.claude/skills/unity-dots-best-practices/SKILL.md"
+}

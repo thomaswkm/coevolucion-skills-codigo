@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "2026-06-03T20:43:40Z",
+  "adoption_commit": "5b09baf34cf959d30cdcc5c09d89194502dbd38c",
+  "candidate_position": 36,
+  "cutoff_commit": "534330459446c14e2363a0bc4a599891a548d736",
+  "default_branch": "main",
+  "detail": "No reachable commit exists at least 60 days before adoption",
+  "exclusion_reason": "insufficient_pre_window",
+  "ordering_hash": "0077e590121e059ba61eb693dbfb9a8eabb2dcb472a6dc4f439ce4aef9ecad6c",
+  "production_python_count": 0,
+  "repo_full_name": "imhidayatchitrali/CTSafe-agent",
+  "repository_url": "https://github.com/imhidayatchitrali/CTSafe-agent.git",
+  "retrieved_at_utc": "2026-10-05T05:14:21.614975Z",
+  "status": "excluded",
+  "test_python_count": 0,
+  "valid_skill_paths": ".agents/skills/ctsafe-agno-memory-evolution/SKILL.md;.agents/skills/ctsafe-agno-ops-gateway/SKILL.md;.agents/skills/ctsafe-dvr-domain/SKILL.md;.agents/skills/docx/SKILL.md;.agents/skills/fastapi-python/SKILL.md;.agents/skills/impl-validator/SKILL.md;.agents/skills/prompt-engineering-patterns/SKILL.md;.agents/skills/rag-implementation/SKILL.md;.agents/skills/supabase-postgres-best-practices/SKILL.md;.agents/skills/supabase/SKILL.md;.agents/skills/systematic-debugging/SKILL.md"
+}

@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "2026-05-19T20:39:19Z",
+  "adoption_commit": "3f872c438b37fcb0a664a4af4d96bd3dce60513f",
+  "candidate_position": 55,
+  "cutoff_commit": "437b7d65a6b70875adaa26a09a6e2108eebfa055",
+  "default_branch": "main",
+  "detail": "No reachable commit exists at least 60 days before adoption",
+  "exclusion_reason": "insufficient_pre_window",
+  "ordering_hash": "00b1f06f29ba1b37da01e750240fcad29b76bdbdd54c7310b9f7f2aa99dba4b7",
+  "production_python_count": 0,
+  "repo_full_name": "Nappinggg/FoodDelivery",
+  "repository_url": "https://github.com/Nappinggg/FoodDelivery.git",
+  "retrieved_at_utc": "2026-10-05T05:17:53.377608Z",
+  "status": "excluded",
+  "test_python_count": 0,
+  "valid_skill_paths": ".agent/skills/food-delivery-rules/SKILL.md"
+}

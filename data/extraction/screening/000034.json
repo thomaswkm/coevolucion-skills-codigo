@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "2026-03-14T22:14:01Z",
+  "adoption_commit": "fe165f1d36a502ffdf05a4629f05806559a7c6c5",
+  "candidate_position": 34,
+  "cutoff_commit": "7f11020c635e4d4834b5e1c979f372b00936f023",
+  "default_branch": "main",
+  "detail": "No reachable commit exists at least 60 days before adoption",
+  "exclusion_reason": "insufficient_pre_window",
+  "ordering_hash": "0070411231d2df6afc23d28a752916025c747591c4161e64dee2dadd7bac76e1",
+  "production_python_count": 0,
+  "repo_full_name": "melanson633/v3-lease-abstract-pipeline",
+  "repository_url": "https://github.com/melanson633/v3-lease-abstract-pipeline.git",
+  "retrieved_at_utc": "2026-10-05T05:14:12.160353Z",
+  "status": "excluded",
+  "test_python_count": 0,
+  "valid_skill_paths": ".claude/skills/lease-abstract/SKILL.md;.claude/skills/lease-export/SKILL.md;.claude/skills/lease-extract/SKILL.md;.claude/skills/lease-render/SKILL.md"
+}

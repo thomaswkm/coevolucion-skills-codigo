@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "2026-05-28T09:08:08Z",
+  "adoption_commit": "c10d2a4b255cb4edfbbaf61a43a2fa6edaeebeae",
+  "candidate_position": 9,
+  "cutoff_commit": "cb06123c9beb4726e33758b88f77fb4b04c8ed95",
+  "default_branch": "main",
+  "detail": "No reachable commit exists at least 60 days before adoption",
+  "exclusion_reason": "insufficient_pre_window",
+  "ordering_hash": "002cda4fbdf2b968cf701e833b0c83a9e5b4aafd3cbd55455f23edac908654c3",
+  "production_python_count": 0,
+  "repo_full_name": "elloza/tfg-grado-ing-informatica",
+  "repository_url": "https://github.com/elloza/tfg-grado-ing-informatica.git",
+  "retrieved_at_utc": "2026-10-05T05:10:13.707042Z",
+  "status": "excluded",
+  "test_python_count": 0,
+  "valid_skill_paths": ".github/skills/teachbook-add-content/SKILL.md;.github/skills/teachbook-build/SKILL.md;.github/skills/teachbook-export-latex-project/SKILL.md;.github/skills/teachbook-export-pdf/SKILL.md;.github/skills/teachbook-generate-circuitikz/SKILL.md;.github/skills/teachbook-generate-diagram/SKILL.md;.github/skills/teachbook-generate-interactive-html/SKILL.md;.github/skills/teachbook-generate-quiz/SKILL.md;.github/skills/teachbook-generate-review-teaching-quality/SKILL.md;.github/skills/teachbook-generate-schemdraw-circuit/SKILL.md;.github/skills/teachbook-generate-teaching-notebook/SKILL.md;.github/skills/teachbook-generate-thebe-binder-page/SKILL.md;.github/skills/teachbook-git-publish/SKILL.md;.github/skills/teachbook-live-preview/SKILL.md;.github/skills/teachbook-multimedia/SKILL.md;.github/skills/teachbook-optimize-static-assets/SKILL.md;.github/skills/teachbook-pdf-to-markdown/SKILL.md;.github/skills/teachbook-review-html-pdf-compatibility/SKILL.md;.github/skills/teachbook-setup-environment/SKILL.md"
+}

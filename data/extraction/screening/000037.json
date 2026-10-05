@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "2026-06-05T01:45:15Z",
+  "adoption_commit": "67be8f6c570915258966d03955ad9e1f64c6e544",
+  "candidate_position": 37,
+  "cutoff_commit": "fe9514e681ac4891c7eeb731edbf6f661126debd",
+  "default_branch": "main",
+  "detail": "All inclusion criteria passed",
+  "exclusion_reason": "",
+  "ordering_hash": "007d8da1153b028d922868aa2bf8b5f8b441965c7c9c9967203d225428d070eb",
+  "production_python_count": 8,
+  "repo_full_name": "speechpro/inex-launcher",
+  "repository_url": "https://github.com/speechpro/inex-launcher.git",
+  "retrieved_at_utc": "2026-10-05T05:14:32.309591Z",
+  "status": "eligible",
+  "test_python_count": 22,
+  "valid_skill_paths": ".cursor/skills/inex-launcher/SKILL.md"
+}

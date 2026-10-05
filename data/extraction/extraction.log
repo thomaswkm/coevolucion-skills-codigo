@@ -1,0 +1,153 @@
+2026-10-05T05:08:52Z INFO Building candidate frame from pinned GitSkills Parquet files
+2026-10-05T05:09:30Z INFO Candidate frame frozen with 22126 repositories
+2026-10-05T05:09:30Z INFO Starting screening with 0 completed candidates and 0/10 eligible
+2026-10-05T05:09:30Z INFO Screening candidate 1: wangtong10086/orbit
+2026-10-05T05:09:33Z INFO Excluded wangtong10086/orbit: insufficient_pre_window
+2026-10-05T05:09:33Z INFO Screening candidate 2: VoidLight00/fablelayer
+2026-10-05T05:09:38Z INFO Excluded VoidLight00/fablelayer: insufficient_pre_window
+2026-10-05T05:09:38Z INFO Screening candidate 3: tinyloophub/tinyhat--runtimes--openclaw
+2026-10-05T05:09:43Z INFO Excluded tinyloophub/tinyhat--runtimes--openclaw: insufficient_pre_window
+2026-10-05T05:09:43Z INFO Screening candidate 4: mechanistic-org/global_agent
+2026-10-05T05:09:44Z WARNING Remote lookup failed (attempt 1/3): https://github.com/mechanistic-org/global_agent.git
+2026-10-05T05:09:46Z WARNING Remote lookup failed (attempt 2/3): https://github.com/mechanistic-org/global_agent.git
+2026-10-05T05:09:51Z WARNING Remote lookup failed (attempt 3/3): https://github.com/mechanistic-org/global_agent.git
+2026-10-05T05:09:51Z INFO Excluded mechanistic-org/global_agent: repository_unavailable
+2026-10-05T05:09:51Z INFO Screening candidate 5: jackperosin06/Sentinel-Prism
+2026-10-05T05:09:51Z WARNING Remote lookup failed (attempt 1/3): https://github.com/jackperosin06/Sentinel-Prism.git
+2026-10-05T05:09:54Z WARNING Remote lookup failed (attempt 2/3): https://github.com/jackperosin06/Sentinel-Prism.git
+2026-10-05T05:09:58Z WARNING Remote lookup failed (attempt 3/3): https://github.com/jackperosin06/Sentinel-Prism.git
+2026-10-05T05:09:58Z INFO Excluded jackperosin06/Sentinel-Prism: repository_unavailable
+2026-10-05T05:09:58Z INFO Screening candidate 6: harrymunro/simulation-bench
+2026-10-05T05:10:01Z INFO Excluded harrymunro/simulation-bench: insufficient_pre_window
+2026-10-05T05:10:01Z INFO Screening candidate 7: darkweb15/AI-scales-agent
+2026-10-05T05:10:07Z INFO Excluded darkweb15/AI-scales-agent: insufficient_pre_window
+2026-10-05T05:10:07Z INFO Screening candidate 8: joaovjo/ai-prompts
+2026-10-05T05:10:13Z INFO Excluded joaovjo/ai-prompts: insufficient_pre_window
+2026-10-05T05:10:13Z INFO Screening candidate 9: elloza/tfg-grado-ing-informatica
+2026-10-05T05:10:29Z INFO Excluded elloza/tfg-grado-ing-informatica: insufficient_pre_window
+2026-10-05T05:10:29Z INFO Screening candidate 10: merceralex397-collab/meta-skill-engineering
+2026-10-05T05:10:29Z WARNING Remote lookup failed (attempt 1/3): https://github.com/merceralex397-collab/meta-skill-engineering.git
+2026-10-05T05:10:32Z WARNING Remote lookup failed (attempt 2/3): https://github.com/merceralex397-collab/meta-skill-engineering.git
+2026-10-05T05:10:36Z WARNING Remote lookup failed (attempt 3/3): https://github.com/merceralex397-collab/meta-skill-engineering.git
+2026-10-05T05:10:36Z INFO Excluded merceralex397-collab/meta-skill-engineering: repository_unavailable
+2026-10-05T05:10:36Z INFO Screening candidate 11: b76182342-source/tuwen-agent
+2026-10-05T05:10:53Z INFO Excluded b76182342-source/tuwen-agent: insufficient_pre_window
+2026-10-05T05:10:53Z INFO Screening candidate 12: jaydubya818/Dental_Agent
+2026-10-05T05:11:45Z INFO Excluded jaydubya818/Dental_Agent: insufficient_pre_window
+2026-10-05T05:11:45Z INFO Screening candidate 13: meteor-007/KL8-2026
+2026-10-05T05:11:54Z INFO Excluded meteor-007/KL8-2026: insufficient_pre_window
+2026-10-05T05:11:54Z INFO Screening candidate 14: marisa901225-cmyk/personal-portfolio
+2026-10-05T05:12:12Z INFO Included marisa901225-cmyk/personal-portfolio as eligible repository 1
+2026-10-05T05:12:12Z INFO Screening candidate 15: caio-olubini/llm-epi-docs-annotation
+2026-10-05T05:12:15Z INFO Excluded caio-olubini/llm-epi-docs-annotation: insufficient_pre_window
+2026-10-05T05:12:15Z INFO Screening candidate 16: surus-lat/benchy
+2026-10-05T05:12:23Z INFO Included surus-lat/benchy as eligible repository 2
+2026-10-05T05:12:23Z INFO Screening candidate 17: kakigakki/chinagent
+2026-10-05T05:12:26Z INFO Excluded kakigakki/chinagent: insufficient_pre_window
+2026-10-05T05:12:26Z INFO Screening candidate 18: meridun/pemr
+2026-10-05T05:12:31Z INFO Excluded meridun/pemr: insufficient_pre_window
+2026-10-05T05:12:31Z INFO Screening candidate 19: bfozone/dagster
+2026-10-05T05:12:38Z INFO Excluded bfozone/dagster: insufficient_pre_window
+2026-10-05T05:12:38Z INFO Screening candidate 20: JoelYYoung/retrolens
+2026-10-05T05:12:42Z INFO Excluded JoelYYoung/retrolens: insufficient_pre_window
+2026-10-05T05:12:42Z INFO Screening candidate 21: unthinkmedia/AzureBuilderPlayground
+2026-10-05T05:12:45Z INFO Excluded unthinkmedia/AzureBuilderPlayground: insufficient_pre_window
+2026-10-05T05:12:45Z INFO Screening candidate 22: cooragent/ClarityFinance
+2026-10-05T05:12:55Z INFO Excluded cooragent/ClarityFinance: insufficient_pre_window
+2026-10-05T05:12:55Z INFO Screening candidate 23: cverrier/segcam
+2026-10-05T05:12:58Z INFO Excluded cverrier/segcam: insufficient_pre_window
+2026-10-05T05:12:58Z INFO Screening candidate 24: ROBOTIS-GIT/zenoh_ros2_sdk
+2026-10-05T05:13:03Z INFO Excluded ROBOTIS-GIT/zenoh_ros2_sdk: insufficient_pre_window
+2026-10-05T05:13:03Z INFO Screening candidate 25: JasonMMo/compounding-stack-harness
+2026-10-05T05:13:09Z INFO Excluded JasonMMo/compounding-stack-harness: insufficient_pre_window
+2026-10-05T05:13:09Z INFO Screening candidate 26: tylertjburns/coopstorage
+2026-10-05T05:13:14Z INFO Included tylertjburns/coopstorage as eligible repository 3
+2026-10-05T05:13:14Z INFO Screening candidate 27: LyonMoncef/SamsungHealth
+2026-10-05T05:13:35Z INFO Included LyonMoncef/SamsungHealth as eligible repository 4
+2026-10-05T05:13:35Z INFO Screening candidate 28: dyCuong03/unity-agent-team
+2026-10-05T05:13:43Z INFO Excluded dyCuong03/unity-agent-team: insufficient_pre_window
+2026-10-05T05:13:43Z INFO Screening candidate 29: mick-gsk/PWBS
+2026-10-05T05:13:48Z INFO Excluded mick-gsk/PWBS: insufficient_pre_window
+2026-10-05T05:13:48Z INFO Screening candidate 30: shohamh/Justice
+2026-10-05T05:13:59Z INFO Excluded shohamh/Justice: insufficient_pre_window
+2026-10-05T05:13:59Z INFO Screening candidate 31: reonyanarticle/aizorius-judge
+2026-10-05T05:14:04Z INFO Excluded reonyanarticle/aizorius-judge: insufficient_pre_window
+2026-10-05T05:14:04Z INFO Screening candidate 32: patelchaitany/fun
+2026-10-05T05:14:07Z INFO Excluded patelchaitany/fun: python_only_inside_skill
+2026-10-05T05:14:07Z INFO Screening candidate 33: ahaqqu/agentic-engineering
+2026-10-05T05:14:12Z INFO Excluded ahaqqu/agentic-engineering: insufficient_pre_window
+2026-10-05T05:14:12Z INFO Screening candidate 34: melanson633/v3-lease-abstract-pipeline
+2026-10-05T05:14:19Z INFO Excluded melanson633/v3-lease-abstract-pipeline: insufficient_pre_window
+2026-10-05T05:14:19Z INFO Screening candidate 35: Iyalvan/uruvagam
+2026-10-05T05:14:21Z INFO Excluded Iyalvan/uruvagam: insufficient_pre_window
+2026-10-05T05:14:21Z INFO Screening candidate 36: imhidayatchitrali/CTSafe-agent
+2026-10-05T05:14:32Z INFO Excluded imhidayatchitrali/CTSafe-agent: insufficient_pre_window
+2026-10-05T05:14:32Z INFO Screening candidate 37: speechpro/inex-launcher
+2026-10-05T05:14:36Z INFO Included speechpro/inex-launcher as eligible repository 5
+2026-10-05T05:14:36Z INFO Screening candidate 38: gupta-builds/TradingView
+2026-10-05T05:14:36Z WARNING Remote lookup failed (attempt 1/3): https://github.com/gupta-builds/TradingView.git
+2026-10-05T05:14:39Z WARNING Remote lookup failed (attempt 2/3): https://github.com/gupta-builds/TradingView.git
+2026-10-05T05:14:43Z WARNING Remote lookup failed (attempt 3/3): https://github.com/gupta-builds/TradingView.git
+2026-10-05T05:14:43Z INFO Excluded gupta-builds/TradingView: repository_unavailable
+2026-10-05T05:14:43Z INFO Screening candidate 39: ewili/ths_follow
+2026-10-05T05:14:47Z INFO Excluded ewili/ths_follow: insufficient_pre_window
+2026-10-05T05:14:47Z INFO Screening candidate 40: Bullish-Design/templateer_v2
+2026-10-05T05:15:03Z INFO Excluded Bullish-Design/templateer_v2: insufficient_pre_window
+2026-10-05T05:15:03Z INFO Screening candidate 41: arcnode-io/dlr-pcb
+2026-10-05T05:15:07Z INFO Excluded arcnode-io/dlr-pcb: insufficient_pre_window
+2026-10-05T05:15:07Z INFO Screening candidate 42: zelk-oss/template_beginner
+2026-10-05T05:15:12Z INFO Excluded zelk-oss/template_beginner: insufficient_pre_window
+2026-10-05T05:15:12Z INFO Screening candidate 43: felaraa/dba
+2026-10-05T05:15:13Z WARNING Remote lookup failed (attempt 1/3): https://github.com/felaraa/dba.git
+2026-10-05T05:15:15Z WARNING Remote lookup failed (attempt 2/3): https://github.com/felaraa/dba.git
+2026-10-05T05:15:19Z WARNING Remote lookup failed (attempt 3/3): https://github.com/felaraa/dba.git
+2026-10-05T05:15:19Z INFO Excluded felaraa/dba: repository_unavailable
+2026-10-05T05:15:19Z INFO Screening candidate 44: Harmeet10000/AgentNexus-LangChain-FastAPI
+2026-10-05T05:15:34Z INFO Included Harmeet10000/AgentNexus-LangChain-FastAPI as eligible repository 6
+2026-10-05T05:15:34Z INFO Screening candidate 45: Gabriel-Fachini/media-traffic-ai-analyst
+2026-10-05T05:15:39Z INFO Excluded Gabriel-Fachini/media-traffic-ai-analyst: insufficient_pre_window
+2026-10-05T05:15:39Z INFO Screening candidate 46: bayleafwalker/homelab-analytics
+2026-10-05T05:15:49Z INFO Excluded bayleafwalker/homelab-analytics: insufficient_pre_window
+2026-10-05T05:15:49Z INFO Screening candidate 47: writeitai/ultimate-memory
+2026-10-05T05:15:58Z INFO Excluded writeitai/ultimate-memory: insufficient_pre_window
+2026-10-05T05:15:58Z INFO Screening candidate 48: diskrotrepo/studio
+2026-10-05T05:16:06Z INFO Excluded diskrotrepo/studio: insufficient_pre_window
+2026-10-05T05:16:06Z INFO Screening candidate 49: paunchygent/sir-convert-a-lot
+2026-10-05T05:16:17Z INFO Excluded paunchygent/sir-convert-a-lot: insufficient_pre_window
+2026-10-05T05:16:17Z INFO Screening candidate 50: tachyon-beep/fable
+2026-10-05T05:16:17Z WARNING Remote lookup failed (attempt 1/3): https://github.com/tachyon-beep/fable.git
+2026-10-05T05:16:19Z WARNING Remote lookup failed (attempt 2/3): https://github.com/tachyon-beep/fable.git
+2026-10-05T05:16:24Z WARNING Remote lookup failed (attempt 3/3): https://github.com/tachyon-beep/fable.git
+2026-10-05T05:16:24Z INFO Excluded tachyon-beep/fable: repository_unavailable
+2026-10-05T05:16:24Z INFO Screening candidate 51: turbobeest/beestgraph
+2026-10-05T05:16:24Z WARNING Remote lookup failed (attempt 1/3): https://github.com/turbobeest/beestgraph.git
+2026-10-05T05:16:27Z WARNING Remote lookup failed (attempt 2/3): https://github.com/turbobeest/beestgraph.git
+2026-10-05T05:16:31Z WARNING Remote lookup failed (attempt 3/3): https://github.com/turbobeest/beestgraph.git
+2026-10-05T05:16:31Z INFO Excluded turbobeest/beestgraph: repository_unavailable
+2026-10-05T05:16:31Z INFO Screening candidate 52: hanzoai/insights
+2026-10-05T05:17:40Z INFO Included hanzoai/insights as eligible repository 7
+2026-10-05T05:17:40Z INFO Screening candidate 53: sanchitmoh/GSTENV
+2026-10-05T05:17:50Z INFO Excluded sanchitmoh/GSTENV: insufficient_pre_window
+2026-10-05T05:17:50Z INFO Screening candidate 54: Elaine-Wu99/claw
+2026-10-05T05:17:53Z INFO Excluded Elaine-Wu99/claw: insufficient_pre_window
+2026-10-05T05:17:53Z INFO Screening candidate 55: Nappinggg/FoodDelivery
+2026-10-05T05:17:56Z INFO Excluded Nappinggg/FoodDelivery: insufficient_pre_window
+2026-10-05T05:17:56Z INFO Screening candidate 56: monte-carlo-data/custom-connector-setup
+2026-10-05T05:18:12Z INFO Excluded monte-carlo-data/custom-connector-setup: insufficient_pre_window
+2026-10-05T05:18:12Z INFO Screening candidate 57: kubrickcode/cine-mirror
+2026-10-05T05:18:31Z INFO Excluded kubrickcode/cine-mirror: insufficient_pre_window
+2026-10-05T05:18:31Z INFO Screening candidate 58: stharrold/stharrold-templates
+2026-10-05T05:19:18Z INFO Included stharrold/stharrold-templates as eligible repository 8
+2026-10-05T05:19:18Z INFO Screening candidate 59: bamdadd/lintel
+2026-10-05T05:19:25Z INFO Excluded bamdadd/lintel: insufficient_pre_window
+2026-10-05T05:19:25Z INFO Screening candidate 60: pinchbench/skill
+2026-10-05T05:19:39Z INFO Included pinchbench/skill as eligible repository 9
+2026-10-05T05:19:39Z INFO Screening candidate 61: mastashake08/rns-ble-connector-playground
+2026-10-05T05:19:42Z INFO Excluded mastashake08/rns-ble-connector-playground: insufficient_pre_window
+2026-10-05T05:19:42Z INFO Screening candidate 62: thbraet/claude-ds-tutorial
+2026-10-05T05:19:46Z INFO Excluded thbraet/claude-ds-tutorial: insufficient_pre_window
+2026-10-05T05:19:46Z INFO Screening candidate 63: javiAI/project-operating-system
+2026-10-05T05:19:50Z INFO Excluded javiAI/project-operating-system: insufficient_pre_window
+2026-10-05T05:19:50Z INFO Screening candidate 64: perrymanuk/radbot
+2026-10-05T05:20:05Z INFO Included perrymanuk/radbot as eligible repository 10
+2026-10-05T05:20:05Z INFO Extraction complete: 10 eligible repositories

@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "2026-03-08T09:11:47Z",
+  "adoption_commit": "d295aa0d7b2970418233b2f3b39e66d61dd68da6",
+  "candidate_position": 57,
+  "cutoff_commit": "c3aca27a6d8d1400b8a1cba45daae77d5f58de2a",
+  "default_branch": "main",
+  "detail": "No reachable commit exists at least 60 days before adoption",
+  "exclusion_reason": "insufficient_pre_window",
+  "ordering_hash": "00bb081721b8afd1c3d8ef9ce1e5de36d2626e0dd0797f001a5ac52dd4609446",
+  "production_python_count": 0,
+  "repo_full_name": "kubrickcode/cine-mirror",
+  "repository_url": "https://github.com/kubrickcode/cine-mirror.git",
+  "retrieved_at_utc": "2026-10-05T05:18:12.778542Z",
+  "status": "excluded",
+  "test_python_count": 0,
+  "valid_skill_paths": ".agents/skills/adr/SKILL.md;.agents/skills/agent-creator/SKILL.md;.agents/skills/blueprint/SKILL.md;.agents/skills/code-review/SKILL.md;.agents/skills/comment-review/SKILL.md;.agents/skills/commit/SKILL.md;.agents/skills/dead-code-cleanup/SKILL.md;.agents/skills/e2e-ui-execute/SKILL.md;.agents/skills/e2e-ui-fix/SKILL.md;.agents/skills/e2e-ui-research/SKILL.md;.agents/skills/epic-analyze/SKILL.md;.agents/skills/epic-plan/SKILL.md;.agents/skills/handover/SKILL.md;.agents/skills/prepare-pr/SKILL.md;.agents/skills/review-pr/SKILL.md;.agents/skills/skill-creator/SKILL.md;.agents/skills/ui-ux-improve/SKILL.md;.agents/skills/ultra-think/SKILL.md;.agents/skills/workflow-analyze/SKILL.md;.agents/skills/workflow-auto/SKILL.md;.agents/skills/workflow-execute/SKILL.md;.agents/skills/workflow-plan/SKILL.md;.agents/skills/workflow-validate/SKILL.md;.claude/skills/adr/SKILL.md;.claude/skills/agent-creator/SKILL.md;.claude/skills/blueprint/SKILL.md;.claude/skills/code-review/SKILL.md;.claude/skills/comment-review/SKILL.md;.claude/skills/commit/SKILL.md;.claude/skills/dead-code-cleanup/SKILL.md;.claude/skills/e2e-ui-execute/SKILL.md;.claude/skills/e2e-ui-fix/SKILL.md;.claude/skills/e2e-ui-research/SKILL.md;.claude/skills/epic-analyze/SKILL.md;.claude/skills/epic-plan/SKILL.md;.claude/skills/handover/SKILL.md;.claude/skills/prepare-pr/SKILL.md;.claude/skills/review-pr/SKILL.md;.claude/skills/skill-creator/SKILL.md;.claude/skills/ui-ux-improve/SKILL.md;.claude/skills/ultra-think/SKILL.md;.claude/skills/workflow-analyze/SKILL.md;.claude/skills/workflow-auto/SKILL.md;.claude/skills/workflow-execute/SKILL.md;.claude/skills/workflow-plan/SKILL.md;.claude/skills/workflow-validate/SKILL.md"
+}

@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "",
+  "adoption_commit": "",
+  "candidate_position": 4,
+  "cutoff_commit": "",
+  "default_branch": "",
+  "detail": "fatal: could not read Username for 'https://github.com': terminal prompts disabled",
+  "exclusion_reason": "repository_unavailable",
+  "ordering_hash": "001972875bbd9c2d7e4cf29912bffe4624d11f7506ced4f75eb6d319c9c0fcc2",
+  "production_python_count": 0,
+  "repo_full_name": "mechanistic-org/global_agent",
+  "repository_url": "https://github.com/mechanistic-org/global_agent.git",
+  "retrieved_at_utc": "2026-10-05T05:09:43.895004Z",
+  "status": "excluded",
+  "test_python_count": 0,
+  "valid_skill_paths": ""
+}

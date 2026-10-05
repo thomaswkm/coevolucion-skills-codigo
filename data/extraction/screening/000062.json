@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "2026-03-02T08:55:01Z",
+  "adoption_commit": "292563d7a67624d20356b618a2f303c9f4caedff",
+  "candidate_position": 62,
+  "cutoff_commit": "d1f83869e70bd085851918ac266eb54ee50c6e78",
+  "default_branch": "main",
+  "detail": "No reachable commit exists at least 60 days before adoption",
+  "exclusion_reason": "insufficient_pre_window",
+  "ordering_hash": "00c9f0dede93dbb3039e73b1aacb8969301e9aedc1183ed076fce60b0d347a1c",
+  "production_python_count": 0,
+  "repo_full_name": "thbraet/claude-ds-tutorial",
+  "repository_url": "https://github.com/thbraet/claude-ds-tutorial.git",
+  "retrieved_at_utc": "2026-10-05T05:19:42.207415Z",
+  "status": "excluded",
+  "test_python_count": 0,
+  "valid_skill_paths": ".claude/skills/crisp-dm-guide/SKILL.md;.claude/skills/data-validation/SKILL.md;.claude/skills/retail-domain/SKILL.md"
+}

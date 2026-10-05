@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "2026-01-16T02:58:06Z",
+  "adoption_commit": "d48294f11737eb3ce3436dea78bc52b4b437b53b",
+  "candidate_position": 24,
+  "cutoff_commit": "be2c4d4595305a9c282fca09820a8b3bfb8076a3",
+  "default_branch": "main",
+  "detail": "No reachable commit exists at least 60 days before adoption",
+  "exclusion_reason": "insufficient_pre_window",
+  "ordering_hash": "00502b130b7ddddbb74c38e6dead802692d3cfd87c556fae46fce4616b4dfad1",
+  "production_python_count": 0,
+  "repo_full_name": "ROBOTIS-GIT/zenoh_ros2_sdk",
+  "repository_url": "https://github.com/ROBOTIS-GIT/zenoh_ros2_sdk.git",
+  "retrieved_at_utc": "2026-10-05T05:12:58.474964Z",
+  "status": "excluded",
+  "test_python_count": 0,
+  "valid_skill_paths": ".claude/skills/bump-version/SKILL.md;.claude/skills/create-example/SKILL.md"
+}

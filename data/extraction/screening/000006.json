@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "2026-04-26T01:07:27Z",
+  "adoption_commit": "591b5353312c3722da7b7bf1101375967fc04d54",
+  "candidate_position": 6,
+  "cutoff_commit": "8e8492a9d5c0cf8158e27b771fc18b4bc3f521d4",
+  "default_branch": "main",
+  "detail": "No reachable commit exists at least 60 days before adoption",
+  "exclusion_reason": "insufficient_pre_window",
+  "ordering_hash": "002605ae7e9a5174600629f04fd2f1d4ab07eb2ed42497ecd9bd5ce6b7a356ed",
+  "production_python_count": 0,
+  "repo_full_name": "harrymunro/simulation-bench",
+  "repository_url": "https://github.com/harrymunro/simulation-bench.git",
+  "retrieved_at_utc": "2026-10-05T05:09:58.595682Z",
+  "status": "excluded",
+  "test_python_count": 0,
+  "valid_skill_paths": ".claude/skills/create-submission/SKILL.md;.claude/skills/evaluate-submission/SKILL.md"
+}

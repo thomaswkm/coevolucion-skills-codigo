@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "2026-01-26T18:24:47Z",
+  "adoption_commit": "f41c5d543a99c8376944b0793620c8045c6c2fcc",
+  "candidate_position": 23,
+  "cutoff_commit": "f41c5d543a99c8376944b0793620c8045c6c2fcc",
+  "default_branch": "main",
+  "detail": "No reachable commit exists at least 60 days before adoption",
+  "exclusion_reason": "insufficient_pre_window",
+  "ordering_hash": "004d0724a26b38a52f45d194c348881585d9d9009410f87a5b7cc6ec1ed88c62",
+  "production_python_count": 0,
+  "repo_full_name": "cverrier/segcam",
+  "repository_url": "https://github.com/cverrier/segcam.git",
+  "retrieved_at_utc": "2026-10-05T05:12:55.986325Z",
+  "status": "excluded",
+  "test_python_count": 0,
+  "valid_skill_paths": ".claude/skills/tdd/SKILL.md"
+}

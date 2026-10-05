@@ -1,0 +1,42 @@
+{
+  "accepted_skill_roots": [
+    ".agent/skills",
+    ".agents/skills",
+    ".claude/skills",
+    ".codex/skills",
+    ".cursor/skills",
+    ".gemini/skills",
+    ".github/skills",
+    ".opencode/skills"
+  ],
+  "candidate_files": {
+    "candidate_count": 22126,
+    "candidate_frame_sha256": "ad1bb2e9637e67809cfbe9c43f252694fa5424fdb7291248d6d4c03b1589043f",
+    "candidate_order_sha256": "305880e1d44bd3258b393ae674ba1612e50d110170d064586d2f8c56851107cb"
+  },
+  "config_path": "/home/thomas/dev/coevolution-skills-code/extraction.toml",
+  "configuration": {
+    "artifact_parts": 31,
+    "checkout_selected": true,
+    "clone_timeout_seconds": 1800,
+    "command_timeout_seconds": 300,
+    "dataset_repository": "mvaccargiu/gitskills",
+    "dataset_revision": "ebab17454a7c236f8f26b183567f1a126f42e3f8",
+    "history_cutoff_utc": "2026-10-04T23:59:59Z",
+    "output_directory": "/home/thomas/dev/coevolution-skills-code/data/extraction",
+    "repository_directory": "/home/thomas/dev/coevolution-skills-code/repositories",
+    "retry_count": 3,
+    "seed": "20261004",
+    "target_count": 10,
+    "window_days": 60
+  },
+  "created_at_utc": "2026-10-05T05:08:52.579646Z",
+  "duckdb_version": "1.5.6",
+  "git_version": "git version 2.53.0",
+  "last_requested_target_count": 10,
+  "last_started_at_utc": "2026-10-05T05:08:52.579714Z",
+  "ordering_definition": "SHA256(seed + \":\" + repo_full_name)",
+  "protocol_hash": "014260e3fb2b00fabb584d3bf0fed4b64b1365c9a6134841dd48f1f8fa520c89",
+  "python_version": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "screening_protocol_version": "2"
+}

@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "2026-05-26T08:44:20Z",
+  "adoption_commit": "f76f033717d6ce41b498a322a060bb02d523392d",
+  "candidate_position": 14,
+  "cutoff_commit": "39573d5f8d0102bd2a2268d352d328d8df59af24",
+  "default_branch": "main",
+  "detail": "All inclusion criteria passed",
+  "exclusion_reason": "",
+  "ordering_hash": "0037260ba3092624ee22a842d89df4e6bf135129b29e6567ff392cd7d4d88cbd",
+  "production_python_count": 371,
+  "repo_full_name": "marisa901225-cmyk/personal-portfolio",
+  "repository_url": "https://github.com/marisa901225-cmyk/personal-portfolio.git",
+  "retrieved_at_utc": "2026-10-05T05:11:54.795132Z",
+  "status": "eligible",
+  "test_python_count": 151,
+  "valid_skill_paths": ".agents/skills/portfolio-ci-fix/SKILL.md;.agents/skills/portfolio-pr-review/SKILL.md;.agents/skills/portfolio-test-triage/SKILL.md"
+}

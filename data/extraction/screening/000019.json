@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "2026-03-16T13:41:39Z",
+  "adoption_commit": "b1c5f7fed50b5d3dcde127f2da41a2444bfeedd5",
+  "candidate_position": 19,
+  "cutoff_commit": "ac1ae715611720c31469f8174ee420696a636308",
+  "default_branch": "main",
+  "detail": "No reachable commit exists at least 60 days before adoption",
+  "exclusion_reason": "insufficient_pre_window",
+  "ordering_hash": "004584c2b8ff23b4349ee48ab7a8328015f1179c56cb6aa9d832d16f225ebb3a",
+  "production_python_count": 0,
+  "repo_full_name": "bfozone/dagster",
+  "repository_url": "https://github.com/bfozone/dagster.git",
+  "retrieved_at_utc": "2026-10-05T05:12:31.427565Z",
+  "status": "excluded",
+  "test_python_count": 0,
+  "valid_skill_paths": ".claude/skills/dagster-add-env-var/SKILL.md;.claude/skills/dagster-new-asset/SKILL.md;.claude/skills/dagster-new-resource/SKILL.md;.claude/skills/dagster-new-schedule/SKILL.md;.claude/skills/dagster-new-test/SKILL.md;.claude/skills/dagster-review/SKILL.md;.claude/skills/dagster-troubleshoot/SKILL.md"
+}

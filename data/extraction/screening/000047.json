@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "2026-07-14T14:14:21Z",
+  "adoption_commit": "e9522fe59f328509a585d122644a2b3d24c40e78",
+  "candidate_position": 47,
+  "cutoff_commit": "baafc0ceaac5601ec28696423b0517c299da014c",
+  "default_branch": "main",
+  "detail": "No reachable commit exists at least 60 days before adoption",
+  "exclusion_reason": "insufficient_pre_window",
+  "ordering_hash": "00a02a7b7887b4acf9ddbe873b4df36814e25b53b30c506bd1f8300200768d23",
+  "production_python_count": 0,
+  "repo_full_name": "writeitai/ultimate-memory",
+  "repository_url": "https://github.com/writeitai/ultimate-memory.git",
+  "retrieved_at_utc": "2026-10-05T05:15:49.674870Z",
+  "status": "excluded",
+  "test_python_count": 0,
+  "valid_skill_paths": ".agents/skills/eval-banana/SKILL.md;.agents/skills/skill-creator/SKILL.md"
+}

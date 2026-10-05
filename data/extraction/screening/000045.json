@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "2026-04-16T22:39:37Z",
+  "adoption_commit": "3bef3f5c5603408cfaaa75e2753fc991a3142f04",
+  "candidate_position": 45,
+  "cutoff_commit": "0cea0b3db6bf982178abe7ca6f1b5c904f67a0e8",
+  "default_branch": "main",
+  "detail": "No reachable commit exists at least 60 days before adoption",
+  "exclusion_reason": "insufficient_pre_window",
+  "ordering_hash": "009812c00d2dd43fa796d58854174d6bc7214a9988352d9a6c13cb513a9eb32c",
+  "production_python_count": 0,
+  "repo_full_name": "Gabriel-Fachini/media-traffic-ai-analyst",
+  "repository_url": "https://github.com/Gabriel-Fachini/media-traffic-ai-analyst.git",
+  "retrieved_at_utc": "2026-10-05T05:15:34.341484Z",
+  "status": "excluded",
+  "test_python_count": 0,
+  "valid_skill_paths": ".agents/skills/fastapi/SKILL.md;.agents/skills/langgraph-fundamentals/SKILL.md;.agents/skills/prompt-engineering-patterns/SKILL.md;.agents/skills/sql-optimization-patterns/SKILL.md"
+}

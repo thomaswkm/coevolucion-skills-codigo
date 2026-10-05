@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "2026-05-06T11:43:18Z",
+  "adoption_commit": "af95d004e1fb221bb6bf0b9c479aa8f9b319e562",
+  "candidate_position": 42,
+  "cutoff_commit": "af95d004e1fb221bb6bf0b9c479aa8f9b319e562",
+  "default_branch": "main",
+  "detail": "No reachable commit exists at least 60 days before adoption",
+  "exclusion_reason": "insufficient_pre_window",
+  "ordering_hash": "00917abda4948298f4af5fe8b322b3575ff15a2c75b30c6f7fb0b1dddf5045f8",
+  "production_python_count": 0,
+  "repo_full_name": "zelk-oss/template_beginner",
+  "repository_url": "https://github.com/zelk-oss/template_beginner.git",
+  "retrieved_at_utc": "2026-10-05T05:15:07.279026Z",
+  "status": "excluded",
+  "test_python_count": 0,
+  "valid_skill_paths": ".claude/skills/develop-with-tdd/SKILL.md;.claude/skills/forecast-model/SKILL.md;.claude/skills/run-python/SKILL.md;.claude/skills/train-model/SKILL.md;.claude/skills/write-tests/SKILL.md"
+}

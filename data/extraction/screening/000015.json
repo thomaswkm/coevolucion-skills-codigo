@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "2026-06-17T04:54:36Z",
+  "adoption_commit": "d6a9096c85967c5a79082860952b0b1e941fd4a3",
+  "candidate_position": 15,
+  "cutoff_commit": "ddea6d1abbe3dacab743dd0b746f3e6cd0cf2f34",
+  "default_branch": "main",
+  "detail": "No reachable commit exists at least 60 days before adoption",
+  "exclusion_reason": "insufficient_pre_window",
+  "ordering_hash": "0038fe4e7bf43b132006327be05f7e84b247f19e805adefb1a1066b964a35afc",
+  "production_python_count": 0,
+  "repo_full_name": "caio-olubini/llm-epi-docs-annotation",
+  "repository_url": "https://github.com/caio-olubini/llm-epi-docs-annotation.git",
+  "retrieved_at_utc": "2026-10-05T05:12:12.029371Z",
+  "status": "excluded",
+  "test_python_count": 0,
+  "valid_skill_paths": ".claude/skills/coding-philosophy/SKILL.md;.claude/skills/spec-driven-development/SKILL.md"
+}

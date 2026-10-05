@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "2026-04-09T12:59:56Z",
+  "adoption_commit": "cc345f6ea36d1799916a07c4f12c1fb156a39a6b",
+  "candidate_position": 20,
+  "cutoff_commit": "1a251c30a4f9a1ecea417836c1f2b70d1f4320c2",
+  "default_branch": "master",
+  "detail": "No reachable commit exists at least 60 days before adoption",
+  "exclusion_reason": "insufficient_pre_window",
+  "ordering_hash": "00462b1dfb5e62cb0df0fb852547dc03ef5e39f3614fb087cf66070b10755e74",
+  "production_python_count": 0,
+  "repo_full_name": "JoelYYoung/retrolens",
+  "repository_url": "https://github.com/JoelYYoung/retrolens.git",
+  "retrieved_at_utc": "2026-10-05T05:12:38.161246Z",
+  "status": "excluded",
+  "test_python_count": 0,
+  "valid_skill_paths": ".github/skills/flowcraft-distill/SKILL.md"
+}

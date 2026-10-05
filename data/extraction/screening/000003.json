@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "2026-05-26T20:54:39Z",
+  "adoption_commit": "7c62c8ac79f2c61d0af4caf939b0a9ae156b6230",
+  "candidate_position": 3,
+  "cutoff_commit": "7746326c5b2d2f68c9248596d6455b5008bba391",
+  "default_branch": "main",
+  "detail": "No reachable commit exists at least 60 days before adoption",
+  "exclusion_reason": "insufficient_pre_window",
+  "ordering_hash": "0014ff1a4455262463eea3260579007ca3a7f79e1edf85bd2a2fd854e6fc8c4d",
+  "production_python_count": 0,
+  "repo_full_name": "tinyloophub/tinyhat--runtimes--openclaw",
+  "repository_url": "https://github.com/tinyloophub/tinyhat--runtimes--openclaw.git",
+  "retrieved_at_utc": "2026-10-05T05:09:38.371606Z",
+  "status": "excluded",
+  "test_python_count": 0,
+  "valid_skill_paths": ".agents/skills/codex/SKILL.md;.agents/skills/commit/SKILL.md;.agents/skills/define-tests/SKILL.md;.agents/skills/open-pr/SKILL.md;.agents/skills/release/SKILL.md;.agents/skills/review/SKILL.md;.agents/skills/sharpen-skill/SKILL.md;.agents/skills/update-guidance/SKILL.md"
+}

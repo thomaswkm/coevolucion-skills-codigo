@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "2026-02-27T13:33:53Z",
+  "adoption_commit": "5e4b4830f85d736230965d7f531b0c49abc15e3d",
+  "candidate_position": 44,
+  "cutoff_commit": "94dcb2398d5b43396e7171a423fc5282f8ce68b1",
+  "default_branch": "main",
+  "detail": "All inclusion criteria passed",
+  "exclusion_reason": "",
+  "ordering_hash": "0096d7ca60915d98bfff855ee651df40d3dae63fe0ddc575f83cccde75458981",
+  "production_python_count": 174,
+  "repo_full_name": "Harmeet10000/AgentNexus-LangChain-FastAPI",
+  "repository_url": "https://github.com/Harmeet10000/AgentNexus-LangChain-FastAPI.git",
+  "retrieved_at_utc": "2026-10-05T05:15:19.989450Z",
+  "status": "eligible",
+  "test_python_count": 4,
+  "valid_skill_paths": ".github/skills/fastapi/SKILL.md"
+}

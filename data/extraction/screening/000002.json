@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "2026-06-14T16:11:04Z",
+  "adoption_commit": "3a39dd88b8217b10aab933d649e84a488f67f34b",
+  "candidate_position": 2,
+  "cutoff_commit": "1e283ef0bd396cf354de87b8ba7f22ce94949289",
+  "default_branch": "main",
+  "detail": "No reachable commit exists at least 60 days before adoption",
+  "exclusion_reason": "insufficient_pre_window",
+  "ordering_hash": "00128d639665ec7bea7b9a738b610e1a9377ed50ef34de6551a888da36880fde",
+  "production_python_count": 0,
+  "repo_full_name": "VoidLight00/fablelayer",
+  "repository_url": "https://github.com/VoidLight00/fablelayer.git",
+  "retrieved_at_utc": "2026-10-05T05:09:33.769780Z",
+  "status": "excluded",
+  "test_python_count": 0,
+  "valid_skill_paths": ".claude/skills/fablelayer-benchmark/SKILL.md;.claude/skills/fablelayer-pipeline/SKILL.md;.claude/skills/fablelayer-qa-gates/SKILL.md;.claude/skills/fablelayer-source-ledger/SKILL.md"
+}

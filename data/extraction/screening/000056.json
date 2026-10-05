@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "2026-03-19T22:11:26Z",
+  "adoption_commit": "9ee583a919958616ece87728798ecbfd381a5664",
+  "candidate_position": 56,
+  "cutoff_commit": "3c91ac4e4c230eaed21e9ef4f0f04b243d8dcf06",
+  "default_branch": "main",
+  "detail": "No reachable commit exists at least 60 days before adoption",
+  "exclusion_reason": "insufficient_pre_window",
+  "ordering_hash": "00b594218d7d22ac3dff1b8176803c67436aaa455178e5e9aaf75d12f65314d1",
+  "production_python_count": 0,
+  "repo_full_name": "monte-carlo-data/custom-connector-setup",
+  "repository_url": "https://github.com/monte-carlo-data/custom-connector-setup.git",
+  "retrieved_at_utc": "2026-10-05T05:17:56.154695Z",
+  "status": "excluded",
+  "test_python_count": 0,
+  "valid_skill_paths": ".claude/skills/export-qlbase/SKILL.md"
+}

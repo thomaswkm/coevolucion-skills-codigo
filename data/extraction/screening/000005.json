@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "",
+  "adoption_commit": "",
+  "candidate_position": 5,
+  "cutoff_commit": "",
+  "default_branch": "",
+  "detail": "fatal: could not read Username for 'https://github.com': terminal prompts disabled",
+  "exclusion_reason": "repository_unavailable",
+  "ordering_hash": "0020b32c48d8ca8cec329582ce1bf4b1780cf8befc188727aa9af58fa6b48d95",
+  "production_python_count": 0,
+  "repo_full_name": "jackperosin06/Sentinel-Prism",
+  "repository_url": "https://github.com/jackperosin06/Sentinel-Prism.git",
+  "retrieved_at_utc": "2026-10-05T05:09:51.273283Z",
+  "status": "excluded",
+  "test_python_count": 0,
+  "valid_skill_paths": ""
+}

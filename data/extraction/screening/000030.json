@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "2026-07-05T04:20:00Z",
+  "adoption_commit": "ae4016bc57276a10877c1c306756bd2d79917744",
+  "candidate_position": 30,
+  "cutoff_commit": "2e1515f7c0df48f169c659b7bd67cd5f85e34790",
+  "default_branch": "master",
+  "detail": "No reachable commit exists at least 60 days before adoption",
+  "exclusion_reason": "insufficient_pre_window",
+  "ordering_hash": "006513341fbc8d09ae04c24b2a648cece446443d2d907a6298341221264e21ee",
+  "production_python_count": 0,
+  "repo_full_name": "shohamh/Justice",
+  "repository_url": "https://github.com/shohamh/Justice.git",
+  "retrieved_at_utc": "2026-10-05T05:13:48.935404Z",
+  "status": "excluded",
+  "test_python_count": 0,
+  "valid_skill_paths": ".claude/skills/merge-worktree-to-dev/SKILL.md;.claude/skills/release-dev-to-master/SKILL.md"
+}

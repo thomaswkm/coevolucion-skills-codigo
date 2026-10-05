@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "2026-06-19T05:41:58Z",
+  "adoption_commit": "36c40c27f40f9a69675115f4923b81d7049ac480",
+  "candidate_position": 16,
+  "cutoff_commit": "f09d5b839c8a6d669bdc7c98f18d4225929f7e3b",
+  "default_branch": "main",
+  "detail": "All inclusion criteria passed",
+  "exclusion_reason": "",
+  "ordering_hash": "0040261de965bdb3412a7655a10b4d9c4ea9b912ed46f270e24ee5e115a734ed",
+  "production_python_count": 153,
+  "repo_full_name": "surus-lat/benchy",
+  "repository_url": "https://github.com/surus-lat/benchy.git",
+  "retrieved_at_utc": "2026-10-05T05:12:15.266737Z",
+  "status": "eligible",
+  "test_python_count": 45,
+  "valid_skill_paths": ".agent/skills/oracle-plan/SKILL.md;.agent/skills/whisper-benchmark/SKILL.md"
+}

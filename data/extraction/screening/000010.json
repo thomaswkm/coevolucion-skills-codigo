@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "",
+  "adoption_commit": "",
+  "candidate_position": 10,
+  "cutoff_commit": "",
+  "default_branch": "",
+  "detail": "fatal: could not read Username for 'https://github.com': terminal prompts disabled",
+  "exclusion_reason": "repository_unavailable",
+  "ordering_hash": "002cde30bbd99567dc0e723235a322bb07bbe24a8062caf4c932048ebc794d3b",
+  "production_python_count": 0,
+  "repo_full_name": "merceralex397-collab/meta-skill-engineering",
+  "repository_url": "https://github.com/merceralex397-collab/meta-skill-engineering.git",
+  "retrieved_at_utc": "2026-10-05T05:10:29.202640Z",
+  "status": "excluded",
+  "test_python_count": 0,
+  "valid_skill_paths": ""
+}

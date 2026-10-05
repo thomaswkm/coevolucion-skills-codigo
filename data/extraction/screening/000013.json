@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "2026-03-09T12:56:57Z",
+  "adoption_commit": "cc0d4c89e2cf4182b859d9150a835b533fcc78c6",
+  "candidate_position": 13,
+  "cutoff_commit": "659925898c6232cd5f1c5c1bef757fc40b396a61",
+  "default_branch": "main",
+  "detail": "No reachable commit exists at least 60 days before adoption",
+  "exclusion_reason": "insufficient_pre_window",
+  "ordering_hash": "00340a71cac913d21c6fffc4e26965e84ae52320151c20e51e2ff52a152d66ea",
+  "production_python_count": 0,
+  "repo_full_name": "meteor-007/KL8-2026",
+  "repository_url": "https://github.com/meteor-007/KL8-2026.git",
+  "retrieved_at_utc": "2026-10-05T05:11:45.822447Z",
+  "status": "excluded",
+  "test_python_count": 0,
+  "valid_skill_paths": ".github/skills/backtest-report/SKILL.md;.github/skills/discover-skills/SKILL.md;.github/skills/google-workspace/SKILL.md;.github/skills/kl8-analysis/SKILL.md;.github/skills/memory-ontology/SKILL.md;.github/skills/proactive-agent/SKILL.md;.github/skills/self-improving/SKILL.md;.github/skills/smart-search/SKILL.md;.github/skills/summarize/SKILL.md;.github/skills/ui-experts/SKILL.md"
+}

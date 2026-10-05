@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "2026-04-03T19:05:01Z",
+  "adoption_commit": "c3d7f1061b1fb60549f6556725fa79eeceb1d7d2",
+  "candidate_position": 1,
+  "cutoff_commit": "5bf86f0aa77a38bbaa7b196de513e9b2afe455a4",
+  "default_branch": "main",
+  "detail": "No reachable commit exists at least 60 days before adoption",
+  "exclusion_reason": "insufficient_pre_window",
+  "ordering_hash": "001257b5d348b98abf138dc131c75b637b69a02dfc9926f469b817bae53aeea8",
+  "production_python_count": 0,
+  "repo_full_name": "wangtong10086/orbit",
+  "repository_url": "https://github.com/wangtong10086/orbit.git",
+  "retrieved_at_utc": "2026-10-05T05:09:30.757396Z",
+  "status": "excluded",
+  "test_python_count": 0,
+  "valid_skill_paths": ".github/skills/muzero-game-training/SKILL.md"
+}

@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "2026-03-02T13:21:13Z",
+  "adoption_commit": "111013dbe80fc71d51924a3c8ab4bd356be76177",
+  "candidate_position": 48,
+  "cutoff_commit": "f4fa9db80b2538779f3c1eb6ff74fb063597ddc0",
+  "default_branch": "main",
+  "detail": "No reachable commit exists at least 60 days before adoption",
+  "exclusion_reason": "insufficient_pre_window",
+  "ordering_hash": "00a215523b1dac496ee9ea412e31566f9d2fa937a65cc935dbd3cff625460d6f",
+  "production_python_count": 0,
+  "repo_full_name": "diskrotrepo/studio",
+  "repository_url": "https://github.com/diskrotrepo/studio.git",
+  "retrieved_at_utc": "2026-10-05T05:15:58.790881Z",
+  "status": "excluded",
+  "test_python_count": 0,
+  "valid_skill_paths": ".claude/skills/acestep-docs/SKILL.md;.claude/skills/acestep-lyrics-transcription/SKILL.md;.claude/skills/acestep-simplemv/SKILL.md;.claude/skills/acestep-songwriting/SKILL.md;.claude/skills/acestep/SKILL.md;.claude/skills/studio-backend-models/SKILL.md;.claude/skills/yulan-mini/SKILL.md"
+}

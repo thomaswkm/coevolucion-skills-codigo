@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "2026-06-19T06:55:57Z",
+  "adoption_commit": "88c015d64014b6c395a96192684cfd8bb00bd316",
+  "candidate_position": 17,
+  "cutoff_commit": "1a993c71052401f8518299a55a20a3dcc3b3a2a7",
+  "default_branch": "main",
+  "detail": "No reachable commit exists at least 60 days before adoption",
+  "exclusion_reason": "insufficient_pre_window",
+  "ordering_hash": "0041ac17524f55abb20d0ac4efdf3c9f2629e84c0ea4b5aef1861324d7956cab",
+  "production_python_count": 0,
+  "repo_full_name": "kakigakki/chinagent",
+  "repository_url": "https://github.com/kakigakki/chinagent.git",
+  "retrieved_at_utc": "2026-10-05T05:12:23.498023Z",
+  "status": "excluded",
+  "test_python_count": 0,
+  "valid_skill_paths": ".claude/skills/langfuse/SKILL.md"
+}

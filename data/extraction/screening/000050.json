@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "",
+  "adoption_commit": "",
+  "candidate_position": 50,
+  "cutoff_commit": "",
+  "default_branch": "",
+  "detail": "fatal: could not read Username for 'https://github.com': terminal prompts disabled",
+  "exclusion_reason": "repository_unavailable",
+  "ordering_hash": "00a68a4933ad02bd505b6e7f2c42db81cc750a4039433110aec74726bdc1bc98",
+  "production_python_count": 0,
+  "repo_full_name": "tachyon-beep/fable",
+  "repository_url": "https://github.com/tachyon-beep/fable.git",
+  "retrieved_at_utc": "2026-10-05T05:16:17.043579Z",
+  "status": "excluded",
+  "test_python_count": 0,
+  "valid_skill_paths": ""
+}

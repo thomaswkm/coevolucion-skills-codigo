@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "2026-03-21T15:53:25Z",
+  "adoption_commit": "12b5ac4487b86af2ac76a705ba9672a45184ec24",
+  "candidate_position": 64,
+  "cutoff_commit": "d3e3040d90c37b2310f1bc0f4e0058ba5e5e9450",
+  "default_branch": "main",
+  "detail": "All inclusion criteria passed",
+  "exclusion_reason": "",
+  "ordering_hash": "00cac10cb3a5396f8ac8af179b8d650729e6fbe3969db08ad3b5bb9ae8daf53e",
+  "production_python_count": 282,
+  "repo_full_name": "perrymanuk/radbot",
+  "repository_url": "https://github.com/perrymanuk/radbot.git",
+  "retrieved_at_utc": "2026-10-05T05:19:50.260224Z",
+  "status": "eligible",
+  "test_python_count": 123,
+  "valid_skill_paths": ".claude/skills/e2e-test/SKILL.md"
+}

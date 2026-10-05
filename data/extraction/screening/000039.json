@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "2026-06-04T12:13:41Z",
+  "adoption_commit": "f7da9e19162d90bc899372e9269ced515f405661",
+  "candidate_position": 39,
+  "cutoff_commit": "46d63866bf106f343bf215f318a513a6d631cd3b",
+  "default_branch": "main",
+  "detail": "No reachable commit exists at least 60 days before adoption",
+  "exclusion_reason": "insufficient_pre_window",
+  "ordering_hash": "008c75c1ae39c3f391fcfa606711373fbbd75dc3843a85df85870bb534c1e0de",
+  "production_python_count": 0,
+  "repo_full_name": "ewili/ths_follow",
+  "repository_url": "https://github.com/ewili/ths_follow.git",
+  "retrieved_at_utc": "2026-10-05T05:14:43.619169Z",
+  "status": "excluded",
+  "test_python_count": 0,
+  "valid_skill_paths": ".cursor/skills/ths-follow-clear-logs-on-start/SKILL.md;.cursor/skills/ths-follow-local-dev/SKILL.md"
+}

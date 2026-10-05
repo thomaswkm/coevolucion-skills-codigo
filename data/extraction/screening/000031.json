@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "2026-07-02T09:22:07Z",
+  "adoption_commit": "c6d2e5007955ef505f7ad41ed0b5aa482756bed7",
+  "candidate_position": 31,
+  "cutoff_commit": "0d8d04e8fbce4d3c381f99929c0b203895b79af3",
+  "default_branch": "main",
+  "detail": "No reachable commit exists at least 60 days before adoption",
+  "exclusion_reason": "insufficient_pre_window",
+  "ordering_hash": "00683b9f67c84d4cae486a4fe6f23598b7ee8d0e93080b3aee9404234ed4b0e3",
+  "production_python_count": 0,
+  "repo_full_name": "reonyanarticle/aizorius-judge",
+  "repository_url": "https://github.com/reonyanarticle/aizorius-judge.git",
+  "retrieved_at_utc": "2026-10-05T05:13:59.259273Z",
+  "status": "excluded",
+  "test_python_count": 0,
+  "valid_skill_paths": ".claude/skills/commit/SKILL.md;.claude/skills/docs-check/SKILL.md;.claude/skills/eval/SKILL.md;.claude/skills/mcp-smoke/SKILL.md;.claude/skills/qa/SKILL.md"
+}

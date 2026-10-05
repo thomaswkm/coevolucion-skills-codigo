@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "2026-02-11T19:41:33Z",
+  "adoption_commit": "9f43e9f24f997835bb8ff880754afdeb692a6587",
+  "candidate_position": 49,
+  "cutoff_commit": "675e1b079ca8e83ec230d3e691426b4814585c77",
+  "default_branch": "main",
+  "detail": "No reachable commit exists at least 60 days before adoption",
+  "exclusion_reason": "insufficient_pre_window",
+  "ordering_hash": "00a64886b6a1e953c952686e913da14e548d5b9f87b43362a77cfbf95e423ec0",
+  "production_python_count": 0,
+  "repo_full_name": "paunchygent/sir-convert-a-lot",
+  "repository_url": "https://github.com/paunchygent/sir-convert-a-lot.git",
+  "retrieved_at_utc": "2026-10-05T05:16:06.608195Z",
+  "status": "excluded",
+  "test_python_count": 0,
+  "valid_skill_paths": ".agents/skills/sir-convert-a-lot-devops-hemma/SKILL.md"
+}

@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "2026-06-16T23:09:32Z",
+  "adoption_commit": "f11879eb2167336983eb051e9f3492bb5f1c75dc",
+  "candidate_position": 52,
+  "cutoff_commit": "b7ef80bbcb0cd2710198a7d1de1095e76a588ac1",
+  "default_branch": "main",
+  "detail": "All inclusion criteria passed",
+  "exclusion_reason": "",
+  "ordering_hash": "00aa35cf1f2dd8a70923bf6a6b87e9c7fc70e24c09054d0eab3b73eab90f208f",
+  "production_python_count": 3835,
+  "repo_full_name": "hanzoai/insights",
+  "repository_url": "https://github.com/hanzoai/insights.git",
+  "retrieved_at_utc": "2026-10-05T05:16:31.713548Z",
+  "status": "eligible",
+  "test_python_count": 1345,
+  "valid_skill_paths": ".agents/skills/clickhouse-migrations/SKILL.md;.agents/skills/implementing-agent-modes/SKILL.md;.agents/skills/insightscli/SKILL.md;.agents/skills/react-doctor/SKILL.md;.agents/skills/setup-web-tests/SKILL.md;.agents/skills/survey-sdk-audit/SKILL.md"
+}

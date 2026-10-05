@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "",
+  "adoption_commit": "",
+  "candidate_position": 38,
+  "cutoff_commit": "",
+  "default_branch": "",
+  "detail": "fatal: could not read Username for 'https://github.com': terminal prompts disabled",
+  "exclusion_reason": "repository_unavailable",
+  "ordering_hash": "0084dfa27336047a8ccff4a5fafd63610fe08041822e51a85ca2c0bd6bf941d1",
+  "production_python_count": 0,
+  "repo_full_name": "gupta-builds/TradingView",
+  "repository_url": "https://github.com/gupta-builds/TradingView.git",
+  "retrieved_at_utc": "2026-10-05T05:14:36.301175Z",
+  "status": "excluded",
+  "test_python_count": 0,
+  "valid_skill_paths": ""
+}

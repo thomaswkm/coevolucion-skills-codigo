@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "2026-07-05T06:12:47Z",
+  "adoption_commit": "f33a1eff18c23836d51186d8d39d2d4e1de06f11",
+  "candidate_position": 33,
+  "cutoff_commit": "73f1351060ccf24f3beea2a03e972bbf16cd2938",
+  "default_branch": "main",
+  "detail": "No reachable commit exists at least 60 days before adoption",
+  "exclusion_reason": "insufficient_pre_window",
+  "ordering_hash": "006f8fb98f3a947e4888476a0bd78d5ac753d4d754fdf64835914c1a2c859375",
+  "production_python_count": 0,
+  "repo_full_name": "ahaqqu/agentic-engineering",
+  "repository_url": "https://github.com/ahaqqu/agentic-engineering.git",
+  "retrieved_at_utc": "2026-10-05T05:14:07.397664Z",
+  "status": "excluded",
+  "test_python_count": 0,
+  "valid_skill_paths": ".opencode/skills/gh-axi/SKILL.md;.opencode/skills/grill-with-docs/SKILL.md;.opencode/skills/tasks-axi/SKILL.md;.opencode/skills/workers-best-practices/SKILL.md"
+}

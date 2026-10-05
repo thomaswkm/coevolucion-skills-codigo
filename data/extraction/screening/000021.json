@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "2026-03-07T06:07:42Z",
+  "adoption_commit": "9dc05d86a9cc0d1ccdafb92a7547b8d9193e4b34",
+  "candidate_position": 21,
+  "cutoff_commit": "542a5956d959b1f509b1a34dd517d67c024a31ca",
+  "default_branch": "main",
+  "detail": "No reachable commit exists at least 60 days before adoption",
+  "exclusion_reason": "insufficient_pre_window",
+  "ordering_hash": "0046c44ea7b553614ef09a646237e150a636a232c049beb1f32df733340f350a",
+  "production_python_count": 0,
+  "repo_full_name": "unthinkmedia/AzureBuilderPlayground",
+  "repository_url": "https://github.com/unthinkmedia/AzureBuilderPlayground.git",
+  "retrieved_at_utc": "2026-10-05T05:12:42.700177Z",
+  "status": "excluded",
+  "test_python_count": 0,
+  "valid_skill_paths": ".github/skills/skill-creator/SKILL.md"
+}

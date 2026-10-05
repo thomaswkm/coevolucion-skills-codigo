@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "2026-01-19T00:07:50Z",
+  "adoption_commit": "2c85d7de7c7857bcf8ed0a3be33ccc739a83873c",
+  "candidate_position": 22,
+  "cutoff_commit": "5a023765a60908d3162913ceab607a562a8733b8",
+  "default_branch": "main",
+  "detail": "No reachable commit exists at least 60 days before adoption",
+  "exclusion_reason": "insufficient_pre_window",
+  "ordering_hash": "0049e97eef2b6c15c97b44e1c720084c9d809099f5732e88aa1f5940a115015a",
+  "production_python_count": 0,
+  "repo_full_name": "cooragent/ClarityFinance",
+  "repository_url": "https://github.com/cooragent/ClarityFinance.git",
+  "retrieved_at_utc": "2026-10-05T05:12:45.540353Z",
+  "status": "excluded",
+  "test_python_count": 0,
+  "valid_skill_paths": ".claude/skills/alpha-hound/SKILL.md;.claude/skills/fundamentals-analyst/SKILL.md;.claude/skills/holdings-hunter/SKILL.md;.claude/skills/news-analyst/SKILL.md;.claude/skills/planning-with-files/SKILL.md;.claude/skills/sentiment-analyst/SKILL.md;.claude/skills/technical-analyst/SKILL.md;.claude/skills/trading-master/SKILL.md;.claude/skills/trading-status/SKILL.md;.claude/skills/trading-working/SKILL.md"
+}

@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "2026-05-28T15:36:17Z",
+  "adoption_commit": "8adc35e42ae05de774eadceef167b42869266920",
+  "candidate_position": 35,
+  "cutoff_commit": "9283499f6337dc9b3d44ed18709b532f6485d87e",
+  "default_branch": "main",
+  "detail": "No reachable commit exists at least 60 days before adoption",
+  "exclusion_reason": "insufficient_pre_window",
+  "ordering_hash": "0076f0cda708ec05aa8358a16ebdb20e196a0d13991d3ab75807f69f9a7eecce",
+  "production_python_count": 0,
+  "repo_full_name": "Iyalvan/uruvagam",
+  "repository_url": "https://github.com/Iyalvan/uruvagam.git",
+  "retrieved_at_utc": "2026-10-05T05:14:19.048292Z",
+  "status": "excluded",
+  "test_python_count": 0,
+  "valid_skill_paths": ".claude/skills/uruvagam/SKILL.md"
+}

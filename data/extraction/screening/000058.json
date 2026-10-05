@@ -1,0 +1,17 @@
+{
+  "adoption_at_utc": "2025-11-20T16:42:36Z",
+  "adoption_commit": "fc7fd5e070910bfc6a7a7d4c42074f6eee536b93",
+  "candidate_position": 58,
+  "cutoff_commit": "2ebc9e1e707f85b9d30ee07542aaac8d5cc03d12",
+  "default_branch": "main",
+  "detail": "All inclusion criteria passed",
+  "exclusion_reason": "",
+  "ordering_hash": "00c278b1b05dcd79143bb76bab1257cf49c40e6f865f36758090ee31a2c7b589",
+  "production_python_count": 10,
+  "repo_full_name": "stharrold/stharrold-templates",
+  "repository_url": "https://github.com/stharrold/stharrold-templates.git",
+  "retrieved_at_utc": "2026-10-05T05:18:31.562310Z",
+  "status": "eligible",
+  "test_python_count": 1,
+  "valid_skill_paths": ".claude/skills/agentdb-state-manager/SKILL.md;.claude/skills/bmad-planner/SKILL.md;.claude/skills/git-workflow-manager/SKILL.md;.claude/skills/initialize-repository/SKILL.md;.claude/skills/quality-enforcer/SKILL.md;.claude/skills/speckit-author/SKILL.md;.claude/skills/tech-stack-adapter/SKILL.md;.claude/skills/workflow-orchestrator/SKILL.md;.claude/skills/workflow-utilities/SKILL.md"
+}
