@@ -1,0 +1,121 @@
+sample_position,repo_full_name,check,passed,observed,expected
+1,marisa901225-cmyk/personal-portfolio,cutoff_commit_exists,true,True,True
+1,marisa901225-cmyk/personal-portfolio,adoption_commit_exists,true,True,True
+1,marisa901225-cmyk/personal-portfolio,adoption_reaches_cutoff,true,True,True
+1,marisa901225-cmyk/personal-portfolio,first_parent_exists,true,3ac3f341ba95a5aab689fa9293c0e5a24a412b3b,non-empty
+1,marisa901225-cmyk/personal-portfolio,valid_skills_before_is_zero,true,0,0
+1,marisa901225-cmyk/personal-portfolio,valid_skills_after_positive,true,3,> 0
+1,marisa901225-cmyk/personal-portfolio,reported_skill_paths_match,true,.agents/skills/portfolio-ci-fix/SKILL.md;.agents/skills/portfolio-pr-review/SKILL.md;.agents/skills/portfolio-test-triage/SKILL.md,.agents/skills/portfolio-ci-fix/SKILL.md;.agents/skills/portfolio-pr-review/SKILL.md;.agents/skills/portfolio-test-triage/SKILL.md
+1,marisa901225-cmyk/personal-portfolio,adoption_committer_timestamp_matches,true,2026-05-26T17:44:20+09:00,2026-05-26T08:44:20Z
+1,marisa901225-cmyk/personal-portfolio,pre_window_observable,true,64f5922c9d4f54b33e8941c294031c41eb257f60,non-empty
+1,marisa901225-cmyk/personal-portfolio,post_window_before_cutoff,true,2026-07-25T08:44:20+00:00,<= 2026-10-04T23:59:59+00:00
+1,marisa901225-cmyk/personal-portfolio,production_path_count_matches,true,371,371
+1,marisa901225-cmyk/personal-portfolio,test_path_count_matches,true,151,151
+2,surus-lat/benchy,cutoff_commit_exists,true,True,True
+2,surus-lat/benchy,adoption_commit_exists,true,True,True
+2,surus-lat/benchy,adoption_reaches_cutoff,true,True,True
+2,surus-lat/benchy,first_parent_exists,true,0ad65f46733cc8d66fbfc9492a1b0c52f23b287f,non-empty
+2,surus-lat/benchy,valid_skills_before_is_zero,true,0,0
+2,surus-lat/benchy,valid_skills_after_positive,true,2,> 0
+2,surus-lat/benchy,reported_skill_paths_match,true,.agent/skills/oracle-plan/SKILL.md;.agent/skills/whisper-benchmark/SKILL.md,.agent/skills/oracle-plan/SKILL.md;.agent/skills/whisper-benchmark/SKILL.md
+2,surus-lat/benchy,adoption_committer_timestamp_matches,true,2026-06-19T02:41:58-03:00,2026-06-19T05:41:58Z
+2,surus-lat/benchy,pre_window_observable,true,5d13450355a55e3f1adb31137076cd8468910d3d,non-empty
+2,surus-lat/benchy,post_window_before_cutoff,true,2026-08-18T05:41:58+00:00,<= 2026-10-04T23:59:59+00:00
+2,surus-lat/benchy,production_path_count_matches,true,153,153
+2,surus-lat/benchy,test_path_count_matches,true,45,45
+3,tylertjburns/coopstorage,cutoff_commit_exists,true,True,True
+3,tylertjburns/coopstorage,adoption_commit_exists,true,True,True
+3,tylertjburns/coopstorage,adoption_reaches_cutoff,true,True,True
+3,tylertjburns/coopstorage,first_parent_exists,true,08ce866aa24b55c23fb490d7e6e36f4ad6d2efee,non-empty
+3,tylertjburns/coopstorage,valid_skills_before_is_zero,true,0,0
+3,tylertjburns/coopstorage,valid_skills_after_positive,true,1,> 0
+3,tylertjburns/coopstorage,reported_skill_paths_match,true,.github/skills/git-branch-workflow/SKILL.md,.github/skills/git-branch-workflow/SKILL.md
+3,tylertjburns/coopstorage,adoption_committer_timestamp_matches,true,2026-05-07T16:59:31-05:00,2026-05-07T21:59:31Z
+3,tylertjburns/coopstorage,pre_window_observable,true,9e3917efd25b9ab22d0765df1c08d8e01a52710c,non-empty
+3,tylertjburns/coopstorage,post_window_before_cutoff,true,2026-07-06T21:59:31+00:00,<= 2026-10-04T23:59:59+00:00
+3,tylertjburns/coopstorage,production_path_count_matches,true,44,44
+3,tylertjburns/coopstorage,test_path_count_matches,true,8,8
+4,LyonMoncef/SamsungHealth,cutoff_commit_exists,true,True,True
+4,LyonMoncef/SamsungHealth,adoption_commit_exists,true,True,True
+4,LyonMoncef/SamsungHealth,adoption_reaches_cutoff,true,True,True
+4,LyonMoncef/SamsungHealth,first_parent_exists,true,5343c9b7a32a6714b8a9dbd544b0e792d8005ad2,non-empty
+4,LyonMoncef/SamsungHealth,valid_skills_before_is_zero,true,0,0
+4,LyonMoncef/SamsungHealth,valid_skills_after_positive,true,7,> 0
+4,LyonMoncef/SamsungHealth,reported_skill_paths_match,true,.claude/skills/align/SKILL.md;.claude/skills/anchor-review/SKILL.md;.claude/skills/annotate/SKILL.md;.claude/skills/impl/SKILL.md;.claude/skills/sync-coverage/SKILL.md;.claude/skills/sync-vault/SKILL.md;.claude/skills/tdd/SKILL.md,.claude/skills/align/SKILL.md;.claude/skills/anchor-review/SKILL.md;.claude/skills/annotate/SKILL.md;.claude/skills/impl/SKILL.md;.claude/skills/sync-coverage/SKILL.md;.claude/skills/sync-vault/SKILL.md;.claude/skills/tdd/SKILL.md
+4,LyonMoncef/SamsungHealth,adoption_committer_timestamp_matches,true,2026-04-30T00:00:54+02:00,2026-04-29T22:00:54Z
+4,LyonMoncef/SamsungHealth,pre_window_observable,true,fb6e039a65cb37489d16ee499f6410535e788793,non-empty
+4,LyonMoncef/SamsungHealth,post_window_before_cutoff,true,2026-06-28T22:00:54+00:00,<= 2026-10-04T23:59:59+00:00
+4,LyonMoncef/SamsungHealth,production_path_count_matches,true,81,81
+4,LyonMoncef/SamsungHealth,test_path_count_matches,true,70,70
+5,speechpro/inex-launcher,cutoff_commit_exists,true,True,True
+5,speechpro/inex-launcher,adoption_commit_exists,true,True,True
+5,speechpro/inex-launcher,adoption_reaches_cutoff,true,True,True
+5,speechpro/inex-launcher,first_parent_exists,true,78307746a1e93e8cbd34e846b1e3153afb400a09,non-empty
+5,speechpro/inex-launcher,valid_skills_before_is_zero,true,0,0
+5,speechpro/inex-launcher,valid_skills_after_positive,true,1,> 0
+5,speechpro/inex-launcher,reported_skill_paths_match,true,.cursor/skills/inex-launcher/SKILL.md,.cursor/skills/inex-launcher/SKILL.md
+5,speechpro/inex-launcher,adoption_committer_timestamp_matches,true,2026-06-05T04:45:15+03:00,2026-06-05T01:45:15Z
+5,speechpro/inex-launcher,pre_window_observable,true,78307746a1e93e8cbd34e846b1e3153afb400a09,non-empty
+5,speechpro/inex-launcher,post_window_before_cutoff,true,2026-08-04T01:45:15+00:00,<= 2026-10-04T23:59:59+00:00
+5,speechpro/inex-launcher,production_path_count_matches,true,8,8
+5,speechpro/inex-launcher,test_path_count_matches,true,22,22
+6,Harmeet10000/AgentNexus-LangChain-FastAPI,cutoff_commit_exists,true,True,True
+6,Harmeet10000/AgentNexus-LangChain-FastAPI,adoption_commit_exists,true,True,True
+6,Harmeet10000/AgentNexus-LangChain-FastAPI,adoption_reaches_cutoff,true,True,True
+6,Harmeet10000/AgentNexus-LangChain-FastAPI,first_parent_exists,true,155d471f6a17c7809a255c1ff1b4f22ef81f90a5,non-empty
+6,Harmeet10000/AgentNexus-LangChain-FastAPI,valid_skills_before_is_zero,true,0,0
+6,Harmeet10000/AgentNexus-LangChain-FastAPI,valid_skills_after_positive,true,1,> 0
+6,Harmeet10000/AgentNexus-LangChain-FastAPI,reported_skill_paths_match,true,.github/skills/fastapi/SKILL.md,.github/skills/fastapi/SKILL.md
+6,Harmeet10000/AgentNexus-LangChain-FastAPI,adoption_committer_timestamp_matches,true,2026-02-27T19:03:53+05:30,2026-02-27T13:33:53Z
+6,Harmeet10000/AgentNexus-LangChain-FastAPI,pre_window_observable,true,228009b7feaa4787b073d2f2ce513f5eda70c2fa,non-empty
+6,Harmeet10000/AgentNexus-LangChain-FastAPI,post_window_before_cutoff,true,2026-04-28T13:33:53+00:00,<= 2026-10-04T23:59:59+00:00
+6,Harmeet10000/AgentNexus-LangChain-FastAPI,production_path_count_matches,true,174,174
+6,Harmeet10000/AgentNexus-LangChain-FastAPI,test_path_count_matches,true,4,4
+7,hanzoai/insights,cutoff_commit_exists,true,True,True
+7,hanzoai/insights,adoption_commit_exists,true,True,True
+7,hanzoai/insights,adoption_reaches_cutoff,true,True,True
+7,hanzoai/insights,first_parent_exists,true,1545a3559716490800936b15480eedbf82cb2f2d,non-empty
+7,hanzoai/insights,valid_skills_before_is_zero,true,0,0
+7,hanzoai/insights,valid_skills_after_positive,true,6,> 0
+7,hanzoai/insights,reported_skill_paths_match,true,.agents/skills/clickhouse-migrations/SKILL.md;.agents/skills/implementing-agent-modes/SKILL.md;.agents/skills/insightscli/SKILL.md;.agents/skills/react-doctor/SKILL.md;.agents/skills/setup-web-tests/SKILL.md;.agents/skills/survey-sdk-audit/SKILL.md,.agents/skills/clickhouse-migrations/SKILL.md;.agents/skills/implementing-agent-modes/SKILL.md;.agents/skills/insightscli/SKILL.md;.agents/skills/react-doctor/SKILL.md;.agents/skills/setup-web-tests/SKILL.md;.agents/skills/survey-sdk-audit/SKILL.md
+7,hanzoai/insights,adoption_committer_timestamp_matches,true,2026-06-16T16:09:32-07:00,2026-06-16T23:09:32Z
+7,hanzoai/insights,pre_window_observable,true,1545a3559716490800936b15480eedbf82cb2f2d,non-empty
+7,hanzoai/insights,post_window_before_cutoff,true,2026-08-15T23:09:32+00:00,<= 2026-10-04T23:59:59+00:00
+7,hanzoai/insights,production_path_count_matches,true,3835,3835
+7,hanzoai/insights,test_path_count_matches,true,1345,1345
+8,stharrold/stharrold-templates,cutoff_commit_exists,true,True,True
+8,stharrold/stharrold-templates,adoption_commit_exists,true,True,True
+8,stharrold/stharrold-templates,adoption_reaches_cutoff,true,True,True
+8,stharrold/stharrold-templates,first_parent_exists,true,d6aa0108c713aaeae5a7f18f18574a157244b1c7,non-empty
+8,stharrold/stharrold-templates,valid_skills_before_is_zero,true,0,0
+8,stharrold/stharrold-templates,valid_skills_after_positive,true,9,> 0
+8,stharrold/stharrold-templates,reported_skill_paths_match,true,.claude/skills/agentdb-state-manager/SKILL.md;.claude/skills/bmad-planner/SKILL.md;.claude/skills/git-workflow-manager/SKILL.md;.claude/skills/initialize-repository/SKILL.md;.claude/skills/quality-enforcer/SKILL.md;.claude/skills/speckit-author/SKILL.md;.claude/skills/tech-stack-adapter/SKILL.md;.claude/skills/workflow-orchestrator/SKILL.md;.claude/skills/workflow-utilities/SKILL.md,.claude/skills/agentdb-state-manager/SKILL.md;.claude/skills/bmad-planner/SKILL.md;.claude/skills/git-workflow-manager/SKILL.md;.claude/skills/initialize-repository/SKILL.md;.claude/skills/quality-enforcer/SKILL.md;.claude/skills/speckit-author/SKILL.md;.claude/skills/tech-stack-adapter/SKILL.md;.claude/skills/workflow-orchestrator/SKILL.md;.claude/skills/workflow-utilities/SKILL.md
+8,stharrold/stharrold-templates,adoption_committer_timestamp_matches,true,2025-11-20T11:42:36-05:00,2025-11-20T16:42:36Z
+8,stharrold/stharrold-templates,pre_window_observable,true,bcf849e76e4ddc00220b06499328e11c20a7bea0,non-empty
+8,stharrold/stharrold-templates,post_window_before_cutoff,true,2026-01-19T16:42:36+00:00,<= 2026-10-04T23:59:59+00:00
+8,stharrold/stharrold-templates,production_path_count_matches,true,10,10
+8,stharrold/stharrold-templates,test_path_count_matches,true,1,1
+9,pinchbench/skill,cutoff_commit_exists,true,True,True
+9,pinchbench/skill,adoption_commit_exists,true,True,True
+9,pinchbench/skill,adoption_reaches_cutoff,true,True,True
+9,pinchbench/skill,first_parent_exists,true,52ef2387a6b8fbf193ae4fa9d9cf8bcc8c13ad94,non-empty
+9,pinchbench/skill,valid_skills_before_is_zero,true,0,0
+9,pinchbench/skill,valid_skills_after_positive,true,2,> 0
+9,pinchbench/skill,reported_skill_paths_match,true,.agents/skills/building-dashboards/SKILL.md;.agents/skills/query-metrics/SKILL.md,.agents/skills/building-dashboards/SKILL.md;.agents/skills/query-metrics/SKILL.md
+9,pinchbench/skill,adoption_committer_timestamp_matches,true,2026-05-22T11:54:52-04:00,2026-05-22T15:54:52Z
+9,pinchbench/skill,pre_window_observable,true,e8e833b063a1dc89cb4dd22ca8fd4409cdb2e54a,non-empty
+9,pinchbench/skill,post_window_before_cutoff,true,2026-07-21T15:54:52+00:00,<= 2026-10-04T23:59:59+00:00
+9,pinchbench/skill,production_path_count_matches,true,16,16
+9,pinchbench/skill,test_path_count_matches,true,4,4
+10,perrymanuk/radbot,cutoff_commit_exists,true,True,True
+10,perrymanuk/radbot,adoption_commit_exists,true,True,True
+10,perrymanuk/radbot,adoption_reaches_cutoff,true,True,True
+10,perrymanuk/radbot,first_parent_exists,true,830828d60f984b5abf9036ebfd3c092b79693e11,non-empty
+10,perrymanuk/radbot,valid_skills_before_is_zero,true,0,0
+10,perrymanuk/radbot,valid_skills_after_positive,true,1,> 0
+10,perrymanuk/radbot,reported_skill_paths_match,true,.claude/skills/e2e-test/SKILL.md,.claude/skills/e2e-test/SKILL.md
+10,perrymanuk/radbot,adoption_committer_timestamp_matches,true,2026-03-21T16:53:25+01:00,2026-03-21T15:53:25Z
+10,perrymanuk/radbot,pre_window_observable,true,4b9ad80aa7f1a175612afcabb12e97ab36e508ff,non-empty
+10,perrymanuk/radbot,post_window_before_cutoff,true,2026-05-20T15:53:25+00:00,<= 2026-10-04T23:59:59+00:00
+10,perrymanuk/radbot,production_path_count_matches,true,282,282
+10,perrymanuk/radbot,test_path_count_matches,true,123,123
