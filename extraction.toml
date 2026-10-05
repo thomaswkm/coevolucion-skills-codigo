@@ -1,0 +1,23 @@
+# Frozen inputs for the Stage 2 extraction. Changing any value creates a
+# different selection protocol; use a new output directory when doing so.
+
+[dataset]
+repository = "mvaccargiu/gitskills"
+revision = "ebab17454a7c236f8f26b183567f1a126f42e3f8"
+artifact_parts = 31
+
+[selection]
+target_count = 10
+seed = "20261004"
+history_cutoff_utc = "2026-10-04T23:59:59Z"
+window_days = 60
+
+[git]
+clone_timeout_seconds = 1800
+command_timeout_seconds = 300
+retry_count = 3
+checkout_selected = true
+
+[paths]
+output_directory = "data/extraction"
+repository_directory = "repositories"
