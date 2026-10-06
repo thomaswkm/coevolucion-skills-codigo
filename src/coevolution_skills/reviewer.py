@@ -30,6 +30,19 @@ from .validation import (
 
 ADOPTION_DECISIONS = {"valid", "invalid", "ambiguous"}
 YES_NO = {"yes", "no"}
+ADOPTION_HUMAN_FIELDS = (
+    "human_adoption_decision",
+    "human_rename_only",
+    "human_frontmatter_and_paths_valid",
+    "reviewer",
+    "reviewed_at_utc",
+)
+PATH_HUMAN_FIELDS = (
+    "human_category",
+    "agreement",
+    "reviewer",
+    "reviewed_at_utc",
+)
 AUTOMATED_CHECK_FIELDS = (
     "sample_position",
     "repo_full_name",
@@ -115,10 +128,15 @@ def _selected_rows(config: Config) -> list[dict[str, str]]:
     return rows
 
 
-def validate_review_package(
+def validate_review_evidence(
     validation_directory: Path, config: Config
 ) -> tuple[list[dict[str, str]], list[dict[str, str]]]:
-    """Validate exact schemas, preserved evidence, and completed human fields."""
+    """Validate exact schemas and preserved evidence, ignoring human decisions.
+
+    The mechanical layer always runs: schemas, row counts, contiguous
+    positions, preserved columns against the extraction and every automated
+    check. It never tolerates malformed or inconsistent evidence.
+    """
     adoption_path = validation_directory / "adoption_review.csv"
     path_review_path = validation_directory / "path_review.csv"
     adoption_rows = load_rows(adoption_path, ADOPTION_REVIEW_FIELDS)
@@ -191,17 +209,6 @@ def validate_review_package(
             )
         for field in ("first_parent", "skill_location_diff"):
             _require_text(row, field, location)
-        _require_choice(row, "human_adoption_decision", ADOPTION_DECISIONS, location)
-        _require_choice(row, "human_rename_only", YES_NO, location)
-        _require_choice(row, "human_frontmatter_and_paths_valid", YES_NO, location)
-        _require_text(row, "reviewer", location)
-        _require_utc(row, "reviewed_at_utc", location)
-        if (
-            row["human_adoption_decision"] != "valid"
-            or row["human_rename_only"] != "no"
-            or row["human_frontmatter_and_paths_valid"] != "yes"
-        ):
-            _require_text(row, "human_notes", location)
 
     category_counts = {category: 0 for category in REVIEW_CATEGORIES}
     for row in path_rows:
@@ -221,10 +228,60 @@ def validate_review_package(
                 f"{location}: commit does not match the preserved adoption commit"
             )
         _require_choice(row, "automatic_category", set(REVIEW_CATEGORIES), location)
-        _require_choice(row, "human_category", set(REVIEW_CATEGORIES), location)
-        _require_choice(row, "agreement", YES_NO, location)
         _require_text(row, "classification_rule", location)
         _require_text(row, "ordering_hash", location)
+        category_counts[row["automatic_category"]] += 1
+    expected_counts = {key: int(value) for key, value in manifest["sample_counts"].items()}
+    if category_counts != expected_counts:
+        raise ReviewValidationError(
+            f"{path_review_path}: category counts {category_counts} do not match manifest "
+            f"{expected_counts}"
+        )
+    return adoption_rows, path_rows
+
+
+def _any_blank(row: dict[str, str], fields: tuple[str, ...]) -> bool:
+    return any(not row[field].strip() for field in fields)
+
+
+def validate_human_review_fields(
+    adoption_rows: list[dict[str, str]],
+    path_rows: list[dict[str, str]],
+    adoption_path: Path,
+    path_review_path: Path,
+) -> tuple[list[int], list[int]]:
+    """Validate completed human fields; return the positions still pending.
+
+    A row whose required human fields are blank is reported as pending and its
+    remaining fields are not judged. A row that is filled but invalid still
+    raises, so a partially completed review cannot hide inconsistencies.
+    """
+    pending_adoptions: list[int] = []
+    for row in adoption_rows:
+        location = f"{adoption_path}: row {row['sample_position']}"
+        if _any_blank(row, ADOPTION_HUMAN_FIELDS):
+            pending_adoptions.append(int(row["sample_position"]))
+            continue
+        _require_choice(row, "human_adoption_decision", ADOPTION_DECISIONS, location)
+        _require_choice(row, "human_rename_only", YES_NO, location)
+        _require_choice(row, "human_frontmatter_and_paths_valid", YES_NO, location)
+        _require_text(row, "reviewer", location)
+        _require_utc(row, "reviewed_at_utc", location)
+        if (
+            row["human_adoption_decision"] != "valid"
+            or row["human_rename_only"] != "no"
+            or row["human_frontmatter_and_paths_valid"] != "yes"
+        ):
+            _require_text(row, "human_notes", location)
+
+    pending_paths: list[int] = []
+    for row in path_rows:
+        location = f"{path_review_path}: row {row['review_position']}"
+        if _any_blank(row, PATH_HUMAN_FIELDS):
+            pending_paths.append(int(row["review_position"]))
+            continue
+        _require_choice(row, "human_category", set(REVIEW_CATEGORIES), location)
+        _require_choice(row, "agreement", YES_NO, location)
         _require_text(row, "reviewer", location)
         _require_utc(row, "reviewed_at_utc", location)
         agrees = row["human_category"] == row["automatic_category"]
@@ -234,12 +291,24 @@ def validate_review_package(
             )
         if row["agreement"] == "no":
             _require_text(row, "human_notes", location)
-        category_counts[row["automatic_category"]] += 1
-    expected_counts = {key: int(value) for key, value in manifest["sample_counts"].items()}
-    if category_counts != expected_counts:
+    return pending_adoptions, pending_paths
+
+
+def validate_review_package(
+    validation_directory: Path, config: Config, *, require_human: bool = True
+) -> tuple[list[dict[str, str]], list[dict[str, str]]]:
+    """Validate preserved evidence and, optionally, completed human fields."""
+    adoption_path = validation_directory / "adoption_review.csv"
+    path_review_path = validation_directory / "path_review.csv"
+    adoption_rows, path_rows = validate_review_evidence(validation_directory, config)
+    pending_adoptions, pending_paths = validate_human_review_fields(
+        adoption_rows, path_rows, adoption_path, path_review_path
+    )
+    if require_human and (pending_adoptions or pending_paths):
         raise ReviewValidationError(
-            f"{path_review_path}: category counts {category_counts} do not match manifest "
-            f"{expected_counts}"
+            "Human review is incomplete: "
+            f"pending adoption positions {pending_adoptions}; "
+            f"pending path positions {pending_paths}"
         )
     return adoption_rows, path_rows
 
@@ -495,8 +564,20 @@ def main() -> None:
     args = argument_parser().parse_args()
     validation_directory = args.validation_directory.resolve()
     config = load_config(args.config)
+    adoption_path = validation_directory / "adoption_review.csv"
+    path_review_path = validation_directory / "path_review.csv"
     try:
-        adoption_rows, path_rows = validate_review_package(validation_directory, config)
+        adoption_rows, path_rows = validate_review_evidence(validation_directory, config)
+        if args.action == "validate":
+            pending_adoptions, pending_paths = validate_human_review_fields(
+                adoption_rows, path_rows, adoption_path, path_review_path
+            )
+            if pending_adoptions or pending_paths:
+                raise ReviewValidationError(
+                    "Human review is incomplete: "
+                    f"pending adoption positions {pending_adoptions}; "
+                    f"pending path positions {pending_paths}"
+                )
     except (OSError, KeyError, ValueError, json.JSONDecodeError) as error:
         raise SystemExit(f"Invalid validation package: {error}") from error
     if args.action == "list":

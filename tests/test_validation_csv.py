@@ -83,3 +83,21 @@ def test_inconsistent_agreement_is_rejected(synthetic_project) -> None:
 
     with pytest.raises(ReviewValidationError):
         validate_review_package(synthetic_project.validation, synthetic_project.config)
+
+
+def test_pending_human_fields_allowed_when_not_required(synthetic_project) -> None:
+    path = synthetic_project.adoption_path
+    rows = read_rows(path)
+    rows[0]["reviewer"] = ""
+    rewrite(path, ADOPTION_REVIEW_FIELDS, rows)
+
+    with pytest.raises(ReviewValidationError):
+        validate_review_package(synthetic_project.validation, synthetic_project.config)
+
+    adoptions, paths = validate_review_package(
+        synthetic_project.validation,
+        synthetic_project.config,
+        require_human=False,
+    )
+    assert len(adoptions) == 1
+    assert len(paths) == 4

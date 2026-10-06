@@ -157,3 +157,23 @@ def test_existing_output_is_rejected(processed, config_factory, tmp_path) -> Non
     output.mkdir()
     with pytest.raises(FileExistsError):
         execute(config_factory(), processed, output)
+
+
+def test_screening_review_status_is_propagated(processed, config_factory, tmp_path) -> None:
+    manifest_path = processed / "processing_manifest.json"
+    manifest = json.loads(manifest_path.read_text())
+    manifest["human_screening_review"] = {
+        "required": False,
+        "status": "pending",
+        "pending_adoptions": [1],
+        "pending_paths": [],
+        "checksum_file_present": False,
+    }
+    manifest_path.write_text(json.dumps(manifest) + "\n", encoding="utf-8")
+
+    output = tmp_path / "results"
+    execute(config_factory(), processed, output)
+
+    result = json.loads((output / "analysis_manifest.json").read_text())
+    assert result["human_screening_review"]["status"] == "pending"
+    assert result["human_screening_review"]["pending_adoptions"] == [1]

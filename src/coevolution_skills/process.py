@@ -25,7 +25,11 @@ from .extract import (
     utc_now,
     write_csv_atomic,
 )
-from .reviewer import validate_review_package
+from .reviewer import (
+    ReviewValidationError,
+    validate_human_review_fields,
+    validate_review_evidence,
+)
 from .validation import (
     REVIEW_CATEGORIES,
     SelectedRepository,
@@ -105,9 +109,24 @@ def configure_logging(output_directory: Path) -> logging.Logger:
 
 
 def verify_human_review_checksums(
-    validation_directory: Path, project_directory: Path
-) -> None:
+    validation_directory: Path,
+    project_directory: Path,
+    *,
+    require_human_review: bool = True,
+) -> bool:
+    """Verify the seal over the two human-review forms.
+
+    A present seal is always verified in full. A missing seal is only an error
+    when the human review is required; otherwise it is reported as absent so
+    the run can continue and record that the review is still pending.
+    """
     checksum_path = validation_directory / "human_review.sha256"
+    if not checksum_path.exists():
+        if require_human_review:
+            raise RuntimeError(
+                f"Human-review checksum is required but missing: {checksum_path}"
+            )
+        return False
     recorded: dict[str, str] = {}
     for line in checksum_path.read_text(encoding="utf-8").splitlines():
         try:
@@ -127,6 +146,7 @@ def verify_human_review_checksums(
         path = project_directory / relative_path
         if file_sha256(path) != digest:
             raise RuntimeError(f"Human-review checksum failed: {relative_path}")
+    return True
 
 
 def commit_exists(repository: Path, commit: str, config: Config) -> None:
@@ -548,14 +568,47 @@ def validate_outputs(
         raise RuntimeError("A counted commit has no auditable file-change rows")
 
 
-def execute(config_path: Path, output_directory: Path) -> None:
+def execute(
+    config_path: Path, output_directory: Path, *, require_human_review: bool = True
+) -> None:
     config = load_config(config_path)
     logger = configure_logging(output_directory)
     logger.info("Validating preserved extraction and human-review inputs")
     project_directory = config_path.resolve().parent
     validation_directory = project_directory / "data/validation"
-    validate_review_package(validation_directory, config)
-    verify_human_review_checksums(validation_directory, project_directory)
+    adoption_rows, path_rows = validate_review_evidence(validation_directory, config)
+    pending_adoptions, pending_paths = validate_human_review_fields(
+        adoption_rows,
+        path_rows,
+        validation_directory / "adoption_review.csv",
+        validation_directory / "path_review.csv",
+    )
+    if require_human_review and (pending_adoptions or pending_paths):
+        raise ReviewValidationError(
+            "Human review is incomplete: "
+            f"pending adoption positions {pending_adoptions}; "
+            f"pending path positions {pending_paths}. "
+            "Re-run with --allow-pending-human-review to continue."
+        )
+    checksum_present = verify_human_review_checksums(
+        validation_directory,
+        project_directory,
+        require_human_review=require_human_review,
+    )
+    human_screening_review = {
+        "required": require_human_review,
+        "status": "pending" if (pending_adoptions or pending_paths) else "complete",
+        "pending_adoptions": pending_adoptions,
+        "pending_paths": pending_paths,
+        "checksum_file_present": checksum_present,
+    }
+    if human_screening_review["status"] == "pending":
+        logger.warning(
+            "Human screening review is pending (%d adoptions, %d paths); "
+            "continuing because --allow-pending-human-review was set",
+            len(pending_adoptions),
+            len(pending_paths),
+        )
     selected_path = config.output_directory / "selected_repositories.csv"
     selected_repositories = load_selected(selected_path)
     if len(selected_repositories) != config.target_count:
@@ -614,10 +667,12 @@ def execute(config_path: Path, output_directory: Path) -> None:
         "selected_repositories": selected_path,
         "adoption_review": validation_directory / "adoption_review.csv",
         "path_review": validation_directory / "path_review.csv",
-        "human_review_checksums": validation_directory / "human_review.sha256",
         "validation_manifest": validation_directory / "validation_manifest.json",
         "automated_checks": validation_directory / "automated_checks.csv",
     }
+    checksum_path = validation_directory / "human_review.sha256"
+    if checksum_path.exists():
+        input_paths["human_review_checksums"] = checksum_path
     manifest = {
         "created_at_utc": utc_now(),
         "processing_protocol_version": PROCESSING_PROTOCOL_VERSION,
@@ -644,6 +699,7 @@ def execute(config_path: Path, output_directory: Path) -> None:
             "file_changes": len(file_rows),
             "activity_counts": len(count_rows),
         },
+        "human_screening_review": human_screening_review,
         "repositories": repository_summaries,
     }
     (output_directory / "processing_manifest.json").write_text(
@@ -670,12 +726,24 @@ def argument_parser() -> argparse.ArgumentParser:
         default=Path("data/processed"),
         help="New output directory; it must not already exist",
     )
+    parser.add_argument(
+        "--allow-pending-human-review",
+        action="store_true",
+        help=(
+            "Continue when the screening review forms have blank human fields "
+            "(preserved evidence and automated checks are still enforced)"
+        ),
+    )
     return parser
 
 
 def main() -> None:
     args = argument_parser().parse_args()
-    execute(args.config.resolve(), args.output.resolve())
+    execute(
+        args.config.resolve(),
+        args.output.resolve(),
+        require_human_review=not args.allow_pending_human_review,
+    )
 
 
 if __name__ == "__main__":

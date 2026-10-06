@@ -6,13 +6,49 @@ import csv
 import json
 from pathlib import Path
 
+import pytest
+
+from conftest import write_csv
 from coevolution_skills.process import build_activity_counts, execute
-from coevolution_skills.validation import SelectedRepository
+from coevolution_skills.reviewer import AUTOMATED_CHECK_FIELDS, ReviewValidationError
+from coevolution_skills.validation import (
+    ADOPTION_REVIEW_FIELDS,
+    PATH_REVIEW_FIELDS,
+    SelectedRepository,
+)
 
 
 def read_csv(path: Path) -> list[dict[str, str]]:
     with path.open(newline="", encoding="utf-8") as handle:
         return list(csv.DictReader(handle))
+
+
+def clear_human_fields(project) -> None:
+    adoption = read_csv(project.adoption_path)
+    for row in adoption:
+        for field in (
+            "human_adoption_decision",
+            "human_rename_only",
+            "human_frontmatter_and_paths_valid",
+            "human_notes",
+            "reviewer",
+            "reviewed_at_utc",
+        ):
+            row[field] = ""
+    write_csv(project.adoption_path, ADOPTION_REVIEW_FIELDS, adoption)
+
+    paths = read_csv(project.path_review_path)
+    for row in paths:
+        for field in (
+            "human_category",
+            "agreement",
+            "human_notes",
+            "reviewer",
+            "reviewed_at_utc",
+        ):
+            row[field] = ""
+    write_csv(project.path_review_path, PATH_REVIEW_FIELDS, paths)
+    (project.validation / "human_review.sha256").unlink()
 
 
 def selected_repository(position: int, name: str) -> SelectedRepository:
@@ -108,3 +144,48 @@ def test_two_runs_produce_identical_csv_and_checksums(synthetic_project) -> None
     assert manifest_one["output_sha256"] == manifest_two["output_sha256"]
     assert manifest_one["input_sha256"] == manifest_two["input_sha256"]
     assert manifest_one["row_counts"] == manifest_two["row_counts"]
+
+
+def test_pending_human_review_is_blocking_by_default(synthetic_project) -> None:
+    clear_human_fields(synthetic_project)
+    output = synthetic_project.project / "out" / "blocked"
+    with pytest.raises(ReviewValidationError):
+        execute(synthetic_project.config_path, output)
+
+
+def test_pending_human_review_can_be_allowed(synthetic_project) -> None:
+    clear_human_fields(synthetic_project)
+    output = synthetic_project.project / "out" / "allowed"
+    execute(synthetic_project.config_path, output, require_human_review=False)
+
+    manifest = json.loads((output / "processing_manifest.json").read_text())
+    review = manifest["human_screening_review"]
+    assert review["required"] is False
+    assert review["status"] == "pending"
+    assert review["pending_adoptions"] == [1]
+    assert review["pending_paths"] == [1, 2, 3, 4]
+    assert review["checksum_file_present"] is False
+    assert len(read_csv(output / "activity_counts.csv")) == 8
+
+
+def test_mechanical_evidence_blocks_when_pending_review_is_allowed(
+    synthetic_project,
+) -> None:
+    clear_human_fields(synthetic_project)
+    checks = read_csv(synthetic_project.validation / "automated_checks.csv")
+    checks[0]["passed"] = "false"
+    write_csv(
+        synthetic_project.validation / "automated_checks.csv",
+        AUTOMATED_CHECK_FIELDS,
+        checks,
+    )
+    manifest_path = synthetic_project.validation / "validation_manifest.json"
+    manifest = json.loads(manifest_path.read_text())
+    manifest["automatic_checks_passed"] = len(checks) - 1
+    manifest_path.write_text(
+        json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+    )
+
+    output = synthetic_project.project / "out" / "blocked-evidence"
+    with pytest.raises(ReviewValidationError):
+        execute(synthetic_project.config_path, output, require_human_review=False)

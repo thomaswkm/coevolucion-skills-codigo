@@ -324,6 +324,10 @@ def execute(config: Config, processed_directory: Path, output_directory: Path) -
     counts_path = processed_directory / "activity_counts.csv"
     processing_manifest_path = processed_directory / "processing_manifest.json"
     order, values = load_counts(counts_path)
+    processing_manifest = json.loads(
+        processing_manifest_path.read_text(encoding="utf-8")
+    )
+    human_screening_review = processing_manifest.get("human_screening_review")
 
     rq1_rows, rq1_summary, tie_count = build_rq1(order, values)
     rq2_rows, rq2_summary = build_rq2(order, values)
@@ -367,6 +371,7 @@ def execute(config: Config, processed_directory: Path, output_directory: Path) -
             "rq2_summary": len(rq2_summary),
         },
         "inferential_tests": False,
+        "human_screening_review": human_screening_review,
     }
     (output_directory / "analysis_manifest.json").write_text(
         json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8"

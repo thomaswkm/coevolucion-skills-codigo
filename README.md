@@ -267,6 +267,38 @@ no corresponda a `selected_repositories.csv` y decisiones humanas incompletas
 o inconsistentes. Al cerrar la revisión se conserva y comprueba
 `data/validation/human_review.sha256`.
 
+### Revisión humana pendiente
+
+Las decisiones humanas del screening son obligatorias por defecto para
+`process-activity`. Para ejecuciones exploratorias o de una muestra ampliada,
+donde revisar cada formulario a mano no es viable, se puede continuar con la
+revisión pendiente:
+
+```bash
+uv run process-activity --config extraction.toml --allow-pending-human-review
+```
+
+Este modificador **solo** tolera campos humanos en blanco. La evidencia
+preservada y las comprobaciones automáticas siguen siendo obligatorias: si un
+CSV está malformado, una columna preservada no coincide con la extracción o
+alguna de las comprobaciones automáticas falla, el comando se detiene. Cuando la
+revisión queda pendiente, el manifiesto lo registra explícitamente:
+
+```json
+"human_screening_review": {
+  "required": false,
+  "status": "pending",
+  "pending_adoptions": [ ... ],
+  "pending_paths": [ ... ],
+  "checksum_file_present": false
+}
+```
+
+`analyze-results` no se bloquea por este estado: continúa y copia el bloque a
+`analysis_manifest.json`. Los resultados preliminares entregados se generaron
+con la revisión **completa** (`status: "complete"`), por lo que este modificador
+no altera ninguna cifra publicada; solo acelera corridas futuras.
+
 ## Procesamiento de actividad
 
 Con la validación humana cerrada y los diez clones preservados, se ejecuta:
@@ -277,7 +309,9 @@ uv run process-activity --config extraction.toml
 
 El comando valida primero las entradas de extracción y revisión, comprueba la
 rama predeterminada y los commits preservados, y crea un directorio nuevo
-`data/processed/`. Nunca sobrescribe una ejecución existente. Usa la fecha del
+`data/processed/`. Nunca sobrescribe una ejecución existente. Por defecto exige
+la revisión humana del screening cerrada; ver «Revisión humana pendiente» para
+el modificador que permite continuar con formularios en blanco. Usa la fecha del
 committer en UTC y ventanas de 60 días con estas fronteras: período previo
 `[t0-60 días, t0)` y período posterior `(t0, t0+60 días]`. El commit de adopción
 y todos los merges quedan excluidos de los conteos.
@@ -416,8 +450,10 @@ clones de `repositories/` ni de la red. Cubren las fronteras exactas de las
 ventanas, la exclusión del commit de adopción y de los merges, la agregación por
 categoría con ceros explícitos, los cambios A/M/D/R, la clasificación de skills,
 producción, pruebas y rutas excluidas, el esquema estricto de los CSV de revisión
-y la reproducibilidad de dos ejecuciones sobre las mismas entradas. Los tests
-están en:
+y la reproducibilidad de dos ejecuciones sobre las mismas entradas. También
+comprueban que la revisión humana pendiente bloquea por defecto, que el
+modificador `--allow-pending-human-review` no relaja la evidencia mecánica y que
+el estado se propaga al manifiesto del análisis. Los tests están en:
 
 ```text
 tests/
