@@ -20,7 +20,8 @@ etiqueta `v0.2-etapa2` de este repositorio.
 El paquete incluye el código del flujo (`src/coevolution_skills/`), las pruebas
 (`tests/`), la utilidad de figurado (`scripts/plot_results.py`), las dependencias
 (`pyproject.toml`, `uv.lock`), la configuración (`extraction.toml`), los datos
-preservados (`data/`), los resultados (`results/`) y este README. No se incluyen
+preservados (`data/`), los resultados (`results/`), las licencias (`LICENSE`,
+`LICENSE-DATA`) y este README. No se incluyen
 los clones bajo `repositories/` (pesados y sujetos a las licencias de sus
 repositorios de origen) ni el material local `gitskills-sample/`.
 
@@ -103,9 +104,9 @@ validación de rutas modificadas con sello; análisis descriptivo de RQ1 y RQ2; 
 
 Pendiente: elaborar las tablas y figuras del artículo (de autoría propia);
 redactar en el manuscrito los resultados, las limitaciones y el paquete de
-réplica, y actualizar el resumen; definir la licencia, crear la etiqueta de
-versión, armar el ZIP y publicar en Zenodo con DOI; y decidir la muestra
-definitiva y, si corresponde, incorporar pruebas inferenciales.
+réplica, y actualizar el resumen; armar el ZIP y publicar en Zenodo con el DOI;
+y decidir la muestra definitiva y, si corresponde, incorporar pruebas
+inferenciales.
 
 ## Procedencia de los datos
 
@@ -142,7 +143,10 @@ repositories/              clones locales (no incluidos en el paquete)
 
 ## Licencia
 
-`PENDIENTE`: definir la licencia del código y de los datos antes de publicar en
-Zenodo, que la exige. Se sugiere una licencia permisiva para el código (por
-ejemplo, MIT o Apache-2.0) y CC BY 4.0 para los datos y resultados, y declarar
-la licencia elegida en los metadatos de Zenodo.
+- **Código** (`src/`, `tests/`, `scripts/`): MIT, véase `LICENSE`.
+- **Datos y resultados** (`data/`, `results/`): CC BY 4.0, véase `LICENSE-DATA`.
+
+La licencia declarada en los metadatos de Zenodo debe corresponder a la del
+material publicado. Como el paquete reúne ambos, se puede declarar CC BY 4.0
+para los datos y CC BY 4.0 o «Other (Open)» para el conjunto, indicando en la
+descripción que el código está bajo MIT.
