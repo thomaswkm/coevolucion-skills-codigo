@@ -1,0 +1,2 @@
+frame_size,candidates_examined,target_count,eligible_found,yield,yield_ci_low,yield_ci_high,estimated_population,estimated_population_low,estimated_population_high,sampling_fraction,finite_population_correction,completion_status,cap_reached,method
+22126,647,120,120,0.18547140649149924,0.15740934778983645,0.21724634679748717,4103.740340030912,3482.839229197921,4806.792669241201,0.029241616198137935,0.9852707159973152,target_reached,false,Wilson 95% interval on eligible/examined; N = frame * yield

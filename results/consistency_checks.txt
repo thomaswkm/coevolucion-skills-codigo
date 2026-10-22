@@ -1,0 +1,374 @@
+Consistency checks for the descriptive RQ1/RQ2 analysis
+
+repositories in analyzed sample: 120
+repositories with a tie for the largest post category: 26
+adoption decisions applied: 120 reviewed
+invalid adoptions excluded: 0
+ambiguous adoptions kept and flagged: 0
+
+RQ1 reconstructed from activity_counts.csv (post period):
+  OK  marisa901225-cmyk/personal-portfolio: {'skill': 0, 'production': 47, 'test': 54} (expected {'skill': 0, 'production': 47, 'test': 54})
+  OK  surus-lat/benchy: {'skill': 15, 'production': 18, 'test': 16} (expected {'skill': 15, 'production': 18, 'test': 16})
+  OK  tylertjburns/coopstorage: {'skill': 0, 'production': 11, 'test': 5} (expected {'skill': 0, 'production': 11, 'test': 5})
+  OK  LyonMoncef/SamsungHealth: {'skill': 2, 'production': 11, 'test': 8} (expected {'skill': 2, 'production': 11, 'test': 8})
+  OK  speechpro/inex-launcher: {'skill': 4, 'production': 3, 'test': 3} (expected {'skill': 4, 'production': 3, 'test': 3})
+  OK  Harmeet10000/AgentNexus-LangChain-FastAPI: {'skill': 6, 'production': 36, 'test': 2} (expected {'skill': 6, 'production': 36, 'test': 2})
+  OK  hanzoai/insights: {'skill': 14, 'production': 211, 'test': 97} (expected {'skill': 14, 'production': 211, 'test': 97})
+  OK  stharrold/stharrold-templates: {'skill': 10, 'production': 49, 'test': 41} (expected {'skill': 10, 'production': 49, 'test': 41})
+  OK  pinchbench/skill: {'skill': 0, 'production': 0, 'test': 0} (expected {'skill': 0, 'production': 0, 'test': 0})
+  OK  perrymanuk/radbot: {'skill': 14, 'production': 150, 'test': 50} (expected {'skill': 14, 'production': 150, 'test': 50})
+  OK  haalfi/remote-store: {'skill': 32, 'production': 155, 'test': 177} (expected {'skill': 32, 'production': 155, 'test': 177})
+  OK  vllm-project/vllm-omni: {'skill': 9, 'production': 496, 'test': 399} (expected {'skill': 9, 'production': 496, 'test': 399})
+  OK  swimmwatch/telegram-webapp-auth: {'skill': 0, 'production': 0, 'test': 0} (expected {'skill': 0, 'production': 0, 'test': 0})
+  OK  jimchurches/myebirdstuff: {'skill': 0, 'production': 2, 'test': 1} (expected {'skill': 0, 'production': 2, 'test': 1})
+  OK  nandyalu/trailarr: {'skill': 0, 'production': 37, 'test': 30} (expected {'skill': 0, 'production': 37, 'test': 30})
+  OK  serhatozdursun/serhatozdursun-ui-tests: {'skill': 1, 'production': 3, 'test': 3} (expected {'skill': 1, 'production': 3, 'test': 3})
+  OK  inspirepan/klaude-code: {'skill': 7, 'production': 698, 'test': 194} (expected {'skill': 7, 'production': 698, 'test': 194})
+  OK  psalmprax/ettametta: {'skill': 4, 'production': 80, 'test': 34} (expected {'skill': 4, 'production': 80, 'test': 34})
+  OK  kdeldycke/meta-package-manager: {'skill': 12, 'production': 172, 'test': 80} (expected {'skill': 12, 'production': 172, 'test': 80})
+  OK  The-Interdependency/aimmh: {'skill': 3, 'production': 6, 'test': 1} (expected {'skill': 3, 'production': 6, 'test': 1})
+  OK  endavis/pynetappfoundry: {'skill': 0, 'production': 6, 'test': 6} (expected {'skill': 0, 'production': 6, 'test': 6})
+  OK  loganrooks/arxiv-mcp-pro: {'skill': 0, 'production': 14, 'test': 9} (expected {'skill': 0, 'production': 14, 'test': 9})
+  OK  sslab-gatech/CRSBench: {'skill': 3, 'production': 403, 'test': 187} (expected {'skill': 3, 'production': 403, 'test': 187})
+  OK  gr8monk3ys/trading-bot: {'skill': 0, 'production': 88, 'test': 67} (expected {'skill': 0, 'production': 88, 'test': 67})
+  OK  wlritchi/env: {'skill': 0, 'production': 32, 'test': 30} (expected {'skill': 0, 'production': 32, 'test': 30})
+  OK  jcg-admin/e-commerce-api: {'skill': 5, 'production': 975, 'test': 777} (expected {'skill': 5, 'production': 975, 'test': 777})
+  OK  SublimeText/PackageDev: {'skill': 2, 'production': 21, 'test': 1} (expected {'skill': 2, 'production': 21, 'test': 1})
+  OK  SepineTam/mcp-for-stata: {'skill': 0, 'production': 38, 'test': 24} (expected {'skill': 0, 'production': 38, 'test': 24})
+  OK  anwellmeng/ai-crawler: {'skill': 0, 'production': 2, 'test': 1} (expected {'skill': 0, 'production': 2, 'test': 1})
+  OK  lsst-sqre/ook: {'skill': 1, 'production': 128, 'test': 130} (expected {'skill': 1, 'production': 128, 'test': 130})
+  OK  maikramer/GameDev: {'skill': 0, 'production': 174, 'test': 137} (expected {'skill': 0, 'production': 174, 'test': 137})
+  OK  PauloCatarino/orcamentos_lanca_encanto: {'skill': 0, 'production': 0, 'test': 0} (expected {'skill': 0, 'production': 0, 'test': 0})
+  OK  Yaso2Go/tbhp: {'skill': 2, 'production': 14, 'test': 14} (expected {'skill': 2, 'production': 14, 'test': 14})
+  OK  Rocky18919975029/VERL: {'skill': 0, 'production': 113, 'test': 36} (expected {'skill': 0, 'production': 113, 'test': 36})
+  OK  baldwinboy/neuromancers-community-platform: {'skill': 0, 'production': 0, 'test': 0} (expected {'skill': 0, 'production': 0, 'test': 0})
+  OK  berntpopp/gnomad-link: {'skill': 1, 'production': 17, 'test': 28} (expected {'skill': 1, 'production': 17, 'test': 28})
+  OK  igrybkov/alfred-pj: {'skill': 0, 'production': 11, 'test': 5} (expected {'skill': 0, 'production': 11, 'test': 5})
+  OK  pytorch/executorch: {'skill': 4, 'production': 332, 'test': 267} (expected {'skill': 4, 'production': 332, 'test': 267})
+  OK  kebtes/epicon: {'skill': 0, 'production': 7, 'test': 3} (expected {'skill': 0, 'production': 7, 'test': 3})
+  OK  ohnoohweh/briidge_lossy: {'skill': 1, 'production': 45, 'test': 64} (expected {'skill': 1, 'production': 45, 'test': 64})
+  OK  Gon3s/dlux: {'skill': 0, 'production': 4, 'test': 3} (expected {'skill': 0, 'production': 4, 'test': 3})
+  OK  ville-k/slurm_sdk: {'skill': 0, 'production': 6, 'test': 8} (expected {'skill': 0, 'production': 6, 'test': 8})
+  OK  masakinakai3/Manage: {'skill': 1, 'production': 1, 'test': 0} (expected {'skill': 1, 'production': 1, 'test': 0})
+  OK  arthursoares/libsync: {'skill': 0, 'production': 0, 'test': 0} (expected {'skill': 0, 'production': 0, 'test': 0})
+  OK  wirenboard/wb-mqtt-dali: {'skill': 3, 'production': 43, 'test': 37} (expected {'skill': 3, 'production': 43, 'test': 37})
+  OK  choderalab/missense-kinase-toolkit: {'skill': 5, 'production': 14, 'test': 10} (expected {'skill': 5, 'production': 14, 'test': 10})
+  OK  Qiskit/samplomatic: {'skill': 0, 'production': 15, 'test': 14} (expected {'skill': 0, 'production': 15, 'test': 14})
+  OK  gcharvin/detecdiv-hub: {'skill': 2, 'production': 104, 'test': 60} (expected {'skill': 2, 'production': 104, 'test': 60})
+  OK  SongshGeo/Python-Project-Template: {'skill': 0, 'production': 0, 'test': 0} (expected {'skill': 0, 'production': 0, 'test': 0})
+  OK  erwinkn/pulse-ui: {'skill': 3, 'production': 60, 'test': 40} (expected {'skill': 3, 'production': 60, 'test': 40})
+  OK  game-scheduler/game-scheduler: {'skill': 2, 'production': 55, 'test': 62} (expected {'skill': 2, 'production': 55, 'test': 62})
+  OK  cantis/MechBay: {'skill': 0, 'production': 9, 'test': 9} (expected {'skill': 0, 'production': 9, 'test': 9})
+  OK  Jamie-BitFlight/git-tree-project-structure-to-yaml: {'skill': 0, 'production': 5, 'test': 5} (expected {'skill': 0, 'production': 5, 'test': 5})
+  OK  siavashoutadi/djdevx: {'skill': 0, 'production': 11, 'test': 9} (expected {'skill': 0, 'production': 11, 'test': 9})
+  OK  equinor/ai-platform-actions: {'skill': 0, 'production': 7, 'test': 0} (expected {'skill': 0, 'production': 7, 'test': 0})
+  OK  Sendspin/aiosendspin: {'skill': 0, 'production': 27, 'test': 22} (expected {'skill': 0, 'production': 27, 'test': 22})
+  OK  AldanDev/Notora: {'skill': 0, 'production': 1, 'test': 0} (expected {'skill': 0, 'production': 1, 'test': 0})
+  OK  i-am-bee/agentstack: {'skill': 2, 'production': 65, 'test': 14} (expected {'skill': 2, 'production': 65, 'test': 14})
+  OK  OpenWSGR/AutoWSGR: {'skill': 4, 'production': 93, 'test': 14} (expected {'skill': 4, 'production': 93, 'test': 14})
+  OK  hevangel/dvcon_ai_library: {'skill': 0, 'production': 8, 'test': 3} (expected {'skill': 0, 'production': 8, 'test': 3})
+  OK  PurdueAF/purdue-af: {'skill': 9, 'production': 70, 'test': 92} (expected {'skill': 9, 'production': 70, 'test': 92})
+  OK  theontho/wgsextract-cli: {'skill': 1, 'production': 45, 'test': 29} (expected {'skill': 1, 'production': 45, 'test': 29})
+  OK  styliteag/dashboard: {'skill': 8, 'production': 75, 'test': 65} (expected {'skill': 8, 'production': 75, 'test': 65})
+  OK  JoshKarpel/counterweight: {'skill': 0, 'production': 1, 'test': 1} (expected {'skill': 0, 'production': 1, 'test': 1})
+  OK  Simpleyyt/ai-manus: {'skill': 1, 'production': 7, 'test': 0} (expected {'skill': 1, 'production': 7, 'test': 0})
+  OK  William-Dennis/slm-bias-testing: {'skill': 0, 'production': 0, 'test': 0} (expected {'skill': 0, 'production': 0, 'test': 0})
+  OK  snowflakedb/snowpark-python: {'skill': 0, 'production': 48, 'test': 48} (expected {'skill': 0, 'production': 48, 'test': 48})
+  OK  kurusugawa-computer/annowork-cli: {'skill': 0, 'production': 4, 'test': 3} (expected {'skill': 0, 'production': 4, 'test': 3})
+  OK  DragonFlyBSD/DeltaPorts: {'skill': 13, 'production': 227, 'test': 197} (expected {'skill': 13, 'production': 227, 'test': 197})
+  OK  empty-quiver/sglang-turboquant: {'skill': 0, 'production': 16, 'test': 0} (expected {'skill': 0, 'production': 16, 'test': 0})
+  OK  fairagro/m4.2_sql_to_arc: {'skill': 0, 'production': 10, 'test': 4} (expected {'skill': 0, 'production': 10, 'test': 4})
+  OK  SoloXLab/perfetto-dsl: {'skill': 0, 'production': 6, 'test': 5} (expected {'skill': 0, 'production': 6, 'test': 5})
+  OK  dewet22/givenergy-modbus: {'skill': 0, 'production': 242, 'test': 236} (expected {'skill': 0, 'production': 242, 'test': 236})
+  OK  icyponds/TradeBot: {'skill': 2, 'production': 10, 'test': 4} (expected {'skill': 2, 'production': 10, 'test': 4})
+  OK  elecdot/competehub: {'skill': 8, 'production': 17, 'test': 17} (expected {'skill': 8, 'production': 17, 'test': 17})
+  OK  olidroide/top-video-generator: {'skill': 0, 'production': 19, 'test': 15} (expected {'skill': 0, 'production': 19, 'test': 15})
+  OK  AICL-Lab/triton-fused-ops: {'skill': 0, 'production': 17, 'test': 24} (expected {'skill': 0, 'production': 17, 'test': 24})
+  OK  newton-physics/newton: {'skill': 3, 'production': 219, 'test': 169} (expected {'skill': 3, 'production': 219, 'test': 169})
+  OK  andborth/RoboPhD: {'skill': 9, 'production': 289, 'test': 2} (expected {'skill': 9, 'production': 289, 'test': 2})
+  OK  xlang-ai/OSWorld-V2: {'skill': 10, 'production': 70, 'test': 1} (expected {'skill': 10, 'production': 70, 'test': 1})
+  OK  kejhy93/ProteinFolding: {'skill': 4, 'production': 31, 'test': 26} (expected {'skill': 4, 'production': 31, 'test': 26})
+  OK  castorini/rank_llm: {'skill': 0, 'production': 7, 'test': 5} (expected {'skill': 0, 'production': 7, 'test': 5})
+  OK  rafahsa/-Multimodal-Deep-Learning-Framework-for-Brain-Tumor-Prediction: {'skill': 0, 'production': 1, 'test': 1} (expected {'skill': 0, 'production': 1, 'test': 1})
+  OK  dimensionalOS/dimos: {'skill': 1, 'production': 146, 'test': 122} (expected {'skill': 1, 'production': 146, 'test': 122})
+  OK  bsmi021/unity-bridge: {'skill': 6, 'production': 8, 'test': 10} (expected {'skill': 6, 'production': 8, 'test': 10})
+  OK  phuongnx2112003/A2A: {'skill': 0, 'production': 2, 'test': 2} (expected {'skill': 0, 'production': 2, 'test': 2})
+  OK  threatpatrols/hibp-downloader: {'skill': 0, 'production': 14, 'test': 4} (expected {'skill': 0, 'production': 14, 'test': 4})
+  OK  Bloomerp-io/Bloomerp: {'skill': 1, 'production': 116, 'test': 54} (expected {'skill': 1, 'production': 116, 'test': 54})
+  OK  sverzijl/oven_logging: {'skill': 0, 'production': 9, 'test': 9} (expected {'skill': 0, 'production': 9, 'test': 9})
+  OK  ryancheley/yt-cli: {'skill': 0, 'production': 6, 'test': 7} (expected {'skill': 0, 'production': 6, 'test': 7})
+  OK  elhajjar1/wrinkleFE: {'skill': 0, 'production': 123, 'test': 114} (expected {'skill': 0, 'production': 123, 'test': 114})
+  OK  lorek123/ha-snb: {'skill': 0, 'production': 11, 'test': 10} (expected {'skill': 0, 'production': 11, 'test': 10})
+  OK  canonical/falco-operators: {'skill': 0, 'production': 4, 'test': 2} (expected {'skill': 0, 'production': 4, 'test': 2})
+  OK  FracktalWorks/ControlCenter: {'skill': 0, 'production': 3, 'test': 0} (expected {'skill': 0, 'production': 3, 'test': 0})
+  OK  BoyuXiao/New-R3: {'skill': 0, 'production': 43, 'test': 11} (expected {'skill': 0, 'production': 43, 'test': 11})
+  OK  genepattern/module-toolkit: {'skill': 1, 'production': 2, 'test': 3} (expected {'skill': 1, 'production': 2, 'test': 3})
+  OK  pauubach/narrassist: {'skill': 0, 'production': 6, 'test': 2} (expected {'skill': 0, 'production': 6, 'test': 2})
+  OK  JohnRushKucharski/units: {'skill': 0, 'production': 0, 'test': 0} (expected {'skill': 0, 'production': 0, 'test': 0})
+  OK  xchem/fragalysis-backend: {'skill': 15, 'production': 34, 'test': 36} (expected {'skill': 15, 'production': 34, 'test': 36})
+  OK  nerd-zero/solei: {'skill': 9, 'production': 716, 'test': 257} (expected {'skill': 9, 'production': 716, 'test': 257})
+  OK  mozilla-services/merino-py: {'skill': 0, 'production': 92, 'test': 74} (expected {'skill': 0, 'production': 92, 'test': 74})
+  OK  LaurentMazare/pipecat: {'skill': 12, 'production': 592, 'test': 113} (expected {'skill': 12, 'production': 592, 'test': 113})
+  OK  adibirzu/oci-log-analytics-detections: {'skill': 0, 'production': 37, 'test': 27} (expected {'skill': 0, 'production': 37, 'test': 27})
+  OK  dannoetc/baseliner: {'skill': 3, 'production': 188, 'test': 154} (expected {'skill': 3, 'production': 188, 'test': 154})
+  OK  dbbs-lab/bsb: {'skill': 0, 'production': 4, 'test': 3} (expected {'skill': 0, 'production': 4, 'test': 3})
+  OK  suigetsukan/suigetsukan-lambdas: {'skill': 0, 'production': 6, 'test': 6} (expected {'skill': 0, 'production': 6, 'test': 6})
+  OK  dlt-hub/verified-sources: {'skill': 0, 'production': 0, 'test': 0} (expected {'skill': 0, 'production': 0, 'test': 0})
+  OK  quantum-guardians/approach-analysis: {'skill': 0, 'production': 0, 'test': 0} (expected {'skill': 0, 'production': 0, 'test': 0})
+  OK  mayflower/scry: {'skill': 0, 'production': 0, 'test': 0} (expected {'skill': 0, 'production': 0, 'test': 0})
+  OK  Cellular-Semantics/Atlas-reporter: {'skill': 3, 'production': 5, 'test': 4} (expected {'skill': 3, 'production': 5, 'test': 4})
+  OK  Centaurea-Platinum/SAKIGo: {'skill': 1, 'production': 19, 'test': 19} (expected {'skill': 1, 'production': 19, 'test': 19})
+  OK  namoshizun/TradePy: {'skill': 4, 'production': 22, 'test': 8} (expected {'skill': 4, 'production': 22, 'test': 8})
+  OK  agentic-community/mcp-gateway-registry: {'skill': 21, 'production': 107, 'test': 76} (expected {'skill': 21, 'production': 107, 'test': 76})
+  OK  houmo-ai/houmo-xh2modelzoo: {'skill': 1, 'production': 86, 'test': 14} (expected {'skill': 1, 'production': 86, 'test': 14})
+  OK  hadsie/treksafer: {'skill': 0, 'production': 0, 'test': 0} (expected {'skill': 0, 'production': 0, 'test': 0})
+  OK  carlostoek/adminpro: {'skill': 2, 'production': 24, 'test': 0} (expected {'skill': 2, 'production': 24, 'test': 0})
+  OK  microsoft/PowerPlatform-DataverseClient-Python: {'skill': 11, 'production': 20, 'test': 16} (expected {'skill': 11, 'production': 20, 'test': 16})
+  OK  aigorahub/sensPy: {'skill': 6, 'production': 2, 'test': 0} (expected {'skill': 6, 'production': 2, 'test': 0})
+  OK  Time-has-wings/slime: {'skill': 0, 'production': 78, 'test': 21} (expected {'skill': 0, 'production': 78, 'test': 21})
+  OK  mizoo-snow21/dotfiles: {'skill': 6, 'production': 1, 'test': 0} (expected {'skill': 6, 'production': 1, 'test': 0})
+
+RQ2 differences reconstructed from activity_counts.csv:
+  OK  marisa901225-cmyk/personal-portfolio production difference -108
+  OK  marisa901225-cmyk/personal-portfolio test difference -87
+  OK  surus-lat/benchy production difference 9
+  OK  surus-lat/benchy test difference 8
+  OK  tylertjburns/coopstorage production difference -73
+  OK  tylertjburns/coopstorage test difference -25
+  OK  LyonMoncef/SamsungHealth production difference 10
+  OK  LyonMoncef/SamsungHealth test difference 6
+  OK  speechpro/inex-launcher production difference 3
+  OK  speechpro/inex-launcher test difference 3
+  OK  Harmeet10000/AgentNexus-LangChain-FastAPI production difference 29
+  OK  Harmeet10000/AgentNexus-LangChain-FastAPI test difference 2
+  OK  hanzoai/insights production difference 211
+  OK  hanzoai/insights test difference 97
+  OK  stharrold/stharrold-templates production difference 42
+  OK  stharrold/stharrold-templates test difference 38
+  OK  pinchbench/skill production difference -57
+  OK  pinchbench/skill test difference -8
+  OK  perrymanuk/radbot production difference 95
+  OK  perrymanuk/radbot test difference 35
+  OK  haalfi/remote-store production difference 2
+  OK  haalfi/remote-store test difference 65
+  OK  vllm-project/vllm-omni production difference 101
+  OK  vllm-project/vllm-omni test difference 128
+  OK  swimmwatch/telegram-webapp-auth production difference -5
+  OK  swimmwatch/telegram-webapp-auth test difference -2
+  OK  jimchurches/myebirdstuff production difference -252
+  OK  jimchurches/myebirdstuff test difference -212
+  OK  nandyalu/trailarr production difference -23
+  OK  nandyalu/trailarr test difference 16
+  OK  serhatozdursun/serhatozdursun-ui-tests production difference 3
+  OK  serhatozdursun/serhatozdursun-ui-tests test difference 2
+  OK  inspirepan/klaude-code production difference 546
+  OK  inspirepan/klaude-code test difference 166
+  OK  psalmprax/ettametta production difference -538
+  OK  psalmprax/ettametta test difference -69
+  OK  kdeldycke/meta-package-manager production difference 157
+  OK  kdeldycke/meta-package-manager test difference 78
+  OK  The-Interdependency/aimmh production difference -10
+  OK  The-Interdependency/aimmh test difference -10
+  OK  endavis/pynetappfoundry production difference -108
+  OK  endavis/pynetappfoundry test difference -96
+  OK  loganrooks/arxiv-mcp-pro production difference -4
+  OK  loganrooks/arxiv-mcp-pro test difference -9
+  OK  sslab-gatech/CRSBench production difference 68
+  OK  sslab-gatech/CRSBench test difference 48
+  OK  gr8monk3ys/trading-bot production difference 88
+  OK  gr8monk3ys/trading-bot test difference 67
+  OK  wlritchi/env production difference 3
+  OK  wlritchi/env test difference 6
+  OK  jcg-admin/e-commerce-api production difference 415
+  OK  jcg-admin/e-commerce-api test difference 500
+  OK  SublimeText/PackageDev production difference 16
+  OK  SublimeText/PackageDev test difference 1
+  OK  SepineTam/mcp-for-stata production difference -49
+  OK  SepineTam/mcp-for-stata test difference 21
+  OK  anwellmeng/ai-crawler production difference -12
+  OK  anwellmeng/ai-crawler test difference -4
+  OK  lsst-sqre/ook production difference 123
+  OK  lsst-sqre/ook test difference 126
+  OK  maikramer/GameDev production difference 17
+  OK  maikramer/GameDev test difference 72
+  OK  PauloCatarino/orcamentos_lanca_encanto production difference -1
+  OK  PauloCatarino/orcamentos_lanca_encanto test difference -1
+  OK  Yaso2Go/tbhp production difference 13
+  OK  Yaso2Go/tbhp test difference 13
+  OK  Rocky18919975029/VERL production difference -83
+  OK  Rocky18919975029/VERL test difference -26
+  OK  baldwinboy/neuromancers-community-platform production difference -3
+  OK  baldwinboy/neuromancers-community-platform test difference -1
+  OK  berntpopp/gnomad-link production difference -86
+  OK  berntpopp/gnomad-link test difference -86
+  OK  igrybkov/alfred-pj production difference 1
+  OK  igrybkov/alfred-pj test difference 2
+  OK  pytorch/executorch production difference 119
+  OK  pytorch/executorch test difference 77
+  OK  kebtes/epicon production difference -8
+  OK  kebtes/epicon test difference -1
+  OK  ohnoohweh/briidge_lossy production difference -38
+  OK  ohnoohweh/briidge_lossy test difference -47
+  OK  Gon3s/dlux production difference -27
+  OK  Gon3s/dlux test difference -6
+  OK  ville-k/slurm_sdk production difference -7
+  OK  ville-k/slurm_sdk test difference -2
+  OK  masakinakai3/Manage production difference -28
+  OK  masakinakai3/Manage test difference -12
+  OK  arthursoares/libsync production difference 0
+  OK  arthursoares/libsync test difference 0
+  OK  wirenboard/wb-mqtt-dali production difference 37
+  OK  wirenboard/wb-mqtt-dali test difference 32
+  OK  choderalab/missense-kinase-toolkit production difference 13
+  OK  choderalab/missense-kinase-toolkit test difference 10
+  OK  Qiskit/samplomatic production difference -12
+  OK  Qiskit/samplomatic test difference 1
+  OK  gcharvin/detecdiv-hub production difference 12
+  OK  gcharvin/detecdiv-hub test difference 41
+  OK  SongshGeo/Python-Project-Template production difference -1
+  OK  SongshGeo/Python-Project-Template test difference -1
+  OK  erwinkn/pulse-ui production difference 14
+  OK  erwinkn/pulse-ui test difference 6
+  OK  game-scheduler/game-scheduler production difference -13
+  OK  game-scheduler/game-scheduler test difference -9
+  OK  cantis/MechBay production difference 4
+  OK  cantis/MechBay test difference 5
+  OK  Jamie-BitFlight/git-tree-project-structure-to-yaml production difference 5
+  OK  Jamie-BitFlight/git-tree-project-structure-to-yaml test difference 5
+  OK  siavashoutadi/djdevx production difference 1
+  OK  siavashoutadi/djdevx test difference 0
+  OK  equinor/ai-platform-actions production difference -33
+  OK  equinor/ai-platform-actions test difference -1
+  OK  Sendspin/aiosendspin production difference -4
+  OK  Sendspin/aiosendspin test difference -5
+  OK  AldanDev/Notora production difference -1
+  OK  AldanDev/Notora test difference -3
+  OK  i-am-bee/agentstack production difference -9
+  OK  i-am-bee/agentstack test difference -4
+  OK  OpenWSGR/AutoWSGR production difference -149
+  OK  OpenWSGR/AutoWSGR test difference -22
+  OK  hevangel/dvcon_ai_library production difference 8
+  OK  hevangel/dvcon_ai_library test difference 3
+  OK  PurdueAF/purdue-af production difference 11
+  OK  PurdueAF/purdue-af test difference 74
+  OK  theontho/wgsextract-cli production difference -44
+  OK  theontho/wgsextract-cli test difference 0
+  OK  styliteag/dashboard production difference -171
+  OK  styliteag/dashboard test difference -122
+  OK  JoshKarpel/counterweight production difference -1
+  OK  JoshKarpel/counterweight test difference -1
+  OK  Simpleyyt/ai-manus production difference -13
+  OK  Simpleyyt/ai-manus test difference 0
+  OK  William-Dennis/slm-bias-testing production difference -19
+  OK  William-Dennis/slm-bias-testing test difference -10
+  OK  snowflakedb/snowpark-python production difference 8
+  OK  snowflakedb/snowpark-python test difference 8
+  OK  kurusugawa-computer/annowork-cli production difference 3
+  OK  kurusugawa-computer/annowork-cli test difference 2
+  OK  DragonFlyBSD/DeltaPorts production difference 65
+  OK  DragonFlyBSD/DeltaPorts test difference 106
+  OK  empty-quiver/sglang-turboquant production difference -1219
+  OK  empty-quiver/sglang-turboquant test difference -498
+  OK  fairagro/m4.2_sql_to_arc production difference -17
+  OK  fairagro/m4.2_sql_to_arc test difference -7
+  OK  SoloXLab/perfetto-dsl production difference 6
+  OK  SoloXLab/perfetto-dsl test difference 5
+  OK  dewet22/givenergy-modbus production difference 218
+  OK  dewet22/givenergy-modbus test difference 222
+  OK  icyponds/TradeBot production difference -188
+  OK  icyponds/TradeBot test difference -86
+  OK  elecdot/competehub production difference 16
+  OK  elecdot/competehub test difference 16
+  OK  olidroide/top-video-generator production difference -27
+  OK  olidroide/top-video-generator test difference -23
+  OK  AICL-Lab/triton-fused-ops production difference 13
+  OK  AICL-Lab/triton-fused-ops test difference 24
+  OK  newton-physics/newton production difference -22
+  OK  newton-physics/newton test difference -26
+  OK  andborth/RoboPhD production difference 164
+  OK  andborth/RoboPhD test difference -6
+  OK  xlang-ai/OSWorld-V2 production difference 43
+  OK  xlang-ai/OSWorld-V2 test difference -4
+  OK  kejhy93/ProteinFolding production difference -6
+  OK  kejhy93/ProteinFolding test difference 24
+  OK  castorini/rank_llm production difference -26
+  OK  castorini/rank_llm test difference -17
+  OK  rafahsa/-Multimodal-Deep-Learning-Framework-for-Brain-Tumor-Prediction production difference 1
+  OK  rafahsa/-Multimodal-Deep-Learning-Framework-for-Brain-Tumor-Prediction test difference 1
+  OK  dimensionalOS/dimos production difference 45
+  OK  dimensionalOS/dimos test difference 47
+  OK  bsmi021/unity-bridge production difference 5
+  OK  bsmi021/unity-bridge test difference 7
+  OK  phuongnx2112003/A2A production difference -7
+  OK  phuongnx2112003/A2A test difference -5
+  OK  threatpatrols/hibp-downloader production difference 14
+  OK  threatpatrols/hibp-downloader test difference 4
+  OK  Bloomerp-io/Bloomerp production difference 73
+  OK  Bloomerp-io/Bloomerp test difference 28
+  OK  sverzijl/oven_logging production difference -49
+  OK  sverzijl/oven_logging test difference -51
+  OK  ryancheley/yt-cli production difference -6
+  OK  ryancheley/yt-cli test difference -1
+  OK  elhajjar1/wrinkleFE production difference 33
+  OK  elhajjar1/wrinkleFE test difference 39
+  OK  lorek123/ha-snb production difference 4
+  OK  lorek123/ha-snb test difference 6
+  OK  canonical/falco-operators production difference -7
+  OK  canonical/falco-operators test difference -8
+  OK  FracktalWorks/ControlCenter production difference 2
+  OK  FracktalWorks/ControlCenter test difference 0
+  OK  BoyuXiao/New-R3 production difference -153
+  OK  BoyuXiao/New-R3 test difference -51
+  OK  genepattern/module-toolkit production difference -36
+  OK  genepattern/module-toolkit test difference -12
+  OK  pauubach/narrassist production difference -227
+  OK  pauubach/narrassist test difference -89
+  OK  JohnRushKucharski/units production difference 0
+  OK  JohnRushKucharski/units test difference 0
+  OK  xchem/fragalysis-backend production difference -33
+  OK  xchem/fragalysis-backend test difference 34
+  OK  nerd-zero/solei production difference 222
+  OK  nerd-zero/solei test difference 81
+  OK  mozilla-services/merino-py production difference 46
+  OK  mozilla-services/merino-py test difference 32
+  OK  LaurentMazare/pipecat production difference 183
+  OK  LaurentMazare/pipecat test difference 47
+  OK  adibirzu/oci-log-analytics-detections production difference 10
+  OK  adibirzu/oci-log-analytics-detections test difference 15
+  OK  dannoetc/baseliner production difference -166
+  OK  dannoetc/baseliner test difference -13
+  OK  dbbs-lab/bsb production difference 3
+  OK  dbbs-lab/bsb test difference 2
+  OK  suigetsukan/suigetsukan-lambdas production difference -9
+  OK  suigetsukan/suigetsukan-lambdas test difference -4
+  OK  dlt-hub/verified-sources production difference -1
+  OK  dlt-hub/verified-sources test difference -1
+  OK  quantum-guardians/approach-analysis production difference -35
+  OK  quantum-guardians/approach-analysis test difference -26
+  OK  mayflower/scry production difference -22
+  OK  mayflower/scry test difference -17
+  OK  Cellular-Semantics/Atlas-reporter production difference 4
+  OK  Cellular-Semantics/Atlas-reporter test difference 4
+  OK  Centaurea-Platinum/SAKIGo production difference 10
+  OK  Centaurea-Platinum/SAKIGo test difference 9
+  OK  namoshizun/TradePy production difference 7
+  OK  namoshizun/TradePy test difference 1
+  OK  agentic-community/mcp-gateway-registry production difference -9
+  OK  agentic-community/mcp-gateway-registry test difference 20
+  OK  houmo-ai/houmo-xh2modelzoo production difference 24
+  OK  houmo-ai/houmo-xh2modelzoo test difference 6
+  OK  hadsie/treksafer production difference -2
+  OK  hadsie/treksafer test difference -1
+  OK  carlostoek/adminpro production difference -416
+  OK  carlostoek/adminpro test difference -79
+  OK  microsoft/PowerPlatform-DataverseClient-Python production difference 15
+  OK  microsoft/PowerPlatform-DataverseClient-Python test difference 14
+  OK  aigorahub/sensPy production difference 2
+  OK  aigorahub/sensPy test difference -1
+  OK  Time-has-wings/slime production difference -34
+  OK  Time-has-wings/slime test difference 7
+  OK  mizoo-snow21/dotfiles production difference 1
+  OK  mizoo-snow21/dotfiles test difference 0
+
+No inferential test, confidence interval or population generalization
+was computed in this stage.

@@ -1,0 +1,92 @@
+{
+  "adoption_review": {
+    "ambiguous_repositories": [],
+    "available": true,
+    "invalid_repositories": [],
+    "path": "/home/thomas/dev/coevolution-skills-code/data/validation/adoption_review.csv"
+  },
+  "ambiguous_count": 0,
+  "analysis_protocol_version": "1",
+  "configuration": {
+    "adoption_policy": "exclude invalid; keep ambiguous flagged; no replacement",
+    "extraction": {
+      "artifact_parts": 31,
+      "checkout_selected": true,
+      "clone_timeout_seconds": 1800,
+      "command_timeout_seconds": 300,
+      "dataset_repository": "mvaccargiu/gitskills",
+      "dataset_revision": "ebab17454a7c236f8f26b183567f1a126f42e3f8",
+      "history_cutoff_utc": "2026-10-04T23:59:59Z",
+      "max_candidates": 1500,
+      "output_directory": "/home/thomas/dev/coevolution-skills-code/data/extraction",
+      "repository_directory": "/home/thomas/dev/coevolution-skills-code/repositories",
+      "retry_count": 3,
+      "seed": "20261004",
+      "target_count": 120,
+      "window_days": 60
+    },
+    "output_directory": "/home/thomas/dev/coevolution-skills-code/results",
+    "processed_directory": "/home/thomas/dev/coevolution-skills-code/data/processed",
+    "rq1_categories": [
+      "skill",
+      "production",
+      "test"
+    ],
+    "rq1_period": "post",
+    "rq2_categories": [
+      "production",
+      "test"
+    ],
+    "rq2_difference_definition": "post - pre",
+    "validation_directory": "/home/thomas/dev/coevolution-skills-code/data/validation"
+  },
+  "created_at_utc": "2026-10-22T14:01:40.161888Z",
+  "excluded_invalid_count": 0,
+  "human_screening_review": {
+    "checksum_file_present": true,
+    "pending_adoptions": [],
+    "pending_paths": [],
+    "required": true,
+    "status": "complete"
+  },
+  "inferential_tests": false,
+  "input_sha256": {
+    "activity_counts": "28c61c9cf5aaf3006108852014961389e38884274b0254245ddd88d69f60875b",
+    "adoption_review": "6e2d1851b915e5493a1dfd516e059a44e3e53447f13adffdc3a825c8dc5fb1e2",
+    "candidate_order": "305880e1d44bd3258b393ae674ba1612e50d110170d064586d2f8c56851107cb",
+    "processing_manifest": "db57df97021e64492f258a04bd033fce80a542b5989c809bbd14bd11590982a6",
+    "screening_log": "2c4e73e02d7776ef1b9099838e75b29764c1a9fa75322a57d8ab8f005126a17e"
+  },
+  "quantile_method": "linear interpolation: rank = q * (n - 1)",
+  "repository_count": 120,
+  "reviewed_repository_count": 120,
+  "row_counts": {
+    "analysis_sample": 120,
+    "rq1_repository_counts": 120,
+    "rq1_summary": 3,
+    "rq2_repository_differences": 120,
+    "rq2_summary": 2
+  },
+  "sample_estimate": {
+    "candidates_examined": 647,
+    "cap_reached": "false",
+    "completion_status": "target_reached",
+    "eligible_found": 120,
+    "estimated_population": 4103.740340030912,
+    "estimated_population_high": 4806.792669241201,
+    "estimated_population_low": 3482.839229197921,
+    "finite_population_correction": 0.9852707159973152,
+    "frame_size": 22126,
+    "method": "Wilson 95% interval on eligible/examined; N = frame * yield",
+    "sampling_fraction": 0.029241616198137935,
+    "target_count": 120,
+    "yield": 0.18547140649149924,
+    "yield_ci_high": 0.21724634679748717,
+    "yield_ci_low": 0.15740934778983645
+  },
+  "tie_repository_count": 26,
+  "tool_versions": {
+    "git": "git version 2.53.0",
+    "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]"
+  }
+}
