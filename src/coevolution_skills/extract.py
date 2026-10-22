@@ -269,7 +269,11 @@ def run_command(
         args,
         cwd=cwd,
         env=environment,
-        text=True,
+        # Git history is not guaranteed to be UTF-8: commit identities, paths
+        # and file contents can carry legacy encodings. Decode deterministically
+        # instead of inheriting the locale and aborting the whole run.
+        encoding="utf-8",
+        errors="replace",
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
         timeout=timeout,
@@ -669,7 +673,10 @@ def commits_touching_skill_locations(
         "--first-parent",
         "--reverse",
         "--format=%H",
-        "--diff-merges=first-parent",
+        # Only object IDs are needed. --no-patch guards against any option or
+        # configuration that would turn on patch output: emitting diffs would
+        # be slow and can inject non-UTF-8 bytes from historical blobs.
+        "--no-patch",
         "--root",
         cutoff_commit,
         "--",
