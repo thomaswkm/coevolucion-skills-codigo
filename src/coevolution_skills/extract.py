@@ -79,6 +79,7 @@ class Config:
     dataset_revision: str
     artifact_parts: int
     target_count: int
+    max_candidates: int | None
     seed: str
     history_cutoff_utc: str
     window_days: int
@@ -144,11 +145,17 @@ def load_config(path: Path) -> Config:
         candidate = Path(value)
         return candidate if candidate.is_absolute() else base / candidate
 
+    target_count = int(raw["selection"]["target_count"])
+    raw_max_candidates = raw["selection"].get("max_candidates")
+    max_candidates = (
+        None if raw_max_candidates is None else int(raw_max_candidates)
+    )
     config = Config(
         dataset_repository=raw["dataset"]["repository"],
         dataset_revision=raw["dataset"]["revision"],
         artifact_parts=int(raw["dataset"]["artifact_parts"]),
-        target_count=int(raw["selection"]["target_count"]),
+        target_count=target_count,
+        max_candidates=max_candidates,
         seed=str(raw["selection"]["seed"]),
         history_cutoff_utc=raw["selection"]["history_cutoff_utc"],
         window_days=int(raw["selection"]["window_days"]),
@@ -161,6 +168,8 @@ def load_config(path: Path) -> Config:
     )
     if config.target_count < 1 or config.artifact_parts < 1:
         raise ValueError("target_count and artifact_parts must be positive")
+    if config.max_candidates is not None and config.max_candidates < config.target_count:
+        raise ValueError("max_candidates must be greater than or equal to target_count")
     if config.window_days < 1 or config.retry_count < 1:
         raise ValueError("window_days and retry_count must be positive")
     _ = config.cutoff
@@ -175,7 +184,8 @@ def serializable_config(config: Config) -> dict[str, Any]:
 
 
 def protocol_hash(config: Config) -> str:
-    # target_count is deliberately excluded: 10 and 485 must be prefixes of
+    # target_count and max_candidates are deliberately excluded: they are
+    # stopping rules, so 10 and 485, or a cap of 1500, must remain prefixes of
     # the same ordered screening run. Filesystem locations are operational and
     # do not define population membership or ordering.
     frozen_protocol = {
@@ -194,6 +204,34 @@ def protocol_hash(config: Config) -> str:
     }
     payload = json.dumps(frozen_protocol, sort_keys=True).encode()
     return hashlib.sha256(payload).hexdigest()
+
+
+def candidate_cap_reached(config: Config, examined_count: int) -> bool:
+    """Whether the screening cap stops the run before the target is met."""
+    return config.max_candidates is not None and examined_count >= config.max_candidates
+
+
+def record_run_summary(
+    config: Config,
+    *,
+    examined_count: int,
+    eligible_count: int,
+    completion_status: str,
+) -> None:
+    manifest_path = config.output_directory / "run_manifest.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    manifest.update(
+        {
+            "completion_status": completion_status,
+            "finished_at_utc": utc_now(),
+            "candidates_examined": examined_count,
+            "eligible_count": eligible_count,
+            "max_candidates": config.max_candidates,
+            "target_count": config.target_count,
+            "cap_reached": completion_status == "cap_reached",
+        }
+    )
+    atomic_write_json(manifest_path, manifest)
 
 
 def utc_now() -> str:
@@ -277,6 +315,10 @@ def initialize_manifest(config: Config, config_path: Path) -> None:
             )
         existing["last_started_at_utc"] = utc_now()
         existing["last_requested_target_count"] = config.target_count
+        existing["last_requested_max_candidates"] = config.max_candidates
+        existing["max_candidates"] = config.max_candidates
+        existing["completion_status"] = "running"
+        existing["cap_reached"] = False
         existing["configuration"] = serializable_config(config)
         atomic_write_json(manifest_path, existing)
         return
@@ -284,6 +326,9 @@ def initialize_manifest(config: Config, config_path: Path) -> None:
         "created_at_utc": utc_now(),
         "last_started_at_utc": utc_now(),
         "last_requested_target_count": config.target_count,
+        "last_requested_max_candidates": config.max_candidates,
+        "max_candidates": config.max_candidates,
+        "completion_status": "running",
         "protocol_hash": digest,
         "config_path": str(config_path.resolve()),
         "configuration": serializable_config(config),
@@ -887,11 +932,13 @@ def execute(config: Config, config_path: Path) -> None:
     results = regenerate_result_tables(config)
     completed_positions = {result.candidate_position for result in results}
     eligible_count = sum(result.status == ScreeningCode.ELIGIBLE.value for result in results)
+    examined_count = len(completed_positions)
     logger.info(
-        "Starting screening with %d completed candidates and %d/%d eligible",
-        len(completed_positions),
+        "Starting screening with %d completed candidates and %d/%d eligible (cap: %s)",
+        examined_count,
         eligible_count,
         config.target_count,
+        config.max_candidates,
     )
 
     for candidate in candidates:
@@ -899,6 +946,12 @@ def execute(config: Config, config_path: Path) -> None:
             break
         if candidate.candidate_position in completed_positions:
             continue
+        if candidate_cap_reached(config, examined_count):
+            logger.warning(
+                "Screening cap reached: %d candidates examined; stopping before target",
+                examined_count,
+            )
+            break
         logger.info(
             "Screening candidate %d: %s",
             candidate.candidate_position,
@@ -934,16 +987,38 @@ def execute(config: Config, config_path: Path) -> None:
                 f"Screening stopped at {candidate.repo_full_name}; rerun after correcting the failure"
             ) from error
         atomic_write_json(checkpoint_path(config, candidate), asdict(result))
+        completed_positions.add(candidate.candidate_position)
+        examined_count += 1
         regenerate_result_tables(config)
 
     final_results = regenerate_result_tables(config)
     final_eligible = sum(
         result.status == ScreeningCode.ELIGIBLE.value for result in final_results
     )
-    if final_eligible < config.target_count:
+    if final_eligible >= config.target_count:
+        completion_status = "target_reached"
+    elif candidate_cap_reached(config, examined_count):
+        completion_status = "cap_reached"
+    else:
+        completion_status = "frame_exhausted"
+    record_run_summary(
+        config,
+        examined_count=examined_count,
+        eligible_count=final_eligible,
+        completion_status=completion_status,
+    )
+    if completion_status == "frame_exhausted":
         raise RuntimeError(
             f"Candidate frame exhausted with only {final_eligible} eligible repositories"
         )
+    if completion_status == "cap_reached":
+        logger.warning(
+            "Screening cap reached with %d/%d eligible repositories; "
+            "the sample is smaller than the target",
+            final_eligible,
+            config.target_count,
+        )
+        return
     logger.info("Extraction complete: %d eligible repositories", final_eligible)
 
 

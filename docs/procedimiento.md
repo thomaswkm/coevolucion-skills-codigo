@@ -24,9 +24,10 @@ uv run extract-repositories --config extraction.toml --show-config
 El comando se puede interrumpir y volver a ejecutar. Los resultados de screening
 terminados se conservan en archivos JSON individuales y no se repiten. El comando
 rechazará reutilizar el directorio de salida si cambió la configuración
-congelada; en ese caso debe usarse otro `output_directory`. `target_count` es la
-excepción deliberada: puede aumentarse para continuar el mismo orden hasta formar
-la muestra definitiva.
+congelada; en ese caso debe usarse otro `output_directory`. `target_count` y
+`max_candidates` son las excepciones deliberadas: el primero puede aumentarse
+para continuar el mismo orden hasta formar la muestra definitiva y el segundo es
+un tope de candidatos examinados que no altera el orden ni la elegibilidad.
 
 ### Protocolo congelado
 
@@ -38,7 +39,7 @@ La configuración predeterminada usa:
 - fecha de corte `2026-10-04T23:59:59Z`;
 - ventanas de 60 días antes y después de la adopción;
 - semilla textual `20261004`;
-- objetivo de diez repositorios elegibles.
+- objetivo de 120 repositorios elegibles, con un tope de 1.500 candidatos examinados.
 
 Las reglas implementadas están identificadas internamente como protocolo de
 screening versión `2`. Si se modifica una regla de población o elegibilidad, debe
@@ -56,12 +57,13 @@ muestra, se debe reutilizar la misma revisión, fecha de corte, semilla, reglas 
 `candidate_order.csv`, y aumentar `target_count`. Los diez casos iniciales son
 así un prefijo de la muestra ampliada. Si el piloto obliga a cambiar una regla,
 se debe crear una nueva extracción y repetir el screening desde la primera
-posición.
+posición. Si se alcanza `max_candidates` antes de `target_count`, la ejecución
+termina con \(n<120\) y lo registra en `run_manifest.json`.
 
 ### Requisitos adicionales de la extracción
 
 - conexión a Hugging Face y GitHub;
-- espacio suficiente para los diez repositorios seleccionados y un clon temporal
+- espacio suficiente para los 120 repositorios seleccionados y un clon temporal
   adicional.
 
 No es necesario descargar la base SQLite de 41 GB. DuckDB consulta los Parquet de
@@ -189,10 +191,11 @@ uv run prepare-validation --config extraction.toml
 ```
 
 El comando no decide si la clasificación es correcta. Ejecuta comprobaciones
-mecánicas, prepara los diez eventos de adopción y selecciona mediante SHA-256
-hasta diez rutas de cada categoría: `skill`, `production`, `test` y `other`. La
-selección procura representar una vez a cada repositorio antes de completar
-posiciones adicionales.
+mecánicas, prepara un evento de adopción por repositorio seleccionado y
+selecciona mediante SHA-256 hasta `--maximum-per-category` rutas de cada
+categoría: `skill`, `production`, `test` y `other`. La selección procura
+representar una vez a cada repositorio antes de completar posiciones
+adicionales. En Etapa 3 se usa `--maximum-per-category 1`.
 
 Se crea un directorio nuevo que no debe existir previamente:
 
@@ -208,7 +211,22 @@ data/validation/
 
 El estudiante debe completar únicamente las columnas de revisión humana en
 `adoption_review.csv` y `path_review.csv`, siguiendo las instrucciones del
-`README.md` generado. Los checks automáticos no sustituyen esa revisión. Para una
+`README.md` generado. Criterios congelados de adopción:
+
+- **`valid`:** primera incorporación de al menos un `SKILL.md` que cumple ruta y
+  front matter; antes de \(t_0\) no había skills válidos; no es solo un
+  renombrado o movimiento. Exige `human_rename_only = no` y
+  `human_frontmatter_and_paths_valid = yes`.
+- **`invalid`:** la evidencia contradice la clasificación automática (front matter
+  o ruta inválidos, skill válido preexistente, renombrado sin adopción real,
+  artefacto de merge o historia inconsistente que no represente una transición
+  real desde el primer padre). Que \(t_0\) sea un merge no es inválido por sí
+  mismo; se evalúa la transición desde su primer padre.
+- **`ambiguous`:** evidencia insuficiente o caso frontera; se conserva con
+  bandera y se analiza también sin estos casos.
+
+Si la primera adopción es `invalid`, no se busca una segunda y no se reemplaza el
+repositorio. Los checks automáticos no sustituyen esa revisión. Para una
 ejecución exploratoria puede continuarse con esos campos en blanco mediante el
 modificador descrito en «Modo exploratorio», pero la entrega se generó con la
 revisión completa. Si la ejecución falla y deja un directorio parcial, debe
@@ -242,9 +260,10 @@ uv run review-validation --commands-only adoption 1
 uv run review-validation --commands-only path 1
 ```
 
-Las posiciones de adopción van de 1 a 10 y las de rutas de 1 a 40 en el piloto
-actual. Después de inspeccionar la evidencia, las decisiones se completan
-manualmente en los formularios CSV.
+Las posiciones de adopción van de 1 a \(n\) (120 en la muestra definitiva, o el
+\(n\) logrado si se alcanza el tope) y las de rutas de 1 a 4 con
+`--maximum-per-category 1` (una por categoría). Después de inspeccionar la
+evidencia, las decisiones se completan manualmente en los formularios CSV.
 
 El asistente rechaza encabezados distintos de los 18 y 13 campos esperados, filas
 adicionales, campos desplazados, posiciones no contiguas, evidencia que no
@@ -308,9 +327,31 @@ data/processed/
   processing_manifest.json  configuración, versiones y checksums
   processing.log            registro operativo
   commit_activity.csv       una fila por commit y categoría observada
-  file_changes.csv          cambios de rutas auditables
-  activity_counts.csv       80 conteos, incluidos los ceros explícitos
+  file_changes.csv          cambios de rutas auditables, con líneas añadidas/eliminadas
+  activity_counts.csv       conteos por repositorio, período y categoría
+  skill_contents.csv        SHA-256 del SKILL.md adoptado en t0 (D9)
 ```
+
+El esquema actual es el protocolo de procesamiento **v2**. `commit_activity.csv`
+registra `author_name`, `author_email`, `committer_name`, `committer_email` e
+`is_bot`; `file_changes.csv` registra `lines_added`, `lines_deleted` e
+`is_binary`. Los binarios cuentan como cero líneas y quedan
+marcados. Los renombrados conservan ambas rutas; para el *churn* se imputan a la
+categoría de la ruta resultante (o a la del padre en eliminaciones).
+
+Si la extracción termina con \(n<120\) por el tope de candidatos o por agotar el
+marco, `process-activity` acepta el déficit solo cuando `run_manifest.json`
+registra `completion_status` igual a `cap_reached` o `frame_exhausted`. Para las
+sensibilidades de ventana puede usarse:
+
+```bash
+uv run process-activity --config extraction.toml --window-days 30 --output data/processed-30
+uv run process-activity --config extraction.toml --window-days 90 --output data/processed-90
+```
+
+La opción `--window-days` solo cambia las ventanas de actividad; no altera la
+elegibilidad ni la validación sellada. Con 90 días, los repositorios sin 90 días
+completos antes y después se excluyen de esa sensibilidad y se reporta el \(n\).
 
 Adiciones y modificaciones se clasifican por la ruta resultante; eliminaciones,
 por la ruta del padre. Los renombrados conservan ambas rutas y la similitud de
@@ -319,6 +360,10 @@ categoría. La clasificación es la misma función usada en la validación del
 screening.
 
 ## Validación de rutas modificadas
+
+> En Etapa 3 no se repite esta validación: se conserva la de Etapa 2 archivada y
+> la revisión acotada de Etapa 3 se limita a las 4 rutas del árbol de adopción
+> descritas arriba.
 
 Sobre las salidas de la fase anterior se prepara la revisión humana de las rutas
 efectivamente modificadas en las ventanas:
@@ -377,8 +422,8 @@ uv run analyze-results --config extraction.toml
 ```
 
 El comando crea un directorio nuevo `results/` que no debe existir previamente.
-Lee `data/processed/activity_counts.csv` y exige que las 80 filas estén en estado
-`observed`; cualquier fila `missing` o `incomplete` detiene el análisis. Solo se
+Lee `data/processed/activity_counts.csv` y exige que todas las filas estén en
+estado `observed`; cualquier fila `missing` o `incomplete` detiene el análisis. Solo se
 usan las categorías `skill`, `production` y `test`; `other` queda fuera.
 
 **RQ1** usa únicamente el período posterior. **RQ2** calcula por repositorio la
@@ -386,15 +431,25 @@ diferencia `post - pre` para producción y pruebas. Los cuantiles se obtienen po
 interpolación lineal (`rango = q * (n - 1)`). No se ejecutan pruebas inferenciales
 ni se presentan los resultados como representativos de la población.
 
+`analyze-results` lee `data/validation/adoption_review.csv` y aplica las
+decisiones humanas: excluye las adopciones `invalid`, conserva las `ambiguous`
+con bandera y registra el \(n\) efectivo. `data/processed/` no se modifica. Si el
+manifiesto de procesamiento declara una revisión completa y faltan las decisiones,
+el comando se detiene. También estima el rendimiento del cribado y \(\hat N\) a
+partir de `screening_log.csv` y `candidate_order.csv`, con un intervalo de Wilson
+aproximado.
+
 Las salidas son:
 
 ```text
 results/
   analysis_manifest.json
+  analysis_sample.csv       decisión por repositorio y si entra en el análisis
   rq1_repository_counts.csv
   rq1_summary.csv
   rq2_repository_differences.csv
   rq2_summary.csv
+  sample_estimate.csv       k, rendimiento, N estimada e IC
   consistency_checks.txt
 ```
 

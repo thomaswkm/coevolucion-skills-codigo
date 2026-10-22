@@ -15,6 +15,7 @@ from coevolution_skills.analyze import (
     load_counts,
     quantile,
     summarize,
+    wilson_interval,
 )
 
 
@@ -177,3 +178,128 @@ def test_screening_review_status_is_propagated(processed, config_factory, tmp_pa
     result = json.loads((output / "analysis_manifest.json").read_text())
     assert result["human_screening_review"]["status"] == "pending"
     assert result["human_screening_review"]["pending_adoptions"] == [1]
+
+
+def test_invalid_adoptions_are_excluded_and_ambiguous_are_flagged(
+    processed, config_factory, tmp_path
+) -> None:
+    validation = processed.parent / "validation"
+    validation.mkdir()
+    write_csv(
+        validation / "adoption_review.csv",
+        ["repo_full_name", "human_adoption_decision"],
+        [
+            {"repo_full_name": "a/b", "human_adoption_decision": "valid"},
+            {"repo_full_name": "c/d", "human_adoption_decision": "invalid"},
+            {"repo_full_name": "e/f", "human_adoption_decision": "ambiguous"},
+        ],
+    )
+    output = tmp_path / "results"
+    execute(config_factory(), processed, output, validation)
+
+    sample = {row["repo_full_name"]: row for row in read_csv(output / "analysis_sample.csv")}
+    assert sample["a/b"]["included_in_primary"] == "true"
+    assert sample["c/d"]["included_in_primary"] == "false"
+    assert sample["e/f"]["included_in_primary"] == "true"
+    assert sample["e/f"]["ambiguous"] == "true"
+
+    rq1 = {row["repo_full_name"]: row for row in read_csv(output / "rq1_repository_counts.csv")}
+    assert set(rq1) == {"a/b", "e/f"}
+
+    manifest = json.loads((output / "analysis_manifest.json").read_text())
+    assert manifest["reviewed_repository_count"] == 3
+    assert manifest["repository_count"] == 2
+    assert manifest["excluded_invalid_count"] == 1
+    assert manifest["ambiguous_count"] == 1
+    assert manifest["adoption_review"]["invalid_repositories"] == ["c/d"]
+    assert manifest["adoption_review"]["ambiguous_repositories"] == ["e/f"]
+
+    consistency = (output / "consistency_checks.txt").read_text()
+    assert "invalid adoptions excluded: 1" in consistency
+    assert "ambiguous adoptions kept and flagged: 1" in consistency
+
+
+def test_pending_review_with_blank_decisions_continues(
+    processed, config_factory, tmp_path
+) -> None:
+    manifest_path = processed / "processing_manifest.json"
+    manifest = json.loads(manifest_path.read_text())
+    manifest["human_screening_review"] = {"status": "pending"}
+    manifest_path.write_text(json.dumps(manifest) + "\n", encoding="utf-8")
+
+    validation = processed.parent / "validation"
+    validation.mkdir()
+    write_csv(
+        validation / "adoption_review.csv",
+        ["repo_full_name", "human_adoption_decision"],
+        [
+            {"repo_full_name": repo, "human_adoption_decision": ""}
+            for repo in ("a/b", "c/d", "e/f")
+        ],
+    )
+    output = tmp_path / "results"
+    execute(config_factory(), processed, output, validation)
+
+    manifest = json.loads((output / "analysis_manifest.json").read_text())
+    assert manifest["repository_count"] == 3
+    assert manifest["adoption_review"]["available"] is False
+    assert len(read_csv(output / "rq1_repository_counts.csv")) == 3
+
+
+def test_complete_review_without_decisions_is_rejected(
+    processed, config_factory, tmp_path
+) -> None:
+    manifest_path = processed / "processing_manifest.json"
+    manifest = json.loads(manifest_path.read_text())
+    manifest["human_screening_review"] = {"status": "complete"}
+    manifest_path.write_text(json.dumps(manifest) + "\n", encoding="utf-8")
+
+    with pytest.raises(ValueError, match="adoption decisions are missing"):
+        execute(config_factory(), processed, tmp_path / "results")
+
+
+def test_wilson_interval_contains_proportion() -> None:
+    low, high = wilson_interval(2, 10)
+    assert low < 0.2 < high
+    assert 0 <= low <= high <= 1
+
+
+def test_population_estimate_from_screening_log(
+    processed, config_factory, tmp_path
+) -> None:
+    extraction = tmp_path / "extraction"
+    extraction.mkdir()
+    write_csv(
+        extraction / "candidate_order.csv",
+        ["repo_full_name"],
+        [{"repo_full_name": f"frame/{index}"} for index in range(100)],
+    )
+    write_csv(
+        extraction / "screening_log.csv",
+        ["repo_full_name", "status"],
+        [
+            {"repo_full_name": f"examined/{index}", "status": "eligible" if index < 2 else "excluded"}
+            for index in range(10)
+        ],
+    )
+    (extraction / "run_manifest.json").write_text(
+        json.dumps({"completion_status": "target_reached", "cap_reached": False})
+        + "\n",
+        encoding="utf-8",
+    )
+
+    output = tmp_path / "results"
+    execute(config_factory(output_directory=extraction), processed, output)
+    estimate = read_csv(output / "sample_estimate.csv")[0]
+    assert estimate["frame_size"] == "100"
+    assert estimate["candidates_examined"] == "10"
+    assert estimate["eligible_found"] == "2"
+    assert float(estimate["yield"]) == pytest.approx(0.2)
+    assert float(estimate["estimated_population"]) == pytest.approx(20.0)
+    assert float(estimate["sampling_fraction"]) == pytest.approx(0.1)
+    assert float(estimate["finite_population_correction"]) == pytest.approx(0.9**0.5)
+    assert estimate["completion_status"] == "target_reached"
+
+    manifest = json.loads((output / "analysis_manifest.json").read_text())
+    assert manifest["sample_estimate"]["estimated_population"] == pytest.approx(20.0)
+    assert "screening_log" in manifest["input_sha256"]

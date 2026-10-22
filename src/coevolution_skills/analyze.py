@@ -31,6 +31,30 @@ RQ2_CATEGORIES = ("production", "test")
 ALL_CATEGORIES = ("skill", "production", "test", "other")
 
 COUNT_FIELDS = ("repo_full_name", "period", "category", "unique_commit_count", "data_status")
+ADOPTION_DECISIONS = {"valid", "invalid", "ambiguous"}
+ANALYSIS_SAMPLE_FIELDS = (
+    "repo_full_name",
+    "adoption_decision",
+    "included_in_primary",
+    "ambiguous",
+)
+SAMPLE_ESTIMATE_FIELDS = (
+    "frame_size",
+    "candidates_examined",
+    "target_count",
+    "eligible_found",
+    "yield",
+    "yield_ci_low",
+    "yield_ci_high",
+    "estimated_population",
+    "estimated_population_low",
+    "estimated_population_high",
+    "sampling_fraction",
+    "finite_population_correction",
+    "completion_status",
+    "cap_reached",
+    "method",
+)
 RQ1_COUNT_FIELDS = (
     "repo_full_name",
     "skill_commits",
@@ -185,6 +209,121 @@ def load_counts(path: Path) -> tuple[list[str], dict[tuple[str, str, str], int]]
     return order, values
 
 
+def load_adoption_decisions(
+    path: Path, order: list[str], *, allow_pending: bool = False
+) -> dict[str, str] | None:
+    """Read the sealed human adoption review, when it is available.
+
+    A pending exploratory review is reported as ``None`` so the descriptive
+    analysis can continue and record that the decisions were not applied.
+    """
+    if not path.exists():
+        return None
+    with path.open(newline="", encoding="utf-8") as handle:
+        reader = csv.DictReader(handle)
+        if "repo_full_name" not in (reader.fieldnames or ()) or (
+            "human_adoption_decision" not in (reader.fieldnames or ())
+        ):
+            raise ValueError(f"{path}: missing adoption-review columns")
+        rows = list(reader)
+    decisions: dict[str, str] = {}
+    for row in rows:
+        repo = row["repo_full_name"]
+        if repo in decisions:
+            raise ValueError(f"{path}: duplicate adoption decision for {repo}")
+        decision = row["human_adoption_decision"].strip()
+        if not decision:
+            if allow_pending:
+                return None
+            raise ValueError(f"{path}: blank adoption decision for {repo}")
+        if decision not in ADOPTION_DECISIONS:
+            raise ValueError(
+                f"{path}: invalid adoption decision {decision!r} for {repo}"
+            )
+        decisions[repo] = decision
+    missing = [repo for repo in order if repo not in decisions]
+    if missing:
+        raise ValueError(
+            f"{path}: missing adoption decisions for {len(missing)} repositories"
+        )
+    return decisions
+
+
+def apply_adoption_decisions(
+    order: list[str], decisions: dict[str, str] | None
+) -> tuple[list[str], list[str], list[str]]:
+    if decisions is None:
+        return list(order), [], []
+    invalid = [repo for repo in order if decisions[repo] == "invalid"]
+    ambiguous = [repo for repo in order if decisions[repo] == "ambiguous"]
+    included = [
+        repo for repo in order if decisions[repo] not in {"invalid"}
+    ]
+    return included, invalid, ambiguous
+
+
+def wilson_interval(successes: int, total: int, z: float = 1.959963984540054) -> tuple[float, float]:
+    if total <= 0:
+        return 0.0, 0.0
+    proportion = successes / total
+    denominator = 1 + z * z / total
+    center = (proportion + z * z / (2 * total)) / denominator
+    half = (
+        z
+        * math.sqrt(
+            proportion * (1 - proportion) / total + z * z / (4 * total * total)
+        )
+        / denominator
+    )
+    return max(0.0, center - half), min(1.0, center + half)
+
+
+def estimate_population(config: Config) -> dict[str, Any] | None:
+    """Estimate the eligible population and the screening yield."""
+    order_path = config.output_directory / "candidate_order.csv"
+    log_path = config.output_directory / "screening_log.csv"
+    manifest_path = config.output_directory / "run_manifest.json"
+    if not order_path.exists() or not log_path.exists():
+        return None
+    with order_path.open(newline="", encoding="utf-8") as handle:
+        frame_size = sum(1 for _ in csv.DictReader(handle))
+    with log_path.open(newline="", encoding="utf-8") as handle:
+        screening = list(csv.DictReader(handle))
+    examined = len(screening)
+    eligible = sum(1 for row in screening if row.get("status") == "eligible")
+    if frame_size <= 0 or examined <= 0:
+        return None
+    yield_rate = eligible / examined
+    low, high = wilson_interval(eligible, examined)
+    estimated = frame_size * yield_rate
+    sampling_fraction = eligible / estimated if estimated > 0 else 0.0
+    correction = (
+        math.sqrt(max(0.0, 1.0 - eligible / estimated))
+        if estimated > 0
+        else 0.0
+    )
+    manifest: dict[str, Any] = {}
+    if manifest_path.exists():
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    return {
+        "frame_size": frame_size,
+        "candidates_examined": examined,
+        "target_count": manifest.get("target_count") or config.target_count,
+        "eligible_found": eligible,
+        "yield": yield_rate,
+        "yield_ci_low": low,
+        "yield_ci_high": high,
+        "estimated_population": estimated,
+        "estimated_population_low": frame_size * low,
+        "estimated_population_high": frame_size * high,
+        "sampling_fraction": sampling_fraction,
+        "finite_population_correction": correction,
+        "completion_status": manifest.get("completion_status", ""),
+        "cap_reached": str(manifest.get("cap_reached", "")).lower(),
+        "method": "Wilson 95% interval on eligible/examined; N = frame * yield",
+    }
+
+
 def build_rq1(
     order: list[str], values: dict[tuple[str, str, str], int]
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]], int]:
@@ -273,15 +412,33 @@ def render_consistency(
     rq1_rows: list[dict[str, Any]],
     rq2_rows: list[dict[str, Any]],
     tie_count: int,
+    *,
+    decisions: dict[str, str] | None = None,
+    invalid: list[str] | None = None,
+    ambiguous: list[str] | None = None,
 ) -> str:
+    invalid = invalid or []
+    ambiguous = ambiguous or []
     lines = [
         "Consistency checks for the descriptive RQ1/RQ2 analysis",
         "",
-        f"repositories: {len(order)}",
+        f"repositories in analyzed sample: {len(order)}",
         f"repositories with a tie for the largest post category: {tie_count}",
-        "",
-        "RQ1 reconstructed from activity_counts.csv (post period):",
     ]
+    if decisions is not None:
+        lines.extend(
+            [
+                f"adoption decisions applied: {len(decisions)} reviewed",
+                f"invalid adoptions excluded: {len(invalid)}",
+                f"ambiguous adoptions kept and flagged: {len(ambiguous)}",
+            ]
+        )
+    lines.extend(
+        [
+            "",
+            "RQ1 reconstructed from activity_counts.csv (post period):",
+        ]
+    )
     for row in rq1_rows:
         repo = row["repo_full_name"]
         expected = {
@@ -314,7 +471,12 @@ def render_consistency(
     return "\n".join(lines) + "\n"
 
 
-def execute(config: Config, processed_directory: Path, output_directory: Path) -> None:
+def execute(
+    config: Config,
+    processed_directory: Path,
+    output_directory: Path,
+    validation_directory: Path | None = None,
+) -> None:
     if output_directory.exists():
         raise FileExistsError(
             f"Output directory already exists: {output_directory}. Use a new directory."
@@ -329,10 +491,51 @@ def execute(config: Config, processed_directory: Path, output_directory: Path) -
     )
     human_screening_review = processing_manifest.get("human_screening_review")
 
-    rq1_rows, rq1_summary, tie_count = build_rq1(order, values)
-    rq2_rows, rq2_summary = build_rq2(order, values)
-    consistency = render_consistency(order, values, rq1_rows, rq2_rows, tie_count)
+    if validation_directory is None:
+        validation_directory = processed_directory.parent / "validation"
+    adoption_review_path = validation_directory / "adoption_review.csv"
+    review_status = (
+        human_screening_review.get("status") if human_screening_review else None
+    )
+    decisions = load_adoption_decisions(
+        adoption_review_path,
+        order,
+        allow_pending=review_status == "pending",
+    )
+    if decisions is None and review_status == "complete":
+        raise ValueError(
+            f"{adoption_review_path}: the processing manifest records a complete "
+            "human review but the adoption decisions are missing"
+        )
+    included_order, invalid, ambiguous = apply_adoption_decisions(order, decisions)
 
+    rq1_rows, rq1_summary, tie_count = build_rq1(included_order, values)
+    rq2_rows, rq2_summary = build_rq2(included_order, values)
+    consistency = render_consistency(
+        included_order,
+        values,
+        rq1_rows,
+        rq2_rows,
+        tie_count,
+        decisions=decisions,
+        invalid=invalid,
+        ambiguous=ambiguous,
+    )
+
+    sample_rows = [
+        {
+            "repo_full_name": repo,
+            "adoption_decision": decisions[repo] if decisions else "",
+            "included_in_primary": str(repo not in invalid).lower(),
+            "ambiguous": str(repo in ambiguous).lower(),
+        }
+        for repo in order
+    ]
+    write_csv_atomic(
+        output_directory / "analysis_sample.csv",
+        list(ANALYSIS_SAMPLE_FIELDS),
+        sample_rows,
+    )
     write_csv_atomic(output_directory / "rq1_repository_counts.csv", list(RQ1_COUNT_FIELDS), rq1_rows)
     write_csv_atomic(output_directory / "rq1_summary.csv", list(RQ1_SUMMARY_FIELDS), rq1_summary)
     write_csv_atomic(
@@ -343,7 +546,20 @@ def execute(config: Config, processed_directory: Path, output_directory: Path) -
     write_csv_atomic(output_directory / "rq2_summary.csv", list(RQ2_SUMMARY_FIELDS), rq2_summary)
     (output_directory / "consistency_checks.txt").write_text(consistency, encoding="utf-8")
 
+    estimate = estimate_population(config)
+    if estimate is not None:
+        write_csv_atomic(
+            output_directory / "sample_estimate.csv",
+            list(SAMPLE_ESTIMATE_FIELDS),
+            [estimate],
+        )
+
     inputs = {"activity_counts": counts_path, "processing_manifest": processing_manifest_path}
+    if adoption_review_path.exists():
+        inputs["adoption_review"] = adoption_review_path
+    if estimate is not None:
+        inputs["screening_log"] = config.output_directory / "screening_log.csv"
+        inputs["candidate_order"] = config.output_directory / "candidate_order.csv"
     review_checksum = processed_directory.parent / "activity-validation" / "human_activity_review.sha256"
     if review_checksum.exists():
         inputs["human_activity_review_checksums"] = review_checksum
@@ -354,22 +570,35 @@ def execute(config: Config, processed_directory: Path, output_directory: Path) -
         "configuration": {
             "extraction": serializable_config(config),
             "processed_directory": str(processed_directory.resolve()),
+            "validation_directory": str(validation_directory.resolve()),
             "output_directory": str(output_directory.resolve()),
             "rq1_categories": list(RQ1_CATEGORIES),
             "rq2_categories": list(RQ2_CATEGORIES),
             "rq1_period": "post",
             "rq2_difference_definition": "post - pre",
+            "adoption_policy": "exclude invalid; keep ambiguous flagged; no replacement",
         },
         "tool_versions": {"git": git_version(config), "python": sys.version},
         "input_sha256": {name: file_sha256(path) for name, path in inputs.items()},
-        "repository_count": len(order),
+        "repository_count": len(included_order),
+        "reviewed_repository_count": len(order),
+        "excluded_invalid_count": len(invalid),
+        "ambiguous_count": len(ambiguous),
+        "adoption_review": {
+            "available": decisions is not None,
+            "path": str(adoption_review_path.resolve()),
+            "invalid_repositories": invalid,
+            "ambiguous_repositories": ambiguous,
+        },
         "tie_repository_count": tie_count,
         "row_counts": {
+            "analysis_sample": len(sample_rows),
             "rq1_repository_counts": len(rq1_rows),
             "rq1_summary": len(rq1_summary),
             "rq2_repository_differences": len(rq2_rows),
             "rq2_summary": len(rq2_summary),
         },
+        "sample_estimate": estimate,
         "inferential_tests": False,
         "human_screening_review": human_screening_review,
     }
@@ -387,6 +616,12 @@ def argument_parser() -> argparse.ArgumentParser:
         "--processed-directory", type=Path, default=Path("data/processed")
     )
     parser.add_argument(
+        "--validation-directory",
+        type=Path,
+        default=Path("data/validation"),
+        help="Directory holding the sealed adoption review",
+    )
+    parser.add_argument(
         "--output",
         type=Path,
         default=Path("results"),
@@ -398,7 +633,12 @@ def argument_parser() -> argparse.ArgumentParser:
 def main() -> None:
     args = argument_parser().parse_args()
     config = load_config(args.config)
-    execute(config, args.processed_directory.resolve(), args.output.resolve())
+    execute(
+        config,
+        args.processed_directory.resolve(),
+        args.output.resolve(),
+        args.validation_directory.resolve(),
+    )
 
 
 if __name__ == "__main__":

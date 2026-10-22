@@ -42,6 +42,25 @@ conexión a Hugging Face y GitHub y espacio para los diez repositorios y un clon
 temporal. No hace falta descargar la base SQLite de 41 GB. El detalle está en
 `docs/procedimiento.md`.
 
+## Etapa 3: corrida definitiva
+
+La preparación de la muestra definitiva y del análisis de Etapa 3 está descrita
+paso a paso en `docs/runbook-etapa3.md`. Incluye el archivado de las salidas de
+Etapa 2, la extracción de 120 repositorios con tope de 1.500 candidatos, la
+revisión humana con rúbrica, el procesamiento y el análisis descriptivo.
+
+Cambios de esta etapa en el flujo:
+
+- `process-activity` acepta \(n<120\) cuando la extracción registra
+  `cap_reached` o `frame_exhausted`;
+- `--window-days` permite sensibilidades de 30 y 90 días sin alterar la
+  elegibilidad ni la validación sellada;
+- `commit_activity.csv` registra autor, *committer* e `is_bot`;
+- `file_changes.csv` registra líneas añadidas/eliminadas y binarios;
+- `skill_contents.csv` conserva el SHA-256 del `SKILL.md` adoptado;
+- `analyze-results` excluye adopciones `invalid`, marca `ambiguous` y estima
+  \(\hat N\) en `sample_estimate.csv`.
+
 ## Reproducción
 
 La reproducción parte de los datos preservados y **no** repite la extracción.
@@ -100,7 +119,7 @@ Implementado y ejecutado: extracción y *screening* (protocolo v2); validación
 humana del *screening* con sello de checksums; procesamiento de actividad con
 ventanas, exclusión de *merges* y del commit de adopción, y clasificación;
 validación de rutas modificadas con sello; análisis descriptivo de RQ1 y RQ2; y
-60 pruebas automatizadas.
+77 pruebas automatizadas.
 
 Pendiente: elaborar las tablas y figuras del artículo (de autoría propia);
 redactar en el manuscrito los resultados, las limitaciones y el paquete de

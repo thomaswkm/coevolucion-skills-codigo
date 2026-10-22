@@ -3,8 +3,10 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import logging
+import re
 import sys
 import time
 from collections import defaultdict
@@ -39,7 +41,7 @@ from .validation import (
 )
 
 
-PROCESSING_PROTOCOL_VERSION = "1"
+PROCESSING_PROTOCOL_VERSION = "2"
 EMPTY_TREE = "4b825dc642cb6eb9a060e54bf8d69288fbee4904"
 PERIODS = ("pre", "post")
 
@@ -52,6 +54,11 @@ COMMIT_ACTIVITY_FIELDS = (
     "path_count",
     "excluded",
     "exclusion_reason",
+    "author_name",
+    "author_email",
+    "committer_name",
+    "committer_email",
+    "is_bot",
 )
 FILE_CHANGE_FIELDS = (
     "repo_full_name",
@@ -64,6 +71,9 @@ FILE_CHANGE_FIELDS = (
     "old_category",
     "new_category",
     "classification_rule",
+    "lines_added",
+    "lines_deleted",
+    "is_binary",
 )
 ACTIVITY_COUNT_FIELDS = (
     "repo_full_name",
@@ -71,6 +81,15 @@ ACTIVITY_COUNT_FIELDS = (
     "category",
     "unique_commit_count",
     "data_status",
+)
+SKILL_CONTENT_FIELDS = ("repo_full_name", "path", "content_sha256")
+
+# Frozen bot heuristic for the sensitivity analysis. It is applied to the
+# author and committer identities recorded in commit_activity.csv.
+BOT_PATTERN = re.compile(
+    r"(?i)(\[bot\]|(?:^|[._+@-])bot(?:$|[._+@-])|dependabot|renovate|"
+    r"github-actions|pre-commit-ci|snyk-bot|mergify|codecov|greenkeeper|"
+    r"semantic-release-bot|allcontributors)"
 )
 
 
@@ -80,6 +99,10 @@ class Commit:
     committed_at_utc: str
     parents: tuple[str, ...]
     period: str
+    author_name: str = ""
+    author_email: str = ""
+    committer_name: str = ""
+    committer_email: str = ""
 
 
 @dataclass(frozen=True)
@@ -88,6 +111,23 @@ class GitChange:
     similarity: str
     old_path: str
     new_path: str
+
+
+@dataclass(frozen=True)
+class LineStats:
+    added: int
+    deleted: int
+    is_binary: bool
+
+
+def is_bot_identity(
+    author_name: str, author_email: str, committer_name: str, committer_email: str
+) -> bool:
+    return bool(
+        BOT_PATTERN.search(
+            " ".join((author_name, author_email, committer_name, committer_email))
+        )
+    )
 
 
 def configure_logging(output_directory: Path) -> logging.Logger:
@@ -202,17 +242,22 @@ def commits_in_windows(
     adoption_commit: str,
     adoption_at_utc: str,
     config: Config,
+    window_days: int | None = None,
 ) -> tuple[list[Commit], int]:
+    window = config.window_days if window_days is None else window_days
+    if window < 1:
+        raise ValueError("window_days must be positive")
     adoption_at = parse_datetime(adoption_at_utc)
-    pre_start = adoption_at - timedelta(days=config.window_days)
-    post_end = adoption_at + timedelta(days=config.window_days)
+    pre_start = adoption_at - timedelta(days=window)
+    post_end = adoption_at + timedelta(days=window)
     # Widen Git's coarse date filter by one second and enforce every boundary
-    # below using parsed committer timestamps.
+    # below using parsed committer timestamps. Unit separators keep names and
+    # e-mail addresses from breaking the record format.
     output = git_output(
         repository,
         config,
         "log",
-        "--format=%H%x09%cI%x09%P",
+        "--format=%H%x1f%cI%x1f%P%x1f%an%x1f%ae%x1f%cn%x1f%ce",
         f"--since-as-filter={(pre_start - timedelta(seconds=1)).isoformat()}",
         f"--until={(post_end + timedelta(seconds=1)).isoformat()}",
         cutoff_commit,
@@ -222,10 +267,18 @@ def commits_in_windows(
     for line in output.splitlines():
         if not line:
             continue
-        fields = line.split("\t")
-        if len(fields) != 3:
+        fields = line.split("\x1f")
+        if len(fields) != 7:
             raise RuntimeError(f"Unexpected git log record in {repository}: {line!r}")
-        commit_hash, timestamp, parent_text = fields
+        (
+            commit_hash,
+            timestamp,
+            parent_text,
+            author_name,
+            author_email,
+            committer_name,
+            committer_email,
+        ) = fields
         committed_at = parse_datetime(timestamp)
         period = ""
         if pre_start <= committed_at < adoption_at:
@@ -244,6 +297,10 @@ def commits_in_windows(
                 committed_at_utc=committed_at.isoformat().replace("+00:00", "Z"),
                 parents=tuple(parent_text.split()) if parent_text else (),
                 period=period,
+                author_name=author_name,
+                author_email=author_email,
+                committer_name=committer_name,
+                committer_email=committer_email,
             )
         )
     commits.sort(key=lambda item: (item.committed_at_utc, item.commit))
@@ -303,9 +360,90 @@ def changes_for_commit(
     return parse_name_status(payload)
 
 
+def parse_numstat(payload: bytes) -> list[tuple[str, str, LineStats]]:
+    """Parse ``git diff --numstat -z`` into (old_path, new_path, stats)."""
+    fields = payload.split(b"\0")
+    if fields and fields[-1] == b"":
+        fields.pop()
+    records: list[tuple[str, str, LineStats]] = []
+    index = 0
+    while index < len(fields):
+        stat = fields[index].decode("utf-8")
+        index += 1
+        parts = stat.split("\t", 2)
+        if len(parts) != 3:
+            raise RuntimeError(f"Unexpected git numstat record: {stat!r}")
+        added, deleted, path = parts
+        if path == "":
+            if index + 1 >= len(fields):
+                raise RuntimeError("Truncated rename record from git numstat")
+            old_path = fields[index].decode("utf-8")
+            new_path = fields[index + 1].decode("utf-8")
+            index += 2
+        else:
+            old_path = new_path = path
+        is_binary = added == "-" or deleted == "-"
+        records.append(
+            (
+                old_path,
+                new_path,
+                LineStats(
+                    added=0 if is_binary else int(added),
+                    deleted=0 if is_binary else int(deleted),
+                    is_binary=is_binary,
+                ),
+            )
+        )
+    return records
+
+
+def line_stats_for_commit(
+    repository: Path, commit: Commit, config: Config
+) -> list[tuple[str, str, LineStats]]:
+    parent = commit.parents[0] if commit.parents else EMPTY_TREE
+    payload = git_bytes_output(
+        repository,
+        config,
+        "diff",
+        "--numstat",
+        "-z",
+        "--find-renames",
+        parent,
+        commit.commit,
+        "--",
+    )
+    return parse_numstat(payload)
+
+
+def stats_for_change(
+    records: list[tuple[str, str, LineStats]], change: GitChange
+) -> LineStats:
+    by_pair = {(old, new): stats for old, new, stats in records}
+    by_new = {new: stats for _, new, stats in records}
+    by_old = {old: stats for old, _, stats in records}
+    if change.status in {"R", "C"}:
+        stats = by_pair.get((change.old_path, change.new_path))
+    elif change.status == "D":
+        stats = by_old.get(change.old_path)
+    else:
+        stats = by_new.get(change.new_path)
+    if stats is None:
+        raise RuntimeError(
+            "A file change has no matching numstat record: "
+            f"{change.status} {change.old_path!r} -> {change.new_path!r}"
+        )
+    return stats
+
+
 def classify_change(
-    repository: Path, commit: Commit, change: GitChange, config: Config
+    repository: Path,
+    commit: Commit,
+    change: GitChange,
+    config: Config,
+    stats: LineStats | None = None,
 ) -> tuple[dict[str, str], list[tuple[str, str]]]:
+    if stats is None:
+        stats = LineStats(added=0, deleted=0, is_binary=False)
     parent = commit.parents[0] if commit.parents else EMPTY_TREE
     old_category = ""
     new_category = ""
@@ -345,6 +483,9 @@ def classify_change(
         "old_category": old_category,
         "new_category": new_category,
         "classification_rule": " | ".join(rules),
+        "lines_added": stats.added,
+        "lines_deleted": stats.deleted,
+        "is_binary": str(stats.is_binary).lower(),
     }
     return row, affected
 
@@ -355,6 +496,8 @@ def process_repository(
     logger: logging.Logger,
     commit_rows: list[dict[str, Any]],
     file_rows: list[dict[str, Any]],
+    skill_rows: list[dict[str, str]],
+    window_days: int,
 ) -> dict[str, Any]:
     repository = repository_path(config, selected.repo_full_name)
     branch_ref = verify_repository(
@@ -370,9 +513,52 @@ def process_repository(
         selected.adoption_commit,
         selected.adoption_at_utc,
         config,
+        window_days,
     )
+    adoption_at = parse_datetime(selected.adoption_at_utc)
+    pre_boundary = adoption_at - timedelta(days=window_days)
+    post_boundary = adoption_at + timedelta(days=window_days)
+    pre_history = git_output(
+        repository,
+        config,
+        "log",
+        "-1",
+        "--format=%H",
+        f"--until={pre_boundary.isoformat()}",
+        selected.cutoff_commit,
+    ).strip()
+    pre_window_complete = bool(pre_history)
+    post_window_complete = post_boundary <= config.cutoff
+    for path in selected.reported_skill_paths:
+        payload = git_bytes_output(
+            repository,
+            config,
+            "show",
+            f"{selected.adoption_commit}:{path}",
+        )
+        skill_rows.append(
+            {
+                "repo_full_name": selected.repo_full_name,
+                "path": path,
+                "content_sha256": hashlib.sha256(payload).hexdigest(),
+            }
+        )
+
     merge_count = 0
     for commit in commits:
+        bot = is_bot_identity(
+            commit.author_name,
+            commit.author_email,
+            commit.committer_name,
+            commit.committer_email,
+        )
+        identity = {
+            "author_name": commit.author_name,
+            "author_email": commit.author_email,
+            "committer_name": commit.committer_name,
+            "committer_email": commit.committer_email,
+            "is_bot": str(bot).lower(),
+        }
         if len(commit.parents) > 1:
             merge_count += 1
             commit_rows.append(
@@ -385,13 +571,18 @@ def process_repository(
                     "path_count": 0,
                     "excluded": "true",
                     "exclusion_reason": "merge_commit",
+                    **identity,
                 }
             )
             continue
 
         category_paths: dict[str, set[str]] = defaultdict(set)
+        stats_records = line_stats_for_commit(repository, commit, config)
         for change in changes_for_commit(repository, commit, config):
-            row, affected = classify_change(repository, commit, change, config)
+            stats = stats_for_change(stats_records, change)
+            row, affected = classify_change(
+                repository, commit, change, config, stats=stats
+            )
             row["repo_full_name"] = selected.repo_full_name
             file_rows.append(row)
             for category, path in affected:
@@ -410,6 +601,7 @@ def process_repository(
                     "path_count": len(category_paths[category]),
                     "excluded": "false",
                     "exclusion_reason": "",
+                    **identity,
                 }
             )
     logger.info(
@@ -424,6 +616,8 @@ def process_repository(
         "commits_in_windows": len(commits),
         "merge_commits_excluded": merge_count,
         "boundary_or_adoption_commits_excluded": boundary_exclusions,
+        "pre_window_complete": pre_window_complete,
+        "post_window_complete": post_window_complete,
     }
 
 
@@ -460,7 +654,9 @@ def validate_outputs(
     file_rows: list[dict[str, Any]],
     count_rows: list[dict[str, Any]],
     config: Config,
+    window_days: int | None = None,
 ) -> None:
+    window = config.window_days if window_days is None else window_days
     expected_count_rows = len(selected_repositories) * len(PERIODS) * len(
         REVIEW_CATEGORIES
     )
@@ -488,9 +684,9 @@ def validate_outputs(
             raise RuntimeError("Adoption commit was included in commit_activity.csv")
         committed_at = parse_datetime(row["committed_at_utc"])
         if row["period"] == "pre":
-            valid_date = adoption_at - timedelta(days=config.window_days) <= committed_at < adoption_at
+            valid_date = adoption_at - timedelta(days=window) <= committed_at < adoption_at
         else:
-            valid_date = adoption_at < committed_at <= adoption_at + timedelta(days=config.window_days)
+            valid_date = adoption_at < committed_at <= adoption_at + timedelta(days=window)
         if not valid_date:
             raise RuntimeError(f"Commit outside its recorded window: {row['commit']}")
         if row["excluded"] == "false":
@@ -568,10 +764,43 @@ def validate_outputs(
         raise RuntimeError("A counted commit has no auditable file-change rows")
 
 
+def load_extraction_manifest(config: Config) -> dict[str, Any]:
+    path = config.output_directory / "run_manifest.json"
+    if not path.exists():
+        return {}
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def validate_selected_count(
+    selected_count: int, config: Config, extraction_manifest: dict[str, Any]
+) -> None:
+    if selected_count > config.target_count:
+        raise RuntimeError(
+            f"Found {selected_count} selected repositories, more than the "
+            f"configured target {config.target_count}"
+        )
+    if selected_count == config.target_count:
+        return
+    completion = extraction_manifest.get("completion_status")
+    if completion not in {"cap_reached", "frame_exhausted"}:
+        raise RuntimeError(
+            f"Expected {config.target_count} selected repositories, found "
+            f"{selected_count}; a shortfall is only accepted when the extraction "
+            "stopped at the candidate cap or exhausted the frame"
+        )
+
+
 def execute(
-    config_path: Path, output_directory: Path, *, require_human_review: bool = True
+    config_path: Path,
+    output_directory: Path,
+    *,
+    require_human_review: bool = True,
+    window_days: int | None = None,
 ) -> None:
     config = load_config(config_path)
+    activity_window_days = config.window_days if window_days is None else window_days
+    if activity_window_days < 1:
+        raise ValueError("window_days must be positive")
     logger = configure_logging(output_directory)
     logger.info("Validating preserved extraction and human-review inputs")
     project_directory = config_path.resolve().parent
@@ -611,14 +840,14 @@ def execute(
         )
     selected_path = config.output_directory / "selected_repositories.csv"
     selected_repositories = load_selected(selected_path)
-    if len(selected_repositories) != config.target_count:
-        raise RuntimeError(
-            f"Expected {config.target_count} selected repositories, "
-            f"found {len(selected_repositories)}"
-        )
+    extraction_manifest = load_extraction_manifest(config)
+    validate_selected_count(
+        len(selected_repositories), config, extraction_manifest
+    )
 
     commit_rows: list[dict[str, Any]] = []
     file_rows: list[dict[str, Any]] = []
+    skill_rows: list[dict[str, str]] = []
     repository_summaries = []
     for selected in selected_repositories:
         logger.info(
@@ -627,7 +856,15 @@ def execute(
             selected.repo_full_name,
         )
         repository_summaries.append(
-            process_repository(selected, config, logger, commit_rows, file_rows)
+            process_repository(
+                selected,
+                config,
+                logger,
+                commit_rows,
+                file_rows,
+                skill_rows,
+                activity_window_days,
+            )
         )
 
     commit_rows.sort(
@@ -649,17 +886,36 @@ def execute(
             row["new_path"],
         )
     )
+    skill_rows.sort(key=lambda row: (row["repo_full_name"], row["path"]))
+    expected_skill_rows = sum(
+        len(selected.reported_skill_paths) for selected in selected_repositories
+    )
+    if len(skill_rows) != expected_skill_rows:
+        raise RuntimeError(
+            f"Expected {expected_skill_rows} skill-content rows, got {len(skill_rows)}"
+        )
+    if len({(row["repo_full_name"], row["path"]) for row in skill_rows}) != len(
+        skill_rows
+    ):
+        raise RuntimeError("Duplicate skill-content rows")
     count_rows = build_activity_counts(selected_repositories, commit_rows)
     validate_outputs(
-        selected_repositories, commit_rows, file_rows, count_rows, config
+        selected_repositories,
+        commit_rows,
+        file_rows,
+        count_rows,
+        config,
+        activity_window_days,
     )
 
     commit_path = output_directory / "commit_activity.csv"
     changes_path = output_directory / "file_changes.csv"
     counts_path = output_directory / "activity_counts.csv"
+    skills_path = output_directory / "skill_contents.csv"
     write_csv_atomic(commit_path, list(COMMIT_ACTIVITY_FIELDS), commit_rows)
     write_csv_atomic(changes_path, list(FILE_CHANGE_FIELDS), file_rows)
     write_csv_atomic(counts_path, list(ACTIVITY_COUNT_FIELDS), count_rows)
+    write_csv_atomic(skills_path, list(SKILL_CONTENT_FIELDS), skill_rows)
 
     input_paths = {
         "configuration": config_path.resolve(),
@@ -684,6 +940,11 @@ def execute(
             "categories": list(REVIEW_CATEGORIES),
             "merge_policy": "exclude commits with more than one parent",
             "adoption_policy": "exclude t0 and use committer timestamps normalized to UTC",
+            "activity_window_days": activity_window_days,
+            "activity_window_source": (
+                "config" if window_days is None else "command-line override"
+            ),
+            "bot_pattern": BOT_PATTERN.pattern,
         },
         "tool_versions": {"git": git_version(config), "python": sys.version},
         "input_sha256": {
@@ -693,12 +954,23 @@ def execute(
             "commit_activity": file_sha256(commit_path),
             "file_changes": file_sha256(changes_path),
             "activity_counts": file_sha256(counts_path),
+            "skill_contents": file_sha256(skills_path),
         },
         "row_counts": {
             "commit_activity": len(commit_rows),
             "file_changes": len(file_rows),
             "activity_counts": len(count_rows),
+            "skill_contents": len(skill_rows),
         },
+        "target_count": config.target_count,
+        "selected_repository_count": len(selected_repositories),
+        "extraction_completion_status": extraction_manifest.get("completion_status"),
+        "cap_reached": extraction_manifest.get("cap_reached"),
+        "bot_commit_category_rows": sum(
+            1
+            for row in commit_rows
+            if row["excluded"] == "false" and row["is_bot"] == "true"
+        ),
         "human_screening_review": human_screening_review,
         "repositories": repository_summaries,
     }
@@ -734,6 +1006,15 @@ def argument_parser() -> argparse.ArgumentParser:
             "(preserved evidence and automated checks are still enforced)"
         ),
     )
+    parser.add_argument(
+        "--window-days",
+        type=int,
+        default=None,
+        help=(
+            "Activity-window override for sensitivity analyses. It does not "
+            "change extraction eligibility or the sealed validation evidence."
+        ),
+    )
     return parser
 
 
@@ -743,6 +1024,7 @@ def main() -> None:
         args.config.resolve(),
         args.output.resolve(),
         require_human_review=not args.allow_pending_human_review,
+        window_days=args.window_days,
     )
 
 

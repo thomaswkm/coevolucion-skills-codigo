@@ -77,12 +77,14 @@ def build_config(
     *,
     window_days: int = WINDOW_DAYS,
     target_count: int = 1,
+    max_candidates: int | None = None,
 ) -> Config:
     return Config(
         dataset_repository="mvaccargiu/gitskills",
         dataset_revision="0" * 40,
         artifact_parts=1,
         target_count=target_count,
+        max_candidates=max_candidates,
         seed="test-seed",
         history_cutoff_utc="2026-12-31T23:59:59Z",
         window_days=window_days,
@@ -115,12 +117,14 @@ def config_factory(tmp_path: Path):
         *,
         window_days: int = WINDOW_DAYS,
         target_count: int = 1,
+        max_candidates: int | None = None,
     ) -> Config:
         return build_config(
             repository_directory or tmp_path / "repositories",
             output_directory or tmp_path / "extraction",
             window_days=window_days,
             target_count=target_count,
+            max_candidates=max_candidates,
         )
 
     return factory

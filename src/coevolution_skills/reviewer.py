@@ -121,10 +121,22 @@ def _contiguous_positions(
 def _selected_rows(config: Config) -> list[dict[str, str]]:
     path = config.output_directory / "selected_repositories.csv"
     rows = load_rows(path)
-    if len(rows) != config.target_count:
+    if len(rows) > config.target_count:
         raise ReviewValidationError(
-            f"{path}: expected {config.target_count} selected repositories, found {len(rows)}"
+            f"{path}: found {len(rows)} selected repositories, more than the "
+            f"configured target {config.target_count}"
         )
+    if len(rows) < config.target_count:
+        manifest_path = config.output_directory / "run_manifest.json"
+        manifest: dict[str, object] = {}
+        if manifest_path.exists():
+            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        if manifest.get("completion_status") not in {"cap_reached", "frame_exhausted"}:
+            raise ReviewValidationError(
+                f"{path}: expected {config.target_count} selected repositories, "
+                f"found {len(rows)}; a shortfall is only accepted when the "
+                "extraction stopped at the candidate cap or exhausted the frame"
+            )
     return rows
 
 
