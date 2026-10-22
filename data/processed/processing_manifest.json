@@ -1,6 +1,11 @@
 {
+  "bot_commit_category_rows": 2147,
+  "cap_reached": false,
   "configuration": {
+    "activity_window_days": 60,
+    "activity_window_source": "config",
     "adoption_policy": "exclude t0 and use committer timestamps normalized to UTC",
+    "bot_pattern": "(?i)(\\[bot\\]|(?:^|[._+@-])bot(?:$|[._+@-])|dependabot|renovate|github-actions|pre-commit-ci|snyk-bot|mergify|codecov|greenkeeper|semantic-release-bot|allcontributors)",
     "categories": [
       "skill",
       "production",
@@ -16,11 +21,12 @@
       "dataset_repository": "mvaccargiu/gitskills",
       "dataset_revision": "ebab17454a7c236f8f26b183567f1a126f42e3f8",
       "history_cutoff_utc": "2026-10-04T23:59:59Z",
+      "max_candidates": 1500,
       "output_directory": "/home/thomas/dev/coevolution-skills-code/data/extraction",
       "repository_directory": "/home/thomas/dev/coevolution-skills-code/repositories",
       "retry_count": 3,
       "seed": "20261004",
-      "target_count": 10,
+      "target_count": 120,
       "window_days": 60
     },
     "merge_policy": "exclude commits with more than one parent",
@@ -30,29 +36,40 @@
       "post"
     ]
   },
-  "created_at_utc": "2026-10-05T07:06:50.710640Z",
+  "created_at_utc": "2026-10-22T13:43:35.732626Z",
+  "extraction_completion_status": "target_reached",
+  "human_screening_review": {
+    "checksum_file_present": true,
+    "pending_adoptions": [],
+    "pending_paths": [],
+    "required": true,
+    "status": "complete"
+  },
   "input_sha256": {
-    "adoption_review": "ad73908d573c51994829d9cd7dd8257f973a92b3aa46b7ec898c2f82f193e37b",
-    "automated_checks": "3e883f683da0a480d8013c35da642753edb827a5da04f6665a78c4656980e024",
-    "configuration": "e81be37f11c02a0d554f9d81b0315539a392a6af4510d16142fc1e5edc28d097",
-    "extraction_manifest": "f8536787557532c1bd58b429d8ed5b5bf072994bf0df38d5ef82dfeedcaa8f5e",
-    "human_review_checksums": "e84f7b33cee263abb192c647ab17c0f22dffc766c3c6a1b18443783e12ac4031",
-    "path_review": "1bd0ca307ae0aa1a727826b9a0a91e89cf818ee11e0984403e94156d97f54319",
-    "selected_repositories": "2a083fb04832c30ed806e268c17c2c671aeb817955390705b7a3021086582fe3",
-    "validation_manifest": "525eeb40f51bcaf2cb4c1179af4ba9ee6ed3e2b081531b8177d6043a5fc42b5a"
+    "adoption_review": "6e2d1851b915e5493a1dfd516e059a44e3e53447f13adffdc3a825c8dc5fb1e2",
+    "automated_checks": "3a944912310abaf56a6916fa92bc674cd6fb05b95f755b762e203a78d75ccc47",
+    "configuration": "66f0b2a6ec0ed11f8efdebf85253d621a04c56231e0b27962353a75425738aab",
+    "extraction_manifest": "5002b70f29973b199d543046ff66bd5cf32676c13dc3fd91fa1ede75cddc63fb",
+    "human_review_checksums": "f4c42694c5298f61478292de37a730f88cd6913341c4657d7266d20c49e039c7",
+    "path_review": "dbd4d946e63001d871ca0263f402853409492c0a767a3a7e85db73a36110c5bd",
+    "selected_repositories": "adc7ba8cb5cb2c7dab9da6a671c5fce48dde59c0776509805af84d146a7623ad",
+    "validation_manifest": "235a5e85adbc1a82ad6063441f5a81ca4c064211c4afb52c0efc9d6f10c09cff"
   },
   "output_sha256": {
-    "activity_counts": "069818418905a03f52929865e9f680119587972e83883caa51a8a7cfe62df177",
-    "commit_activity": "32af2457c6e3ddae09dfd74517356c5c3a9383fd0a16ae9c4ad21f7aba2af58c",
-    "file_changes": "1b1ef7a502ccad748bda8da4d4ec237f3023f245271f1682cd0c9218597d35ab"
+    "activity_counts": "28c61c9cf5aaf3006108852014961389e38884274b0254245ddd88d69f60875b",
+    "commit_activity": "0619046b25d4035b3810f6a579ee50c628da54a71a7fed56742bfef21c20565f",
+    "file_changes": "b3390a599302e2ea5b527e693b12618e94bc0826cede00d994338ffb96793037",
+    "skill_contents": "d74a388d5227d931a19a2ae23a8fe0541f0db8e83d29a7824c36229dfdbeabdc"
   },
-  "processing_protocol_version": "1",
+  "processing_protocol_version": "2",
   "repositories": [
     {
       "boundary_or_adoption_commits_excluded": 1,
       "commits_in_windows": 294,
       "default_branch_ref": "refs/heads/main",
       "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
       "repo_full_name": "marisa901225-cmyk/personal-portfolio"
     },
     {
@@ -60,6 +77,8 @@
       "commits_in_windows": 66,
       "default_branch_ref": "refs/heads/main",
       "merge_commits_excluded": 1,
+      "post_window_complete": true,
+      "pre_window_complete": true,
       "repo_full_name": "surus-lat/benchy"
     },
     {
@@ -67,6 +86,8 @@
       "commits_in_windows": 153,
       "default_branch_ref": "refs/heads/master",
       "merge_commits_excluded": 26,
+      "post_window_complete": true,
+      "pre_window_complete": true,
       "repo_full_name": "tylertjburns/coopstorage"
     },
     {
@@ -74,6 +95,8 @@
       "commits_in_windows": 72,
       "default_branch_ref": "refs/heads/main",
       "merge_commits_excluded": 17,
+      "post_window_complete": true,
+      "pre_window_complete": true,
       "repo_full_name": "LyonMoncef/SamsungHealth"
     },
     {
@@ -81,6 +104,8 @@
       "commits_in_windows": 11,
       "default_branch_ref": "refs/heads/main",
       "merge_commits_excluded": 1,
+      "post_window_complete": true,
+      "pre_window_complete": true,
       "repo_full_name": "speechpro/inex-launcher"
     },
     {
@@ -88,6 +113,8 @@
       "commits_in_windows": 46,
       "default_branch_ref": "refs/heads/main",
       "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
       "repo_full_name": "Harmeet10000/AgentNexus-LangChain-FastAPI"
     },
     {
@@ -95,6 +122,8 @@
       "commits_in_windows": 633,
       "default_branch_ref": "refs/heads/main",
       "merge_commits_excluded": 85,
+      "post_window_complete": true,
+      "pre_window_complete": true,
       "repo_full_name": "hanzoai/insights"
     },
     {
@@ -102,6 +131,8 @@
       "commits_in_windows": 310,
       "default_branch_ref": "refs/heads/main",
       "merge_commits_excluded": 102,
+      "post_window_complete": true,
+      "pre_window_complete": true,
       "repo_full_name": "stharrold/stharrold-templates"
     },
     {
@@ -109,6 +140,8 @@
       "commits_in_windows": 242,
       "default_branch_ref": "refs/heads/main",
       "merge_commits_excluded": 102,
+      "post_window_complete": true,
+      "pre_window_complete": true,
       "repo_full_name": "pinchbench/skill"
     },
     {
@@ -116,14 +149,1009 @@
       "commits_in_windows": 327,
       "default_branch_ref": "refs/heads/main",
       "merge_commits_excluded": 29,
+      "post_window_complete": true,
+      "pre_window_complete": true,
       "repo_full_name": "perrymanuk/radbot"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 863,
+      "default_branch_ref": "refs/heads/master",
+      "merge_commits_excluded": 31,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "haalfi/remote-store"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 1293,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "vllm-project/vllm-omni"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 36,
+      "default_branch_ref": "refs/heads/master",
+      "merge_commits_excluded": 15,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "swimmwatch/telegram-webapp-auth"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 455,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 82,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "jimchurches/myebirdstuff"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 328,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 23,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "nandyalu/trailarr"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 6,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "serhatozdursun/serhatozdursun-ui-tests"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 1023,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 10,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "inspirepan/klaude-code"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 1286,
+      "default_branch_ref": "refs/heads/master",
+      "merge_commits_excluded": 3,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "psalmprax/ettametta"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 514,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "kdeldycke/meta-package-manager"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 107,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 20,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "The-Interdependency/aimmh"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 239,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "endavis/pynetappfoundry"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 2,
+      "commits_in_windows": 55,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 1,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "loganrooks/arxiv-mcp-pro"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 1215,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 95,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "sslab-gatech/CRSBench"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 172,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 4,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "gr8monk3ys/trading-bot"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 226,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "wlritchi/env"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 1938,
+      "default_branch_ref": "refs/heads/develop",
+      "merge_commits_excluded": 115,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "jcg-admin/e-commerce-api"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 73,
+      "default_branch_ref": "refs/heads/master",
+      "merge_commits_excluded": 7,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "SublimeText/PackageDev"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 265,
+      "default_branch_ref": "refs/heads/master",
+      "merge_commits_excluded": 36,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "SepineTam/mcp-for-stata"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 21,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 1,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "anwellmeng/ai-crawler"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 222,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 37,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "lsst-sqre/ook"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 5,
+      "commits_in_windows": 872,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 8,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "maikramer/GameDev"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 1,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "PauloCatarino/orcamentos_lanca_encanto"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 19,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "Yaso2Go/tbhp"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 544,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "Rocky18919975029/VERL"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 2,
+      "commits_in_windows": 38,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 22,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "baldwinboy/neuromancers-community-platform"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 206,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 9,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "berntpopp/gnomad-link"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 67,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 8,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "igrybkov/alfred-pj"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 1441,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "pytorch/executorch"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 44,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 12,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "kebtes/epicon"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 251,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 31,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "ohnoohweh/briidge_lossy"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 136,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 28,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "Gon3s/dlux"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 30,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "ville-k/slurm_sdk"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 85,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "masakinakai3/Manage"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 0,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "arthursoares/libsync"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 51,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "wirenboard/wb-mqtt-dali"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 32,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "choderalab/missense-kinase-toolkit"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 50,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "Qiskit/samplomatic"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 309,
+      "default_branch_ref": "refs/heads/master",
+      "merge_commits_excluded": 13,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "gcharvin/detecdiv-hub"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 4,
+      "default_branch_ref": "refs/heads/master",
+      "merge_commits_excluded": 2,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "SongshGeo/Python-Project-Template"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 178,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 4,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "erwinkn/pulse-ui"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 10,
+      "commits_in_windows": 231,
+      "default_branch_ref": "refs/heads/develop",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "game-scheduler/game-scheduler"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 24,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 2,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "cantis/MechBay"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 15,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 2,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "Jamie-BitFlight/git-tree-project-structure-to-yaml"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 37,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "siavashoutadi/djdevx"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 109,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 33,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "equinor/ai-platform-actions"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 95,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "Sendspin/aiosendspin"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 48,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 22,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "AldanDev/Notora"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 595,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "i-am-bee/agentstack"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 398,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 3,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "OpenWSGR/AutoWSGR"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 24,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 2,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "hevangel/dvcon_ai_library"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 678,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 8,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "PurdueAF/purdue-af"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 194,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "theontho/wgsextract-cli"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 941,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 9,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "styliteag/dashboard"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 34,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "JoshKarpel/counterweight"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 61,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 16,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "Simpleyyt/ai-manus"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 25,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "William-Dennis/slm-bias-testing"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 109,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "snowflakedb/snowpark-python"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 10,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "kurusugawa-computer/annowork-cli"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 695,
+      "default_branch_ref": "refs/heads/master",
+      "merge_commits_excluded": 17,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "DragonFlyBSD/DeltaPorts"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 1889,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 26,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "empty-quiver/sglang-turboquant"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 155,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 36,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "fairagro/m4.2_sql_to_arc"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 19,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 5,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "SoloXLab/perfetto-dsl"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 530,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 17,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "dewet22/givenergy-modbus"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 232,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 5,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "icyponds/TradeBot"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 18,
+      "commits_in_windows": 85,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "elecdot/competehub"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 81,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 5,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "olidroide/top-video-generator"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 66,
+      "default_branch_ref": "refs/heads/master",
+      "merge_commits_excluded": 1,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "AICL-Lab/triton-fused-ops"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 707,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "newton-physics/newton"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 565,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 3,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "andborth/RoboPhD"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 201,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 10,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "xlang-ai/OSWorld-V2"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 120,
+      "default_branch_ref": "refs/heads/master",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "kejhy93/ProteinFolding"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 48,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "castorini/rank_llm"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 5,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 1,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "rafahsa/-Multimodal-Deep-Learning-Framework-for-Brain-Tumor-Prediction"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 434,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 7,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "dimensionalOS/dimos"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 19,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 4,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "bsmi021/unity-bridge"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 12,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "phuongnx2112003/A2A"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 25,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 3,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "threatpatrols/hibp-downloader"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 249,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 20,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "Bloomerp-io/Bloomerp"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 98,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 7,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "sverzijl/oven_logging"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 102,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "ryancheley/yt-cli"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 442,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 116,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "elhajjar1/wrinkleFE"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 40,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "lorek123/ha-snb"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 90,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "canonical/falco-operators"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 10,
+      "default_branch_ref": "refs/heads/production",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "FracktalWorks/ControlCenter"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 352,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "BoyuXiao/New-R3"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 68,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 11,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "genepattern/module-toolkit"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 405,
+      "default_branch_ref": "refs/heads/master",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "pauubach/narrassist"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 0,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "JohnRushKucharski/units"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 217,
+      "default_branch_ref": "refs/heads/staging",
+      "merge_commits_excluded": 59,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "xchem/fragalysis-backend"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 2450,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "nerd-zero/solei"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 169,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "mozilla-services/merino-py"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 2058,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 549,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "LaurentMazare/pipecat"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 132,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 10,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "adibirzu/oci-log-analytics-detections"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 1292,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 320,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "dannoetc/baseliner"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 13,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "dbbs-lab/bsb"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 38,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "suigetsukan/suigetsukan-lambdas"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 1,
+      "default_branch_ref": "refs/heads/master",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "dlt-hub/verified-sources"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 68,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 10,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "quantum-guardians/approach-analysis"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 46,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "mayflower/scry"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 12,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 3,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "Cellular-Semantics/Atlas-reporter"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 45,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 1,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "Centaurea-Platinum/SAKIGo"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 43,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 1,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "namoshizun/TradePy"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 736,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 121,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "agentic-community/mcp-gateway-registry"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 227,
+      "default_branch_ref": "refs/heads/release_xh2_v1.5.0",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "houmo-ai/houmo-xh2modelzoo"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 2,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "hadsie/treksafer"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 884,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 49,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "carlostoek/adminpro"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 44,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "microsoft/PowerPlatform-DataverseClient-Python"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 14,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 1,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "aigorahub/sensPy"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 295,
+      "default_branch_ref": "refs/heads/v0.3.0",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "Time-has-wings/slime"
+    },
+    {
+      "boundary_or_adoption_commits_excluded": 1,
+      "commits_in_windows": 31,
+      "default_branch_ref": "refs/heads/main",
+      "merge_commits_excluded": 0,
+      "post_window_complete": true,
+      "pre_window_complete": true,
+      "repo_full_name": "mizoo-snow21/dotfiles"
     }
   ],
   "row_counts": {
-    "activity_counts": 80,
-    "commit_activity": 3170,
-    "file_changes": 76809
+    "activity_counts": 960,
+    "commit_activity": 53769,
+    "file_changes": 336766,
+    "skill_contents": 522
   },
+  "selected_repository_count": 120,
+  "target_count": 120,
   "tool_versions": {
     "git": "git version 2.53.0",
     "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]"

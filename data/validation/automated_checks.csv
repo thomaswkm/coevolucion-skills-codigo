@@ -119,3 +119,1323 @@ sample_position,repo_full_name,check,passed,observed,expected
 10,perrymanuk/radbot,post_window_before_cutoff,true,2026-05-20T15:53:25+00:00,<= 2026-10-04T23:59:59+00:00
 10,perrymanuk/radbot,production_path_count_matches,true,282,282
 10,perrymanuk/radbot,test_path_count_matches,true,123,123
+11,haalfi/remote-store,cutoff_commit_exists,true,True,True
+11,haalfi/remote-store,adoption_commit_exists,true,True,True
+11,haalfi/remote-store,adoption_reaches_cutoff,true,True,True
+11,haalfi/remote-store,first_parent_exists,true,094b394d49203bdef849278ae7b7b17383e6b263,non-empty
+11,haalfi/remote-store,valid_skills_before_is_zero,true,0,0
+11,haalfi/remote-store,valid_skills_after_positive,true,6,> 0
+11,haalfi/remote-store,reported_skill_paths_match,true,.claude/skills/audit/SKILL.md;.claude/skills/fix-pr/SKILL.md;.claude/skills/pr/SKILL.md;.claude/skills/preview/SKILL.md;.claude/skills/release/SKILL.md;.claude/skills/review-pr/SKILL.md,.claude/skills/audit/SKILL.md;.claude/skills/fix-pr/SKILL.md;.claude/skills/pr/SKILL.md;.claude/skills/preview/SKILL.md;.claude/skills/release/SKILL.md;.claude/skills/review-pr/SKILL.md
+11,haalfi/remote-store,adoption_committer_timestamp_matches,true,2026-03-28T12:55:52+01:00,2026-03-28T11:55:52Z
+11,haalfi/remote-store,pre_window_observable,true,e2e8ae342bbca5615b4764b0cae4dcc3772b4014,non-empty
+11,haalfi/remote-store,post_window_before_cutoff,true,2026-05-27T11:55:52+00:00,<= 2026-10-04T23:59:59+00:00
+11,haalfi/remote-store,production_path_count_matches,true,55,55
+11,haalfi/remote-store,test_path_count_matches,true,61,61
+12,vllm-project/vllm-omni,cutoff_commit_exists,true,True,True
+12,vllm-project/vllm-omni,adoption_commit_exists,true,True,True
+12,vllm-project/vllm-omni,adoption_reaches_cutoff,true,True,True
+12,vllm-project/vllm-omni,first_parent_exists,true,159d6558ea55ef59b3c57cf512e8114b62cd881e,non-empty
+12,vllm-project/vllm-omni,valid_skills_before_is_zero,true,0,0
+12,vllm-project/vllm-omni,valid_skills_after_positive,true,2,> 0
+12,vllm-project/vllm-omni,reported_skill_paths_match,true,.claude/skills/add-diffusion-model/SKILL.md;.claude/skills/add-tts-model/SKILL.md,.claude/skills/add-diffusion-model/SKILL.md;.claude/skills/add-tts-model/SKILL.md
+12,vllm-project/vllm-omni,adoption_committer_timestamp_matches,true,2026-04-14T20:26:27+08:00,2026-04-14T12:26:27Z
+12,vllm-project/vllm-omni,pre_window_observable,true,75770c93097ebfa33f16c0722e2037a93c6b9f3b,non-empty
+12,vllm-project/vllm-omni,post_window_before_cutoff,true,2026-06-13T12:26:27+00:00,<= 2026-10-04T23:59:59+00:00
+12,vllm-project/vllm-omni,production_path_count_matches,true,546,546
+12,vllm-project/vllm-omni,test_path_count_matches,true,237,237
+13,swimmwatch/telegram-webapp-auth,cutoff_commit_exists,true,True,True
+13,swimmwatch/telegram-webapp-auth,adoption_commit_exists,true,True,True
+13,swimmwatch/telegram-webapp-auth,adoption_reaches_cutoff,true,True,True
+13,swimmwatch/telegram-webapp-auth,first_parent_exists,true,84cdd1f920c850f73ebcf50e6df259682431f7eb,non-empty
+13,swimmwatch/telegram-webapp-auth,valid_skills_before_is_zero,true,0,0
+13,swimmwatch/telegram-webapp-auth,valid_skills_after_positive,true,2,> 0
+13,swimmwatch/telegram-webapp-auth,reported_skill_paths_match,true,.agents/skills/project-pull-request/SKILL.md;.agents/skills/project-release/SKILL.md,.agents/skills/project-pull-request/SKILL.md;.agents/skills/project-release/SKILL.md
+13,swimmwatch/telegram-webapp-auth,adoption_committer_timestamp_matches,true,2026-06-21T13:25:57+03:00,2026-06-21T10:25:57Z
+13,swimmwatch/telegram-webapp-auth,pre_window_observable,true,2ceb2ec96adc7a0dea9734ef19dc0fb49a422902,non-empty
+13,swimmwatch/telegram-webapp-auth,post_window_before_cutoff,true,2026-08-20T10:25:57+00:00,<= 2026-10-04T23:59:59+00:00
+13,swimmwatch/telegram-webapp-auth,production_path_count_matches,true,5,5
+13,swimmwatch/telegram-webapp-auth,test_path_count_matches,true,4,4
+14,jimchurches/myebirdstuff,cutoff_commit_exists,true,True,True
+14,jimchurches/myebirdstuff,adoption_commit_exists,true,True,True
+14,jimchurches/myebirdstuff,adoption_reaches_cutoff,true,True,True
+14,jimchurches/myebirdstuff,first_parent_exists,true,131c6820d58dc9699a8c795f5847caee11a05de8,non-empty
+14,jimchurches/myebirdstuff,valid_skills_before_is_zero,true,0,0
+14,jimchurches/myebirdstuff,valid_skills_after_positive,true,1,> 0
+14,jimchurches/myebirdstuff,reported_skill_paths_match,true,.agents/skills/developing-with-streamlit/SKILL.md,.agents/skills/developing-with-streamlit/SKILL.md
+14,jimchurches/myebirdstuff,adoption_committer_timestamp_matches,true,2026-07-17T20:29:30+10:00,2026-07-17T10:29:30Z
+14,jimchurches/myebirdstuff,pre_window_observable,true,031dbfc8c321571b134ff18f06b6f594b9920425,non-empty
+14,jimchurches/myebirdstuff,post_window_before_cutoff,true,2026-09-15T10:29:30+00:00,<= 2026-10-04T23:59:59+00:00
+14,jimchurches/myebirdstuff,production_path_count_matches,true,129,129
+14,jimchurches/myebirdstuff,test_path_count_matches,true,86,86
+15,nandyalu/trailarr,cutoff_commit_exists,true,True,True
+15,nandyalu/trailarr,adoption_commit_exists,true,True,True
+15,nandyalu/trailarr,adoption_reaches_cutoff,true,True,True
+15,nandyalu/trailarr,first_parent_exists,true,1dafeb93075ab2204295f45f735e1df9b2af2186,non-empty
+15,nandyalu/trailarr,valid_skills_before_is_zero,true,0,0
+15,nandyalu/trailarr,valid_skills_after_positive,true,1,> 0
+15,nandyalu/trailarr,reported_skill_paths_match,true,.claude/skills/graphify/SKILL.md,.claude/skills/graphify/SKILL.md
+15,nandyalu/trailarr,adoption_committer_timestamp_matches,true,2026-06-07T21:20:58Z,2026-06-07T21:20:58Z
+15,nandyalu/trailarr,pre_window_observable,true,aa2ca8abdc101fff95f472c3bc0e704cb85ad70c,non-empty
+15,nandyalu/trailarr,post_window_before_cutoff,true,2026-08-06T21:20:58+00:00,<= 2026-10-04T23:59:59+00:00
+15,nandyalu/trailarr,production_path_count_matches,true,192,192
+15,nandyalu/trailarr,test_path_count_matches,true,47,47
+16,serhatozdursun/serhatozdursun-ui-tests,cutoff_commit_exists,true,True,True
+16,serhatozdursun/serhatozdursun-ui-tests,adoption_commit_exists,true,True,True
+16,serhatozdursun/serhatozdursun-ui-tests,adoption_reaches_cutoff,true,True,True
+16,serhatozdursun/serhatozdursun-ui-tests,first_parent_exists,true,5af296c95b6d02cd844e7bfc4a3f1a025c18b1f4,non-empty
+16,serhatozdursun/serhatozdursun-ui-tests,valid_skills_before_is_zero,true,0,0
+16,serhatozdursun/serhatozdursun-ui-tests,valid_skills_after_positive,true,2,> 0
+16,serhatozdursun/serhatozdursun-ui-tests,reported_skill_paths_match,true,.cursor/skills/ui-test-discoverer/SKILL.md;.cursor/skills/ui-test-healer/SKILL.md,.cursor/skills/ui-test-discoverer/SKILL.md;.cursor/skills/ui-test-healer/SKILL.md
+16,serhatozdursun/serhatozdursun-ui-tests,adoption_committer_timestamp_matches,true,2026-06-09T11:11:28Z,2026-06-09T11:11:28Z
+16,serhatozdursun/serhatozdursun-ui-tests,pre_window_observable,true,318a276348031e5d282a7daaf333967ae878f768,non-empty
+16,serhatozdursun/serhatozdursun-ui-tests,post_window_before_cutoff,true,2026-08-08T11:11:28+00:00,<= 2026-10-04T23:59:59+00:00
+16,serhatozdursun/serhatozdursun-ui-tests,production_path_count_matches,true,9,9
+16,serhatozdursun/serhatozdursun-ui-tests,test_path_count_matches,true,3,3
+17,inspirepan/klaude-code,cutoff_commit_exists,true,True,True
+17,inspirepan/klaude-code,adoption_commit_exists,true,True,True
+17,inspirepan/klaude-code,adoption_reaches_cutoff,true,True,True
+17,inspirepan/klaude-code,first_parent_exists,true,5f369ba35d50f5a6dfd2e153b5b3465dde7985c5,non-empty
+17,inspirepan/klaude-code,valid_skills_before_is_zero,true,0,0
+17,inspirepan/klaude-code,valid_skills_after_positive,true,1,> 0
+17,inspirepan/klaude-code,reported_skill_paths_match,true,.claude/skills/publish/SKILL.md,.claude/skills/publish/SKILL.md
+17,inspirepan/klaude-code,adoption_committer_timestamp_matches,true,2025-11-25T20:10:25+08:00,2025-11-25T12:10:25Z
+17,inspirepan/klaude-code,pre_window_observable,true,bb7fa3116dd55b46b5145f6f38a53d0a386e6877,non-empty
+17,inspirepan/klaude-code,post_window_before_cutoff,true,2026-01-24T12:10:25+00:00,<= 2026-10-04T23:59:59+00:00
+17,inspirepan/klaude-code,production_path_count_matches,true,108,108
+17,inspirepan/klaude-code,test_path_count_matches,true,13,13
+18,psalmprax/ettametta,cutoff_commit_exists,true,True,True
+18,psalmprax/ettametta,adoption_commit_exists,true,True,True
+18,psalmprax/ettametta,adoption_reaches_cutoff,true,True,True
+18,psalmprax/ettametta,first_parent_exists,true,f9321d4fd8d742aa5f122c0e68429f38c5e2d467,non-empty
+18,psalmprax/ettametta,valid_skills_before_is_zero,true,0,0
+18,psalmprax/ettametta,valid_skills_after_positive,true,1,> 0
+18,psalmprax/ettametta,reported_skill_paths_match,true,.claude/skills/nexus-engine/SKILL.md,.claude/skills/nexus-engine/SKILL.md
+18,psalmprax/ettametta,adoption_committer_timestamp_matches,true,2026-05-28T23:10:01+02:00,2026-05-28T21:10:01Z
+18,psalmprax/ettametta,pre_window_observable,true,dda804042e6e7bf9bfec5e9c7c84f04f0944566d,non-empty
+18,psalmprax/ettametta,post_window_before_cutoff,true,2026-07-27T21:10:01+00:00,<= 2026-10-04T23:59:59+00:00
+18,psalmprax/ettametta,production_path_count_matches,true,528,528
+18,psalmprax/ettametta,test_path_count_matches,true,121,121
+19,kdeldycke/meta-package-manager,cutoff_commit_exists,true,True,True
+19,kdeldycke/meta-package-manager,adoption_commit_exists,true,True,True
+19,kdeldycke/meta-package-manager,adoption_reaches_cutoff,true,True,True
+19,kdeldycke/meta-package-manager,first_parent_exists,true,d8f385656b4bbd893fa14df28905eb685669bc53,non-empty
+19,kdeldycke/meta-package-manager,valid_skills_before_is_zero,true,0,0
+19,kdeldycke/meta-package-manager,valid_skills_after_positive,true,9,> 0
+19,kdeldycke/meta-package-manager,reported_skill_paths_match,true,.claude/skills/repomatic-audit/SKILL.md;.claude/skills/repomatic-changelog/SKILL.md;.claude/skills/repomatic-deps/SKILL.md;.claude/skills/repomatic-init/SKILL.md;.claude/skills/repomatic-lint/SKILL.md;.claude/skills/repomatic-release/SKILL.md;.claude/skills/repomatic-sync/SKILL.md;.claude/skills/repomatic-test/SKILL.md;.claude/skills/repomatic-topics/SKILL.md,.claude/skills/repomatic-audit/SKILL.md;.claude/skills/repomatic-changelog/SKILL.md;.claude/skills/repomatic-deps/SKILL.md;.claude/skills/repomatic-init/SKILL.md;.claude/skills/repomatic-lint/SKILL.md;.claude/skills/repomatic-release/SKILL.md;.claude/skills/repomatic-sync/SKILL.md;.claude/skills/repomatic-test/SKILL.md;.claude/skills/repomatic-topics/SKILL.md
+19,kdeldycke/meta-package-manager,adoption_committer_timestamp_matches,true,2026-03-23T10:49:52+01:00,2026-03-23T09:49:52Z
+19,kdeldycke/meta-package-manager,pre_window_observable,true,be598670dbe97542c44d584df0ae7dad29c62776,non-empty
+19,kdeldycke/meta-package-manager,post_window_before_cutoff,true,2026-05-22T09:49:52+00:00,<= 2026-10-04T23:59:59+00:00
+19,kdeldycke/meta-package-manager,production_path_count_matches,true,41,41
+19,kdeldycke/meta-package-manager,test_path_count_matches,true,23,23
+20,The-Interdependency/aimmh,cutoff_commit_exists,true,True,True
+20,The-Interdependency/aimmh,adoption_commit_exists,true,True,True
+20,The-Interdependency/aimmh,adoption_reaches_cutoff,true,True,True
+20,The-Interdependency/aimmh,first_parent_exists,true,4fbcd285cb5055ba4a822e11826ca46225a06a29,non-empty
+20,The-Interdependency/aimmh,valid_skills_before_is_zero,true,0,0
+20,The-Interdependency/aimmh,valid_skills_after_positive,true,3,> 0
+20,The-Interdependency/aimmh,reported_skill_paths_match,true,.agents/skills/meta-module-build/SKILL.md;.agents/skills/msdmd/SKILL.md;.agents/skills/test-build/SKILL.md,.agents/skills/meta-module-build/SKILL.md;.agents/skills/msdmd/SKILL.md;.agents/skills/test-build/SKILL.md
+20,The-Interdependency/aimmh,adoption_committer_timestamp_matches,true,2026-05-23T11:21:54-07:00,2026-05-23T18:21:54Z
+20,The-Interdependency/aimmh,pre_window_observable,true,fed6c313d443c0796bf3923436fbd73b5d4ad278,non-empty
+20,The-Interdependency/aimmh,post_window_before_cutoff,true,2026-07-22T18:21:54+00:00,<= 2026-10-04T23:59:59+00:00
+20,The-Interdependency/aimmh,production_path_count_matches,true,52,52
+20,The-Interdependency/aimmh,test_path_count_matches,true,22,22
+21,endavis/pynetappfoundry,cutoff_commit_exists,true,True,True
+21,endavis/pynetappfoundry,adoption_commit_exists,true,True,True
+21,endavis/pynetappfoundry,adoption_reaches_cutoff,true,True,True
+21,endavis/pynetappfoundry,first_parent_exists,true,e1230bc6b1127b5a984461fb9af7dde5ce2b73ae,non-empty
+21,endavis/pynetappfoundry,valid_skills_before_is_zero,true,0,0
+21,endavis/pynetappfoundry,valid_skills_after_positive,true,22,> 0
+21,endavis/pynetappfoundry,reported_skill_paths_match,true,.agents/skills/checkpoint/SKILL.md;.agents/skills/codex-adversarial-review/SKILL.md;.agents/skills/codex-implement/SKILL.md;.agents/skills/codex-plan/SKILL.md;.agents/skills/codex-review/SKILL.md;.agents/skills/delegate-claude-adversarial-review/SKILL.md;.agents/skills/delegate-claude-implement/SKILL.md;.agents/skills/delegate-claude-plan/SKILL.md;.agents/skills/delegate-claude-review/SKILL.md;.agents/skills/delegate-copilot-adversarial-review/SKILL.md;.agents/skills/delegate-copilot-implement/SKILL.md;.agents/skills/delegate-copilot-plan/SKILL.md;.agents/skills/delegate-copilot-review/SKILL.md;.agents/skills/delegate-gemini-adversarial-review/SKILL.md;.agents/skills/delegate-gemini-implement/SKILL.md;.agents/skills/delegate-gemini-plan/SKILL.md;.agents/skills/delegate-gemini-review/SKILL.md;.agents/skills/ghi-finalize/SKILL.md;.agents/skills/multi-adversarial-review/SKILL.md;.agents/skills/multi-plan/SKILL.md;.agents/skills/multi-review/SKILL.md;.agents/skills/restore/SKILL.md,.agents/skills/checkpoint/SKILL.md;.agents/skills/codex-adversarial-review/SKILL.md;.agents/skills/codex-implement/SKILL.md;.agents/skills/codex-plan/SKILL.md;.agents/skills/codex-review/SKILL.md;.agents/skills/delegate-claude-adversarial-review/SKILL.md;.agents/skills/delegate-claude-implement/SKILL.md;.agents/skills/delegate-claude-plan/SKILL.md;.agents/skills/delegate-claude-review/SKILL.md;.agents/skills/delegate-copilot-adversarial-review/SKILL.md;.agents/skills/delegate-copilot-implement/SKILL.md;.agents/skills/delegate-copilot-plan/SKILL.md;.agents/skills/delegate-copilot-review/SKILL.md;.agents/skills/delegate-gemini-adversarial-review/SKILL.md;.agents/skills/delegate-gemini-implement/SKILL.md;.agents/skills/delegate-gemini-plan/SKILL.md;.agents/skills/delegate-gemini-review/SKILL.md;.agents/skills/ghi-finalize/SKILL.md;.agents/skills/multi-adversarial-review/SKILL.md;.agents/skills/multi-plan/SKILL.md;.agents/skills/multi-review/SKILL.md;.agents/skills/restore/SKILL.md
+21,endavis/pynetappfoundry,adoption_committer_timestamp_matches,true,2026-05-14T02:06:29+01:00,2026-05-14T01:06:29Z
+21,endavis/pynetappfoundry,pre_window_observable,true,74fc3c91746b2725687ec04c83c4ffb52b80adca,non-empty
+21,endavis/pynetappfoundry,post_window_before_cutoff,true,2026-07-13T01:06:29+00:00,<= 2026-10-04T23:59:59+00:00
+21,endavis/pynetappfoundry,production_path_count_matches,true,2464,2464
+21,endavis/pynetappfoundry,test_path_count_matches,true,147,147
+22,loganrooks/arxiv-mcp-pro,cutoff_commit_exists,true,True,True
+22,loganrooks/arxiv-mcp-pro,adoption_commit_exists,true,True,True
+22,loganrooks/arxiv-mcp-pro,adoption_reaches_cutoff,true,True,True
+22,loganrooks/arxiv-mcp-pro,first_parent_exists,true,c987bb49a9a59e49beefeb1831f67b2cbdb91fbe,non-empty
+22,loganrooks/arxiv-mcp-pro,valid_skills_before_is_zero,true,0,0
+22,loganrooks/arxiv-mcp-pro,valid_skills_after_positive,true,1,> 0
+22,loganrooks/arxiv-mcp-pro,reported_skill_paths_match,true,.claude/skills/pr-review-triage/SKILL.md,.claude/skills/pr-review-triage/SKILL.md
+22,loganrooks/arxiv-mcp-pro,adoption_committer_timestamp_matches,true,2026-06-18T15:36:05-04:00,2026-06-18T19:36:05Z
+22,loganrooks/arxiv-mcp-pro,pre_window_observable,true,1a47463e28eb87366ab90880250125e5b591c700,non-empty
+22,loganrooks/arxiv-mcp-pro,post_window_before_cutoff,true,2026-08-17T19:36:05+00:00,<= 2026-10-04T23:59:59+00:00
+22,loganrooks/arxiv-mcp-pro,production_path_count_matches,true,27,27
+22,loganrooks/arxiv-mcp-pro,test_path_count_matches,true,15,15
+23,sslab-gatech/CRSBench,cutoff_commit_exists,true,True,True
+23,sslab-gatech/CRSBench,adoption_commit_exists,true,True,True
+23,sslab-gatech/CRSBench,adoption_reaches_cutoff,true,True,True
+23,sslab-gatech/CRSBench,first_parent_exists,true,ec95db1d560f82e2bd4c400e009917a5625e14ff,non-empty
+23,sslab-gatech/CRSBench,valid_skills_before_is_zero,true,0,0
+23,sslab-gatech/CRSBench,valid_skills_after_positive,true,2,> 0
+23,sslab-gatech/CRSBench,reported_skill_paths_match,true,.claude/skills/vuln-yaml-analyzer/SKILL.md;.claude/skills/vuln-yaml-generator/SKILL.md,.claude/skills/vuln-yaml-analyzer/SKILL.md;.claude/skills/vuln-yaml-generator/SKILL.md
+23,sslab-gatech/CRSBench,adoption_committer_timestamp_matches,true,2026-01-14T17:18:36-05:00,2026-01-14T22:18:36Z
+23,sslab-gatech/CRSBench,pre_window_observable,true,1e56539446f7f44f86ccbf4e6fe7209f982ec1f3,non-empty
+23,sslab-gatech/CRSBench,post_window_before_cutoff,true,2026-03-15T22:18:36+00:00,<= 2026-10-04T23:59:59+00:00
+23,sslab-gatech/CRSBench,production_path_count_matches,true,147,147
+23,sslab-gatech/CRSBench,test_path_count_matches,true,52,52
+24,gr8monk3ys/trading-bot,cutoff_commit_exists,true,True,True
+24,gr8monk3ys/trading-bot,adoption_commit_exists,true,True,True
+24,gr8monk3ys/trading-bot,adoption_reaches_cutoff,true,True,True
+24,gr8monk3ys/trading-bot,first_parent_exists,true,44c7f2a56a981eaae714b7a64108b1279914410c,non-empty
+24,gr8monk3ys/trading-bot,valid_skills_before_is_zero,true,0,0
+24,gr8monk3ys/trading-bot,valid_skills_after_positive,true,8,> 0
+24,gr8monk3ys/trading-bot,reported_skill_paths_match,true,.claude/skills/api-development/SKILL.md;.claude/skills/code-quality/SKILL.md;.claude/skills/database-operations/SKILL.md;.claude/skills/devops-automation/SKILL.md;.claude/skills/frontend-development/SKILL.md;.claude/skills/mcp-builder/SKILL.md;.claude/skills/skill-creator/SKILL.md;.claude/skills/webapp-testing/SKILL.md,.claude/skills/api-development/SKILL.md;.claude/skills/code-quality/SKILL.md;.claude/skills/database-operations/SKILL.md;.claude/skills/devops-automation/SKILL.md;.claude/skills/frontend-development/SKILL.md;.claude/skills/mcp-builder/SKILL.md;.claude/skills/skill-creator/SKILL.md;.claude/skills/webapp-testing/SKILL.md
+24,gr8monk3ys/trading-bot,adoption_committer_timestamp_matches,true,2026-01-14T00:44:54-08:00,2026-01-14T08:44:54Z
+24,gr8monk3ys/trading-bot,pre_window_observable,true,44c7f2a56a981eaae714b7a64108b1279914410c,non-empty
+24,gr8monk3ys/trading-bot,post_window_before_cutoff,true,2026-03-15T08:44:54+00:00,<= 2026-10-04T23:59:59+00:00
+24,gr8monk3ys/trading-bot,production_path_count_matches,true,52,52
+24,gr8monk3ys/trading-bot,test_path_count_matches,true,19,19
+25,wlritchi/env,cutoff_commit_exists,true,True,True
+25,wlritchi/env,adoption_commit_exists,true,True,True
+25,wlritchi/env,adoption_reaches_cutoff,true,True,True
+25,wlritchi/env,first_parent_exists,true,03289cdc9bacb4e527d0b3f8b655508c393872a2,non-empty
+25,wlritchi/env,valid_skills_before_is_zero,true,0,0
+25,wlritchi/env,valid_skills_after_positive,true,1,> 0
+25,wlritchi/env,reported_skill_paths_match,true,.claude/skills/init-private-overlay/SKILL.md,.claude/skills/init-private-overlay/SKILL.md
+25,wlritchi/env,adoption_committer_timestamp_matches,true,2026-05-31T01:49:03-04:00,2026-05-31T05:49:03Z
+25,wlritchi/env,pre_window_observable,true,84ce13a89abedfb7426e594585450e181382a6ae,non-empty
+25,wlritchi/env,post_window_before_cutoff,true,2026-07-30T05:49:03+00:00,<= 2026-10-04T23:59:59+00:00
+25,wlritchi/env,production_path_count_matches,true,16,16
+25,wlritchi/env,test_path_count_matches,true,13,13
+26,jcg-admin/e-commerce-api,cutoff_commit_exists,true,True,True
+26,jcg-admin/e-commerce-api,adoption_commit_exists,true,True,True
+26,jcg-admin/e-commerce-api,adoption_reaches_cutoff,true,True,True
+26,jcg-admin/e-commerce-api,first_parent_exists,true,50124a0855130b3067a387e869a598960c4a6017,non-empty
+26,jcg-admin/e-commerce-api,valid_skills_before_is_zero,true,0,0
+26,jcg-admin/e-commerce-api,valid_skills_after_positive,true,84,> 0
+26,jcg-admin/e-commerce-api,reported_skill_paths_match,true,.claude/skills/ba-elicitation/SKILL.md;.claude/skills/ba-planning/SKILL.md;.claude/skills/ba-requirements-analysis/SKILL.md;.claude/skills/ba-requirements-lifecycle/SKILL.md;.claude/skills/ba-solution-evaluation/SKILL.md;.claude/skills/ba-strategy/SKILL.md;.claude/skills/bpa-analyze/SKILL.md;.claude/skills/bpa-design/SKILL.md;.claude/skills/bpa-identify/SKILL.md;.claude/skills/bpa-implement/SKILL.md;.claude/skills/bpa-map/SKILL.md;.claude/skills/bpa-monitor/SKILL.md;.claude/skills/cp-diagnosis/SKILL.md;.claude/skills/cp-evaluate/SKILL.md;.claude/skills/cp-implement/SKILL.md;.claude/skills/cp-initiation/SKILL.md;.claude/skills/cp-plan/SKILL.md;.claude/skills/cp-recommend/SKILL.md;.claude/skills/cp-structure/SKILL.md;.claude/skills/dmaic-analyze/SKILL.md;.claude/skills/dmaic-control/SKILL.md;.claude/skills/dmaic-define/SKILL.md;.claude/skills/dmaic-improve/SKILL.md;.claude/skills/dmaic-measure/SKILL.md;.claude/skills/kanban-board-setup/SKILL.md;.claude/skills/kanban-flow-metrics/SKILL.md;.claude/skills/kanban-queue-management/SKILL.md;.claude/skills/kanban-wip-limits/SKILL.md;.claude/skills/lean-analyze/SKILL.md;.claude/skills/lean-control/SKILL.md;.claude/skills/lean-define/SKILL.md;.claude/skills/lean-improve/SKILL.md;.claude/skills/lean-measure/SKILL.md;.claude/skills/pdca-act/SKILL.md;.claude/skills/pdca-check/SKILL.md;.claude/skills/pdca-do/SKILL.md;.claude/skills/pdca-plan/SKILL.md;.claude/skills/pm-closing/SKILL.md;.claude/skills/pm-executing/SKILL.md;.claude/skills/pm-initiating/SKILL.md;.claude/skills/pm-monitoring/SKILL.md;.claude/skills/pm-planning/SKILL.md;.claude/skills/pps-analyze/SKILL.md;.claude/skills/pps-clarify/SKILL.md;.claude/skills/pps-countermeasures/SKILL.md;.claude/skills/pps-evaluate/SKILL.md;.claude/skills/pps-implement/SKILL.md;.claude/skills/pps-target/SKILL.md;.claude/skills/rm-analysis/SKILL.md;.claude/skills/rm-elicitation/SKILL.md;.claude/skills/rm-management/SKILL.md;.claude/skills/rm-specification/SKILL.md;.claude/skills/rm-validation/SKILL.md;.claude/skills/rup-construction/SKILL.md;.claude/skills/rup-elaboration/SKILL.md;.claude/skills/rup-inception/SKILL.md;.claude/skills/rup-transition/SKILL.md;.claude/skills/scrum-backlog-refinement/SKILL.md;.claude/skills/scrum-daily-standup/SKILL.md;.claude/skills/scrum-definition-of-done/SKILL.md;.claude/skills/scrum-retrospective/SKILL.md;.claude/skills/scrum-sprint-planning/SKILL.md;.claude/skills/scrum-sprint-review/SKILL.md;.claude/skills/sp-adjust/SKILL.md;.claude/skills/sp-analysis/SKILL.md;.claude/skills/sp-context/SKILL.md;.claude/skills/sp-execute/SKILL.md;.claude/skills/sp-formulate/SKILL.md;.claude/skills/sp-gaps/SKILL.md;.claude/skills/sp-monitor/SKILL.md;.claude/skills/sp-plan/SKILL.md;.claude/skills/workflow-audit/SKILL.md;.claude/skills/workflow-baseline/SKILL.md;.claude/skills/workflow-constraints/SKILL.md;.claude/skills/workflow-decompose/SKILL.md;.claude/skills/workflow-diagnose/SKILL.md;.claude/skills/workflow-discover/SKILL.md;.claude/skills/workflow-implement/SKILL.md;.claude/skills/workflow-pilot/SKILL.md;.claude/skills/workflow-scope/SKILL.md;.claude/skills/workflow-standardize/SKILL.md;.claude/skills/workflow-strategy/SKILL.md;.claude/skills/workflow-structure/SKILL.md;.claude/skills/workflow-track/SKILL.md,.claude/skills/ba-elicitation/SKILL.md;.claude/skills/ba-planning/SKILL.md;.claude/skills/ba-requirements-analysis/SKILL.md;.claude/skills/ba-requirements-lifecycle/SKILL.md;.claude/skills/ba-solution-evaluation/SKILL.md;.claude/skills/ba-strategy/SKILL.md;.claude/skills/bpa-analyze/SKILL.md;.claude/skills/bpa-design/SKILL.md;.claude/skills/bpa-identify/SKILL.md;.claude/skills/bpa-implement/SKILL.md;.claude/skills/bpa-map/SKILL.md;.claude/skills/bpa-monitor/SKILL.md;.claude/skills/cp-diagnosis/SKILL.md;.claude/skills/cp-evaluate/SKILL.md;.claude/skills/cp-implement/SKILL.md;.claude/skills/cp-initiation/SKILL.md;.claude/skills/cp-plan/SKILL.md;.claude/skills/cp-recommend/SKILL.md;.claude/skills/cp-structure/SKILL.md;.claude/skills/dmaic-analyze/SKILL.md;.claude/skills/dmaic-control/SKILL.md;.claude/skills/dmaic-define/SKILL.md;.claude/skills/dmaic-improve/SKILL.md;.claude/skills/dmaic-measure/SKILL.md;.claude/skills/kanban-board-setup/SKILL.md;.claude/skills/kanban-flow-metrics/SKILL.md;.claude/skills/kanban-queue-management/SKILL.md;.claude/skills/kanban-wip-limits/SKILL.md;.claude/skills/lean-analyze/SKILL.md;.claude/skills/lean-control/SKILL.md;.claude/skills/lean-define/SKILL.md;.claude/skills/lean-improve/SKILL.md;.claude/skills/lean-measure/SKILL.md;.claude/skills/pdca-act/SKILL.md;.claude/skills/pdca-check/SKILL.md;.claude/skills/pdca-do/SKILL.md;.claude/skills/pdca-plan/SKILL.md;.claude/skills/pm-closing/SKILL.md;.claude/skills/pm-executing/SKILL.md;.claude/skills/pm-initiating/SKILL.md;.claude/skills/pm-monitoring/SKILL.md;.claude/skills/pm-planning/SKILL.md;.claude/skills/pps-analyze/SKILL.md;.claude/skills/pps-clarify/SKILL.md;.claude/skills/pps-countermeasures/SKILL.md;.claude/skills/pps-evaluate/SKILL.md;.claude/skills/pps-implement/SKILL.md;.claude/skills/pps-target/SKILL.md;.claude/skills/rm-analysis/SKILL.md;.claude/skills/rm-elicitation/SKILL.md;.claude/skills/rm-management/SKILL.md;.claude/skills/rm-specification/SKILL.md;.claude/skills/rm-validation/SKILL.md;.claude/skills/rup-construction/SKILL.md;.claude/skills/rup-elaboration/SKILL.md;.claude/skills/rup-inception/SKILL.md;.claude/skills/rup-transition/SKILL.md;.claude/skills/scrum-backlog-refinement/SKILL.md;.claude/skills/scrum-daily-standup/SKILL.md;.claude/skills/scrum-definition-of-done/SKILL.md;.claude/skills/scrum-retrospective/SKILL.md;.claude/skills/scrum-sprint-planning/SKILL.md;.claude/skills/scrum-sprint-review/SKILL.md;.claude/skills/sp-adjust/SKILL.md;.claude/skills/sp-analysis/SKILL.md;.claude/skills/sp-context/SKILL.md;.claude/skills/sp-execute/SKILL.md;.claude/skills/sp-formulate/SKILL.md;.claude/skills/sp-gaps/SKILL.md;.claude/skills/sp-monitor/SKILL.md;.claude/skills/sp-plan/SKILL.md;.claude/skills/workflow-audit/SKILL.md;.claude/skills/workflow-baseline/SKILL.md;.claude/skills/workflow-constraints/SKILL.md;.claude/skills/workflow-decompose/SKILL.md;.claude/skills/workflow-diagnose/SKILL.md;.claude/skills/workflow-discover/SKILL.md;.claude/skills/workflow-implement/SKILL.md;.claude/skills/workflow-pilot/SKILL.md;.claude/skills/workflow-scope/SKILL.md;.claude/skills/workflow-standardize/SKILL.md;.claude/skills/workflow-strategy/SKILL.md;.claude/skills/workflow-structure/SKILL.md;.claude/skills/workflow-track/SKILL.md
+26,jcg-admin/e-commerce-api,adoption_committer_timestamp_matches,true,2026-07-04T17:54:02-06:00,2026-07-04T23:54:02Z
+26,jcg-admin/e-commerce-api,pre_window_observable,true,d7ea83cf84445b7704ae09efafdc721a7e56ed92,non-empty
+26,jcg-admin/e-commerce-api,post_window_before_cutoff,true,2026-09-02T23:54:02+00:00,<= 2026-10-04T23:59:59+00:00
+26,jcg-admin/e-commerce-api,production_path_count_matches,true,419,419
+26,jcg-admin/e-commerce-api,test_path_count_matches,true,173,173
+27,SublimeText/PackageDev,cutoff_commit_exists,true,True,True
+27,SublimeText/PackageDev,adoption_commit_exists,true,True,True
+27,SublimeText/PackageDev,adoption_reaches_cutoff,true,True,True
+27,SublimeText/PackageDev,first_parent_exists,true,87dc0f102faabcef6e3de763f0a73df61ebb54ac,non-empty
+27,SublimeText/PackageDev,valid_skills_before_is_zero,true,0,0
+27,SublimeText/PackageDev,valid_skills_after_positive,true,1,> 0
+27,SublimeText/PackageDev,reported_skill_paths_match,true,.agents/skills/release-note-generation/SKILL.md,.agents/skills/release-note-generation/SKILL.md
+27,SublimeText/PackageDev,adoption_committer_timestamp_matches,true,2026-07-11T16:29:40+02:00,2026-07-11T14:29:40Z
+27,SublimeText/PackageDev,pre_window_observable,true,cf0aadb688d96864c06634efc97cefdcba36f413,non-empty
+27,SublimeText/PackageDev,post_window_before_cutoff,true,2026-09-09T14:29:40+00:00,<= 2026-10-04T23:59:59+00:00
+27,SublimeText/PackageDev,production_path_count_matches,true,34,34
+27,SublimeText/PackageDev,test_path_count_matches,true,1,1
+28,SepineTam/mcp-for-stata,cutoff_commit_exists,true,True,True
+28,SepineTam/mcp-for-stata,adoption_commit_exists,true,True,True
+28,SepineTam/mcp-for-stata,adoption_reaches_cutoff,true,True,True
+28,SepineTam/mcp-for-stata,first_parent_exists,true,4e148606ea89bac657b7f93c2f2fd86982ce8a6d,non-empty
+28,SepineTam/mcp-for-stata,valid_skills_before_is_zero,true,0,0
+28,SepineTam/mcp-for-stata,valid_skills_after_positive,true,1,> 0
+28,SepineTam/mcp-for-stata,reported_skill_paths_match,true,.claude/skills/rfc-impl-generator/SKILL.md,.claude/skills/rfc-impl-generator/SKILL.md
+28,SepineTam/mcp-for-stata,adoption_committer_timestamp_matches,true,2026-04-20T17:19:21+08:00,2026-04-20T09:19:21Z
+28,SepineTam/mcp-for-stata,pre_window_observable,true,09a79b874c906ee808ff1225f372bee6d2415302,non-empty
+28,SepineTam/mcp-for-stata,post_window_before_cutoff,true,2026-06-19T09:19:21+00:00,<= 2026-10-04T23:59:59+00:00
+28,SepineTam/mcp-for-stata,production_path_count_matches,true,84,84
+28,SepineTam/mcp-for-stata,test_path_count_matches,true,2,2
+29,anwellmeng/ai-crawler,cutoff_commit_exists,true,True,True
+29,anwellmeng/ai-crawler,adoption_commit_exists,true,True,True
+29,anwellmeng/ai-crawler,adoption_reaches_cutoff,true,True,True
+29,anwellmeng/ai-crawler,first_parent_exists,true,38c8db1a0746dc3764d5d62e448a3d5b2e7c937b,non-empty
+29,anwellmeng/ai-crawler,valid_skills_before_is_zero,true,0,0
+29,anwellmeng/ai-crawler,valid_skills_after_positive,true,1,> 0
+29,anwellmeng/ai-crawler,reported_skill_paths_match,true,.claude/skills/new-award-scraper/SKILL.md,.claude/skills/new-award-scraper/SKILL.md
+29,anwellmeng/ai-crawler,adoption_committer_timestamp_matches,true,2026-06-25T20:11:50-04:00,2026-06-26T00:11:50Z
+29,anwellmeng/ai-crawler,pre_window_observable,true,19eca01fd3f126429b589e898b55939b583eeae3,non-empty
+29,anwellmeng/ai-crawler,post_window_before_cutoff,true,2026-08-25T00:11:50+00:00,<= 2026-10-04T23:59:59+00:00
+29,anwellmeng/ai-crawler,production_path_count_matches,true,12,12
+29,anwellmeng/ai-crawler,test_path_count_matches,true,9,9
+30,lsst-sqre/ook,cutoff_commit_exists,true,True,True
+30,lsst-sqre/ook,adoption_commit_exists,true,True,True
+30,lsst-sqre/ook,adoption_reaches_cutoff,true,True,True
+30,lsst-sqre/ook,first_parent_exists,true,75f8e7c9930ab8333f5065fa28eba14756996dbf,non-empty
+30,lsst-sqre/ook,valid_skills_before_is_zero,true,0,0
+30,lsst-sqre/ook,valid_skills_after_positive,true,20,> 0
+30,lsst-sqre/ook,reported_skill_paths_match,true,.agents/skills/project-mechanics/SKILL.md;.agents/skills/stoker-create-pr/SKILL.md;.agents/skills/stoker-fixup/SKILL.md;.agents/skills/stoker-implement/SKILL.md;.agents/skills/stoker-prd-followup/SKILL.md;.agents/skills/stoker-prd-to-issues/SKILL.md;.agents/skills/stoker-prd/SKILL.md;.agents/skills/stoker-rebase/SKILL.md;.agents/skills/stoker-review/SKILL.md;.agents/skills/stoker-work/SKILL.md;.claude/skills/project-mechanics/SKILL.md;.claude/skills/stoker-create-pr/SKILL.md;.claude/skills/stoker-fixup/SKILL.md;.claude/skills/stoker-implement/SKILL.md;.claude/skills/stoker-prd-followup/SKILL.md;.claude/skills/stoker-prd-to-issues/SKILL.md;.claude/skills/stoker-prd/SKILL.md;.claude/skills/stoker-rebase/SKILL.md;.claude/skills/stoker-review/SKILL.md;.claude/skills/stoker-work/SKILL.md,.agents/skills/project-mechanics/SKILL.md;.agents/skills/stoker-create-pr/SKILL.md;.agents/skills/stoker-fixup/SKILL.md;.agents/skills/stoker-implement/SKILL.md;.agents/skills/stoker-prd-followup/SKILL.md;.agents/skills/stoker-prd-to-issues/SKILL.md;.agents/skills/stoker-prd/SKILL.md;.agents/skills/stoker-rebase/SKILL.md;.agents/skills/stoker-review/SKILL.md;.agents/skills/stoker-work/SKILL.md;.claude/skills/project-mechanics/SKILL.md;.claude/skills/stoker-create-pr/SKILL.md;.claude/skills/stoker-fixup/SKILL.md;.claude/skills/stoker-implement/SKILL.md;.claude/skills/stoker-prd-followup/SKILL.md;.claude/skills/stoker-prd-to-issues/SKILL.md;.claude/skills/stoker-prd/SKILL.md;.claude/skills/stoker-rebase/SKILL.md;.claude/skills/stoker-review/SKILL.md;.claude/skills/stoker-work/SKILL.md
+30,lsst-sqre/ook,adoption_committer_timestamp_matches,true,2026-07-06T10:06:50-04:00,2026-07-06T14:06:50Z
+30,lsst-sqre/ook,pre_window_observable,true,6493286c6141cecca9136b2d8eb2fc2ea28f17cf,non-empty
+30,lsst-sqre/ook,post_window_before_cutoff,true,2026-09-04T14:06:50+00:00,<= 2026-10-04T23:59:59+00:00
+30,lsst-sqre/ook,production_path_count_matches,true,115,115
+30,lsst-sqre/ook,test_path_count_matches,true,53,53
+31,maikramer/GameDev,cutoff_commit_exists,true,True,True
+31,maikramer/GameDev,adoption_commit_exists,true,True,True
+31,maikramer/GameDev,adoption_reaches_cutoff,true,True,True
+31,maikramer/GameDev,first_parent_exists,true,585e79e38a54c059698d3638536a95576ddb4f0d,non-empty
+31,maikramer/GameDev,valid_skills_before_is_zero,true,0,0
+31,maikramer/GameDev,valid_skills_after_positive,true,1,> 0
+31,maikramer/GameDev,reported_skill_paths_match,true,.claude/skills/check/SKILL.md,.claude/skills/check/SKILL.md
+31,maikramer/GameDev,adoption_committer_timestamp_matches,true,2026-06-27T01:06:07-03:00,2026-06-27T04:06:07Z
+31,maikramer/GameDev,pre_window_observable,true,af55b9f9b4aa3f6b2cbbd3573edebce123cea8a6,non-empty
+31,maikramer/GameDev,post_window_before_cutoff,true,2026-08-26T04:06:07+00:00,<= 2026-10-04T23:59:59+00:00
+31,maikramer/GameDev,production_path_count_matches,true,414,414
+31,maikramer/GameDev,test_path_count_matches,true,128,128
+32,PauloCatarino/orcamentos_lanca_encanto,cutoff_commit_exists,true,True,True
+32,PauloCatarino/orcamentos_lanca_encanto,adoption_commit_exists,true,True,True
+32,PauloCatarino/orcamentos_lanca_encanto,adoption_reaches_cutoff,true,True,True
+32,PauloCatarino/orcamentos_lanca_encanto,first_parent_exists,true,fd85df9f326fb187f4fd4b74ec197271b4f95b0c,non-empty
+32,PauloCatarino/orcamentos_lanca_encanto,valid_skills_before_is_zero,true,0,0
+32,PauloCatarino/orcamentos_lanca_encanto,valid_skills_after_positive,true,3,> 0
+32,PauloCatarino/orcamentos_lanca_encanto,reported_skill_paths_match,true,.codex/skills/martelo-dados-gerais-items/SKILL.md;.codex/skills/martelo-protecao-dados-criticos/SKILL.md;.codex/skills/mat-default-filtrado-e-preview/SKILL.md,.codex/skills/martelo-dados-gerais-items/SKILL.md;.codex/skills/martelo-protecao-dados-criticos/SKILL.md;.codex/skills/mat-default-filtrado-e-preview/SKILL.md
+32,PauloCatarino/orcamentos_lanca_encanto,adoption_committer_timestamp_matches,true,2026-06-03T21:38:04+01:00,2026-06-03T20:38:04Z
+32,PauloCatarino/orcamentos_lanca_encanto,pre_window_observable,true,a50fa29f6c240fd7799199f02f998aecf10f17a9,non-empty
+32,PauloCatarino/orcamentos_lanca_encanto,post_window_before_cutoff,true,2026-08-02T20:38:04+00:00,<= 2026-10-04T23:59:59+00:00
+32,PauloCatarino/orcamentos_lanca_encanto,production_path_count_matches,true,127,127
+32,PauloCatarino/orcamentos_lanca_encanto,test_path_count_matches,true,40,40
+33,Yaso2Go/tbhp,cutoff_commit_exists,true,True,True
+33,Yaso2Go/tbhp,adoption_commit_exists,true,True,True
+33,Yaso2Go/tbhp,adoption_reaches_cutoff,true,True,True
+33,Yaso2Go/tbhp,first_parent_exists,true,dbc9327a45b7c5b510155e0e194f85ef0f37e38a,non-empty
+33,Yaso2Go/tbhp,valid_skills_before_is_zero,true,0,0
+33,Yaso2Go/tbhp,valid_skills_after_positive,true,48,> 0
+33,Yaso2Go/tbhp,reported_skill_paths_match,true,.claude/skills/add-phase-feature/SKILL.md;.claude/skills/api-design/SKILL.md;.claude/skills/backend-patterns/SKILL.md;.claude/skills/check-phase-compliance/SKILL.md;.claude/skills/clickhouse-io/SKILL.md;.claude/skills/coding-standards/SKILL.md;.claude/skills/configure-ecc/SKILL.md;.claude/skills/content-hash-cache-pattern/SKILL.md;.claude/skills/continuous-learning-v2/SKILL.md;.claude/skills/continuous-learning/SKILL.md;.claude/skills/cost-aware-llm-pipeline/SKILL.md;.claude/skills/cpp-coding-standards/SKILL.md;.claude/skills/cpp-testing/SKILL.md;.claude/skills/database-migrations/SKILL.md;.claude/skills/debug-pipeline/SKILL.md;.claude/skills/deployment-patterns/SKILL.md;.claude/skills/django-patterns/SKILL.md;.claude/skills/django-security/SKILL.md;.claude/skills/django-tdd/SKILL.md;.claude/skills/django-verification/SKILL.md;.claude/skills/docker-patterns/SKILL.md;.claude/skills/dream-cycle/SKILL.md;.claude/skills/e2e-testing/SKILL.md;.claude/skills/eval-harness/SKILL.md;.claude/skills/frontend-patterns/SKILL.md;.claude/skills/golang-patterns/SKILL.md;.claude/skills/golang-testing/SKILL.md;.claude/skills/iterative-retrieval/SKILL.md;.claude/skills/java-coding-standards/SKILL.md;.claude/skills/jpa-patterns/SKILL.md;.claude/skills/nutrient-document-processing/SKILL.md;.claude/skills/postgres-patterns/SKILL.md;.claude/skills/project-guidelines-example/SKILL.md;.claude/skills/python-patterns/SKILL.md;.claude/skills/python-testing/SKILL.md;.claude/skills/regex-vs-llm-structured-text/SKILL.md;.claude/skills/run-tests/SKILL.md;.claude/skills/security-review/SKILL.md;.claude/skills/security-scan/SKILL.md;.claude/skills/springboot-patterns/SKILL.md;.claude/skills/springboot-security/SKILL.md;.claude/skills/springboot-tdd/SKILL.md;.claude/skills/springboot-verification/SKILL.md;.claude/skills/strategic-compact/SKILL.md;.claude/skills/swift-actor-persistence/SKILL.md;.claude/skills/swift-protocol-di-testing/SKILL.md;.claude/skills/tdd-workflow/SKILL.md;.claude/skills/verification-loop/SKILL.md,.claude/skills/add-phase-feature/SKILL.md;.claude/skills/api-design/SKILL.md;.claude/skills/backend-patterns/SKILL.md;.claude/skills/check-phase-compliance/SKILL.md;.claude/skills/clickhouse-io/SKILL.md;.claude/skills/coding-standards/SKILL.md;.claude/skills/configure-ecc/SKILL.md;.claude/skills/content-hash-cache-pattern/SKILL.md;.claude/skills/continuous-learning-v2/SKILL.md;.claude/skills/continuous-learning/SKILL.md;.claude/skills/cost-aware-llm-pipeline/SKILL.md;.claude/skills/cpp-coding-standards/SKILL.md;.claude/skills/cpp-testing/SKILL.md;.claude/skills/database-migrations/SKILL.md;.claude/skills/debug-pipeline/SKILL.md;.claude/skills/deployment-patterns/SKILL.md;.claude/skills/django-patterns/SKILL.md;.claude/skills/django-security/SKILL.md;.claude/skills/django-tdd/SKILL.md;.claude/skills/django-verification/SKILL.md;.claude/skills/docker-patterns/SKILL.md;.claude/skills/dream-cycle/SKILL.md;.claude/skills/e2e-testing/SKILL.md;.claude/skills/eval-harness/SKILL.md;.claude/skills/frontend-patterns/SKILL.md;.claude/skills/golang-patterns/SKILL.md;.claude/skills/golang-testing/SKILL.md;.claude/skills/iterative-retrieval/SKILL.md;.claude/skills/java-coding-standards/SKILL.md;.claude/skills/jpa-patterns/SKILL.md;.claude/skills/nutrient-document-processing/SKILL.md;.claude/skills/postgres-patterns/SKILL.md;.claude/skills/project-guidelines-example/SKILL.md;.claude/skills/python-patterns/SKILL.md;.claude/skills/python-testing/SKILL.md;.claude/skills/regex-vs-llm-structured-text/SKILL.md;.claude/skills/run-tests/SKILL.md;.claude/skills/security-review/SKILL.md;.claude/skills/security-scan/SKILL.md;.claude/skills/springboot-patterns/SKILL.md;.claude/skills/springboot-security/SKILL.md;.claude/skills/springboot-tdd/SKILL.md;.claude/skills/springboot-verification/SKILL.md;.claude/skills/strategic-compact/SKILL.md;.claude/skills/swift-actor-persistence/SKILL.md;.claude/skills/swift-protocol-di-testing/SKILL.md;.claude/skills/tdd-workflow/SKILL.md;.claude/skills/verification-loop/SKILL.md
+33,Yaso2Go/tbhp,adoption_committer_timestamp_matches,true,2026-02-18T20:41:30+02:00,2026-02-18T18:41:30Z
+33,Yaso2Go/tbhp,pre_window_observable,true,7e4b2e7115cc377779baab9366755c227c1ed996,non-empty
+33,Yaso2Go/tbhp,post_window_before_cutoff,true,2026-04-19T18:41:30+00:00,<= 2026-10-04T23:59:59+00:00
+33,Yaso2Go/tbhp,production_path_count_matches,true,214,214
+33,Yaso2Go/tbhp,test_path_count_matches,true,22,22
+34,Rocky18919975029/VERL,cutoff_commit_exists,true,True,True
+34,Rocky18919975029/VERL,adoption_commit_exists,true,True,True
+34,Rocky18919975029/VERL,adoption_reaches_cutoff,true,True,True
+34,Rocky18919975029/VERL,first_parent_exists,true,00bbaa1490616046e5bf191bf1aec38e66e43519,non-empty
+34,Rocky18919975029/VERL,valid_skills_before_is_zero,true,0,0
+34,Rocky18919975029/VERL,valid_skills_after_positive,true,2,> 0
+34,Rocky18919975029/VERL,reported_skill_paths_match,true,.agent/skills/issue/SKILL.md;.agent/skills/pr/SKILL.md,.agent/skills/issue/SKILL.md;.agent/skills/pr/SKILL.md
+34,Rocky18919975029/VERL,adoption_committer_timestamp_matches,true,2026-05-18T18:29:39+08:00,2026-05-18T10:29:39Z
+34,Rocky18919975029/VERL,pre_window_observable,true,b2c489c3b88a78f6e2abe943e22ac2518cb175f6,non-empty
+34,Rocky18919975029/VERL,post_window_before_cutoff,true,2026-07-17T10:29:39+00:00,<= 2026-10-04T23:59:59+00:00
+34,Rocky18919975029/VERL,production_path_count_matches,true,333,333
+34,Rocky18919975029/VERL,test_path_count_matches,true,167,167
+35,baldwinboy/neuromancers-community-platform,cutoff_commit_exists,true,True,True
+35,baldwinboy/neuromancers-community-platform,adoption_commit_exists,true,True,True
+35,baldwinboy/neuromancers-community-platform,adoption_reaches_cutoff,true,True,True
+35,baldwinboy/neuromancers-community-platform,first_parent_exists,true,7d3557a8dc8bdcb8d11bac91fa0b25a054e7c87e,non-empty
+35,baldwinboy/neuromancers-community-platform,valid_skills_before_is_zero,true,0,0
+35,baldwinboy/neuromancers-community-platform,valid_skills_after_positive,true,4,> 0
+35,baldwinboy/neuromancers-community-platform,reported_skill_paths_match,true,.agents/skills/django-access-review/SKILL.md;.agents/skills/django-perf-review/SKILL.md;.agents/skills/django-python/SKILL.md;.agents/skills/python-testing-patterns/SKILL.md,.agents/skills/django-access-review/SKILL.md;.agents/skills/django-perf-review/SKILL.md;.agents/skills/django-python/SKILL.md;.agents/skills/python-testing-patterns/SKILL.md
+35,baldwinboy/neuromancers-community-platform,adoption_committer_timestamp_matches,true,2026-05-05T18:54:23+01:00,2026-05-05T17:54:23Z
+35,baldwinboy/neuromancers-community-platform,pre_window_observable,true,8d1d46fa83cc68a0be36b0a5da2699427e5e12d1,non-empty
+35,baldwinboy/neuromancers-community-platform,post_window_before_cutoff,true,2026-07-04T17:54:23+00:00,<= 2026-10-04T23:59:59+00:00
+35,baldwinboy/neuromancers-community-platform,production_path_count_matches,true,35,35
+35,baldwinboy/neuromancers-community-platform,test_path_count_matches,true,15,15
+36,berntpopp/gnomad-link,cutoff_commit_exists,true,True,True
+36,berntpopp/gnomad-link,adoption_commit_exists,true,True,True
+36,berntpopp/gnomad-link,adoption_reaches_cutoff,true,True,True
+36,berntpopp/gnomad-link,first_parent_exists,true,55cf38b3e52a9d6f41d9aaec423fc15c43b0c70a,non-empty
+36,berntpopp/gnomad-link,valid_skills_before_is_zero,true,0,0
+36,berntpopp/gnomad-link,valid_skills_after_positive,true,8,> 0
+36,berntpopp/gnomad-link,reported_skill_paths_match,true,.claude/skills/ci-failure-triage/SKILL.md;.claude/skills/code-quality-review/SKILL.md;.claude/skills/dependency-cve-sweep/SKILL.md;.claude/skills/fastapi-route-change/SKILL.md;.claude/skills/fleet-standard-adoption/SKILL.md;.claude/skills/mcp-tool-change/SKILL.md;.claude/skills/release-readiness/SKILL.md;.claude/skills/security-review/SKILL.md,.claude/skills/ci-failure-triage/SKILL.md;.claude/skills/code-quality-review/SKILL.md;.claude/skills/dependency-cve-sweep/SKILL.md;.claude/skills/fastapi-route-change/SKILL.md;.claude/skills/fleet-standard-adoption/SKILL.md;.claude/skills/mcp-tool-change/SKILL.md;.claude/skills/release-readiness/SKILL.md;.claude/skills/security-review/SKILL.md
+36,berntpopp/gnomad-link,adoption_committer_timestamp_matches,true,2026-07-06T16:50:07+02:00,2026-07-06T14:50:07Z
+36,berntpopp/gnomad-link,pre_window_observable,true,a9be438ae30c86e39e115d75c04b225b38a29ea6,non-empty
+36,berntpopp/gnomad-link,post_window_before_cutoff,true,2026-09-04T14:50:07+00:00,<= 2026-10-04T23:59:59+00:00
+36,berntpopp/gnomad-link,production_path_count_matches,true,75,75
+36,berntpopp/gnomad-link,test_path_count_matches,true,98,98
+37,igrybkov/alfred-pj,cutoff_commit_exists,true,True,True
+37,igrybkov/alfred-pj,adoption_commit_exists,true,True,True
+37,igrybkov/alfred-pj,adoption_reaches_cutoff,true,True,True
+37,igrybkov/alfred-pj,first_parent_exists,true,741cc4aa2f3bd9a19db193503196fa4fb6d1c201,non-empty
+37,igrybkov/alfred-pj,valid_skills_before_is_zero,true,0,0
+37,igrybkov/alfred-pj,valid_skills_after_positive,true,1,> 0
+37,igrybkov/alfred-pj,reported_skill_paths_match,true,.claude/skills/release-changelog/SKILL.md,.claude/skills/release-changelog/SKILL.md
+37,igrybkov/alfred-pj,adoption_committer_timestamp_matches,true,2026-01-27T17:25:41-06:00,2026-01-27T23:25:41Z
+37,igrybkov/alfred-pj,pre_window_observable,true,f2a6f5ef60f6b09aa30da7df5bc47443c7116da4,non-empty
+37,igrybkov/alfred-pj,post_window_before_cutoff,true,2026-03-28T23:25:41+00:00,<= 2026-10-04T23:59:59+00:00
+37,igrybkov/alfred-pj,production_path_count_matches,true,20,20
+37,igrybkov/alfred-pj,test_path_count_matches,true,19,19
+38,pytorch/executorch,cutoff_commit_exists,true,True,True
+38,pytorch/executorch,adoption_commit_exists,true,True,True
+38,pytorch/executorch,adoption_reaches_cutoff,true,True,True
+38,pytorch/executorch,first_parent_exists,true,02501d87252be3544ba6cb4cdcaf86f4b38188f0,non-empty
+38,pytorch/executorch,valid_skills_before_is_zero,true,0,0
+38,pytorch/executorch,valid_skills_after_positive,true,4,> 0
+38,pytorch/executorch,reported_skill_paths_match,true,.claude/skills/building/SKILL.md;.claude/skills/export/SKILL.md;.claude/skills/profile/SKILL.md;.claude/skills/setup/SKILL.md,.claude/skills/building/SKILL.md;.claude/skills/export/SKILL.md;.claude/skills/profile/SKILL.md;.claude/skills/setup/SKILL.md
+38,pytorch/executorch,adoption_committer_timestamp_matches,true,2026-02-07T21:21:29-08:00,2026-02-08T05:21:29Z
+38,pytorch/executorch,pre_window_observable,true,a0a627805245c1132c208d382656edac685d879e,non-empty
+38,pytorch/executorch,post_window_before_cutoff,true,2026-04-09T05:21:29+00:00,<= 2026-10-04T23:59:59+00:00
+38,pytorch/executorch,production_path_count_matches,true,1376,1376
+38,pytorch/executorch,test_path_count_matches,true,818,818
+39,kebtes/epicon,cutoff_commit_exists,true,True,True
+39,kebtes/epicon,adoption_commit_exists,true,True,True
+39,kebtes/epicon,adoption_reaches_cutoff,true,True,True
+39,kebtes/epicon,first_parent_exists,true,70ff64a065d2f2d2527c8b873b7b6117c5e50dde,non-empty
+39,kebtes/epicon,valid_skills_before_is_zero,true,0,0
+39,kebtes/epicon,valid_skills_after_positive,true,1,> 0
+39,kebtes/epicon,reported_skill_paths_match,true,.opencode/skills/github-git/SKILL.md,.opencode/skills/github-git/SKILL.md
+39,kebtes/epicon,adoption_committer_timestamp_matches,true,2026-06-24T19:52:10+03:00,2026-06-24T16:52:10Z
+39,kebtes/epicon,pre_window_observable,true,8e95649a4611d0c72f94d47b09225004fea18195,non-empty
+39,kebtes/epicon,post_window_before_cutoff,true,2026-08-23T16:52:10+00:00,<= 2026-10-04T23:59:59+00:00
+39,kebtes/epicon,production_path_count_matches,true,56,56
+39,kebtes/epicon,test_path_count_matches,true,43,43
+40,ohnoohweh/briidge_lossy,cutoff_commit_exists,true,True,True
+40,ohnoohweh/briidge_lossy,adoption_commit_exists,true,True,True
+40,ohnoohweh/briidge_lossy,adoption_reaches_cutoff,true,True,True
+40,ohnoohweh/briidge_lossy,first_parent_exists,true,6d0c260c1695086855f21db00759573b3baed428,non-empty
+40,ohnoohweh/briidge_lossy,valid_skills_before_is_zero,true,0,0
+40,ohnoohweh/briidge_lossy,valid_skills_after_positive,true,1,> 0
+40,ohnoohweh/briidge_lossy,reported_skill_paths_match,true,.codex/skills/obstaclebridge-project/SKILL.md,.codex/skills/obstaclebridge-project/SKILL.md
+40,ohnoohweh/briidge_lossy,adoption_committer_timestamp_matches,true,2026-06-24T22:20:35+08:00,2026-06-24T14:20:35Z
+40,ohnoohweh/briidge_lossy,pre_window_observable,true,b71ff142d4771b8855b1536ff027148bc117e773,non-empty
+40,ohnoohweh/briidge_lossy,post_window_before_cutoff,true,2026-08-23T14:20:35+00:00,<= 2026-10-04T23:59:59+00:00
+40,ohnoohweh/briidge_lossy,production_path_count_matches,true,72,72
+40,ohnoohweh/briidge_lossy,test_path_count_matches,true,64,64
+41,Gon3s/dlux,cutoff_commit_exists,true,True,True
+41,Gon3s/dlux,adoption_commit_exists,true,True,True
+41,Gon3s/dlux,adoption_reaches_cutoff,true,True,True
+41,Gon3s/dlux,first_parent_exists,true,e769c4d1e5c774e28b07d703d474e8ed02034993,non-empty
+41,Gon3s/dlux,valid_skills_before_is_zero,true,0,0
+41,Gon3s/dlux,valid_skills_after_positive,true,5,> 0
+41,Gon3s/dlux,reported_skill_paths_match,true,.claude/skills/api-smoke/SKILL.md;.claude/skills/db-migrate/SKILL.md;.claude/skills/new-feature/SKILL.md;.claude/skills/quality-gate/SKILL.md;.claude/skills/release/SKILL.md,.claude/skills/api-smoke/SKILL.md;.claude/skills/db-migrate/SKILL.md;.claude/skills/new-feature/SKILL.md;.claude/skills/quality-gate/SKILL.md;.claude/skills/release/SKILL.md
+41,Gon3s/dlux,adoption_committer_timestamp_matches,true,2026-06-03T21:05:46+02:00,2026-06-03T19:05:46Z
+41,Gon3s/dlux,pre_window_observable,true,54671c13b44eaa4503026901fa7ec41a5267c0be,non-empty
+41,Gon3s/dlux,post_window_before_cutoff,true,2026-08-02T19:05:46+00:00,<= 2026-10-04T23:59:59+00:00
+41,Gon3s/dlux,production_path_count_matches,true,47,47
+41,Gon3s/dlux,test_path_count_matches,true,13,13
+42,ville-k/slurm_sdk,cutoff_commit_exists,true,True,True
+42,ville-k/slurm_sdk,adoption_commit_exists,true,True,True
+42,ville-k/slurm_sdk,adoption_reaches_cutoff,true,True,True
+42,ville-k/slurm_sdk,first_parent_exists,true,619e38150786a97c72efbc5ec362566e5b6ef28d,non-empty
+42,ville-k/slurm_sdk,valid_skills_before_is_zero,true,0,0
+42,ville-k/slurm_sdk,valid_skills_after_positive,true,2,> 0
+42,ville-k/slurm_sdk,reported_skill_paths_match,true,.agents/skills/docs/SKILL.md;.agents/skills/release/SKILL.md,.agents/skills/docs/SKILL.md;.agents/skills/release/SKILL.md
+42,ville-k/slurm_sdk,adoption_committer_timestamp_matches,true,2026-04-07T16:59:22-06:00,2026-04-07T22:59:22Z
+42,ville-k/slurm_sdk,pre_window_observable,true,100e1c69161621ddbbc868bd182b6c0d7de70b8e,non-empty
+42,ville-k/slurm_sdk,post_window_before_cutoff,true,2026-06-06T22:59:22+00:00,<= 2026-10-04T23:59:59+00:00
+42,ville-k/slurm_sdk,production_path_count_matches,true,67,67
+42,ville-k/slurm_sdk,test_path_count_matches,true,64,64
+43,masakinakai3/Manage,cutoff_commit_exists,true,True,True
+43,masakinakai3/Manage,adoption_commit_exists,true,True,True
+43,masakinakai3/Manage,adoption_reaches_cutoff,true,True,True
+43,masakinakai3/Manage,first_parent_exists,true,f0890ecf07c4d19a42a47118e2b04487cf2283a8,non-empty
+43,masakinakai3/Manage,valid_skills_before_is_zero,true,0,0
+43,masakinakai3/Manage,valid_skills_after_positive,true,1,> 0
+43,masakinakai3/Manage,reported_skill_paths_match,true,.agents/skills/manage-ui-design/SKILL.md,.agents/skills/manage-ui-design/SKILL.md
+43,masakinakai3/Manage,adoption_committer_timestamp_matches,true,2026-04-26T06:51:05+09:00,2026-04-25T21:51:05Z
+43,masakinakai3/Manage,pre_window_observable,true,16e090b75fb6f750b415a23f6bcc8cf3dd13e9f9,non-empty
+43,masakinakai3/Manage,post_window_before_cutoff,true,2026-06-24T21:51:05+00:00,<= 2026-10-04T23:59:59+00:00
+43,masakinakai3/Manage,production_path_count_matches,true,19,19
+43,masakinakai3/Manage,test_path_count_matches,true,4,4
+44,arthursoares/libsync,cutoff_commit_exists,true,True,True
+44,arthursoares/libsync,adoption_commit_exists,true,True,True
+44,arthursoares/libsync,adoption_reaches_cutoff,true,True,True
+44,arthursoares/libsync,first_parent_exists,true,ba49a77527b4bfa8b8b5e8e3ded4b2371d4ea3aa,non-empty
+44,arthursoares/libsync,valid_skills_before_is_zero,true,0,0
+44,arthursoares/libsync,valid_skills_after_positive,true,16,> 0
+44,arthursoares/libsync,reported_skill_paths_match,true,.claude/skills/libsync-architecture-contract/SKILL.md;.claude/skills/libsync-build-and-env/SKILL.md;.claude/skills/libsync-change-control/SKILL.md;.claude/skills/libsync-config-and-flags/SKILL.md;.claude/skills/libsync-debugging-playbook/SKILL.md;.claude/skills/libsync-diagnostics-and-tooling/SKILL.md;.claude/skills/libsync-docs-and-writing/SKILL.md;.claude/skills/libsync-external-positioning/SKILL.md;.claude/skills/libsync-failure-archaeology/SKILL.md;.claude/skills/libsync-proof-and-analysis-toolkit/SKILL.md;.claude/skills/libsync-qobuz-auth-campaign/SKILL.md;.claude/skills/libsync-research-frontier/SKILL.md;.claude/skills/libsync-research-methodology/SKILL.md;.claude/skills/libsync-run-and-operate/SKILL.md;.claude/skills/libsync-validation-and-qa/SKILL.md;.claude/skills/qobuz-tidal-domain-reference/SKILL.md,.claude/skills/libsync-architecture-contract/SKILL.md;.claude/skills/libsync-build-and-env/SKILL.md;.claude/skills/libsync-change-control/SKILL.md;.claude/skills/libsync-config-and-flags/SKILL.md;.claude/skills/libsync-debugging-playbook/SKILL.md;.claude/skills/libsync-diagnostics-and-tooling/SKILL.md;.claude/skills/libsync-docs-and-writing/SKILL.md;.claude/skills/libsync-external-positioning/SKILL.md;.claude/skills/libsync-failure-archaeology/SKILL.md;.claude/skills/libsync-proof-and-analysis-toolkit/SKILL.md;.claude/skills/libsync-qobuz-auth-campaign/SKILL.md;.claude/skills/libsync-research-frontier/SKILL.md;.claude/skills/libsync-research-methodology/SKILL.md;.claude/skills/libsync-run-and-operate/SKILL.md;.claude/skills/libsync-validation-and-qa/SKILL.md;.claude/skills/qobuz-tidal-domain-reference/SKILL.md
+44,arthursoares/libsync,adoption_committer_timestamp_matches,true,2026-07-03T14:30:12+02:00,2026-07-03T12:30:12Z
+44,arthursoares/libsync,pre_window_observable,true,ba49a77527b4bfa8b8b5e8e3ded4b2371d4ea3aa,non-empty
+44,arthursoares/libsync,post_window_before_cutoff,true,2026-09-01T12:30:12+00:00,<= 2026-10-04T23:59:59+00:00
+44,arthursoares/libsync,production_path_count_matches,true,18,18
+44,arthursoares/libsync,test_path_count_matches,true,22,22
+45,wirenboard/wb-mqtt-dali,cutoff_commit_exists,true,True,True
+45,wirenboard/wb-mqtt-dali,adoption_commit_exists,true,True,True
+45,wirenboard/wb-mqtt-dali,adoption_reaches_cutoff,true,True,True
+45,wirenboard/wb-mqtt-dali,first_parent_exists,true,a66b2cab75eff43cadaf922542e047ff4744b32f,non-empty
+45,wirenboard/wb-mqtt-dali,valid_skills_before_is_zero,true,0,0
+45,wirenboard/wb-mqtt-dali,valid_skills_after_positive,true,1,> 0
+45,wirenboard/wb-mqtt-dali,reported_skill_paths_match,true,.claude/skills/plan-feature/SKILL.md,.claude/skills/plan-feature/SKILL.md
+45,wirenboard/wb-mqtt-dali,adoption_committer_timestamp_matches,true,2026-04-29T09:30:09+05:00,2026-04-29T04:30:09Z
+45,wirenboard/wb-mqtt-dali,pre_window_observable,true,aa3d9514b02bbd1dcce33353226d6c7ad6a02995,non-empty
+45,wirenboard/wb-mqtt-dali,post_window_before_cutoff,true,2026-06-28T04:30:09+00:00,<= 2026-10-04T23:59:59+00:00
+45,wirenboard/wb-mqtt-dali,production_path_count_matches,true,73,73
+45,wirenboard/wb-mqtt-dali,test_path_count_matches,true,30,30
+46,choderalab/missense-kinase-toolkit,cutoff_commit_exists,true,True,True
+46,choderalab/missense-kinase-toolkit,adoption_commit_exists,true,True,True
+46,choderalab/missense-kinase-toolkit,adoption_reaches_cutoff,true,True,True
+46,choderalab/missense-kinase-toolkit,first_parent_exists,true,39e4a2285951943f9f1ef24aaf0432dc3528b560,non-empty
+46,choderalab/missense-kinase-toolkit,valid_skills_before_is_zero,true,0,0
+46,choderalab/missense-kinase-toolkit,valid_skills_after_positive,true,5,> 0
+46,choderalab/missense-kinase-toolkit,reported_skill_paths_match,true,.claude/skills/ci/SKILL.md;.claude/skills/formatting/SKILL.md;.claude/skills/git/SKILL.md;.claude/skills/plotting/SKILL.md;.claude/skills/tests/SKILL.md,.claude/skills/ci/SKILL.md;.claude/skills/formatting/SKILL.md;.claude/skills/git/SKILL.md;.claude/skills/plotting/SKILL.md;.claude/skills/tests/SKILL.md
+46,choderalab/missense-kinase-toolkit,adoption_committer_timestamp_matches,true,2026-06-19T10:18:43-04:00,2026-06-19T14:18:43Z
+46,choderalab/missense-kinase-toolkit,pre_window_observable,true,daef5931f2275348ca660df787549a32fac68c20,non-empty
+46,choderalab/missense-kinase-toolkit,post_window_before_cutoff,true,2026-08-18T14:18:43+00:00,<= 2026-10-04T23:59:59+00:00
+46,choderalab/missense-kinase-toolkit,production_path_count_matches,true,83,83
+46,choderalab/missense-kinase-toolkit,test_path_count_matches,true,24,24
+47,Qiskit/samplomatic,cutoff_commit_exists,true,True,True
+47,Qiskit/samplomatic,adoption_commit_exists,true,True,True
+47,Qiskit/samplomatic,adoption_reaches_cutoff,true,True,True
+47,Qiskit/samplomatic,first_parent_exists,true,b1cfdb167630305f652b39c33c40c880c6d21788,non-empty
+47,Qiskit/samplomatic,valid_skills_before_is_zero,true,0,0
+47,Qiskit/samplomatic,valid_skills_after_positive,true,2,> 0
+47,Qiskit/samplomatic,reported_skill_paths_match,true,.claude/skills/changelog/SKILL.md;.claude/skills/review/SKILL.md,.claude/skills/changelog/SKILL.md;.claude/skills/review/SKILL.md
+47,Qiskit/samplomatic,adoption_committer_timestamp_matches,true,2026-05-07T16:34:12-02:30,2026-05-07T19:04:12Z
+47,Qiskit/samplomatic,pre_window_observable,true,44a19b74a3aeabf90764e961364d08a3622f425c,non-empty
+47,Qiskit/samplomatic,post_window_before_cutoff,true,2026-07-06T19:04:12+00:00,<= 2026-10-04T23:59:59+00:00
+47,Qiskit/samplomatic,production_path_count_matches,true,131,131
+47,Qiskit/samplomatic,test_path_count_matches,true,125,125
+48,gcharvin/detecdiv-hub,cutoff_commit_exists,true,True,True
+48,gcharvin/detecdiv-hub,adoption_commit_exists,true,True,True
+48,gcharvin/detecdiv-hub,adoption_reaches_cutoff,true,True,True
+48,gcharvin/detecdiv-hub,first_parent_exists,true,ff59aece107ba484dba700597981e0f2a3e211da,non-empty
+48,gcharvin/detecdiv-hub,valid_skills_before_is_zero,true,0,0
+48,gcharvin/detecdiv-hub,valid_skills_after_positive,true,1,> 0
+48,gcharvin/detecdiv-hub,reported_skill_paths_match,true,.claude/skills/detecdiv-hub-ops/SKILL.md,.claude/skills/detecdiv-hub-ops/SKILL.md
+48,gcharvin/detecdiv-hub,adoption_committer_timestamp_matches,true,2026-05-07T10:23:00+02:00,2026-05-07T08:23:00Z
+48,gcharvin/detecdiv-hub,pre_window_observable,true,d559aec65190676bd71a8afbeb1afb82132b911d,non-empty
+48,gcharvin/detecdiv-hub,post_window_before_cutoff,true,2026-07-06T08:23:00+00:00,<= 2026-10-04T23:59:59+00:00
+48,gcharvin/detecdiv-hub,production_path_count_matches,true,67,67
+48,gcharvin/detecdiv-hub,test_path_count_matches,true,11,11
+49,SongshGeo/Python-Project-Template,cutoff_commit_exists,true,True,True
+49,SongshGeo/Python-Project-Template,adoption_commit_exists,true,True,True
+49,SongshGeo/Python-Project-Template,adoption_reaches_cutoff,true,True,True
+49,SongshGeo/Python-Project-Template,first_parent_exists,true,20cf54e1a9d595ed864884edb3bb6a5d3301b077,non-empty
+49,SongshGeo/Python-Project-Template,valid_skills_before_is_zero,true,0,0
+49,SongshGeo/Python-Project-Template,valid_skills_after_positive,true,5,> 0
+49,SongshGeo/Python-Project-Template,reported_skill_paths_match,true,.claude/skills/commit/SKILL.md;.claude/skills/quality-check/SKILL.md;.claude/skills/setup-project/SKILL.md;.claude/skills/update-memory-bank/SKILL.md;.claude/skills/upgrade-project/SKILL.md,.claude/skills/commit/SKILL.md;.claude/skills/quality-check/SKILL.md;.claude/skills/setup-project/SKILL.md;.claude/skills/update-memory-bank/SKILL.md;.claude/skills/upgrade-project/SKILL.md
+49,SongshGeo/Python-Project-Template,adoption_committer_timestamp_matches,true,2026-07-02T11:41:55+02:00,2026-07-02T09:41:55Z
+49,SongshGeo/Python-Project-Template,pre_window_observable,true,20cf54e1a9d595ed864884edb3bb6a5d3301b077,non-empty
+49,SongshGeo/Python-Project-Template,post_window_before_cutoff,true,2026-08-31T09:41:55+00:00,<= 2026-10-04T23:59:59+00:00
+49,SongshGeo/Python-Project-Template,production_path_count_matches,true,5,5
+49,SongshGeo/Python-Project-Template,test_path_count_matches,true,4,4
+50,erwinkn/pulse-ui,cutoff_commit_exists,true,True,True
+50,erwinkn/pulse-ui,adoption_commit_exists,true,True,True
+50,erwinkn/pulse-ui,adoption_reaches_cutoff,true,True,True
+50,erwinkn/pulse-ui,first_parent_exists,true,93a5a15066ce518135556096fb2c97eb12c10aa3,non-empty
+50,erwinkn/pulse-ui,valid_skills_before_is_zero,true,0,0
+50,erwinkn/pulse-ui,valid_skills_after_positive,true,1,> 0
+50,erwinkn/pulse-ui,reported_skill_paths_match,true,.claude/skills/context7/SKILL.md,.claude/skills/context7/SKILL.md
+50,erwinkn/pulse-ui,adoption_committer_timestamp_matches,true,2026-01-01T23:26:45+01:00,2026-01-01T22:26:45Z
+50,erwinkn/pulse-ui,pre_window_observable,true,659c4b4bf5815281f616271302f309bc858b4b85,non-empty
+50,erwinkn/pulse-ui,post_window_before_cutoff,true,2026-03-02T22:26:45+00:00,<= 2026-10-04T23:59:59+00:00
+50,erwinkn/pulse-ui,production_path_count_matches,true,323,323
+50,erwinkn/pulse-ui,test_path_count_matches,true,50,50
+51,game-scheduler/game-scheduler,cutoff_commit_exists,true,True,True
+51,game-scheduler/game-scheduler,adoption_commit_exists,true,True,True
+51,game-scheduler/game-scheduler,adoption_reaches_cutoff,true,True,True
+51,game-scheduler/game-scheduler,first_parent_exists,true,839814608ea39e6434202dd2e76dda097812f8a1,non-empty
+51,game-scheduler/game-scheduler,valid_skills_before_is_zero,true,0,0
+51,game-scheduler/game-scheduler,valid_skills_after_positive,true,1,> 0
+51,game-scheduler/game-scheduler,reported_skill_paths_match,true,.claude/skills/sync-claude-config/SKILL.md,.claude/skills/sync-claude-config/SKILL.md
+51,game-scheduler/game-scheduler,adoption_committer_timestamp_matches,true,2026-07-14T21:47:41-07:00,2026-07-15T04:47:41Z
+51,game-scheduler/game-scheduler,pre_window_observable,true,9377a0eb669363fbc087bffaf37478503ec0ee62,non-empty
+51,game-scheduler/game-scheduler,post_window_before_cutoff,true,2026-09-13T04:47:41+00:00,<= 2026-10-04T23:59:59+00:00
+51,game-scheduler/game-scheduler,production_path_count_matches,true,192,192
+51,game-scheduler/game-scheduler,test_path_count_matches,true,280,280
+52,cantis/MechBay,cutoff_commit_exists,true,True,True
+52,cantis/MechBay,adoption_commit_exists,true,True,True
+52,cantis/MechBay,adoption_reaches_cutoff,true,True,True
+52,cantis/MechBay,first_parent_exists,true,5deced7a4f6990f0350021e25f78ca1d20338173,non-empty
+52,cantis/MechBay,valid_skills_before_is_zero,true,0,0
+52,cantis/MechBay,valid_skills_after_positive,true,4,> 0
+52,cantis/MechBay,reported_skill_paths_match,true,.github/skills/admin-crud-pages/SKILL.md;.github/skills/forms-and-validation/SKILL.md;.github/skills/jinja-partials-and-macros/SKILL.md;.github/skills/python-web-frontend/SKILL.md,.github/skills/admin-crud-pages/SKILL.md;.github/skills/forms-and-validation/SKILL.md;.github/skills/jinja-partials-and-macros/SKILL.md;.github/skills/python-web-frontend/SKILL.md
+52,cantis/MechBay,adoption_committer_timestamp_matches,true,2026-06-10T20:42:42-05:00,2026-06-11T01:42:42Z
+52,cantis/MechBay,pre_window_observable,true,5deced7a4f6990f0350021e25f78ca1d20338173,non-empty
+52,cantis/MechBay,post_window_before_cutoff,true,2026-08-10T01:42:42+00:00,<= 2026-10-04T23:59:59+00:00
+52,cantis/MechBay,production_path_count_matches,true,23,23
+52,cantis/MechBay,test_path_count_matches,true,11,11
+53,Jamie-BitFlight/git-tree-project-structure-to-yaml,cutoff_commit_exists,true,True,True
+53,Jamie-BitFlight/git-tree-project-structure-to-yaml,adoption_commit_exists,true,True,True
+53,Jamie-BitFlight/git-tree-project-structure-to-yaml,adoption_reaches_cutoff,true,True,True
+53,Jamie-BitFlight/git-tree-project-structure-to-yaml,first_parent_exists,true,eb04f7f3b391df8e676597ab65dfb11983145207,non-empty
+53,Jamie-BitFlight/git-tree-project-structure-to-yaml,valid_skills_before_is_zero,true,0,0
+53,Jamie-BitFlight/git-tree-project-structure-to-yaml,valid_skills_after_positive,true,1,> 0
+53,Jamie-BitFlight/git-tree-project-structure-to-yaml,reported_skill_paths_match,true,.claude/skills/brownfield-modernization/SKILL.md,.claude/skills/brownfield-modernization/SKILL.md
+53,Jamie-BitFlight/git-tree-project-structure-to-yaml,adoption_committer_timestamp_matches,true,2026-01-19T13:09:20-05:00,2026-01-19T18:09:20Z
+53,Jamie-BitFlight/git-tree-project-structure-to-yaml,pre_window_observable,true,eb04f7f3b391df8e676597ab65dfb11983145207,non-empty
+53,Jamie-BitFlight/git-tree-project-structure-to-yaml,post_window_before_cutoff,true,2026-03-20T18:09:20+00:00,<= 2026-10-04T23:59:59+00:00
+53,Jamie-BitFlight/git-tree-project-structure-to-yaml,production_path_count_matches,true,2,2
+53,Jamie-BitFlight/git-tree-project-structure-to-yaml,test_path_count_matches,true,2,2
+54,siavashoutadi/djdevx,cutoff_commit_exists,true,True,True
+54,siavashoutadi/djdevx,adoption_commit_exists,true,True,True
+54,siavashoutadi/djdevx,adoption_reaches_cutoff,true,True,True
+54,siavashoutadi/djdevx,first_parent_exists,true,4f0c50cd081d42353edf6042188ceda88041643f,non-empty
+54,siavashoutadi/djdevx,valid_skills_before_is_zero,true,0,0
+54,siavashoutadi/djdevx,valid_skills_after_positive,true,2,> 0
+54,siavashoutadi/djdevx,reported_skill_paths_match,true,.github/skills/django-package-researcher/SKILL.md;.github/skills/django-packages/SKILL.md,.github/skills/django-package-researcher/SKILL.md;.github/skills/django-packages/SKILL.md
+54,siavashoutadi/djdevx,adoption_committer_timestamp_matches,true,2026-03-03T23:39:09+01:00,2026-03-03T22:39:09Z
+54,siavashoutadi/djdevx,pre_window_observable,true,f15307dd44571aef025c7fda9939d88b634487e9,non-empty
+54,siavashoutadi/djdevx,post_window_before_cutoff,true,2026-05-02T22:39:09+00:00,<= 2026-10-04T23:59:59+00:00
+54,siavashoutadi/djdevx,production_path_count_matches,true,185,185
+54,siavashoutadi/djdevx,test_path_count_matches,true,144,144
+55,equinor/ai-platform-actions,cutoff_commit_exists,true,True,True
+55,equinor/ai-platform-actions,adoption_commit_exists,true,True,True
+55,equinor/ai-platform-actions,adoption_reaches_cutoff,true,True,True
+55,equinor/ai-platform-actions,first_parent_exists,true,2726fa162276ce5e16db9357cd77b7b1a0caca49,non-empty
+55,equinor/ai-platform-actions,valid_skills_before_is_zero,true,0,0
+55,equinor/ai-platform-actions,valid_skills_after_positive,true,2,> 0
+55,equinor/ai-platform-actions,reported_skill_paths_match,true,.github/skills/ai-requirements/SKILL.md;.github/skills/create-inner-loops/SKILL.md,.github/skills/ai-requirements/SKILL.md;.github/skills/create-inner-loops/SKILL.md
+55,equinor/ai-platform-actions,adoption_committer_timestamp_matches,true,2026-02-10T09:47:16+01:00,2026-02-10T08:47:16Z
+55,equinor/ai-platform-actions,pre_window_observable,true,ec7ad0cdfc5a264dd5e8de4efed4143432746aca,non-empty
+55,equinor/ai-platform-actions,post_window_before_cutoff,true,2026-04-11T08:47:16+00:00,<= 2026-10-04T23:59:59+00:00
+55,equinor/ai-platform-actions,production_path_count_matches,true,10,10
+55,equinor/ai-platform-actions,test_path_count_matches,true,1,1
+56,Sendspin/aiosendspin,cutoff_commit_exists,true,True,True
+56,Sendspin/aiosendspin,adoption_commit_exists,true,True,True
+56,Sendspin/aiosendspin,adoption_reaches_cutoff,true,True,True
+56,Sendspin/aiosendspin,first_parent_exists,true,f7df890d4fc2cdb1869eb86f85bcf9f56a223068,non-empty
+56,Sendspin/aiosendspin,valid_skills_before_is_zero,true,0,0
+56,Sendspin/aiosendspin,valid_skills_after_positive,true,1,> 0
+56,Sendspin/aiosendspin,reported_skill_paths_match,true,.claude/skills/review-pr/SKILL.md,.claude/skills/review-pr/SKILL.md
+56,Sendspin/aiosendspin,adoption_committer_timestamp_matches,true,2026-03-17T10:51:48+01:00,2026-03-17T09:51:48Z
+56,Sendspin/aiosendspin,pre_window_observable,true,30bc37510ac295e4aa25e708e86428237f6e424a,non-empty
+56,Sendspin/aiosendspin,post_window_before_cutoff,true,2026-05-16T09:51:48+00:00,<= 2026-10-04T23:59:59+00:00
+56,Sendspin/aiosendspin,production_path_count_matches,true,56,56
+56,Sendspin/aiosendspin,test_path_count_matches,true,54,54
+57,AldanDev/Notora,cutoff_commit_exists,true,True,True
+57,AldanDev/Notora,adoption_commit_exists,true,True,True
+57,AldanDev/Notora,adoption_reaches_cutoff,true,True,True
+57,AldanDev/Notora,first_parent_exists,true,cb283a8409eb0d13aadeb67e19348eeccc7aa44c,non-empty
+57,AldanDev/Notora,valid_skills_before_is_zero,true,0,0
+57,AldanDev/Notora,valid_skills_after_positive,true,1,> 0
+57,AldanDev/Notora,reported_skill_paths_match,true,.agents/skills/notora-v2/SKILL.md,.agents/skills/notora-v2/SKILL.md
+57,AldanDev/Notora,adoption_committer_timestamp_matches,true,2026-07-01T17:44:14+03:00,2026-07-01T14:44:14Z
+57,AldanDev/Notora,pre_window_observable,true,ea384b9481a4b44fd71788922b7b868447b07891,non-empty
+57,AldanDev/Notora,post_window_before_cutoff,true,2026-08-30T14:44:14+00:00,<= 2026-10-04T23:59:59+00:00
+57,AldanDev/Notora,production_path_count_matches,true,58,58
+57,AldanDev/Notora,test_path_count_matches,true,50,50
+58,i-am-bee/agentstack,cutoff_commit_exists,true,True,True
+58,i-am-bee/agentstack,adoption_commit_exists,true,True,True
+58,i-am-bee/agentstack,adoption_reaches_cutoff,true,True,True
+58,i-am-bee/agentstack,first_parent_exists,true,3188abe414e1cc0d292c16ef3028816b7a5b7ea6,non-empty
+58,i-am-bee/agentstack,valid_skills_before_is_zero,true,0,0
+58,i-am-bee/agentstack,valid_skills_after_positive,true,1,> 0
+58,i-am-bee/agentstack,reported_skill_paths_match,true,.claude/skills/release-notes/SKILL.md,.claude/skills/release-notes/SKILL.md
+58,i-am-bee/agentstack,adoption_committer_timestamp_matches,true,2026-01-21T08:34:04+01:00,2026-01-21T07:34:04Z
+58,i-am-bee/agentstack,pre_window_observable,true,329e278c27dd82070fb031a726444b86f1d4059d,non-empty
+58,i-am-bee/agentstack,post_window_before_cutoff,true,2026-03-22T07:34:04+00:00,<= 2026-10-04T23:59:59+00:00
+58,i-am-bee/agentstack,production_path_count_matches,true,311,311
+58,i-am-bee/agentstack,test_path_count_matches,true,59,59
+59,OpenWSGR/AutoWSGR,cutoff_commit_exists,true,True,True
+59,OpenWSGR/AutoWSGR,adoption_commit_exists,true,True,True
+59,OpenWSGR/AutoWSGR,adoption_reaches_cutoff,true,True,True
+59,OpenWSGR/AutoWSGR,first_parent_exists,true,1e658d4d7fd781563bff821f1f946dd9c4be09e4,non-empty
+59,OpenWSGR/AutoWSGR,valid_skills_before_is_zero,true,0,0
+59,OpenWSGR/AutoWSGR,valid_skills_after_positive,true,1,> 0
+59,OpenWSGR/AutoWSGR,reported_skill_paths_match,true,.agents/skills/emulator-debug/SKILL.md,.agents/skills/emulator-debug/SKILL.md
+59,OpenWSGR/AutoWSGR,adoption_committer_timestamp_matches,true,2026-03-29T15:44:10+08:00,2026-03-29T07:44:10Z
+59,OpenWSGR/AutoWSGR,pre_window_observable,true,6bbb69070432673d7ad4b9ba38a03af0f0afc322,non-empty
+59,OpenWSGR/AutoWSGR,post_window_before_cutoff,true,2026-05-28T07:44:10+00:00,<= 2026-10-04T23:59:59+00:00
+59,OpenWSGR/AutoWSGR,production_path_count_matches,true,270,270
+59,OpenWSGR/AutoWSGR,test_path_count_matches,true,15,15
+60,hevangel/dvcon_ai_library,cutoff_commit_exists,true,True,True
+60,hevangel/dvcon_ai_library,adoption_commit_exists,true,True,True
+60,hevangel/dvcon_ai_library,adoption_reaches_cutoff,true,True,True
+60,hevangel/dvcon_ai_library,first_parent_exists,true,d97716fbaab116dee091fd6eb8753c2b78391e48,non-empty
+60,hevangel/dvcon_ai_library,valid_skills_before_is_zero,true,0,0
+60,hevangel/dvcon_ai_library,valid_skills_after_positive,true,1,> 0
+60,hevangel/dvcon_ai_library,reported_skill_paths_match,true,.agents/skills/dvcon-papers/SKILL.md,.agents/skills/dvcon-papers/SKILL.md
+60,hevangel/dvcon_ai_library,adoption_committer_timestamp_matches,true,2026-07-19T18:14:59-07:00,2026-07-20T01:14:59Z
+60,hevangel/dvcon_ai_library,pre_window_observable,true,d97716fbaab116dee091fd6eb8753c2b78391e48,non-empty
+60,hevangel/dvcon_ai_library,post_window_before_cutoff,true,2026-09-18T01:14:59+00:00,<= 2026-10-04T23:59:59+00:00
+60,hevangel/dvcon_ai_library,production_path_count_matches,true,30,30
+60,hevangel/dvcon_ai_library,test_path_count_matches,true,3,3
+61,PurdueAF/purdue-af,cutoff_commit_exists,true,True,True
+61,PurdueAF/purdue-af,adoption_commit_exists,true,True,True
+61,PurdueAF/purdue-af,adoption_reaches_cutoff,true,True,True
+61,PurdueAF/purdue-af,first_parent_exists,true,ca8e1b5879e17d1f839923c81073a5b79bfc7b7c,non-empty
+61,PurdueAF/purdue-af,valid_skills_before_is_zero,true,0,0
+61,PurdueAF/purdue-af,valid_skills_after_positive,true,1,> 0
+61,PurdueAF/purdue-af,reported_skill_paths_match,true,.claude/skills/purdue-af-agentic-interface/SKILL.md,.claude/skills/purdue-af-agentic-interface/SKILL.md
+61,PurdueAF/purdue-af,adoption_committer_timestamp_matches,true,2026-06-12T10:50:19-04:00,2026-06-12T14:50:19Z
+61,PurdueAF/purdue-af,pre_window_observable,true,b916a6b56b6d96c85d874824db76dafdb1dddb5c,non-empty
+61,PurdueAF/purdue-af,post_window_before_cutoff,true,2026-08-11T14:50:19+00:00,<= 2026-10-04T23:59:59+00:00
+61,PurdueAF/purdue-af,production_path_count_matches,true,52,52
+61,PurdueAF/purdue-af,test_path_count_matches,true,34,34
+62,theontho/wgsextract-cli,cutoff_commit_exists,true,True,True
+62,theontho/wgsextract-cli,adoption_commit_exists,true,True,True
+62,theontho/wgsextract-cli,adoption_reaches_cutoff,true,True,True
+62,theontho/wgsextract-cli,first_parent_exists,true,268b919cb8195112a95579dc7fc1ac0eb9087784,non-empty
+62,theontho/wgsextract-cli,valid_skills_before_is_zero,true,0,0
+62,theontho/wgsextract-cli,valid_skills_after_positive,true,1,> 0
+62,theontho/wgsextract-cli,reported_skill_paths_match,true,.agents/skills/ci-pr-autopilot/SKILL.md,.agents/skills/ci-pr-autopilot/SKILL.md
+62,theontho/wgsextract-cli,adoption_committer_timestamp_matches,true,2026-05-06T01:28:48-07:00,2026-05-06T08:28:48Z
+62,theontho/wgsextract-cli,pre_window_observable,true,16744c2fb9a87a92ab1e908e489ac6dcd09d49e1,non-empty
+62,theontho/wgsextract-cli,post_window_before_cutoff,true,2026-07-05T08:28:48+00:00,<= 2026-10-04T23:59:59+00:00
+62,theontho/wgsextract-cli,production_path_count_matches,true,68,68
+62,theontho/wgsextract-cli,test_path_count_matches,true,34,34
+63,styliteag/dashboard,cutoff_commit_exists,true,True,True
+63,styliteag/dashboard,adoption_commit_exists,true,True,True
+63,styliteag/dashboard,adoption_reaches_cutoff,true,True,True
+63,styliteag/dashboard,first_parent_exists,true,5ad7bbb94494a57b97c95817c801fdef132b806d,non-empty
+63,styliteag/dashboard,valid_skills_before_is_zero,true,0,0
+63,styliteag/dashboard,valid_skills_after_positive,true,5,> 0
+63,styliteag/dashboard,reported_skill_paths_match,true,.claude/skills/lab-verify/SKILL.md;.claude/skills/new-migration/SKILL.md;.claude/skills/new-scoped-endpoint/SKILL.md;.claude/skills/ship-agent-change/SKILL.md;.claude/skills/verify-backend/SKILL.md,.claude/skills/lab-verify/SKILL.md;.claude/skills/new-migration/SKILL.md;.claude/skills/new-scoped-endpoint/SKILL.md;.claude/skills/ship-agent-change/SKILL.md;.claude/skills/verify-backend/SKILL.md
+63,styliteag/dashboard,adoption_committer_timestamp_matches,true,2026-07-07T19:06:57+02:00,2026-07-07T17:06:57Z
+63,styliteag/dashboard,pre_window_observable,true,0b2677ad3f3adbb6a67397c6cb0757e53944a7de,non-empty
+63,styliteag/dashboard,post_window_before_cutoff,true,2026-09-05T17:06:57+00:00,<= 2026-10-04T23:59:59+00:00
+63,styliteag/dashboard,production_path_count_matches,true,190,190
+63,styliteag/dashboard,test_path_count_matches,true,108,108
+64,JoshKarpel/counterweight,cutoff_commit_exists,true,True,True
+64,JoshKarpel/counterweight,adoption_commit_exists,true,True,True
+64,JoshKarpel/counterweight,adoption_reaches_cutoff,true,True,True
+64,JoshKarpel/counterweight,first_parent_exists,true,b0f2cad3f8d1a27ce5659cfd664a115bc83f46d3,non-empty
+64,JoshKarpel/counterweight,valid_skills_before_is_zero,true,0,0
+64,JoshKarpel/counterweight,valid_skills_after_positive,true,1,> 0
+64,JoshKarpel/counterweight,reported_skill_paths_match,true,.claude/skills/cw-profile/SKILL.md,.claude/skills/cw-profile/SKILL.md
+64,JoshKarpel/counterweight,adoption_committer_timestamp_matches,true,2026-03-08T21:42:03-05:00,2026-03-09T02:42:03Z
+64,JoshKarpel/counterweight,pre_window_observable,true,8c286be21e6255236f490dc18762dac4ba4951df,non-empty
+64,JoshKarpel/counterweight,post_window_before_cutoff,true,2026-05-08T02:42:03+00:00,<= 2026-10-04T23:59:59+00:00
+64,JoshKarpel/counterweight,production_path_count_matches,true,32,32
+64,JoshKarpel/counterweight,test_path_count_matches,true,35,35
+65,Simpleyyt/ai-manus,cutoff_commit_exists,true,True,True
+65,Simpleyyt/ai-manus,adoption_commit_exists,true,True,True
+65,Simpleyyt/ai-manus,adoption_reaches_cutoff,true,True,True
+65,Simpleyyt/ai-manus,first_parent_exists,true,70331236d41eba98dd79bc394e0a9f1e02d9671f,non-empty
+65,Simpleyyt/ai-manus,valid_skills_before_is_zero,true,0,0
+65,Simpleyyt/ai-manus,valid_skills_after_positive,true,1,> 0
+65,Simpleyyt/ai-manus,reported_skill_paths_match,true,.cursor/skills/debug-claw/SKILL.md,.cursor/skills/debug-claw/SKILL.md
+65,Simpleyyt/ai-manus,adoption_committer_timestamp_matches,true,2026-03-31T00:00:48+08:00,2026-03-30T16:00:48Z
+65,Simpleyyt/ai-manus,pre_window_observable,true,f3836e2324f54a7cf17bad29872f05dca7326adc,non-empty
+65,Simpleyyt/ai-manus,post_window_before_cutoff,true,2026-05-29T16:00:48+00:00,<= 2026-10-04T23:59:59+00:00
+65,Simpleyyt/ai-manus,production_path_count_matches,true,140,140
+65,Simpleyyt/ai-manus,test_path_count_matches,true,6,6
+66,William-Dennis/slm-bias-testing,cutoff_commit_exists,true,True,True
+66,William-Dennis/slm-bias-testing,adoption_commit_exists,true,True,True
+66,William-Dennis/slm-bias-testing,adoption_reaches_cutoff,true,True,True
+66,William-Dennis/slm-bias-testing,first_parent_exists,true,58df32db039ea6ad18eb0c11a8c3c9fefa1a70ae,non-empty
+66,William-Dennis/slm-bias-testing,valid_skills_before_is_zero,true,0,0
+66,William-Dennis/slm-bias-testing,valid_skills_after_positive,true,8,> 0
+66,William-Dennis/slm-bias-testing,reported_skill_paths_match,true,.opencode/skills/caveman/SKILL.md;.opencode/skills/dev-workflow/SKILL.md;.opencode/skills/doc-alignment/SKILL.md;.opencode/skills/grill-me/SKILL.md;.opencode/skills/grilling/SKILL.md;.opencode/skills/opencode-skill-audit/SKILL.md;.opencode/skills/session-retro/SKILL.md;.opencode/skills/writing-great-skills/SKILL.md,.opencode/skills/caveman/SKILL.md;.opencode/skills/dev-workflow/SKILL.md;.opencode/skills/doc-alignment/SKILL.md;.opencode/skills/grill-me/SKILL.md;.opencode/skills/grilling/SKILL.md;.opencode/skills/opencode-skill-audit/SKILL.md;.opencode/skills/session-retro/SKILL.md;.opencode/skills/writing-great-skills/SKILL.md
+66,William-Dennis/slm-bias-testing,adoption_committer_timestamp_matches,true,2026-06-20T01:45:07+01:00,2026-06-20T00:45:07Z
+66,William-Dennis/slm-bias-testing,pre_window_observable,true,e521c3eff40c012cc39af1771c18bd3d7921f54c,non-empty
+66,William-Dennis/slm-bias-testing,post_window_before_cutoff,true,2026-08-19T00:45:07+00:00,<= 2026-10-04T23:59:59+00:00
+66,William-Dennis/slm-bias-testing,production_path_count_matches,true,16,16
+66,William-Dennis/slm-bias-testing,test_path_count_matches,true,11,11
+67,snowflakedb/snowpark-python,cutoff_commit_exists,true,True,True
+67,snowflakedb/snowpark-python,adoption_commit_exists,true,True,True
+67,snowflakedb/snowpark-python,adoption_reaches_cutoff,true,True,True
+67,snowflakedb/snowpark-python,first_parent_exists,true,24129395c423871d93880a3f1fa8fbf2795e2156,non-empty
+67,snowflakedb/snowpark-python,valid_skills_before_is_zero,true,0,0
+67,snowflakedb/snowpark-python,valid_skills_after_positive,true,1,> 0
+67,snowflakedb/snowpark-python,reported_skill_paths_match,true,.claude/skills/local-testing-bug-fix/SKILL.md,.claude/skills/local-testing-bug-fix/SKILL.md
+67,snowflakedb/snowpark-python,adoption_committer_timestamp_matches,true,2026-03-31T10:30:52-07:00,2026-03-31T17:30:52Z
+67,snowflakedb/snowpark-python,pre_window_observable,true,273ccd05b2538701d3e4c88bf8d446c22cbd8397,non-empty
+67,snowflakedb/snowpark-python,post_window_before_cutoff,true,2026-05-30T17:30:52+00:00,<= 2026-10-04T23:59:59+00:00
+67,snowflakedb/snowpark-python,production_path_count_matches,true,227,227
+67,snowflakedb/snowpark-python,test_path_count_matches,true,639,639
+68,kurusugawa-computer/annowork-cli,cutoff_commit_exists,true,True,True
+68,kurusugawa-computer/annowork-cli,adoption_commit_exists,true,True,True
+68,kurusugawa-computer/annowork-cli,adoption_reaches_cutoff,true,True,True
+68,kurusugawa-computer/annowork-cli,first_parent_exists,true,ba4eaf32b999f4c46d33dfec85ee353d3f0a7989,non-empty
+68,kurusugawa-computer/annowork-cli,valid_skills_before_is_zero,true,0,0
+68,kurusugawa-computer/annowork-cli,valid_skills_after_positive,true,4,> 0
+68,kurusugawa-computer/annowork-cli,reported_skill_paths_match,true,.agents/skills/annowork-cli-command-style/SKILL.md;.agents/skills/document-style/SKILL.md;.agents/skills/python-coding-style/SKILL.md;.agents/skills/test-writing/SKILL.md,.agents/skills/annowork-cli-command-style/SKILL.md;.agents/skills/document-style/SKILL.md;.agents/skills/python-coding-style/SKILL.md;.agents/skills/test-writing/SKILL.md
+68,kurusugawa-computer/annowork-cli,adoption_committer_timestamp_matches,true,2026-05-13T04:51:13Z,2026-05-13T04:51:13Z
+68,kurusugawa-computer/annowork-cli,pre_window_observable,true,0ee39c899c094e24ddb5d74d53f4062de8166f7f,non-empty
+68,kurusugawa-computer/annowork-cli,post_window_before_cutoff,true,2026-07-12T04:51:13+00:00,<= 2026-10-04T23:59:59+00:00
+68,kurusugawa-computer/annowork-cli,production_path_count_matches,true,76,76
+68,kurusugawa-computer/annowork-cli,test_path_count_matches,true,22,22
+69,DragonFlyBSD/DeltaPorts,cutoff_commit_exists,true,True,True
+69,DragonFlyBSD/DeltaPorts,adoption_commit_exists,true,True,True
+69,DragonFlyBSD/DeltaPorts,adoption_reaches_cutoff,true,True,True
+69,DragonFlyBSD/DeltaPorts,first_parent_exists,true,9f8f130aa6b7cc82546b8e67079b23008368fa39,non-empty
+69,DragonFlyBSD/DeltaPorts,valid_skills_before_is_zero,true,0,0
+69,DragonFlyBSD/DeltaPorts,valid_skills_after_positive,true,1,> 0
+69,DragonFlyBSD/DeltaPorts,reported_skill_paths_match,true,.claude/skills/dportsv3-agentic-analysis/SKILL.md,.claude/skills/dportsv3-agentic-analysis/SKILL.md
+69,DragonFlyBSD/DeltaPorts,adoption_committer_timestamp_matches,true,2026-05-23T12:06:17+02:00,2026-05-23T10:06:17Z
+69,DragonFlyBSD/DeltaPorts,pre_window_observable,true,fb00602ef289a2c5fbbb516e1a782a73515a0f5a,non-empty
+69,DragonFlyBSD/DeltaPorts,post_window_before_cutoff,true,2026-07-22T10:06:17+00:00,<= 2026-10-04T23:59:59+00:00
+69,DragonFlyBSD/DeltaPorts,production_path_count_matches,true,232,232
+69,DragonFlyBSD/DeltaPorts,test_path_count_matches,true,69,69
+70,empty-quiver/sglang-turboquant,cutoff_commit_exists,true,True,True
+70,empty-quiver/sglang-turboquant,adoption_commit_exists,true,True,True
+70,empty-quiver/sglang-turboquant,adoption_reaches_cutoff,true,True,True
+70,empty-quiver/sglang-turboquant,first_parent_exists,true,a864420ee4d0daba15644f3f2d4a50dadcd892a6,non-empty
+70,empty-quiver/sglang-turboquant,valid_skills_before_is_zero,true,0,0
+70,empty-quiver/sglang-turboquant,valid_skills_after_positive,true,2,> 0
+70,empty-quiver/sglang-turboquant,reported_skill_paths_match,true,.claude/skills/add-jit-kernel/SKILL.md;.claude/skills/add-sgl-kernel/SKILL.md,.claude/skills/add-jit-kernel/SKILL.md;.claude/skills/add-sgl-kernel/SKILL.md
+70,empty-quiver/sglang-turboquant,adoption_committer_timestamp_matches,true,2026-02-26T07:52:14Z,2026-02-26T07:52:14Z
+70,empty-quiver/sglang-turboquant,pre_window_observable,true,eaf832efc2ecbdd0b12f691fdf2608d4baf5b3c5,non-empty
+70,empty-quiver/sglang-turboquant,post_window_before_cutoff,true,2026-04-27T07:52:14+00:00,<= 2026-10-04T23:59:59+00:00
+70,empty-quiver/sglang-turboquant,production_path_count_matches,true,1622,1622
+70,empty-quiver/sglang-turboquant,test_path_count_matches,true,796,796
+71,fairagro/m4.2_sql_to_arc,cutoff_commit_exists,true,True,True
+71,fairagro/m4.2_sql_to_arc,adoption_commit_exists,true,True,True
+71,fairagro/m4.2_sql_to_arc,adoption_reaches_cutoff,true,True,True
+71,fairagro/m4.2_sql_to_arc,first_parent_exists,true,42d675d04f6319744131e45d8a4ec06a4ac3062c,non-empty
+71,fairagro/m4.2_sql_to_arc,valid_skills_before_is_zero,true,0,0
+71,fairagro/m4.2_sql_to_arc,valid_skills_after_positive,true,3,> 0
+71,fairagro/m4.2_sql_to_arc,reported_skill_paths_match,true,.agents/skills/arctrl/SKILL.md;.agents/skills/config-wrapper/SKILL.md;.agents/skills/create-specifica-feature/SKILL.md,.agents/skills/arctrl/SKILL.md;.agents/skills/config-wrapper/SKILL.md;.agents/skills/create-specifica-feature/SKILL.md
+71,fairagro/m4.2_sql_to_arc,adoption_committer_timestamp_matches,true,2026-04-13T19:39:48+02:00,2026-04-13T17:39:48Z
+71,fairagro/m4.2_sql_to_arc,pre_window_observable,true,7633ceae8dfcf911c75dfe2f1482b7531baaedc0,non-empty
+71,fairagro/m4.2_sql_to_arc,post_window_before_cutoff,true,2026-06-12T17:39:48+00:00,<= 2026-10-04T23:59:59+00:00
+71,fairagro/m4.2_sql_to_arc,production_path_count_matches,true,11,11
+71,fairagro/m4.2_sql_to_arc,test_path_count_matches,true,11,11
+72,SoloXLab/perfetto-dsl,cutoff_commit_exists,true,True,True
+72,SoloXLab/perfetto-dsl,adoption_commit_exists,true,True,True
+72,SoloXLab/perfetto-dsl,adoption_reaches_cutoff,true,True,True
+72,SoloXLab/perfetto-dsl,first_parent_exists,true,7269687a3d6eff7d6a6e0b0d37f5e79da418c455,non-empty
+72,SoloXLab/perfetto-dsl,valid_skills_before_is_zero,true,0,0
+72,SoloXLab/perfetto-dsl,valid_skills_after_positive,true,6,> 0
+72,SoloXLab/perfetto-dsl,reported_skill_paths_match,true,.agents/skills/digital-user-research/SKILL.md;.agents/skills/exploration-logger/SKILL.md;.agents/skills/github-operator/SKILL.md;.agents/skills/market-discovery/SKILL.md;.agents/skills/pr-writer/SKILL.md;.agents/skills/task-planner/SKILL.md,.agents/skills/digital-user-research/SKILL.md;.agents/skills/exploration-logger/SKILL.md;.agents/skills/github-operator/SKILL.md;.agents/skills/market-discovery/SKILL.md;.agents/skills/pr-writer/SKILL.md;.agents/skills/task-planner/SKILL.md
+72,SoloXLab/perfetto-dsl,adoption_committer_timestamp_matches,true,2026-03-13T11:58:27+08:00,2026-03-13T03:58:27Z
+72,SoloXLab/perfetto-dsl,pre_window_observable,true,62b76c8b4fc55cca05bc6874abbbf0004d5e2fdb,non-empty
+72,SoloXLab/perfetto-dsl,post_window_before_cutoff,true,2026-05-12T03:58:27+00:00,<= 2026-10-04T23:59:59+00:00
+72,SoloXLab/perfetto-dsl,production_path_count_matches,true,7,7
+72,SoloXLab/perfetto-dsl,test_path_count_matches,true,8,8
+73,dewet22/givenergy-modbus,cutoff_commit_exists,true,True,True
+73,dewet22/givenergy-modbus,adoption_commit_exists,true,True,True
+73,dewet22/givenergy-modbus,adoption_reaches_cutoff,true,True,True
+73,dewet22/givenergy-modbus,first_parent_exists,true,82e6fd27964422dacb6c79d1ecf27eadd39d2079,non-empty
+73,dewet22/givenergy-modbus,valid_skills_before_is_zero,true,0,0
+73,dewet22/givenergy-modbus,valid_skills_after_positive,true,2,> 0
+73,dewet22/givenergy-modbus,reported_skill_paths_match,true,.claude/skills/changelog-entry/SKILL.md;.claude/skills/run-checks/SKILL.md,.claude/skills/changelog-entry/SKILL.md;.claude/skills/run-checks/SKILL.md
+73,dewet22/givenergy-modbus,adoption_committer_timestamp_matches,true,2026-05-13T10:06:05+01:00,2026-05-13T09:06:05Z
+73,dewet22/givenergy-modbus,pre_window_observable,true,9fc61b53f85f91a1bd16f0bfb6c9071d0090fc9e,non-empty
+73,dewet22/givenergy-modbus,post_window_before_cutoff,true,2026-07-12T09:06:05+00:00,<= 2026-10-04T23:59:59+00:00
+73,dewet22/givenergy-modbus,production_path_count_matches,true,21,21
+73,dewet22/givenergy-modbus,test_path_count_matches,true,15,15
+74,icyponds/TradeBot,cutoff_commit_exists,true,True,True
+74,icyponds/TradeBot,adoption_commit_exists,true,True,True
+74,icyponds/TradeBot,adoption_reaches_cutoff,true,True,True
+74,icyponds/TradeBot,first_parent_exists,true,6c6430b0bcfa367adba96c7671552151f403e108,non-empty
+74,icyponds/TradeBot,valid_skills_before_is_zero,true,0,0
+74,icyponds/TradeBot,valid_skills_after_positive,true,7,> 0
+74,icyponds/TradeBot,reported_skill_paths_match,true,.agent/skills/asset-taxonomy/SKILL.md;.agent/skills/backtesting-trading-strategies/SKILL.md;.agent/skills/code-modification-workflow/SKILL.md;.agent/skills/hyperliquid-api/SKILL.md;.agent/skills/quant-analyst/SKILL.md;.agent/skills/skill-reader/SKILL.md;.agent/skills/trade-database-reader/SKILL.md,.agent/skills/asset-taxonomy/SKILL.md;.agent/skills/backtesting-trading-strategies/SKILL.md;.agent/skills/code-modification-workflow/SKILL.md;.agent/skills/hyperliquid-api/SKILL.md;.agent/skills/quant-analyst/SKILL.md;.agent/skills/skill-reader/SKILL.md;.agent/skills/trade-database-reader/SKILL.md
+74,icyponds/TradeBot,adoption_committer_timestamp_matches,true,2026-03-01T16:30:08-05:00,2026-03-01T21:30:08Z
+74,icyponds/TradeBot,pre_window_observable,true,811ae0821b8d63f5c2a82e93df7bcaa27a4ebf94,non-empty
+74,icyponds/TradeBot,post_window_before_cutoff,true,2026-04-30T21:30:08+00:00,<= 2026-10-04T23:59:59+00:00
+74,icyponds/TradeBot,production_path_count_matches,true,53,53
+74,icyponds/TradeBot,test_path_count_matches,true,96,96
+75,elecdot/competehub,cutoff_commit_exists,true,True,True
+75,elecdot/competehub,adoption_commit_exists,true,True,True
+75,elecdot/competehub,adoption_reaches_cutoff,true,True,True
+75,elecdot/competehub,first_parent_exists,true,c002969048c72e877b0a006db2fe58f6e029c916,non-empty
+75,elecdot/competehub,valid_skills_before_is_zero,true,0,0
+75,elecdot/competehub,valid_skills_after_positive,true,3,> 0
+75,elecdot/competehub,reported_skill_paths_match,true,.agents/skills/domain-modeling/SKILL.md;.agents/skills/grill-with-docs/SKILL.md;.agents/skills/grilling/SKILL.md,.agents/skills/domain-modeling/SKILL.md;.agents/skills/grill-with-docs/SKILL.md;.agents/skills/grilling/SKILL.md
+75,elecdot/competehub,adoption_committer_timestamp_matches,true,2026-07-02T21:14:23+08:00,2026-07-02T13:14:23Z
+75,elecdot/competehub,pre_window_observable,true,1b2391436508efeec7fe6a488f94f74140579f32,non-empty
+75,elecdot/competehub,post_window_before_cutoff,true,2026-08-31T13:14:23+00:00,<= 2026-10-04T23:59:59+00:00
+75,elecdot/competehub,production_path_count_matches,true,22,22
+75,elecdot/competehub,test_path_count_matches,true,1,1
+76,olidroide/top-video-generator,cutoff_commit_exists,true,True,True
+76,olidroide/top-video-generator,adoption_commit_exists,true,True,True
+76,olidroide/top-video-generator,adoption_reaches_cutoff,true,True,True
+76,olidroide/top-video-generator,first_parent_exists,true,6950271ae8fb3c3345aadd0c2c042dd4b8347842,non-empty
+76,olidroide/top-video-generator,valid_skills_before_is_zero,true,0,0
+76,olidroide/top-video-generator,valid_skills_after_positive,true,15,> 0
+76,olidroide/top-video-generator,reported_skill_paths_match,true,.agents/skills/caveman-commit/SKILL.md;.agents/skills/caveman-compress/SKILL.md;.agents/skills/caveman/SKILL.md;.github/skills/docker-best-practices/SKILL.md;.github/skills/hexagonal-architecture-video-publish/SKILL.md;.github/skills/jinja2-atomic-design/SKILL.md;.github/skills/python-async-patterns/SKILL.md;.github/skills/python-fastapi-patterns/SKILL.md;.github/skills/python-observability-patterns/SKILL.md;.github/skills/python-resilience-patterns/SKILL.md;.github/skills/python-testing-respx/SKILL.md;.github/skills/python-typing-patterns/SKILL.md;.github/skills/skill-creator/SKILL.md;.github/skills/tinyflux-time-series/SKILL.md;.github/skills/video-processing-migration/SKILL.md,.agents/skills/caveman-commit/SKILL.md;.agents/skills/caveman-compress/SKILL.md;.agents/skills/caveman/SKILL.md;.github/skills/docker-best-practices/SKILL.md;.github/skills/hexagonal-architecture-video-publish/SKILL.md;.github/skills/jinja2-atomic-design/SKILL.md;.github/skills/python-async-patterns/SKILL.md;.github/skills/python-fastapi-patterns/SKILL.md;.github/skills/python-observability-patterns/SKILL.md;.github/skills/python-resilience-patterns/SKILL.md;.github/skills/python-testing-respx/SKILL.md;.github/skills/python-typing-patterns/SKILL.md;.github/skills/skill-creator/SKILL.md;.github/skills/tinyflux-time-series/SKILL.md;.github/skills/video-processing-migration/SKILL.md
+76,olidroide/top-video-generator,adoption_committer_timestamp_matches,true,2026-05-15T19:36:21+02:00,2026-05-15T17:36:21Z
+76,olidroide/top-video-generator,pre_window_observable,true,6950271ae8fb3c3345aadd0c2c042dd4b8347842,non-empty
+76,olidroide/top-video-generator,post_window_before_cutoff,true,2026-07-14T17:36:21+00:00,<= 2026-10-04T23:59:59+00:00
+76,olidroide/top-video-generator,production_path_count_matches,true,98,98
+76,olidroide/top-video-generator,test_path_count_matches,true,81,81
+77,AICL-Lab/triton-fused-ops,cutoff_commit_exists,true,True,True
+77,AICL-Lab/triton-fused-ops,adoption_commit_exists,true,True,True
+77,AICL-Lab/triton-fused-ops,adoption_reaches_cutoff,true,True,True
+77,AICL-Lab/triton-fused-ops,first_parent_exists,true,e50b48debec6a88821333a8648271f5e99805102,non-empty
+77,AICL-Lab/triton-fused-ops,valid_skills_before_is_zero,true,0,0
+77,AICL-Lab/triton-fused-ops,valid_skills_after_positive,true,5,> 0
+77,AICL-Lab/triton-fused-ops,reported_skill_paths_match,true,.claude/skills/openspec-apply-change/SKILL.md;.claude/skills/openspec-archive-change/SKILL.md;.claude/skills/openspec-explore/SKILL.md;.claude/skills/openspec-propose/SKILL.md;.claude/skills/verify/SKILL.md,.claude/skills/openspec-apply-change/SKILL.md;.claude/skills/openspec-archive-change/SKILL.md;.claude/skills/openspec-explore/SKILL.md;.claude/skills/openspec-propose/SKILL.md;.claude/skills/verify/SKILL.md
+77,AICL-Lab/triton-fused-ops,adoption_committer_timestamp_matches,true,2026-04-24T02:51:32+08:00,2026-04-23T18:51:32Z
+77,AICL-Lab/triton-fused-ops,pre_window_observable,true,9c30ce956eb0adb86172f9280dc2c057282f5bd6,non-empty
+77,AICL-Lab/triton-fused-ops,post_window_before_cutoff,true,2026-06-22T18:51:32+00:00,<= 2026-10-04T23:59:59+00:00
+77,AICL-Lab/triton-fused-ops,production_path_count_matches,true,19,19
+77,AICL-Lab/triton-fused-ops,test_path_count_matches,true,14,14
+78,newton-physics/newton,cutoff_commit_exists,true,True,True
+78,newton-physics/newton,adoption_commit_exists,true,True,True
+78,newton-physics/newton,adoption_reaches_cutoff,true,True,True
+78,newton-physics/newton,first_parent_exists,true,1e5eb6bd16a657ccd82f00908c64162c5128a5be,non-empty
+78,newton-physics/newton,valid_skills_before_is_zero,true,0,0
+78,newton-physics/newton,valid_skills_after_positive,true,1,> 0
+78,newton-physics/newton,reported_skill_paths_match,true,.claude/skills/newton-api-design/SKILL.md,.claude/skills/newton-api-design/SKILL.md
+78,newton-physics/newton,adoption_committer_timestamp_matches,true,2026-03-03T00:15:26Z,2026-03-03T00:15:26Z
+78,newton-physics/newton,pre_window_observable,true,dccbc669aee62d63a987636756031d8590c91e28,non-empty
+78,newton-physics/newton,post_window_before_cutoff,true,2026-05-02T00:15:26+00:00,<= 2026-10-04T23:59:59+00:00
+78,newton-physics/newton,production_path_count_matches,true,169,169
+78,newton-physics/newton,test_path_count_matches,true,87,87
+79,andborth/RoboPhD,cutoff_commit_exists,true,True,True
+79,andborth/RoboPhD,adoption_commit_exists,true,True,True
+79,andborth/RoboPhD,adoption_reaches_cutoff,true,True,True
+79,andborth/RoboPhD,first_parent_exists,true,6c472b19f18ece8368bb2ab8dcd6aa61247e8fb8,non-empty
+79,andborth/RoboPhD,valid_skills_before_is_zero,true,0,0
+79,andborth/RoboPhD,valid_skills_after_positive,true,1,> 0
+79,andborth/RoboPhD,reported_skill_paths_match,true,.claude/skills/record-result/SKILL.md,.claude/skills/record-result/SKILL.md
+79,andborth/RoboPhD,adoption_committer_timestamp_matches,true,2026-03-04T16:33:28-08:00,2026-03-05T00:33:28Z
+79,andborth/RoboPhD,pre_window_observable,true,9de65413aeb1b7f416b4895c9f7966b359d01ea2,non-empty
+79,andborth/RoboPhD,post_window_before_cutoff,true,2026-05-04T00:33:28+00:00,<= 2026-10-04T23:59:59+00:00
+79,andborth/RoboPhD,production_path_count_matches,true,50,50
+79,andborth/RoboPhD,test_path_count_matches,true,1,1
+80,xlang-ai/OSWorld-V2,cutoff_commit_exists,true,True,True
+80,xlang-ai/OSWorld-V2,adoption_commit_exists,true,True,True
+80,xlang-ai/OSWorld-V2,adoption_reaches_cutoff,true,True,True
+80,xlang-ai/OSWorld-V2,first_parent_exists,true,b0f6800f6d3e2785825494fd81e8f2bb8da19251,non-empty
+80,xlang-ai/OSWorld-V2,valid_skills_before_is_zero,true,0,0
+80,xlang-ai/OSWorld-V2,valid_skills_after_positive,true,1,> 0
+80,xlang-ai/OSWorld-V2,reported_skill_paths_match,true,.claude/skills/traj-analyzer/SKILL.md,.claude/skills/traj-analyzer/SKILL.md
+80,xlang-ai/OSWorld-V2,adoption_committer_timestamp_matches,true,2026-03-09T22:55:22+08:00,2026-03-09T14:55:22Z
+80,xlang-ai/OSWorld-V2,pre_window_observable,true,a198ade432a9cfbad2f075a72ae25173046450de,non-empty
+80,xlang-ai/OSWorld-V2,post_window_before_cutoff,true,2026-05-08T14:55:22+00:00,<= 2026-10-04T23:59:59+00:00
+80,xlang-ai/OSWorld-V2,production_path_count_matches,true,524,524
+80,xlang-ai/OSWorld-V2,test_path_count_matches,true,24,24
+81,kejhy93/ProteinFolding,cutoff_commit_exists,true,True,True
+81,kejhy93/ProteinFolding,adoption_commit_exists,true,True,True
+81,kejhy93/ProteinFolding,adoption_reaches_cutoff,true,True,True
+81,kejhy93/ProteinFolding,first_parent_exists,true,d5a702b817899b78f5d7dae3cc15599ea7e8ef70,non-empty
+81,kejhy93/ProteinFolding,valid_skills_before_is_zero,true,0,0
+81,kejhy93/ProteinFolding,valid_skills_after_positive,true,2,> 0
+81,kejhy93/ProteinFolding,reported_skill_paths_match,true,.claude/skills/github-pr-maintenance/SKILL.md;.claude/skills/sonarcloud-dashboard/SKILL.md,.claude/skills/github-pr-maintenance/SKILL.md;.claude/skills/sonarcloud-dashboard/SKILL.md
+81,kejhy93/ProteinFolding,adoption_committer_timestamp_matches,true,2026-07-14T15:43:19+02:00,2026-07-14T13:43:19Z
+81,kejhy93/ProteinFolding,pre_window_observable,true,c78ca94c026e48f068096a170a190f65f689bdd6,non-empty
+81,kejhy93/ProteinFolding,post_window_before_cutoff,true,2026-09-12T13:43:19+00:00,<= 2026-10-04T23:59:59+00:00
+81,kejhy93/ProteinFolding,production_path_count_matches,true,16,16
+81,kejhy93/ProteinFolding,test_path_count_matches,true,3,3
+82,castorini/rank_llm,cutoff_commit_exists,true,True,True
+82,castorini/rank_llm,adoption_commit_exists,true,True,True
+82,castorini/rank_llm,adoption_reaches_cutoff,true,True,True
+82,castorini/rank_llm,first_parent_exists,true,bdb5ac8bb65044858911591dd7393151fbbec6fe,non-empty
+82,castorini/rank_llm,valid_skills_before_is_zero,true,0,0
+82,castorini/rank_llm,valid_skills_after_positive,true,3,> 0
+82,castorini/rank_llm,reported_skill_paths_match,true,.claude/skills/rank-llm-eval/SKILL.md;.claude/skills/rank-llm-install/SKILL.md;.claude/skills/rank-llm-verify/SKILL.md,.claude/skills/rank-llm-eval/SKILL.md;.claude/skills/rank-llm-install/SKILL.md;.claude/skills/rank-llm-verify/SKILL.md
+82,castorini/rank_llm,adoption_committer_timestamp_matches,true,2026-03-27T15:53:28+01:00,2026-03-27T14:53:28Z
+82,castorini/rank_llm,pre_window_observable,true,bd71964690665e9b047a51a8619e75d4716d47da,non-empty
+82,castorini/rank_llm,post_window_before_cutoff,true,2026-05-26T14:53:28+00:00,<= 2026-10-04T23:59:59+00:00
+82,castorini/rank_llm,production_path_count_matches,true,114,114
+82,castorini/rank_llm,test_path_count_matches,true,37,37
+83,rafahsa/-Multimodal-Deep-Learning-Framework-for-Brain-Tumor-Prediction,cutoff_commit_exists,true,True,True
+83,rafahsa/-Multimodal-Deep-Learning-Framework-for-Brain-Tumor-Prediction,adoption_commit_exists,true,True,True
+83,rafahsa/-Multimodal-Deep-Learning-Framework-for-Brain-Tumor-Prediction,adoption_reaches_cutoff,true,True,True
+83,rafahsa/-Multimodal-Deep-Learning-Framework-for-Brain-Tumor-Prediction,first_parent_exists,true,9a0ce5386c8e69be847c435929c2f8dc8ab83855,non-empty
+83,rafahsa/-Multimodal-Deep-Learning-Framework-for-Brain-Tumor-Prediction,valid_skills_before_is_zero,true,0,0
+83,rafahsa/-Multimodal-Deep-Learning-Framework-for-Brain-Tumor-Prediction,valid_skills_after_positive,true,14,> 0
+83,rafahsa/-Multimodal-Deep-Learning-Framework-for-Brain-Tumor-Prediction,reported_skill_paths_match,true,.cursor/skills/speckit-analyze/SKILL.md;.cursor/skills/speckit-checklist/SKILL.md;.cursor/skills/speckit-clarify/SKILL.md;.cursor/skills/speckit-constitution/SKILL.md;.cursor/skills/speckit-git-commit/SKILL.md;.cursor/skills/speckit-git-feature/SKILL.md;.cursor/skills/speckit-git-initialize/SKILL.md;.cursor/skills/speckit-git-remote/SKILL.md;.cursor/skills/speckit-git-validate/SKILL.md;.cursor/skills/speckit-implement/SKILL.md;.cursor/skills/speckit-plan/SKILL.md;.cursor/skills/speckit-specify/SKILL.md;.cursor/skills/speckit-tasks/SKILL.md;.cursor/skills/speckit-taskstoissues/SKILL.md,.cursor/skills/speckit-analyze/SKILL.md;.cursor/skills/speckit-checklist/SKILL.md;.cursor/skills/speckit-clarify/SKILL.md;.cursor/skills/speckit-constitution/SKILL.md;.cursor/skills/speckit-git-commit/SKILL.md;.cursor/skills/speckit-git-feature/SKILL.md;.cursor/skills/speckit-git-initialize/SKILL.md;.cursor/skills/speckit-git-remote/SKILL.md;.cursor/skills/speckit-git-validate/SKILL.md;.cursor/skills/speckit-implement/SKILL.md;.cursor/skills/speckit-plan/SKILL.md;.cursor/skills/speckit-specify/SKILL.md;.cursor/skills/speckit-tasks/SKILL.md;.cursor/skills/speckit-taskstoissues/SKILL.md
+83,rafahsa/-Multimodal-Deep-Learning-Framework-for-Brain-Tumor-Prediction,adoption_committer_timestamp_matches,true,2026-05-21T03:41:55+03:00,2026-05-21T00:41:55Z
+83,rafahsa/-Multimodal-Deep-Learning-Framework-for-Brain-Tumor-Prediction,pre_window_observable,true,9a0ce5386c8e69be847c435929c2f8dc8ab83855,non-empty
+83,rafahsa/-Multimodal-Deep-Learning-Framework-for-Brain-Tumor-Prediction,post_window_before_cutoff,true,2026-07-20T00:41:55+00:00,<= 2026-10-04T23:59:59+00:00
+83,rafahsa/-Multimodal-Deep-Learning-Framework-for-Brain-Tumor-Prediction,production_path_count_matches,true,110,110
+83,rafahsa/-Multimodal-Deep-Learning-Framework-for-Brain-Tumor-Prediction,test_path_count_matches,true,2,2
+84,dimensionalOS/dimos,cutoff_commit_exists,true,True,True
+84,dimensionalOS/dimos,adoption_commit_exists,true,True,True
+84,dimensionalOS/dimos,adoption_reaches_cutoff,true,True,True
+84,dimensionalOS/dimos,first_parent_exists,true,b794a5df5080f8e794077337a77f7d440aef676d,non-empty
+84,dimensionalOS/dimos,valid_skills_before_is_zero,true,0,0
+84,dimensionalOS/dimos,valid_skills_after_positive,true,1,> 0
+84,dimensionalOS/dimos,reported_skill_paths_match,true,.agents/skills/python-unit-tests/SKILL.md,.agents/skills/python-unit-tests/SKILL.md
+84,dimensionalOS/dimos,adoption_committer_timestamp_matches,true,2026-06-20T01:56:03+03:00,2026-06-19T22:56:03Z
+84,dimensionalOS/dimos,pre_window_observable,true,a035fb315d35bba511dfc6156dc21827e70dbc94,non-empty
+84,dimensionalOS/dimos,post_window_before_cutoff,true,2026-08-18T22:56:03+00:00,<= 2026-10-04T23:59:59+00:00
+84,dimensionalOS/dimos,production_path_count_matches,true,751,751
+84,dimensionalOS/dimos,test_path_count_matches,true,257,257
+85,bsmi021/unity-bridge,cutoff_commit_exists,true,True,True
+85,bsmi021/unity-bridge,adoption_commit_exists,true,True,True
+85,bsmi021/unity-bridge,adoption_reaches_cutoff,true,True,True
+85,bsmi021/unity-bridge,first_parent_exists,true,aefdd5e19d6a045bb9d32fbd50e5ad1ab616342a,non-empty
+85,bsmi021/unity-bridge,valid_skills_before_is_zero,true,0,0
+85,bsmi021/unity-bridge,valid_skills_after_positive,true,1,> 0
+85,bsmi021/unity-bridge,reported_skill_paths_match,true,.agents/skills/unity-bridge-cli/SKILL.md,.agents/skills/unity-bridge-cli/SKILL.md
+85,bsmi021/unity-bridge,adoption_committer_timestamp_matches,true,2026-07-01T10:26:24-04:00,2026-07-01T14:26:24Z
+85,bsmi021/unity-bridge,pre_window_observable,true,57f672a440d8487ff953144994dbae71824b55df,non-empty
+85,bsmi021/unity-bridge,post_window_before_cutoff,true,2026-08-30T14:26:24+00:00,<= 2026-10-04T23:59:59+00:00
+85,bsmi021/unity-bridge,production_path_count_matches,true,100,100
+85,bsmi021/unity-bridge,test_path_count_matches,true,110,110
+86,phuongnx2112003/A2A,cutoff_commit_exists,true,True,True
+86,phuongnx2112003/A2A,adoption_commit_exists,true,True,True
+86,phuongnx2112003/A2A,adoption_reaches_cutoff,true,True,True
+86,phuongnx2112003/A2A,first_parent_exists,true,c62a96401a9ae37b02fbaf2131e7d3552f56e391,non-empty
+86,phuongnx2112003/A2A,valid_skills_before_is_zero,true,0,0
+86,phuongnx2112003/A2A,valid_skills_after_positive,true,2,> 0
+86,phuongnx2112003/A2A,reported_skill_paths_match,true,.claude/skills/agent-browser/SKILL.md;.claude/skills/find-skills/SKILL.md,.claude/skills/agent-browser/SKILL.md;.claude/skills/find-skills/SKILL.md
+86,phuongnx2112003/A2A,adoption_committer_timestamp_matches,true,2026-04-07T19:22:20+07:00,2026-04-07T12:22:20Z
+86,phuongnx2112003/A2A,pre_window_observable,true,eadb13f27b40f86b0e639a8f8a49fe4ef7c30a74,non-empty
+86,phuongnx2112003/A2A,post_window_before_cutoff,true,2026-06-06T12:22:20+00:00,<= 2026-10-04T23:59:59+00:00
+86,phuongnx2112003/A2A,production_path_count_matches,true,107,107
+86,phuongnx2112003/A2A,test_path_count_matches,true,13,13
+87,threatpatrols/hibp-downloader,cutoff_commit_exists,true,True,True
+87,threatpatrols/hibp-downloader,adoption_commit_exists,true,True,True
+87,threatpatrols/hibp-downloader,adoption_reaches_cutoff,true,True,True
+87,threatpatrols/hibp-downloader,first_parent_exists,true,c19017fe5f7ef58b1ecfe5405f19a06884099686,non-empty
+87,threatpatrols/hibp-downloader,valid_skills_before_is_zero,true,0,0
+87,threatpatrols/hibp-downloader,valid_skills_after_positive,true,7,> 0
+87,threatpatrols/hibp-downloader,reported_skill_paths_match,true,.agent/skills/architect-review/SKILL.md;.agent/skills/caveman/SKILL.md;.agent/skills/code-reviewer/SKILL.md;.agent/skills/karpathy-guidelines/SKILL.md;.agent/skills/python-patterns/SKILL.md;.agent/skills/python-pro/SKILL.md;.agent/skills/vulnerability-scanner/SKILL.md,.agent/skills/architect-review/SKILL.md;.agent/skills/caveman/SKILL.md;.agent/skills/code-reviewer/SKILL.md;.agent/skills/karpathy-guidelines/SKILL.md;.agent/skills/python-patterns/SKILL.md;.agent/skills/python-pro/SKILL.md;.agent/skills/vulnerability-scanner/SKILL.md
+87,threatpatrols/hibp-downloader,adoption_committer_timestamp_matches,true,2026-06-06T19:46:00+10:00,2026-06-06T09:46:00Z
+87,threatpatrols/hibp-downloader,pre_window_observable,true,c19017fe5f7ef58b1ecfe5405f19a06884099686,non-empty
+87,threatpatrols/hibp-downloader,post_window_before_cutoff,true,2026-08-05T09:46:00+00:00,<= 2026-10-04T23:59:59+00:00
+87,threatpatrols/hibp-downloader,production_path_count_matches,true,19,19
+87,threatpatrols/hibp-downloader,test_path_count_matches,true,12,12
+88,Bloomerp-io/Bloomerp,cutoff_commit_exists,true,True,True
+88,Bloomerp-io/Bloomerp,adoption_commit_exists,true,True,True
+88,Bloomerp-io/Bloomerp,adoption_reaches_cutoff,true,True,True
+88,Bloomerp-io/Bloomerp,first_parent_exists,true,59fcb42e65b0d59f05a264134a7940778058fbce,non-empty
+88,Bloomerp-io/Bloomerp,valid_skills_before_is_zero,true,0,0
+88,Bloomerp-io/Bloomerp,valid_skills_after_positive,true,2,> 0
+88,Bloomerp-io/Bloomerp,reported_skill_paths_match,true,.codex/skills/bloomerp-components/SKILL.md;.codex/skills/bloomerp-permissions/SKILL.md,.codex/skills/bloomerp-components/SKILL.md;.codex/skills/bloomerp-permissions/SKILL.md
+88,Bloomerp-io/Bloomerp,adoption_committer_timestamp_matches,true,2026-04-12T20:12:06+02:00,2026-04-12T18:12:06Z
+88,Bloomerp-io/Bloomerp,pre_window_observable,true,59fcb42e65b0d59f05a264134a7940778058fbce,non-empty
+88,Bloomerp-io/Bloomerp,post_window_before_cutoff,true,2026-06-11T18:12:06+00:00,<= 2026-10-04T23:59:59+00:00
+88,Bloomerp-io/Bloomerp,production_path_count_matches,true,299,299
+88,Bloomerp-io/Bloomerp,test_path_count_matches,true,31,31
+89,sverzijl/oven_logging,cutoff_commit_exists,true,True,True
+89,sverzijl/oven_logging,adoption_commit_exists,true,True,True
+89,sverzijl/oven_logging,adoption_reaches_cutoff,true,True,True
+89,sverzijl/oven_logging,first_parent_exists,true,56c283a38a95c3ab7036af2ddbc58b595efa1b2d,non-empty
+89,sverzijl/oven_logging,valid_skills_before_is_zero,true,0,0
+89,sverzijl/oven_logging,valid_skills_after_positive,true,1,> 0
+89,sverzijl/oven_logging,reported_skill_paths_match,true,.claude/skills/run-oven-logging/SKILL.md,.claude/skills/run-oven-logging/SKILL.md
+89,sverzijl/oven_logging,adoption_committer_timestamp_matches,true,2026-06-06T20:25:31+10:00,2026-06-06T10:25:31Z
+89,sverzijl/oven_logging,pre_window_observable,true,a8a1a536a0dd3adc48f1a01487a9c3f281595926,non-empty
+89,sverzijl/oven_logging,post_window_before_cutoff,true,2026-08-05T10:25:31+00:00,<= 2026-10-04T23:59:59+00:00
+89,sverzijl/oven_logging,production_path_count_matches,true,132,132
+89,sverzijl/oven_logging,test_path_count_matches,true,81,81
+90,ryancheley/yt-cli,cutoff_commit_exists,true,True,True
+90,ryancheley/yt-cli,adoption_commit_exists,true,True,True
+90,ryancheley/yt-cli,adoption_reaches_cutoff,true,True,True
+90,ryancheley/yt-cli,first_parent_exists,true,12d7d5565525d8e8e614424703954a610f6a245f,non-empty
+90,ryancheley/yt-cli,valid_skills_before_is_zero,true,0,0
+90,ryancheley/yt-cli,valid_skills_after_positive,true,10,> 0
+90,ryancheley/yt-cli,reported_skill_paths_match,true,.claude/skills/speckit-agent-context-update/SKILL.md;.claude/skills/speckit-analyze/SKILL.md;.claude/skills/speckit-checklist/SKILL.md;.claude/skills/speckit-clarify/SKILL.md;.claude/skills/speckit-constitution/SKILL.md;.claude/skills/speckit-implement/SKILL.md;.claude/skills/speckit-plan/SKILL.md;.claude/skills/speckit-specify/SKILL.md;.claude/skills/speckit-tasks/SKILL.md;.claude/skills/speckit-taskstoissues/SKILL.md,.claude/skills/speckit-agent-context-update/SKILL.md;.claude/skills/speckit-analyze/SKILL.md;.claude/skills/speckit-checklist/SKILL.md;.claude/skills/speckit-clarify/SKILL.md;.claude/skills/speckit-constitution/SKILL.md;.claude/skills/speckit-implement/SKILL.md;.claude/skills/speckit-plan/SKILL.md;.claude/skills/speckit-specify/SKILL.md;.claude/skills/speckit-tasks/SKILL.md;.claude/skills/speckit-taskstoissues/SKILL.md
+90,ryancheley/yt-cli,adoption_committer_timestamp_matches,true,2026-07-08T19:00:52-07:00,2026-07-09T02:00:52Z
+90,ryancheley/yt-cli,pre_window_observable,true,e5551963890f381ed8c4686cb93d0ee277217e99,non-empty
+90,ryancheley/yt-cli,post_window_before_cutoff,true,2026-09-07T02:00:52+00:00,<= 2026-10-04T23:59:59+00:00
+90,ryancheley/yt-cli,production_path_count_matches,true,63,63
+90,ryancheley/yt-cli,test_path_count_matches,true,58,58
+91,elhajjar1/wrinkleFE,cutoff_commit_exists,true,True,True
+91,elhajjar1/wrinkleFE,adoption_commit_exists,true,True,True
+91,elhajjar1/wrinkleFE,adoption_reaches_cutoff,true,True,True
+91,elhajjar1/wrinkleFE,first_parent_exists,true,5db6847ecd3fc6ef7c7a1f767563fce1c0f8b47e,non-empty
+91,elhajjar1/wrinkleFE,valid_skills_before_is_zero,true,0,0
+91,elhajjar1/wrinkleFE,valid_skills_after_positive,true,3,> 0
+91,elhajjar1/wrinkleFE,reported_skill_paths_match,true,.claude/skills/expand-mypy-coverage/SKILL.md;.claude/skills/fix-ruff-violations/SKILL.md;.claude/skills/pre-commit-hooks/SKILL.md,.claude/skills/expand-mypy-coverage/SKILL.md;.claude/skills/fix-ruff-violations/SKILL.md;.claude/skills/pre-commit-hooks/SKILL.md
+91,elhajjar1/wrinkleFE,adoption_committer_timestamp_matches,true,2026-05-23T18:36:44-05:00,2026-05-23T23:36:44Z
+91,elhajjar1/wrinkleFE,pre_window_observable,true,ebf73dc13b665d0392bef0ef234825fb78082581,non-empty
+91,elhajjar1/wrinkleFE,post_window_before_cutoff,true,2026-07-22T23:36:44+00:00,<= 2026-10-04T23:59:59+00:00
+91,elhajjar1/wrinkleFE,production_path_count_matches,true,43,43
+91,elhajjar1/wrinkleFE,test_path_count_matches,true,66,66
+92,lorek123/ha-snb,cutoff_commit_exists,true,True,True
+92,lorek123/ha-snb,adoption_commit_exists,true,True,True
+92,lorek123/ha-snb,adoption_reaches_cutoff,true,True,True
+92,lorek123/ha-snb,first_parent_exists,true,eadf6911e8bfe14aa3902584e892264ca1e71d98,non-empty
+92,lorek123/ha-snb,valid_skills_before_is_zero,true,0,0
+92,lorek123/ha-snb,valid_skills_after_positive,true,1,> 0
+92,lorek123/ha-snb,reported_skill_paths_match,true,.claude/skills/analyze-sb-app/SKILL.md,.claude/skills/analyze-sb-app/SKILL.md
+92,lorek123/ha-snb,adoption_committer_timestamp_matches,true,2026-06-28T18:26:40+02:00,2026-06-28T16:26:40Z
+92,lorek123/ha-snb,pre_window_observable,true,78d79f6545f23cac4209efd0e7e9e2a35d296207,non-empty
+92,lorek123/ha-snb,post_window_before_cutoff,true,2026-08-27T16:26:40+00:00,<= 2026-10-04T23:59:59+00:00
+92,lorek123/ha-snb,production_path_count_matches,true,15,15
+92,lorek123/ha-snb,test_path_count_matches,true,15,15
+93,canonical/falco-operators,cutoff_commit_exists,true,True,True
+93,canonical/falco-operators,adoption_commit_exists,true,True,True
+93,canonical/falco-operators,adoption_reaches_cutoff,true,True,True
+93,canonical/falco-operators,first_parent_exists,true,9e96bd75034f066c8154f790455aaead3923bde4,non-empty
+93,canonical/falco-operators,valid_skills_before_is_zero,true,0,0
+93,canonical/falco-operators,valid_skills_after_positive,true,1,> 0
+93,canonical/falco-operators,reported_skill_paths_match,true,.github/skills/documentation-reviewer/SKILL.md,.github/skills/documentation-reviewer/SKILL.md
+93,canonical/falco-operators,adoption_committer_timestamp_matches,true,2026-02-05T16:21:05Z,2026-02-05T16:21:05Z
+93,canonical/falco-operators,pre_window_observable,true,b60a4fa4e65f8a9aea7499c144fb31816590f6bc,non-empty
+93,canonical/falco-operators,post_window_before_cutoff,true,2026-04-06T16:21:05+00:00,<= 2026-10-04T23:59:59+00:00
+93,canonical/falco-operators,production_path_count_matches,true,14,14
+93,canonical/falco-operators,test_path_count_matches,true,25,25
+94,FracktalWorks/ControlCenter,cutoff_commit_exists,true,True,True
+94,FracktalWorks/ControlCenter,adoption_commit_exists,true,True,True
+94,FracktalWorks/ControlCenter,adoption_reaches_cutoff,true,True,True
+94,FracktalWorks/ControlCenter,first_parent_exists,true,0bbfce7537a6642ed02c23cc3ef06063ae2a5e0e,non-empty
+94,FracktalWorks/ControlCenter,valid_skills_before_is_zero,true,0,0
+94,FracktalWorks/ControlCenter,valid_skills_after_positive,true,3,> 0
+94,FracktalWorks/ControlCenter,reported_skill_paths_match,true,.github/skills/klipper-log-analyzer/SKILL.md;.github/skills/klipper-ssh-debug/SKILL.md;.github/skills/octoprint-api/SKILL.md,.github/skills/klipper-log-analyzer/SKILL.md;.github/skills/klipper-ssh-debug/SKILL.md;.github/skills/octoprint-api/SKILL.md
+94,FracktalWorks/ControlCenter,adoption_committer_timestamp_matches,true,2026-06-10T17:18:27+05:30,2026-06-10T11:48:27Z
+94,FracktalWorks/ControlCenter,pre_window_observable,true,43cd75f917ab0d6a51985989cd8ad0ad6d0573c2,non-empty
+94,FracktalWorks/ControlCenter,post_window_before_cutoff,true,2026-08-09T11:48:27+00:00,<= 2026-10-04T23:59:59+00:00
+94,FracktalWorks/ControlCenter,production_path_count_matches,true,59,59
+94,FracktalWorks/ControlCenter,test_path_count_matches,true,1,1
+95,BoyuXiao/New-R3,cutoff_commit_exists,true,True,True
+95,BoyuXiao/New-R3,adoption_commit_exists,true,True,True
+95,BoyuXiao/New-R3,adoption_reaches_cutoff,true,True,True
+95,BoyuXiao/New-R3,first_parent_exists,true,00bbaa1490616046e5bf191bf1aec38e66e43519,non-empty
+95,BoyuXiao/New-R3,valid_skills_before_is_zero,true,0,0
+95,BoyuXiao/New-R3,valid_skills_after_positive,true,2,> 0
+95,BoyuXiao/New-R3,reported_skill_paths_match,true,.agent/skills/issue/SKILL.md;.agent/skills/pr/SKILL.md,.agent/skills/issue/SKILL.md;.agent/skills/pr/SKILL.md
+95,BoyuXiao/New-R3,adoption_committer_timestamp_matches,true,2026-05-18T18:29:39+08:00,2026-05-18T10:29:39Z
+95,BoyuXiao/New-R3,pre_window_observable,true,b2c489c3b88a78f6e2abe943e22ac2518cb175f6,non-empty
+95,BoyuXiao/New-R3,post_window_before_cutoff,true,2026-07-17T10:29:39+00:00,<= 2026-10-04T23:59:59+00:00
+95,BoyuXiao/New-R3,production_path_count_matches,true,333,333
+95,BoyuXiao/New-R3,test_path_count_matches,true,167,167
+96,genepattern/module-toolkit,cutoff_commit_exists,true,True,True
+96,genepattern/module-toolkit,adoption_commit_exists,true,True,True
+96,genepattern/module-toolkit,adoption_reaches_cutoff,true,True,True
+96,genepattern/module-toolkit,first_parent_exists,true,58356776e1ccfd9ea3a8c5b38b0839543f607f04,non-empty
+96,genepattern/module-toolkit,valid_skills_before_is_zero,true,0,0
+96,genepattern/module-toolkit,valid_skills_after_positive,true,1,> 0
+96,genepattern/module-toolkit,reported_skill_paths_match,true,.github/skills/building-pydantic-ai-agents/SKILL.md,.github/skills/building-pydantic-ai-agents/SKILL.md
+96,genepattern/module-toolkit,adoption_committer_timestamp_matches,true,2026-04-10T09:45:15-07:00,2026-04-10T16:45:15Z
+96,genepattern/module-toolkit,pre_window_observable,true,894733fe14a6c05e7444e51704065bd926d6683c,non-empty
+96,genepattern/module-toolkit,post_window_before_cutoff,true,2026-06-09T16:45:15+00:00,<= 2026-10-04T23:59:59+00:00
+96,genepattern/module-toolkit,production_path_count_matches,true,44,44
+96,genepattern/module-toolkit,test_path_count_matches,true,63,63
+97,pauubach/narrassist,cutoff_commit_exists,true,True,True
+97,pauubach/narrassist,adoption_commit_exists,true,True,True
+97,pauubach/narrassist,adoption_reaches_cutoff,true,True,True
+97,pauubach/narrassist,first_parent_exists,true,ad398e0c07a150453438ed1490d6d4954d9b9f39,non-empty
+97,pauubach/narrassist,valid_skills_before_is_zero,true,0,0
+97,pauubach/narrassist,valid_skills_after_positive,true,18,> 0
+97,pauubach/narrassist,reported_skill_paths_match,true,.claude/skills/audit/SKILL.md;.claude/skills/check/SKILL.md;.claude/skills/ci-status/SKILL.md;.claude/skills/cleanup/SKILL.md;.claude/skills/commit/SKILL.md;.claude/skills/coverage/SKILL.md;.claude/skills/debug/SKILL.md;.claude/skills/deps/SKILL.md;.claude/skills/docs-sync/SKILL.md;.claude/skills/e2e/SKILL.md;.claude/skills/pre-push/SKILL.md;.claude/skills/refactor/SKILL.md;.claude/skills/research/SKILL.md;.claude/skills/review-pr/SKILL.md;.claude/skills/scaffold/SKILL.md;.claude/skills/ship/SKILL.md;.claude/skills/simplify/SKILL.md;.claude/skills/test/SKILL.md,.claude/skills/audit/SKILL.md;.claude/skills/check/SKILL.md;.claude/skills/ci-status/SKILL.md;.claude/skills/cleanup/SKILL.md;.claude/skills/commit/SKILL.md;.claude/skills/coverage/SKILL.md;.claude/skills/debug/SKILL.md;.claude/skills/deps/SKILL.md;.claude/skills/docs-sync/SKILL.md;.claude/skills/e2e/SKILL.md;.claude/skills/pre-push/SKILL.md;.claude/skills/refactor/SKILL.md;.claude/skills/research/SKILL.md;.claude/skills/review-pr/SKILL.md;.claude/skills/scaffold/SKILL.md;.claude/skills/ship/SKILL.md;.claude/skills/simplify/SKILL.md;.claude/skills/test/SKILL.md
+97,pauubach/narrassist,adoption_committer_timestamp_matches,true,2026-04-17T12:44:41+02:00,2026-04-17T10:44:41Z
+97,pauubach/narrassist,pre_window_observable,true,5aef836fa007aa6a7eff6f1253e660b2010cd144,non-empty
+97,pauubach/narrassist,post_window_before_cutoff,true,2026-06-16T10:44:41+00:00,<= 2026-10-04T23:59:59+00:00
+97,pauubach/narrassist,production_path_count_matches,true,372,372
+97,pauubach/narrassist,test_path_count_matches,true,241,241
+98,JohnRushKucharski/units,cutoff_commit_exists,true,True,True
+98,JohnRushKucharski/units,adoption_commit_exists,true,True,True
+98,JohnRushKucharski/units,adoption_reaches_cutoff,true,True,True
+98,JohnRushKucharski/units,first_parent_exists,true,e0a74f289ba344140cddfe202087e738ea4d278b,non-empty
+98,JohnRushKucharski/units,valid_skills_before_is_zero,true,0,0
+98,JohnRushKucharski/units,valid_skills_after_positive,true,11,> 0
+98,JohnRushKucharski/units,reported_skill_paths_match,true,.github/skills/design-pattern-review/SKILL.md;.github/skills/diagnose/SKILL.md;.github/skills/grill-with-docs/SKILL.md;.github/skills/improve-codebase-architecture/SKILL.md;.github/skills/python-code-review/SKILL.md;.github/skills/solid/SKILL.md;.github/skills/tdd/SKILL.md;.github/skills/to-issues/SKILL.md;.github/skills/to-prd/SKILL.md;.github/skills/triage/SKILL.md;.github/skills/zoom-out/SKILL.md,.github/skills/design-pattern-review/SKILL.md;.github/skills/diagnose/SKILL.md;.github/skills/grill-with-docs/SKILL.md;.github/skills/improve-codebase-architecture/SKILL.md;.github/skills/python-code-review/SKILL.md;.github/skills/solid/SKILL.md;.github/skills/tdd/SKILL.md;.github/skills/to-issues/SKILL.md;.github/skills/to-prd/SKILL.md;.github/skills/triage/SKILL.md;.github/skills/zoom-out/SKILL.md
+98,JohnRushKucharski/units,adoption_committer_timestamp_matches,true,2026-05-05T13:44:40+02:00,2026-05-05T11:44:40Z
+98,JohnRushKucharski/units,pre_window_observable,true,e0a74f289ba344140cddfe202087e738ea4d278b,non-empty
+98,JohnRushKucharski/units,post_window_before_cutoff,true,2026-07-04T11:44:40+00:00,<= 2026-10-04T23:59:59+00:00
+98,JohnRushKucharski/units,production_path_count_matches,true,13,13
+98,JohnRushKucharski/units,test_path_count_matches,true,8,8
+99,xchem/fragalysis-backend,cutoff_commit_exists,true,True,True
+99,xchem/fragalysis-backend,adoption_commit_exists,true,True,True
+99,xchem/fragalysis-backend,adoption_reaches_cutoff,true,True,True
+99,xchem/fragalysis-backend,first_parent_exists,true,efbae7c7ac36aa824c9fe4d5006ff1024afd4de7,non-empty
+99,xchem/fragalysis-backend,valid_skills_before_is_zero,true,0,0
+99,xchem/fragalysis-backend,valid_skills_after_positive,true,1,> 0
+99,xchem/fragalysis-backend,reported_skill_paths_match,true,.claude/skills/build-stack/SKILL.md,.claude/skills/build-stack/SKILL.md
+99,xchem/fragalysis-backend,adoption_committer_timestamp_matches,true,2026-05-26T15:16:13+01:00,2026-05-26T14:16:13Z
+99,xchem/fragalysis-backend,pre_window_observable,true,9dd156d6679cd13115f8d81aa65d517f38381a0a,non-empty
+99,xchem/fragalysis-backend,post_window_before_cutoff,true,2026-07-25T14:16:13+00:00,<= 2026-10-04T23:59:59+00:00
+99,xchem/fragalysis-backend,production_path_count_matches,true,288,288
+99,xchem/fragalysis-backend,test_path_count_matches,true,8,8
+100,nerd-zero/solei,cutoff_commit_exists,true,True,True
+100,nerd-zero/solei,adoption_commit_exists,true,True,True
+100,nerd-zero/solei,adoption_reaches_cutoff,true,True,True
+100,nerd-zero/solei,first_parent_exists,true,f75d086be50a4a659bc82ee0bc1682afd8d312c2,non-empty
+100,nerd-zero/solei,valid_skills_before_is_zero,true,0,0
+100,nerd-zero/solei,valid_skills_after_positive,true,1,> 0
+100,nerd-zero/solei,reported_skill_paths_match,true,.claude/skills/vercel-react-best-practices/SKILL.md,.claude/skills/vercel-react-best-practices/SKILL.md
+100,nerd-zero/solei,adoption_committer_timestamp_matches,true,2026-01-16T09:53:25Z,2026-01-16T09:53:25Z
+100,nerd-zero/solei,pre_window_observable,true,6109594cba4382b1c668f5044cbfc8bfe25f640f,non-empty
+100,nerd-zero/solei,post_window_before_cutoff,true,2026-03-17T09:53:25+00:00,<= 2026-10-04T23:59:59+00:00
+100,nerd-zero/solei,production_path_count_matches,true,1085,1085
+100,nerd-zero/solei,test_path_count_matches,true,241,241
+101,mozilla-services/merino-py,cutoff_commit_exists,true,True,True
+101,mozilla-services/merino-py,adoption_commit_exists,true,True,True
+101,mozilla-services/merino-py,adoption_reaches_cutoff,true,True,True
+101,mozilla-services/merino-py,first_parent_exists,true,f601d64e61848fee90ac2835299fba1bf3df1f88,non-empty
+101,mozilla-services/merino-py,valid_skills_before_is_zero,true,0,0
+101,mozilla-services/merino-py,valid_skills_after_positive,true,1,> 0
+101,mozilla-services/merino-py,reported_skill_paths_match,true,.claude/skills/review-provider/SKILL.md,.claude/skills/review-provider/SKILL.md
+101,mozilla-services/merino-py,adoption_committer_timestamp_matches,true,2026-02-20T17:10:48Z,2026-02-20T17:10:48Z
+101,mozilla-services/merino-py,pre_window_observable,true,2cba41f48fcca0033bed09f97b94d76d925abfa4,non-empty
+101,mozilla-services/merino-py,post_window_before_cutoff,true,2026-04-21T17:10:48+00:00,<= 2026-10-04T23:59:59+00:00
+101,mozilla-services/merino-py,production_path_count_matches,true,238,238
+101,mozilla-services/merino-py,test_path_count_matches,true,228,228
+102,LaurentMazare/pipecat,cutoff_commit_exists,true,True,True
+102,LaurentMazare/pipecat,adoption_commit_exists,true,True,True
+102,LaurentMazare/pipecat,adoption_reaches_cutoff,true,True,True
+102,LaurentMazare/pipecat,first_parent_exists,true,8f05d95f50638a400b10a0fdb1df3ad10002f76c,non-empty
+102,LaurentMazare/pipecat,valid_skills_before_is_zero,true,0,0
+102,LaurentMazare/pipecat,valid_skills_after_positive,true,1,> 0
+102,LaurentMazare/pipecat,reported_skill_paths_match,true,.claude/skills/changelog/SKILL.md,.claude/skills/changelog/SKILL.md
+102,LaurentMazare/pipecat,adoption_committer_timestamp_matches,true,2026-01-21T20:50:47-08:00,2026-01-22T04:50:47Z
+102,LaurentMazare/pipecat,pre_window_observable,true,3458b74fc958b79cd7b35fb1e882fa298a8ea439,non-empty
+102,LaurentMazare/pipecat,post_window_before_cutoff,true,2026-03-23T04:50:47+00:00,<= 2026-10-04T23:59:59+00:00
+102,LaurentMazare/pipecat,production_path_count_matches,true,445,445
+102,LaurentMazare/pipecat,test_path_count_matches,true,53,53
+103,adibirzu/oci-log-analytics-detections,cutoff_commit_exists,true,True,True
+103,adibirzu/oci-log-analytics-detections,adoption_commit_exists,true,True,True
+103,adibirzu/oci-log-analytics-detections,adoption_reaches_cutoff,true,True,True
+103,adibirzu/oci-log-analytics-detections,first_parent_exists,true,e29d21c92c8db5d3e4a53ccf9dc41d76978fb1de,non-empty
+103,adibirzu/oci-log-analytics-detections,valid_skills_before_is_zero,true,0,0
+103,adibirzu/oci-log-analytics-detections,valid_skills_after_positive,true,1,> 0
+103,adibirzu/oci-log-analytics-detections,reported_skill_paths_match,true,.claude/skills/oci-log-analytics-dashboard-enhancer/SKILL.md,.claude/skills/oci-log-analytics-dashboard-enhancer/SKILL.md
+103,adibirzu/oci-log-analytics-detections,adoption_committer_timestamp_matches,true,2026-05-16T23:15:33+03:00,2026-05-16T20:15:33Z
+103,adibirzu/oci-log-analytics-detections,pre_window_observable,true,86b613e6688f66c9189c2d2e420c2d86fe7f36c1,non-empty
+103,adibirzu/oci-log-analytics-detections,post_window_before_cutoff,true,2026-07-15T20:15:33+00:00,<= 2026-10-04T23:59:59+00:00
+103,adibirzu/oci-log-analytics-detections,production_path_count_matches,true,76,76
+103,adibirzu/oci-log-analytics-detections,test_path_count_matches,true,41,41
+104,dannoetc/baseliner,cutoff_commit_exists,true,True,True
+104,dannoetc/baseliner,adoption_commit_exists,true,True,True
+104,dannoetc/baseliner,adoption_reaches_cutoff,true,True,True
+104,dannoetc/baseliner,first_parent_exists,true,33e51f1d30a7dd60099404a0d9c579af10800ce0,non-empty
+104,dannoetc/baseliner,valid_skills_before_is_zero,true,0,0
+104,dannoetc/baseliner,valid_skills_after_positive,true,1,> 0
+104,dannoetc/baseliner,reported_skill_paths_match,true,.agents/skills/interface-design/SKILL.md,.agents/skills/interface-design/SKILL.md
+104,dannoetc/baseliner,adoption_committer_timestamp_matches,true,2026-02-11T14:32:14-07:00,2026-02-11T21:32:14Z
+104,dannoetc/baseliner,pre_window_observable,true,b491148399470a6d6b6591b5a22824e4d4a751e2,non-empty
+104,dannoetc/baseliner,post_window_before_cutoff,true,2026-04-12T21:32:14+00:00,<= 2026-10-04T23:59:59+00:00
+104,dannoetc/baseliner,production_path_count_matches,true,182,182
+104,dannoetc/baseliner,test_path_count_matches,true,74,74
+105,dbbs-lab/bsb,cutoff_commit_exists,true,True,True
+105,dbbs-lab/bsb,adoption_commit_exists,true,True,True
+105,dbbs-lab/bsb,adoption_reaches_cutoff,true,True,True
+105,dbbs-lab/bsb,first_parent_exists,true,1f477730c76052a01c7d2b6bcf5a3bb24dd5f591,non-empty
+105,dbbs-lab/bsb,valid_skills_before_is_zero,true,0,0
+105,dbbs-lab/bsb,valid_skills_after_positive,true,1,> 0
+105,dbbs-lab/bsb,reported_skill_paths_match,true,.claude/skills/open-docs/SKILL.md,.claude/skills/open-docs/SKILL.md
+105,dbbs-lab/bsb,adoption_committer_timestamp_matches,true,2026-05-29T16:13:33+02:00,2026-05-29T14:13:33Z
+105,dbbs-lab/bsb,pre_window_observable,true,bec367ac72210bb995172c2f5a2b3ca1b7218e7c,non-empty
+105,dbbs-lab/bsb,post_window_before_cutoff,true,2026-07-28T14:13:33+00:00,<= 2026-10-04T23:59:59+00:00
+105,dbbs-lab/bsb,production_path_count_matches,true,211,211
+105,dbbs-lab/bsb,test_path_count_matches,true,79,79
+106,suigetsukan/suigetsukan-lambdas,cutoff_commit_exists,true,True,True
+106,suigetsukan/suigetsukan-lambdas,adoption_commit_exists,true,True,True
+106,suigetsukan/suigetsukan-lambdas,adoption_reaches_cutoff,true,True,True
+106,suigetsukan/suigetsukan-lambdas,first_parent_exists,true,6495a134c0e713dcc1d1ffc338f0f4acd6689cb5,non-empty
+106,suigetsukan/suigetsukan-lambdas,valid_skills_before_is_zero,true,0,0
+106,suigetsukan/suigetsukan-lambdas,valid_skills_after_positive,true,2,> 0
+106,suigetsukan/suigetsukan-lambdas,reported_skill_paths_match,true,.cursor/skills/ccn/SKILL.md;.cursor/skills/repo-deep-dive/SKILL.md,.cursor/skills/ccn/SKILL.md;.cursor/skills/repo-deep-dive/SKILL.md
+106,suigetsukan/suigetsukan-lambdas,adoption_committer_timestamp_matches,true,2026-04-11T04:27:31-05:00,2026-04-11T09:27:31Z
+106,suigetsukan/suigetsukan-lambdas,pre_window_observable,true,5d68ceb815be773804a1fc5e1f805018d6e70738,non-empty
+106,suigetsukan/suigetsukan-lambdas,post_window_before_cutoff,true,2026-06-10T09:27:31+00:00,<= 2026-10-04T23:59:59+00:00
+106,suigetsukan/suigetsukan-lambdas,production_path_count_matches,true,28,28
+106,suigetsukan/suigetsukan-lambdas,test_path_count_matches,true,16,16
+107,dlt-hub/verified-sources,cutoff_commit_exists,true,True,True
+107,dlt-hub/verified-sources,adoption_commit_exists,true,True,True
+107,dlt-hub/verified-sources,adoption_reaches_cutoff,true,True,True
+107,dlt-hub/verified-sources,first_parent_exists,true,9a0a56f64654f1d56a2283bd365b4d5e2b1a4dc6,non-empty
+107,dlt-hub/verified-sources,valid_skills_before_is_zero,true,0,0
+107,dlt-hub/verified-sources,valid_skills_after_positive,true,1,> 0
+107,dlt-hub/verified-sources,reported_skill_paths_match,true,.claude/skills/contributing/SKILL.md,.claude/skills/contributing/SKILL.md
+107,dlt-hub/verified-sources,adoption_committer_timestamp_matches,true,2026-03-30T21:43:02+02:00,2026-03-30T19:43:02Z
+107,dlt-hub/verified-sources,pre_window_observable,true,c838272f958a36437f7e3297fd0bf497956f11a5,non-empty
+107,dlt-hub/verified-sources,post_window_before_cutoff,true,2026-05-29T19:43:02+00:00,<= 2026-10-04T23:59:59+00:00
+107,dlt-hub/verified-sources,production_path_count_matches,true,172,172
+107,dlt-hub/verified-sources,test_path_count_matches,true,85,85
+108,quantum-guardians/approach-analysis,cutoff_commit_exists,true,True,True
+108,quantum-guardians/approach-analysis,adoption_commit_exists,true,True,True
+108,quantum-guardians/approach-analysis,adoption_reaches_cutoff,true,True,True
+108,quantum-guardians/approach-analysis,first_parent_exists,true,683f91ce12976f49341b475830df7b47fe7c2540,non-empty
+108,quantum-guardians/approach-analysis,valid_skills_before_is_zero,true,0,0
+108,quantum-guardians/approach-analysis,valid_skills_after_positive,true,8,> 0
+108,quantum-guardians/approach-analysis,reported_skill_paths_match,true,.agents/skills/handoff/SKILL.md;.agents/skills/pair-review/SKILL.md;.agents/skills/plan-review/SKILL.md;.agents/skills/writing-plan/SKILL.md;.claude/skills/handoff/SKILL.md;.claude/skills/pair-review/SKILL.md;.claude/skills/plan-review/SKILL.md;.claude/skills/writing-plan/SKILL.md,.agents/skills/handoff/SKILL.md;.agents/skills/pair-review/SKILL.md;.agents/skills/plan-review/SKILL.md;.agents/skills/writing-plan/SKILL.md;.claude/skills/handoff/SKILL.md;.claude/skills/pair-review/SKILL.md;.claude/skills/plan-review/SKILL.md;.claude/skills/writing-plan/SKILL.md
+108,quantum-guardians/approach-analysis,adoption_committer_timestamp_matches,true,2026-06-15T14:42:09+09:00,2026-06-15T05:42:09Z
+108,quantum-guardians/approach-analysis,pre_window_observable,true,4348b10d80423447db99816ee00a8cdfce6ffd50,non-empty
+108,quantum-guardians/approach-analysis,post_window_before_cutoff,true,2026-08-14T05:42:09+00:00,<= 2026-10-04T23:59:59+00:00
+108,quantum-guardians/approach-analysis,production_path_count_matches,true,34,34
+108,quantum-guardians/approach-analysis,test_path_count_matches,true,9,9
+109,mayflower/scry,cutoff_commit_exists,true,True,True
+109,mayflower/scry,adoption_commit_exists,true,True,True
+109,mayflower/scry,adoption_reaches_cutoff,true,True,True
+109,mayflower/scry,first_parent_exists,true,e499263d5563fa5ae0a71c081a27de8a8e4fccf5,non-empty
+109,mayflower/scry,valid_skills_before_is_zero,true,0,0
+109,mayflower/scry,valid_skills_after_positive,true,4,> 0
+109,mayflower/scry,reported_skill_paths_match,true,.claude/skills/pr-quality/SKILL.md;.claude/skills/push-watch/SKILL.md;.claude/skills/sonar-fix/SKILL.md;.claude/skills/sonar-status/SKILL.md,.claude/skills/pr-quality/SKILL.md;.claude/skills/push-watch/SKILL.md;.claude/skills/sonar-fix/SKILL.md;.claude/skills/sonar-status/SKILL.md
+109,mayflower/scry,adoption_committer_timestamp_matches,true,2026-02-28T21:29:53+01:00,2026-02-28T20:29:53Z
+109,mayflower/scry,pre_window_observable,true,6bbef0135edd5f130302c93a4e36cd2ee88ce00c,non-empty
+109,mayflower/scry,post_window_before_cutoff,true,2026-04-29T20:29:53+00:00,<= 2026-10-04T23:59:59+00:00
+109,mayflower/scry,production_path_count_matches,true,49,49
+109,mayflower/scry,test_path_count_matches,true,29,29
+110,Cellular-Semantics/Atlas-reporter,cutoff_commit_exists,true,True,True
+110,Cellular-Semantics/Atlas-reporter,adoption_commit_exists,true,True,True
+110,Cellular-Semantics/Atlas-reporter,adoption_reaches_cutoff,true,True,True
+110,Cellular-Semantics/Atlas-reporter,first_parent_exists,true,1cfeb0df90349633cdc088b8dc6db725d4e68797,non-empty
+110,Cellular-Semantics/Atlas-reporter,valid_skills_before_is_zero,true,0,0
+110,Cellular-Semantics/Atlas-reporter,valid_skills_after_positive,true,1,> 0
+110,Cellular-Semantics/Atlas-reporter,reported_skill_paths_match,true,.claude/skills/anndata-zarr-summary/SKILL.md,.claude/skills/anndata-zarr-summary/SKILL.md
+110,Cellular-Semantics/Atlas-reporter,adoption_committer_timestamp_matches,true,2026-05-28T14:45:32+01:00,2026-05-28T13:45:32Z
+110,Cellular-Semantics/Atlas-reporter,pre_window_observable,true,ac08c3a3088557a006a8fe1615846ba8bd8270fb,non-empty
+110,Cellular-Semantics/Atlas-reporter,post_window_before_cutoff,true,2026-07-27T13:45:32+00:00,<= 2026-10-04T23:59:59+00:00
+110,Cellular-Semantics/Atlas-reporter,production_path_count_matches,true,37,37
+110,Cellular-Semantics/Atlas-reporter,test_path_count_matches,true,2,2
+111,Centaurea-Platinum/SAKIGo,cutoff_commit_exists,true,True,True
+111,Centaurea-Platinum/SAKIGo,adoption_commit_exists,true,True,True
+111,Centaurea-Platinum/SAKIGo,adoption_reaches_cutoff,true,True,True
+111,Centaurea-Platinum/SAKIGo,first_parent_exists,true,abddff3b61d80d6a6395c08bc87767db59778aac,non-empty
+111,Centaurea-Platinum/SAKIGo,valid_skills_before_is_zero,true,0,0
+111,Centaurea-Platinum/SAKIGo,valid_skills_after_positive,true,1,> 0
+111,Centaurea-Platinum/SAKIGo,reported_skill_paths_match,true,.github/skills/verification/SKILL.md,.github/skills/verification/SKILL.md
+111,Centaurea-Platinum/SAKIGo,adoption_committer_timestamp_matches,true,2026-07-06T00:22:40+08:00,2026-07-05T16:22:40Z
+111,Centaurea-Platinum/SAKIGo,pre_window_observable,true,5754fa0bdf7b4043f6d7d076b5172493a2206d0c,non-empty
+111,Centaurea-Platinum/SAKIGo,post_window_before_cutoff,true,2026-09-03T16:22:40+00:00,<= 2026-10-04T23:59:59+00:00
+111,Centaurea-Platinum/SAKIGo,production_path_count_matches,true,23,23
+111,Centaurea-Platinum/SAKIGo,test_path_count_matches,true,2,2
+112,namoshizun/TradePy,cutoff_commit_exists,true,True,True
+112,namoshizun/TradePy,adoption_commit_exists,true,True,True
+112,namoshizun/TradePy,adoption_reaches_cutoff,true,True,True
+112,namoshizun/TradePy,first_parent_exists,true,9e97c266a6ebe6109cd581949342d0974217eddc,non-empty
+112,namoshizun/TradePy,valid_skills_before_is_zero,true,0,0
+112,namoshizun/TradePy,valid_skills_after_positive,true,1,> 0
+112,namoshizun/TradePy,reported_skill_paths_match,true,.cursor/skills/implement-new-indicator/SKILL.md,.cursor/skills/implement-new-indicator/SKILL.md
+112,namoshizun/TradePy,adoption_committer_timestamp_matches,true,2026-06-10T09:56:55+08:00,2026-06-10T01:56:55Z
+112,namoshizun/TradePy,pre_window_observable,true,34f1be0f9f218e782ef05862c9fc744bfee67a58,non-empty
+112,namoshizun/TradePy,post_window_before_cutoff,true,2026-08-09T01:56:55+00:00,<= 2026-10-04T23:59:59+00:00
+112,namoshizun/TradePy,production_path_count_matches,true,39,39
+112,namoshizun/TradePy,test_path_count_matches,true,5,5
+113,agentic-community/mcp-gateway-registry,cutoff_commit_exists,true,True,True
+113,agentic-community/mcp-gateway-registry,adoption_commit_exists,true,True,True
+113,agentic-community/mcp-gateway-registry,adoption_reaches_cutoff,true,True,True
+113,agentic-community/mcp-gateway-registry,first_parent_exists,true,92765bb4629d58467b0c82f380ca88c8a953e2e0,non-empty
+113,agentic-community/mcp-gateway-registry,valid_skills_before_is_zero,true,0,0
+113,agentic-community/mcp-gateway-registry,valid_skills_after_positive,true,1,> 0
+113,agentic-community/mcp-gateway-registry,reported_skill_paths_match,true,.claude/skills/pr-review/SKILL.md,.claude/skills/pr-review/SKILL.md
+113,agentic-community/mcp-gateway-registry,adoption_committer_timestamp_matches,true,2026-02-18T16:07:32-05:00,2026-02-18T21:07:32Z
+113,agentic-community/mcp-gateway-registry,pre_window_observable,true,07af311ff906eb033d803f30cd0843ea553a90af,non-empty
+113,agentic-community/mcp-gateway-registry,post_window_before_cutoff,true,2026-04-19T21:07:32+00:00,<= 2026-10-04T23:59:59+00:00
+113,agentic-community/mcp-gateway-registry,production_path_count_matches,true,212,212
+113,agentic-community/mcp-gateway-registry,test_path_count_matches,true,105,105
+114,houmo-ai/houmo-xh2modelzoo,cutoff_commit_exists,true,True,True
+114,houmo-ai/houmo-xh2modelzoo,adoption_commit_exists,true,True,True
+114,houmo-ai/houmo-xh2modelzoo,adoption_reaches_cutoff,true,True,True
+114,houmo-ai/houmo-xh2modelzoo,first_parent_exists,true,922a788e47f66b450594cc344ba7e8aa39e2f414,non-empty
+114,houmo-ai/houmo-xh2modelzoo,valid_skills_before_is_zero,true,0,0
+114,houmo-ai/houmo-xh2modelzoo,valid_skills_after_positive,true,1,> 0
+114,houmo-ai/houmo-xh2modelzoo,reported_skill_paths_match,true,.agents/skills/migrate-xhquantllm-to-xh2modelzoo/SKILL.md,.agents/skills/migrate-xhquantllm-to-xh2modelzoo/SKILL.md
+114,houmo-ai/houmo-xh2modelzoo,adoption_committer_timestamp_matches,true,2026-03-06T13:34:52+08:00,2026-03-06T05:34:52Z
+114,houmo-ai/houmo-xh2modelzoo,pre_window_observable,true,27cb08336b1e849b32cac141d11ff0f3303773c8,non-empty
+114,houmo-ai/houmo-xh2modelzoo,post_window_before_cutoff,true,2026-05-05T05:34:52+00:00,<= 2026-10-04T23:59:59+00:00
+114,houmo-ai/houmo-xh2modelzoo,production_path_count_matches,true,676,676
+114,houmo-ai/houmo-xh2modelzoo,test_path_count_matches,true,19,19
+115,hadsie/treksafer,cutoff_commit_exists,true,True,True
+115,hadsie/treksafer,adoption_commit_exists,true,True,True
+115,hadsie/treksafer,adoption_reaches_cutoff,true,True,True
+115,hadsie/treksafer,first_parent_exists,true,d0387f814bc8d72c48df2e897e4c640a5dfe571e,non-empty
+115,hadsie/treksafer,valid_skills_before_is_zero,true,0,0
+115,hadsie/treksafer,valid_skills_after_positive,true,1,> 0
+115,hadsie/treksafer,reported_skill_paths_match,true,.claude/skills/dependency-audit/SKILL.md,.claude/skills/dependency-audit/SKILL.md
+115,hadsie/treksafer,adoption_committer_timestamp_matches,true,2026-04-06T12:06:34-07:00,2026-04-06T19:06:34Z
+115,hadsie/treksafer,pre_window_observable,true,b7a3cc3acab4ae8af136d350a031eb124f280d62,non-empty
+115,hadsie/treksafer,post_window_before_cutoff,true,2026-06-05T19:06:34+00:00,<= 2026-10-04T23:59:59+00:00
+115,hadsie/treksafer,production_path_count_matches,true,22,22
+115,hadsie/treksafer,test_path_count_matches,true,14,14
+116,carlostoek/adminpro,cutoff_commit_exists,true,True,True
+116,carlostoek/adminpro,adoption_commit_exists,true,True,True
+116,carlostoek/adminpro,adoption_reaches_cutoff,true,True,True
+116,carlostoek/adminpro,first_parent_exists,true,cee83e96b4b292a86d156fb50e1c7293702485e5,non-empty
+116,carlostoek/adminpro,valid_skills_before_is_zero,true,0,0
+116,carlostoek/adminpro,valid_skills_after_positive,true,4,> 0
+116,carlostoek/adminpro,reported_skill_paths_match,true,.claude/skills/db-migrate/SKILL.md;.claude/skills/new-handler/SKILL.md;.claude/skills/run-tests/SKILL.md;.claude/skills/test-handler/SKILL.md,.claude/skills/db-migrate/SKILL.md;.claude/skills/new-handler/SKILL.md;.claude/skills/run-tests/SKILL.md;.claude/skills/test-handler/SKILL.md
+116,carlostoek/adminpro,adoption_committer_timestamp_matches,true,2026-03-20T07:44:23-06:00,2026-03-20T13:44:23Z
+116,carlostoek/adminpro,pre_window_observable,true,f8570d717a8a3253ff522112466c4fd413961400,non-empty
+116,carlostoek/adminpro,post_window_before_cutoff,true,2026-05-19T13:44:23+00:00,<= 2026-10-04T23:59:59+00:00
+116,carlostoek/adminpro,production_path_count_matches,true,148,148
+116,carlostoek/adminpro,test_path_count_matches,true,76,76
+117,microsoft/PowerPlatform-DataverseClient-Python,cutoff_commit_exists,true,True,True
+117,microsoft/PowerPlatform-DataverseClient-Python,adoption_commit_exists,true,True,True
+117,microsoft/PowerPlatform-DataverseClient-Python,adoption_reaches_cutoff,true,True,True
+117,microsoft/PowerPlatform-DataverseClient-Python,first_parent_exists,true,8e171f135b8cab48f9c2e1a9518e20a1ae495327,non-empty
+117,microsoft/PowerPlatform-DataverseClient-Python,valid_skills_before_is_zero,true,0,0
+117,microsoft/PowerPlatform-DataverseClient-Python,valid_skills_after_positive,true,2,> 0
+117,microsoft/PowerPlatform-DataverseClient-Python,reported_skill_paths_match,true,.claude/skills/dataverse-sdk-dev/SKILL.md;.claude/skills/dataverse-sdk-use/SKILL.md,.claude/skills/dataverse-sdk-dev/SKILL.md;.claude/skills/dataverse-sdk-use/SKILL.md
+117,microsoft/PowerPlatform-DataverseClient-Python,adoption_committer_timestamp_matches,true,2026-02-06T10:45:16-08:00,2026-02-06T18:45:16Z
+117,microsoft/PowerPlatform-DataverseClient-Python,pre_window_observable,true,8aa99450644bdaca4be04ad51f07e0e92ba323ab,non-empty
+117,microsoft/PowerPlatform-DataverseClient-Python,post_window_before_cutoff,true,2026-04-07T18:45:16+00:00,<= 2026-10-04T23:59:59+00:00
+117,microsoft/PowerPlatform-DataverseClient-Python,production_path_count_matches,true,18,18
+117,microsoft/PowerPlatform-DataverseClient-Python,test_path_count_matches,true,11,11
+118,aigorahub/sensPy,cutoff_commit_exists,true,True,True
+118,aigorahub/sensPy,adoption_commit_exists,true,True,True
+118,aigorahub/sensPy,adoption_reaches_cutoff,true,True,True
+118,aigorahub/sensPy,first_parent_exists,true,58d3b3ff5808106bd794c3a40b67ff8327a824fd,non-empty
+118,aigorahub/sensPy,valid_skills_before_is_zero,true,0,0
+118,aigorahub/sensPy,valid_skills_after_positive,true,1,> 0
+118,aigorahub/sensPy,reported_skill_paths_match,true,.claude/skills/review-loop/SKILL.md,.claude/skills/review-loop/SKILL.md
+118,aigorahub/sensPy,adoption_committer_timestamp_matches,true,2026-02-20T14:18:40+01:00,2026-02-20T13:18:40Z
+118,aigorahub/sensPy,pre_window_observable,true,8b78df477a415d45c53458f902c1b4201fd6eedb,non-empty
+118,aigorahub/sensPy,post_window_before_cutoff,true,2026-04-21T13:18:40+00:00,<= 2026-10-04T23:59:59+00:00
+118,aigorahub/sensPy,production_path_count_matches,true,22,22
+118,aigorahub/sensPy,test_path_count_matches,true,25,25
+119,Time-has-wings/slime,cutoff_commit_exists,true,True,True
+119,Time-has-wings/slime,adoption_commit_exists,true,True,True
+119,Time-has-wings/slime,adoption_reaches_cutoff,true,True,True
+119,Time-has-wings/slime,first_parent_exists,true,6a3bb90e3210171e27ab7d799c8c2888e7465a1f,non-empty
+119,Time-has-wings/slime,valid_skills_before_is_zero,true,0,0
+119,Time-has-wings/slime,valid_skills_after_positive,true,5,> 0
+119,Time-has-wings/slime,reported_skill_paths_match,true,.claude/skills/add-dynamic-filter/SKILL.md;.claude/skills/add-eval-dataset-config/SKILL.md;.claude/skills/add-reward-function/SKILL.md;.claude/skills/add-rollout-function/SKILL.md;.claude/skills/add-tests-and-ci/SKILL.md,.claude/skills/add-dynamic-filter/SKILL.md;.claude/skills/add-eval-dataset-config/SKILL.md;.claude/skills/add-reward-function/SKILL.md;.claude/skills/add-rollout-function/SKILL.md;.claude/skills/add-tests-and-ci/SKILL.md
+119,Time-has-wings/slime,adoption_committer_timestamp_matches,true,2026-03-02T11:01:43+08:00,2026-03-02T03:01:43Z
+119,Time-has-wings/slime,pre_window_observable,true,0644397cbcfe4b7baf595453dae3469a28f481c1,non-empty
+119,Time-has-wings/slime,post_window_before_cutoff,true,2026-05-01T03:01:43+00:00,<= 2026-10-04T23:59:59+00:00
+119,Time-has-wings/slime,production_path_count_matches,true,159,159
+119,Time-has-wings/slime,test_path_count_matches,true,24,24
+120,mizoo-snow21/dotfiles,cutoff_commit_exists,true,True,True
+120,mizoo-snow21/dotfiles,adoption_commit_exists,true,True,True
+120,mizoo-snow21/dotfiles,adoption_reaches_cutoff,true,True,True
+120,mizoo-snow21/dotfiles,first_parent_exists,true,5d2dbd41e304b9a9077caf64c7cb998837d9f14b,non-empty
+120,mizoo-snow21/dotfiles,valid_skills_before_is_zero,true,0,0
+120,mizoo-snow21/dotfiles,valid_skills_after_positive,true,1,> 0
+120,mizoo-snow21/dotfiles,reported_skill_paths_match,true,.claude/skills/handover/SKILL.md,.claude/skills/handover/SKILL.md
+120,mizoo-snow21/dotfiles,adoption_committer_timestamp_matches,true,2026-03-07T23:30:57+09:00,2026-03-07T14:30:57Z
+120,mizoo-snow21/dotfiles,pre_window_observable,true,25c5e02f21183ba7305fade3d6c7561aa5be439b,non-empty
+120,mizoo-snow21/dotfiles,post_window_before_cutoff,true,2026-05-06T14:30:57+00:00,<= 2026-10-04T23:59:59+00:00
+120,mizoo-snow21/dotfiles,production_path_count_matches,true,677,677
+120,mizoo-snow21/dotfiles,test_path_count_matches,true,12,12
