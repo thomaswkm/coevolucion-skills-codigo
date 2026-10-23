@@ -13,13 +13,14 @@ elaboran por separado.
 | Elemento | Valor |
 |---|---|
 | Repositorio | [thomaswkm/coevolucion-skills-codigo](https://github.com/thomaswkm/coevolucion-skills-codigo) |
-| Versión (etiqueta) | `v0.2-etapa2` |
-| DOI de Zenodo | `10.5281/zenodo.23178699` |
+| Versión (etiqueta) | `v1.0-etapa3` |
+| DOI de versión (Zenodo) | `[DOI-PENDIENTE]` |
 
-La versión publicada en Zenodo `10.5281/zenodo.23178699` corresponde a la
-etiqueta `v0.2-etapa2` de este repositorio. Los resultados inferenciales de
-`results-inference/` pertenecen a la corrida de Etapa 3 y se publicarán con la
-etiqueta definitiva.
+La versión de Etapa 3 corresponde a la etiqueta `v1.0-etapa3` de este
+repositorio y a su release en GitHub. Su DOI de versión en Zenodo se añadirá
+tras la publicación. Los resultados inferenciales de `results-inference/`
+pertenecen a esta versión. La versión de Etapa 2 (`v0.2-etapa2`) se conserva con
+el DOI `10.5281/zenodo.23178699`.
 
 El paquete incluye el código del flujo (`src/coevolution_skills/`), las pruebas
 (`tests/`), la utilidad de figurado (`scripts/plot_results.py`), las dependencias
