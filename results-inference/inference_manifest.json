@@ -1,0 +1,193 @@
+{
+  "ambiguous_count": 0,
+  "analysis_sample_sha256": "ce2dff3119a454213987dbd18d81d39ce726505a641ba624ce0c514ecde2a60f",
+  "bot_pattern_matches": {
+    "manual_review_file": "bot_commits_review.csv",
+    "manual_review_status": "pending",
+    "unique_commits": 1700
+  },
+  "configuration": {
+    "adoption_policy": "exclude invalid; keep ambiguous flagged; no replacement",
+    "alpha": 0.05,
+    "alternative": "two-sided for Wilcoxon and sign tests; Friedman upper tail by construction",
+    "bootstrap_percentiles": [
+      2.5,
+      97.5
+    ],
+    "bootstrap_resamples": 10000,
+    "bootstrap_seed": 20261020,
+    "confidence_intervals": "Percentile bootstrap: 2.5 and 97.5 percentiles; repositories are the resampling unit and RQ1/RQ2 keep their paired structure",
+    "effects": "Matched rank-biserial correlation (positive rank sum minus negative rank sum over total rank sum) and Hodges-Lehmann shift (median of Walsh averages)",
+    "extraction": {
+      "artifact_parts": 31,
+      "checkout_selected": true,
+      "clone_timeout_seconds": 1800,
+      "command_timeout_seconds": 300,
+      "dataset_repository": "mvaccargiu/gitskills",
+      "dataset_revision": "ebab17454a7c236f8f26b183567f1a126f42e3f8",
+      "history_cutoff_utc": "2026-10-04T23:59:59Z",
+      "max_candidates": 1500,
+      "output_directory": "/home/thomas/dev/coevolution-skills-code/data/extraction",
+      "repository_directory": "/home/thomas/dev/coevolution-skills-code/repositories",
+      "retry_count": 3,
+      "seed": "20261004",
+      "target_count": 120,
+      "window_days": 60
+    },
+    "merges": "excluded before counts by process-activity; no separate sensitivity",
+    "multiple_comparisons": "Holm step-down adjusted p-values within RQ1 (3 pairwise tests) and within RQ2 (2 tests), computed separately",
+    "output_directory": "/home/thomas/dev/coevolution-skills-code/results-inference",
+    "placebo": "none (D8); a pre-adoption trend remains a threat to validity and is not tested",
+    "processed_directory": "/home/thomas/dev/coevolution-skills-code/data/processed",
+    "results_directory": "/home/thomas/dev/coevolution-skills-code/results",
+    "rq1_categories": [
+      "skill",
+      "production",
+      "test"
+    ],
+    "rq1_pairs": [
+      [
+        "skill",
+        "production"
+      ],
+      [
+        "skill",
+        "test"
+      ],
+      [
+        "production",
+        "test"
+      ]
+    ],
+    "rq2_categories": [
+      "production",
+      "test"
+    ],
+    "sensitivity_policy": "report after the primary result; never replace it",
+    "sign_test": "Two-sided exact binomial test on non-zero paired differences; Clopper-Pearson 95% interval for the proportion of positive differences",
+    "wilcoxon": "Two-sided Wilcoxon signed-rank test; zero differences discarded; SciPy method='auto' (exact when n_nonzero <= 25 without ties, otherwise normal approximation with tie correction); no continuity correction"
+  },
+  "created_at_utc": "2026-10-22T20:12:00.166332Z",
+  "excluded_invalid_count": 0,
+  "frozen_plan": "docs/analysis-plan.md v1.1 (2026-10-22)",
+  "generalization": "Only to E; no causal reading is licensed by this design.",
+  "inference_protocol_version": "1",
+  "input_sha256": {
+    "activity_counts": "28c61c9cf5aaf3006108852014961389e38884274b0254245ddd88d69f60875b",
+    "analysis_manifest.json": "192a745db673aa917593c5cccf2e046eaac06db06946ad46feb6844960b0d1a0",
+    "analysis_sample": "ce2dff3119a454213987dbd18d81d39ce726505a641ba624ce0c514ecde2a60f",
+    "candidate_frame.csv": "ad1bb2e9637e67809cfbe9c43f252694fa5424fdb7291248d6d4c03b1589043f",
+    "commit_activity.csv": "0619046b25d4035b3810f6a579ee50c628da54a71a7fed56742bfef21c20565f",
+    "file_changes.csv": "b3390a599302e2ea5b527e693b12618e94bc0826cede00d994338ffb96793037",
+    "selected_repositories.csv": "adc7ba8cb5cb2c7dab9da6a671c5fce48dde59c0776509805af84d146a7623ad",
+    "skill_contents.csv": "d74a388d5227d931a19a2ae23a8fe0541f0db8e83d29a7824c36229dfdbeabdc"
+  },
+  "output_sha256": {
+    "bootstrap_ci.csv": "ef1a48c83417c200668d5e5b350201e17317b0b5d08d13fba6ee168b240fea1d",
+    "bot_commits_review.csv": "f95696940f849e593524539026560bb37d8ba50ec409d9daf4f74072f1927776",
+    "consistency_checks.txt": "18511867938256be8b675233647e806f67fd084986d22911148089a72d199079",
+    "effect_sizes.csv": "d24bcb416683dea78b583275530fbe0d590d6c25552573353c730b76d9cd0592",
+    "rq1_tests.csv": "6602b83022391ce373e13bc867aac7f2f5af7d7f651b802c814118598f8d6642",
+    "rq2_tests.csv": "9e8afccd7668e200fc3b55dd20fed2123e75bf86e0d00895cba7c225b29eefe8",
+    "sample_representativeness.csv": "33d94cff59d07bbe345c4cc58af65776dc37da792f5f78e8f50ac14e33043457",
+    "sensitivity_churn.csv": "9289cceeebe50cdc67f266112845a642411f16d45ed1b572f1396053a35bb5b5",
+    "sensitivity_ci.csv": "bdbaa56eccc70d162485c48db7a529fe9dc7ed5e9e0b91ba0a5c2b0fcb329690",
+    "sensitivity_effects.csv": "0cc985bb4a2fc5bd6d3deb94f9c3983967bc268b97c663d8ca499cba71854548",
+    "sensitivity_sign_tests.csv": "df2b5f19edef83d1db1a4b5ce1e75ab5309db4bb2b68a7d8ef0ed668a0e68a4b",
+    "sensitivity_status.csv": "c4ca320e27e4aeaf8c815e59f395a74daaf246f4bee8cd6523b834335f9ba165",
+    "sensitivity_tests.csv": "b21cafbcf617521cba334feef895861f6efe0cf8bfe9a9b78050fca755026d98",
+    "sign_tests.csv": "52c0eeb72d7ffc7e390cd761fa905770ee079a89331bc6e8488aaf3d0aad9b30",
+    "skill_cluster_assignment.csv": "01b8653f87ff25f281e09e4b0b40cf2784e7d8fc8fc3331b35c2e8d5bb02bc50"
+  },
+  "repository_count": 120,
+  "representativeness": {
+    "copies_source": "t0 SKILL.md content_sha256 within the analysis sample (fallback; snapshot frame table unavailable)",
+    "frame_size": 22126,
+    "interpretation": "Descriptive only. No significance tests are computed against the frame because the sample is drawn from E, not directly from the frame.",
+    "metadata_source": "not provided; stars and age reported as missing",
+    "missing_repositories_in_metadata": 120,
+    "sample_is_frame_subset": true,
+    "sample_size": 120
+  },
+  "reviewed_repository_count": 120,
+  "sample_estimate": {
+    "candidates_examined": 647,
+    "cap_reached": "false",
+    "completion_status": "target_reached",
+    "eligible_found": 120,
+    "estimated_population": 4103.740340030912,
+    "estimated_population_high": 4806.792669241201,
+    "estimated_population_low": 3482.839229197921,
+    "finite_population_correction": 0.9852707159973152,
+    "frame_size": 22126,
+    "method": "Wilson 95% interval on eligible/examined; N = frame * yield",
+    "sampling_fraction": 0.029241616198137935,
+    "target_count": 120,
+    "yield": 0.18547140649149924,
+    "yield_ci_high": 0.21724634679748717,
+    "yield_ci_low": 0.15740934778983645
+  },
+  "sensitivity_status": [
+    {
+      "detail": "D7 normalized metric; raw counts remain primary",
+      "repositories": 120,
+      "sensitivity": "churn_commits_per_file",
+      "status": "computed"
+    },
+    {
+      "detail": "D7 normalized metric; raw counts remain primary",
+      "repositories": 120,
+      "sensitivity": "churn_churn_per_file",
+      "status": "computed"
+    },
+    {
+      "detail": "D7 normalized metric; raw counts remain primary",
+      "repositories": 120,
+      "sensitivity": "churn_commit_share",
+      "status": "computed"
+    },
+    {
+      "detail": "no ambiguous adoptions in the analysis sample",
+      "repositories": 120,
+      "sensitivity": "ambiguous_excluded",
+      "status": "not_applicable"
+    },
+    {
+      "detail": "119 unique content signatures from 120 repositories; 1 dropped",
+      "repositories": 119,
+      "sensitivity": "skill_content_clusters",
+      "status": "computed"
+    },
+    {
+      "detail": "1700 unique commits matched the frozen bot pattern; manual confirmation of matches is recorded in bot_commits_review.csv",
+      "repositories": 120,
+      "sensitivity": "bots_excluded",
+      "status": "computed"
+    },
+    {
+      "detail": "run process-activity with --window-days and pass the directory",
+      "repositories": "",
+      "sensitivity": "window_30_days",
+      "status": "not_available"
+    },
+    {
+      "detail": "run process-activity with --window-days and pass the directory",
+      "repositories": "",
+      "sensitivity": "window_90_days",
+      "status": "not_available"
+    }
+  ],
+  "software_requirement": "SciPy is pinned in pyproject.toml and uv.lock",
+  "tests": {
+    "rq1_global_and_pairs": 4,
+    "rq2": 2,
+    "sign_tests": 5
+  },
+  "tool_versions": {
+    "duckdb": "1.5.6",
+    "git": "git version 2.53.0",
+    "numpy": "2.5.3",
+    "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+    "scipy": "1.18.1"
+  }
+}

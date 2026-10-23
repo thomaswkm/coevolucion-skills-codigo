@@ -1,6 +1,6 @@
 # Plan de análisis congelado — Etapa 3
 
-**Versión:** 1.1
+**Versión:** 1.2
 **Fecha de congelamiento:** 2026-10-22
 **Ámbito:** análisis inferencial de RQ1 y RQ2 sobre la muestra definitiva de Etapa 3.
 **Documentos de referencia:** `paper/PLAN_ETAPA3.md` (decisiones D1–D9), `docs/procedimiento.md` (extracción, procesamiento y validación) y `paper/etapa-2-diseno-metodológico-y-resultados-preliminares.md`.
@@ -96,7 +96,7 @@ Este documento traslada las decisiones D1–D9 de `paper/PLAN_ETAPA3.md` y fija 
 - **Casos degenerados:** si la distribución bootstrap es degenerada (por ejemplo, todas las diferencias son cero), se reporta el hecho y no se fuerza un intervalo.
 - **Reproducibilidad:** la semilla y el número de remuestreos se registran en el manifiesto y en `results/`.
 
-## 6. Sensibilidades obligatorias
+## 6. Sensibilidades
 
 Las sensibilidades se reportan **después** del resultado principal y no lo sustituyen. Si alguna cambia la dirección o la conclusión, se reportan ambas y se califica el hallazgo como no robusto.
 
@@ -143,24 +143,24 @@ Se calculan métricas secundarias para RQ1 y RQ2, manteniendo los conteos brutos
 
 - **Adopciones ambiguas (D4):** se repite el análisis principal excluyendo los casos marcados `ambiguous`; se reporta el \(n\) y si cambian las conclusiones.
 - **Adopciones inválidas (D4):** se excluyen del análisis principal y se reporta el \(n\) efectivo; no se reemplazan.
-- **Bots:** se repite el análisis excluyendo commits cuyo autor o *committer* coincida con el patrón congelado
-  `(?i)(\[bot\]|(?:^|[._+@-])bot(?:$|[._+@-])|dependabot|renovate|github-actions|pre-commit-ci|snyk-bot|mergify|codecov|greenkeeper|semantic-release-bot|allcontributors)`.
-  Se revisan manualmente las coincidencias y se reporta cuántos commits se excluyen. `commit_activity.csv` registra `author_name`, `author_email`, `committer_name`, `committer_email` e `is_bot`.
-- **Ventanas 30 y 90 días:** se reprocesa la misma muestra con la opción `--window-days 30` o `--window-days 90`, que solo afecta a las ventanas de actividad y no a la elegibilidad ni a la validación sellada. La ventana principal sigue siendo 60 días. El manifiesto de procesamiento registra `pre_window_complete` y `post_window_complete` por repositorio; con 90 días, los que tengan alguno en `false` se excluyen de esa sensibilidad y se reporta el \(n\).
+- **Bots:** la exclusión por el patrón congelado
+  `(?i)(\[bot\]|(?:^|[._+@-])bot(?:$|[._+@-])|dependabot|renovate|github-actions|pre-commit-ci|snyk-bot|mergify|codecov|greenkeeper|semantic-release-bot|allcontributors)`
+  ya está calculada en `results-inference/`, pero **no se exige revisión manual** de las coincidencias ni se reporta en el artículo. La presencia de bots en los conteos principales se declara como amenaza a la validez.
+- **Ventanas 30 y 90 días:** **fuera del alcance de esta entrega**. La ventana principal sigue siendo de 60 días y la elección de esa duración se declara como amenaza a la validez. El comando queda disponible para una ampliación futura.
 - **Sin placebo (D8):** no se añade una ventana placebo. La posible tendencia previa a la adopción se declara como amenaza a la validez; no se cambia \(E\) ni el \(n\).
 
 ## 7. Representatividad de la muestra frente al marco
 
-- **Comparaciones descriptivas:** estrellas, antigüedad del repositorio en el corte, número de skills elegibles y proporción de skills copiadas verbatim. Esta última se define como la fracción de `SKILL.md` válidos cuyo `file_sha` aparece en dos o más repositorios del conjunto comparado.
+- **Comparaciones descriptivas:** número de skills elegibles y proporción de skills copiadas verbatim. Esta última se define como la fracción de `SKILL.md` válidos cuyo `file_sha` aparece en dos o más repositorios del conjunto comparado. Las estrellas y la antigüedad quedan fuera de alcance y no se reportan.
 - **Estadísticos:** mediana y rango intercuartílico para la muestra y para el marco, presentados en paralelo.
 - **Sin pruebas de significación:** la muestra es aleatoria de \(E\), no del marco; los valores \(p\) frente al marco no tendrían una interpretación válida.
-- **Interpretación esperada:** \(E\) es más antigua que el marco por diseño, porque exige 60 días de historia previa y una ventana posterior completa. Se explicita en el texto.
-- **Fuente de estrellas y antigüedad:** tabla `repos` de GitSkills o API de GitHub, registrando la fuente y la fecha de consulta. Si un dato no está disponible, se reporta como faltante y no se imputa.
+- **Interpretación esperada:** \(E\) es más antigua que el marco por diseño, porque exige 60 días de historia previa y una ventana posterior completa. Se explicita en el texto, sin medición de antigüedad.
+- **Fuente:** `candidate_frame.csv` y `selected_repositories.csv` para el número de skills; la copia verbatim se calcula con los hashes de contenido en \(t_0\). No se consultan metadatos externos de GitHub y no se imputa ningún valor.
 
 ## 8. Datos faltantes, exclusiones y trazabilidad
 
 - **Entrada principal:** `data/processed/activity_counts.csv`. Todas las filas deben estar en estado `observed`; cualquier fila `missing` o `incomplete` detiene el análisis y se investiga. **No se imputan conteos.**
-- **Entrada de sensibilidades:** `data/processed/file_changes.csv` (churn), `commit_activity.csv` (bots) y la tabla de hashes de skills (D9).
+- **Entrada de sensibilidades:** `data/processed/file_changes.csv` (*churn*) y la tabla de hashes de skills (D9).
 - **Exclusiones:** solo las previstas en este plan (adopción inválida, `other`, merges y \(t_0\)). Cualquier exclusión adicional se documenta y se reporta. `data/processed/` conserva todos los repositorios procesados; el filtro de adopciones inválidas se aplica en `analyze-results` y queda registrado en `results/analysis_sample.csv`.
 - **Trazabilidad:** cada cifra del artículo debe poder reconstruirse desde un CSV de `results/`. Los manifiestos registran configuración, versiones, semilla y SHA-256 de las entradas.
 - **Sellado:** la validación humana de la extracción (`data/validation/human_review.sha256`) no se modifica. Las extensiones de procesamiento no alteran ese sello; solo generan un directorio nuevo de datos procesados.
@@ -223,3 +223,5 @@ No forman parte del análisis estadístico y se cierran en `paper/PLAN_ETAPA3.md
 - Si un cambio altera la población, la muestra, las hipótesis o los tests, se repite el análisis completo y se reporta la versión anterior junto con la nueva.
 
 **Cambios de 1.0 a 1.1 (2026-10-22):** se añadieron los criterios de revisión humana, la política para \(n<120\), el filtrado de decisiones en el análisis, la opción `--window-days`, el patrón congelado de bots, la estimación de \(\hat N\) y las salidas `analysis_sample.csv`, `sample_estimate.csv` y `skill_contents.csv`.
+
+**Cambios de 1.1 a 1.2 (2026-10-22):** se acota el alcance de lo reportado. Se eliminan la revisión manual de coincidencias de bots, las sensibilidades de ventana de 30/90 días y la comparación de estrellas y antigüedad. **No cambia la población, la muestra, las hipótesis ni los tests**: los resultados inferenciales se ejecutaron con la versión 1.1 y siguen vigentes. Se mantienen la sensibilidad de *churn* (sección 6.2) y la de contenido de *skill* (sección 6.3).

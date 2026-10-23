@@ -1,0 +1,9 @@
+sensitivity,status,repositories,detail
+churn_commits_per_file,computed,120,D7 normalized metric; raw counts remain primary
+churn_churn_per_file,computed,120,D7 normalized metric; raw counts remain primary
+churn_commit_share,computed,120,D7 normalized metric; raw counts remain primary
+ambiguous_excluded,not_applicable,120,no ambiguous adoptions in the analysis sample
+skill_content_clusters,computed,119,119 unique content signatures from 120 repositories; 1 dropped
+bots_excluded,computed,120,1700 unique commits matched the frozen bot pattern; manual confirmation of matches is recorded in bot_commits_review.csv
+window_30_days,not_available,,run process-activity with --window-days and pass the directory
+window_90_days,not_available,,run process-activity with --window-days and pass the directory

@@ -7,6 +7,7 @@ requires-python = ">=3.12"
 dependencies = [
     "duckdb>=1.4,<2",
     "PyYAML>=6.0,<7",
+    "scipy>=1.14,<2",
 ]
 
 [project.scripts]
@@ -17,9 +18,10 @@ process-activity = "coevolution_skills.process:main"
 prepare-activity-validation = "coevolution_skills.activity_validation:prepare_main"
 review-activity-validation = "coevolution_skills.activity_validation:review_main"
 analyze-results = "coevolution_skills.analyze:main"
+infer-results = "coevolution_skills.infer:main"
 
 [dependency-groups]
-dev = ["pytest>=8,<9", "matplotlib>=3.8,<4"]
+dev = ["pytest>=8,<9", "matplotlib>=3.9,<4", "numpy>=1.26,<3"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

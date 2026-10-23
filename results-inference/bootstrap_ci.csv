@@ -1,0 +1,13 @@
+sensitivity,rq,quantity,comparison,category,point_estimate,ci_low,ci_high,degenerate,resamples,seed
+primary,RQ1,median,,skill,0.0,0.0,1.0,false,10000,20261020
+primary,RQ1,median,,production,17.0,11.0,31.0,false,10000,20261020
+primary,RQ1,median,,test,9.5,5.5,16.0,false,10000,20261020
+primary,RQ2,median,,production,27.0,15.0,40.0,false,10000,20261020
+primary,RQ2,median,,test,10.0,6.0,14.0,false,10000,20261020
+primary,RQ2,median_difference,,production,0.5,-4.5,3.0,false,10000,20261020
+primary,RQ2,median_difference,,test,1.0,-1.0,4.0,false,10000,20261020
+primary,RQ1,hodges_lehmann,skill-production,,32.0,20.5,49.0,false,10000,20261020
+primary,RQ1,hodges_lehmann,skill-test,,17.5,11.0,29.0,false,10000,20261020
+primary,RQ1,hodges_lehmann,production-test,,-8.0,-15.5,-3.5,false,10000,20261020
+primary,RQ2,hodges_lehmann,production,,-1.0,-8.0,4.5,false,10000,20261020
+primary,RQ2,hodges_lehmann,test,,2.5,-1.0,7.5,false,10000,20261020

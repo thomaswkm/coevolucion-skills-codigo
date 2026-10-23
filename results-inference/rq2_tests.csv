@@ -1,0 +1,3 @@
+sensitivity,rq,test,comparison,n_blocks,n_nonzero,df,statistic,p_value,p_adjusted,adjusted_family,significant,note
+primary,RQ2,wilcoxon,production_post_minus_pre,120,118,,3396.5,0.7594694865136908,0.7594694865136908,rq2,false,
+primary,RQ2,wilcoxon,test_post_minus_pre,120,113,,2752.5,0.17985419704588934,0.3597083940917787,rq2,false,

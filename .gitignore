@@ -14,6 +14,7 @@ repositories/
 # Generated figures (the Stage 2 guidelines require the students to produce
 # their own tables and figures)
 figures/
+/figures-etapa3/
 
 /data/activity-validation-etapa2/
 /data/processed-etapa2/

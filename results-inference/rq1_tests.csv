@@ -1,0 +1,5 @@
+sensitivity,rq,test,comparison,n_blocks,n_nonzero,df,statistic,p_value,p_adjusted,adjusted_family,significant,note
+primary,RQ1,friedman,skill|production|test,120,,2,150.71670702179165,1.8719011232948492e-33,1.8719011232948492e-33,rq1_global,true,Kendall W=0.627986; treatments=3
+primary,RQ1,wilcoxon,skill-production,120,107,,40.5,8.4267968531455e-19,2.5280390559436498e-18,rq1_pairs,true,
+primary,RQ1,wilcoxon,skill-test,120,104,,241.0,6.828612830818568e-16,1.3657225661637136e-15,rq1_pairs,true,
+primary,RQ1,wilcoxon,production-test,120,94,,472.5,3.110976657396928e-11,3.110976657396928e-11,rq1_pairs,true,

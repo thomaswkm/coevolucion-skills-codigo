@@ -171,6 +171,7 @@ data/validation/           validación humana del screening
 data/processed/            eventos y conteos de actividad
 data/activity-validation/  revisión de rutas modificadas
 results/                   descriptivos para RQ1 y RQ2
+results-inference/         tests, efectos, IC y sensibilidades
 repositories/              clones locales, no incluidos en el paquete publicado
 ```
 
@@ -305,7 +306,7 @@ altera ninguna cifra publicada; solo acelera corridas futuras.
 
 ## Procesamiento de actividad
 
-Con la validación humana cerrada y los diez clones preservados, se ejecuta:
+Con la validación humana cerrada y los 120 clones preservados, se ejecuta:
 
 ```bash
 uv run process-activity --config extraction.toml
@@ -428,8 +429,9 @@ usan las categorías `skill`, `production` y `test`; `other` queda fuera.
 
 **RQ1** usa únicamente el período posterior. **RQ2** calcula por repositorio la
 diferencia `post - pre` para producción y pruebas. Los cuantiles se obtienen por
-interpolación lineal (`rango = q * (n - 1)`). No se ejecutan pruebas inferenciales
-ni se presentan los resultados como representativos de la población.
+interpolación lineal (`rango = q * (n - 1)`). Este comando descriptivo no ejecuta
+pruebas inferenciales; el módulo `infer-results` las calcula por separado a partir
+de `results/analysis_sample.csv`.
 
 `analyze-results` lee `data/validation/adoption_review.csv` y aplica las
 decisiones humanas: excluye las adopciones `invalid`, conserva las `ambiguous`
@@ -457,6 +459,71 @@ results/
 deja constancia de que no se ejecutó inferencia. Las tablas y figuras del artículo
 deben elaborarse personalmente a partir de estos CSV; el comando no las genera.
 
+## Análisis inferencial de RQ1 y RQ2
+
+El plan congelado (`docs/analysis-plan.md`, v1.2) se ejecuta después del análisis
+descriptivo y escribe un directorio nuevo:
+
+```bash
+uv run infer-results --config extraction.toml --fetch-representation
+```
+
+`infer-results` requiere SciPy, fijado en `pyproject.toml` y `uv.lock`. Lee
+`results/analysis_sample.csv` (para respetar el \(n\) efectivo y las adopciones
+`invalid`) y los CSV de `data/processed/`; no modifica `results/` ni `data/`.
+Escribe en `results-inference/`:
+
+```text
+rq1_tests.csv                 Friedman, W de Kendall y Wilcoxon por pares
+rq2_tests.csv                 Wilcoxon de post-pre por categoría
+effect_sizes.csv              rango-biserial y Hodges-Lehmann
+bootstrap_ci.csv              IC percentiles al 95 %
+sign_tests.csv                test del signo y Clopper-Pearson
+sensitivity_tests.csv         pruebas de las sensibilidades
+sensitivity_effects.csv       efectos de las sensibilidades
+sensitivity_ci.csv            IC de las sensibilidades
+sensitivity_sign_tests.csv    test del signo de las sensibilidades
+sensitivity_status.csv        estado y n de cada sensibilidad
+sensitivity_churn.csv         commits/archivo, churn/archivo y proporción
+skill_cluster_assignment.csv  grupos por firma de contenido (D9)
+bot_commits_review.csv        coincidencias del patrón congelado de bots
+sample_representativeness.csv muestra frente al marco
+consistency_checks.txt        reconstrucción de pruebas, efectos e IC
+inference_manifest.json       configuración, semillas, versiones y checksums
+```
+
+Las pruebas son las del plan: Friedman con corrección por empates para RQ1;
+Wilcoxon por pares solo si el global es significativo; Wilcoxon de \(post-pre\)
+para RQ2; Holm dentro de cada RQ; rango-biserial apareado y diferencia de
+Hodges-Lehmann. El bootstrap usa el repositorio como unidad, 10.000 remuestreos y
+la semilla `20261020`. El test del signo es la sensibilidad D6: se marca
+`robust=true` solo cuando coincide en dirección y significación con Wilcoxon; si
+discrepan, se reportan ambos y no se afirma el efecto.
+
+Las sensibilidades se calculan desde los CSV procesados:
+
+- **D7:** *commits* por archivo, *churn* por archivo y proporción de *commits*.
+  Los binarios se excluyen del numerador de *churn* y se cuentan aparte; los
+  renombrados se imputan a la ruta resultante y las eliminaciones a la del padre.
+- **Bots (no reportada):** se excluyen los commits cuyo autor o *committer*
+  coincide con el patrón congelado. `bot_commits_review.csv` deja las
+  coincidencias para revisión manual; en esta entrega no se revisan ni se
+  reportan, y la presencia de bots se declara como amenaza.
+- **Ambigüedad:** si hay adopciones `ambiguous`, se repite el análisis sin ellas.
+- **D9:** se agrupa por la tupla ordenada de SHA-256 de los `SKILL.md` en \(t_0\)
+  y se conserva el `repo_full_name` lexicográficamente menor de cada grupo.
+- **Ventanas 30/90 (no ejecutadas):** se activan solo si se pasan
+  `--processed-30` y `--processed-90` a `infer-results`. Con 90 días se excluyen
+  los repositorios que el manifiesto marca con `pre_window_complete` o
+  `post_window_complete` en `false`. La ventana principal sigue siendo 60 días.
+
+La representatividad usa `candidate_frame.csv`, `selected_repositories.csv` y,
+si se pasa `--fetch-representation`, las tablas `repos` y `artifacts` de la
+revisión congelada de GitSkills. Se informan mediana y RIC del número de *skills*
+y de la fracción de *skills* copiadas verbatim; las estrellas y la antigüedad no
+estaban disponibles y se reportan como faltantes. No se hacen pruebas de
+significación frente al marco: la muestra proviene de \(E\), no del marco.
+
 ### Figuras (utilidad opcional)
 
 La pauta de la Etapa 2 exige que las tablas y figuras del artículo sean elaboradas
@@ -466,13 +533,30 @@ genera figuras de partida que debes revisar, adaptar y asumir como propias antes
 de usarlas.
 
 ```bash
-uv run python scripts/plot_results.py --results results --output figures
+uv run python scripts/plot_results.py \
+  --results results \
+  --inference results-inference \
+  --output figures-etapa3 \
+  --forest --sign --sensitivity
 ```
 
-Produce en `figures/` (PNG a 300 dpi y PDF): boxplots de RQ1 por categoría y por
-repositorio, boxplot de períodos y de diferencias de RQ2, y barras de las
-diferencias por repositorio. Usa `matplotlib` y `numpy`, declarados en el grupo de
-desarrollo.
+Produce en `figures-etapa3/` (PNG a 300 dpi y PDF):
+
+- `fig_rq1_boxplot`: caja de *commits* posteriores por categoría;
+- `fig_rq2_boxplot`: caja de *commits* previos y posteriores por categoría;
+- `fig_effects` (opcional): efectos de Hodges–Lehmann con IC para RQ1 y RQ2;
+- `fig_sign_tests` (opcional): test del signo con IC exacto de Clopper–Pearson y
+  concordancia con Wilcoxon;
+- `fig_rq1_sensitivity` (opcional): dirección de RQ1 con el conteo absoluto y
+  cada sensibilidad marcada como `computed` en `sensitivity_status.csv`; los
+  paneles se descubren desde ese archivo, sin editar el script. Las
+  sensibilidades no calculadas se listan en el `README.md` generado.
+
+También escribe `README.md` y `manifest.json` con checksums y versiones. Se
+niega a escribir en un directorio no vacío salvo que se pase `--force`. Usa
+`matplotlib` y `numpy`, declarados en el grupo de desarrollo. Las barras por
+repositorio de la Etapa 2 se retiraron porque 120 etiquetas no son legibles en
+IEEE a dos columnas.
 
 ## Pruebas automatizadas
 
@@ -502,6 +586,7 @@ tests/
   test_validation_csv.py
   test_activity_validation.py
   test_analysis.py
+  test_inference.py
 ```
 
 Estas pruebas son control de calidad interno del paquete de réplica: la pauta de

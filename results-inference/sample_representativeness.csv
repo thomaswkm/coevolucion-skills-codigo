@@ -1,0 +1,9 @@
+group,variable,n_repositories,n_available,n_missing,median,q1,q3,iqr,minimum,maximum,unit,source,notes
+frame,stars,22126,0,22126,,,,,,,GitHub stars at snapshot,not provided; stars and age reported as missing,missing values are not imputed
+frame,repository_age_days_at_cutoff,22126,0,22126,,,,,,,days,not provided; stars and age reported as missing,cutoff 2026-10-04T23:59:59Z; E is older than the frame by design
+frame,eligible_skill_count,22126,22126,0,2.0,1.0,6.0,5.0,1.0,7177.0,valid SKILL.md,candidate_frame.csv (GitSkills snapshot),same snapshot definition for both groups
+frame,verbatim_skill_fraction,22126,0,22126,,,,,,,fraction of valid SKILL.md,not provided; verbatim-copy fraction reported as missing,0 when no valid skill is copied; no imputation
+sample,stars,120,0,120,,,,,,,GitHub stars at snapshot,not provided; stars and age reported as missing,missing values are not imputed
+sample,repository_age_days_at_cutoff,120,0,120,,,,,,,days,not provided; stars and age reported as missing,cutoff 2026-10-04T23:59:59Z; E is older than the frame by design
+sample,eligible_skill_count,120,120,0,2.0,1.0,5.0,4.0,1.0,79.0,valid SKILL.md,candidate_frame.csv (GitSkills snapshot),same snapshot definition for both groups
+sample,verbatim_skill_fraction,120,120,0,0.0,0.0,0.0,0.0,0.0,1.0,fraction of valid SKILL.md,t0 SKILL.md content_sha256 within the analysis sample (fallback; snapshot frame table unavailable),0 when no valid skill is copied; no imputation

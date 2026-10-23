@@ -1,0 +1,6 @@
+sensitivity,rq,comparison,n_nonzero,positive,negative,positive_proportion,ci_low,ci_high,p_value,p_adjusted,significant,wilcoxon_significant,concordant_with_wilcoxon,robust,note
+primary,RQ1,skill-production,107,104,3,0.9719626168224299,0.9202453441675968,0.9941802712084932,2.5177481866260118e-27,7.553244559878035e-27,true,true,true,true,sign test is a D6 sensitivity and is only run when Friedman is significant
+primary,RQ1,skill-test,104,93,11,0.8942307692307693,0.8186268356588391,0.9460048620305532,2.4866245084256097e-17,4.9732490168512194e-17,true,true,true,true,sign test is a D6 sensitivity and is only run when Friedman is significant
+primary,RQ1,production-test,94,13,81,0.13829787234042554,0.07574297875530737,0.2248771947130573,3.603774247253982e-13,3.603774247253982e-13,true,true,true,true,sign test is a D6 sensitivity and is only run when Friedman is significant
+primary,RQ2,production_post_minus_pre,118,60,58,0.5084745762711864,0.4148393858020757,0.6016743079661676,0.9267042229477809,0.9267042229477809,false,false,false,false,sign test is a D6 sensitivity; 
+primary,RQ2,test_post_minus_pre,113,61,52,0.5398230088495575,0.44351884275714426,0.6339886086814046,0.4518532686657418,0.9037065373314837,false,false,true,false,sign test is a D6 sensitivity; 

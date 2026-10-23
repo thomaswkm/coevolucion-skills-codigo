@@ -37,7 +37,7 @@ sha256sum --check data/validation/human_review.sha256
 # 4. Procesamiento principal (ventana de 60 días)
 uv run process-activity --config extraction.toml
 
-# 5. Sensibilidades de ventana (opcionales, en directorios nuevos)
+# 5. Sensibilidades de ventana (opcionales; fuera de alcance en esta entrega)
 uv run process-activity --config extraction.toml --window-days 30 \
   --output data/processed-30
 uv run process-activity --config extraction.toml --window-days 90 \
@@ -46,17 +46,22 @@ uv run process-activity --config extraction.toml --window-days 90 \
 # 6. Análisis descriptivo, filtro de adopciones inválidas y N estimada
 uv run analyze-results --config extraction.toml
 
-# 7. Verificación
+# 7. Análisis inferencial congelado y sensibilidades
+uv run infer-results --config extraction.toml --fetch-representation
+
+# 8. Verificación
 uv run pytest
 sha256sum --check data/validation/human_review.sha256
-! grep -q MISMATCH results/consistency_checks.txt   # éxito = no hay discrepancias
+! grep -q MISMATCH results/consistency_checks.txt
+! grep -q MISMATCH results-inference/consistency_checks.txt
 ```
 
 La revisión humana del paso 3 es el único paso que no puede automatizarse: hay
 que revisar todas las adopciones y las 4 rutas del árbol con la rúbrica de
-`docs/procedimiento.md`. Los pasos 5 son opcionales; si se ejecutan, sus
-resultados se guardan en `data/processed-30/` y `data/processed-90/`, sin tocar
-`data/processed/`.
+`docs/procedimiento.md`. Los pasos 5 son opcionales y **no se ejecutan en esta
+entrega**; se conservan como referencia para una ampliación futura. Si se
+ejecutaran, sus resultados se guardarían en `data/processed-30/` y
+`data/processed-90/`, sin tocar `data/processed/`.
 
 Requisitos: `uv`, Git 2.31 o posterior, conexión a Hugging Face y GitHub, y
 espacio para los 120 clones y un clon temporal. El cribado y los clones son la
@@ -209,7 +214,47 @@ print(m["sample_estimate"])
 PY
 ```
 
-## 6. Verificación final
+## 6. Análisis inferencial
+
+```bash
+uv run infer-results --config extraction.toml --fetch-representation
+```
+
+El comando crea un directorio nuevo `results-inference/` y no modifica
+`results/`. Aplica el plan congelado `docs/analysis-plan.md` v1.2 (el análisis se ejecutó con la 1.1):
+
+- Friedman con corrección por empates, \(W\) de Kendall y Wilcoxon por pares con
+  Holm para RQ1;
+- Wilcoxon de \(post-pre\) con Holm para RQ2;
+- rango-biserial apareado, Hodges–Lehmann e IC percentiles con 10.000
+  remuestreos y semilla `20261020`;
+- test del signo con intervalo exacto de Clopper–Pearson;
+- sensibilidades de *churn* por archivo, *commits* por archivo, proporción de
+  *commits*, exclusión de bots y ambigüedad, y un representante por firma de
+  contenido de *skill* (D9);
+- representatividad muestra-marco en número de *skills* y copia verbatim;
+  estrellas y antigüedad se reportan como no disponibles.
+
+`--fetch-representation` consulta la revisión congelada de GitSkills. Sin esa
+opción, los campos que no estén en los datos preservados se reportan como
+faltantes, sin imputación. Las ventanas de 30 y 90 días se incorporan solo si se
+pasan explícitamente `--processed-30` y `--processed-90`; en esta entrega no se
+ejecutaron y quedan como `not_available`.
+
+Comprueba:
+
+```bash
+! grep -q MISMATCH results-inference/consistency_checks.txt
+uv run python - <<'PY'
+import json
+m = json.load(open("results-inference/inference_manifest.json"))
+print(m["repository_count"], m["excluded_invalid_count"], m["ambiguous_count"])
+print(m["configuration"]["bootstrap_resamples"], m["configuration"]["bootstrap_seed"])
+print(m["tool_versions"]["scipy"])
+PY
+```
+
+## 7. Verificación final
 
 ```bash
 uv run pytest
@@ -219,16 +264,43 @@ sha256sum --check data/validation/human_review.sha256
 Revisa que:
 
 - `results/` contiene `analysis_sample.csv` y `sample_estimate.csv`;
-- las cifras de `consistency_checks.txt` no tienen `MISMATCH`;
+- `results-inference/` contiene los tests, efectos, IC, sensibilidades y
+  `sample_representativeness.csv`;
+- las cifras de ambos `consistency_checks.txt` no tienen `MISMATCH`;
 - el \(n\) efectivo del análisis coincide con el reportado en el artículo;
-- los repositorios excluidos por `invalid` y los `ambiguous` están listados en el
-  manifiesto;
-- las sensibilidades de 30/90 y de bots se calculan desde los CSV de
-  `data/processed*/`, no desde los clones.
+- los repositorios excluidos por `invalid` y los `ambiguous` están listados en
+  los manifiestos;
+- las sensibilidades reportadas (*churn* y clustering de contenido) se calculan
+  desde los CSV de `data/processed*/`, no desde los clones;
+- la revisión manual de bots y las ventanas de 30/90 días quedan fuera de
+  alcance y no se reportan.
 
-## 7. Pendiente fuera de este runbook
+## 8. Figuras de partida
 
-La fase de inferencia (`src/coevolution_skills/infer.py`), la tabla de
-representatividad muestra-marco (`sample_representativeness.csv`), las tablas y
-figuras del artículo, la auditoría de referencias y la publicación en Zenodo se
-abordan después de cerrar la corrida y el análisis descriptivo.
+Con `results/` y `results-inference/` ya cerrados:
+
+```bash
+uv run python scripts/plot_results.py \
+  --results results \
+  --inference results-inference \
+  --output figures-etapa3 \
+  --forest --sign --sensitivity
+```
+
+Genera `fig_rq1_boxplot`, `fig_rq2_boxplot`, `fig_effects`,
+`fig_sign_tests` y `fig_rq1_sensitivity`, además de `README.md` y
+`manifest.json`. La figura de sensibilidad incluye un panel por cada
+sensibilidad `computed` de `sensitivity_status.csv` (métricas normalizadas,
+contenido de *skill* y exclusión de bots) y deja constancia en el README de las
+que no se calcularon. El comando se niega a sobrescribir un directorio no vacío;
+usá `--force` si necesitás regenerarlas. Las figuras son un punto de partida: la
+pauta exige revisarlas, adaptarlas y asumir su autoría. `figures-etapa3/` no se
+versiona.
+
+## 9. Pendiente fuera de este runbook
+
+Revisar y asumir las figuras de `figures-etapa3/`, elaborar las tablas del
+artículo (de autoría propia), la auditoría de referencias y la publicación en
+Zenodo se abordan después de cerrar la corrida y el análisis inferencial. La
+revisión manual de coincidencias de bots y las ventanas de 30/90 días quedan
+fuera de alcance y se declaran como amenazas.

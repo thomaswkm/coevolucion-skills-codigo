@@ -1,0 +1,159 @@
+Consistency checks for the inferential RQ1/RQ2 analysis
+
+repositories: 120
+tests reported: 6
+effects reported: 5
+bootstrap intervals: 12
+sign tests: 5
+
+Primary RQ1/RQ2 tests reconstructed from activity_counts.csv:
+  OK  RQ1 Friedman statistic 150.71670702179165 (expected 150.71670702179165)
+  OK  RQ1 Friedman p 1.8719011232948492e-33 (expected 1.8719011232948492e-33)
+  OK  RQ1 Wilcoxon skill-production p 8.4267968531455e-19
+  OK  RQ1 Wilcoxon skill-test p 6.828612830818568e-16
+  OK  RQ1 Wilcoxon production-test p 3.110976657396928e-11
+  OK  RQ2 Wilcoxon production p 0.7594694865136908
+  OK  RQ2 Wilcoxon test p 0.17985419704588934
+
+Effect sizes reconstructed from activity_counts.csv:
+  OK  RQ1 skill-production HL 32.0 (expected 32.0); r_rb 0.985981308411215 (expected 0.985981308411215)
+  OK  RQ1 skill-test HL 17.5 (expected 17.5); r_rb 0.9117216117216117 (expected 0.9117216117216117)
+  OK  RQ1 production-test HL -8.0 (expected -8.0); r_rb -0.7883538633818589 (expected -0.7883538633818589)
+  OK  RQ2 production HL -1.0 (expected -1.0); r_rb -0.03247400655177325 (expected -0.03247400655177325)
+  OK  RQ2 test HL 2.5 (expected 2.5); r_rb 0.14531904983698182 (expected 0.14531904983698182)
+
+Bootstrap intervals and Holm adjustments:
+  OK  bootstrap RQ1 median skill: [0.0, 1.0] contains point 0.0
+  OK  bootstrap RQ1 median production: [11.0, 31.0] contains point 17.0
+  OK  bootstrap RQ1 median test: [5.5, 16.0] contains point 9.5
+  OK  bootstrap RQ2 median production: [15.0, 40.0] contains point 27.0
+  OK  bootstrap RQ2 median test: [6.0, 14.0] contains point 10.0
+  OK  bootstrap RQ2 median_difference production: [-4.5, 3.0] contains point 0.5
+  OK  bootstrap RQ2 median_difference test: [-1.0, 4.0] contains point 1.0
+  OK  bootstrap RQ1 hodges_lehmann skill-production: [20.5, 49.0] contains point 32.0
+  OK  bootstrap RQ1 hodges_lehmann skill-test: [11.0, 29.0] contains point 17.5
+  OK  bootstrap RQ1 hodges_lehmann production-test: [-15.5, -3.5] contains point -8.0
+  OK  bootstrap RQ2 hodges_lehmann production: [-8.0, 4.5] contains point -1.0
+  OK  bootstrap RQ2 hodges_lehmann test: [-1.0, 7.5] contains point 2.5
+  OK  RQ1 Holm adjusted p-values are >= raw p-values
+  OK  RQ2 Holm adjusted p-values are >= raw p-values
+
+Sensitivity output invariants:
+  OK  bots_excluded: adjusted p-values are >= raw p-values
+  OK  churn_churn_per_file: adjusted p-values are >= raw p-values
+  OK  churn_commit_share: adjusted p-values are >= raw p-values
+  OK  churn_commits_per_file: adjusted p-values are >= raw p-values
+  OK  skill_content_clusters: adjusted p-values are >= raw p-values
+  OK  churn_commits_per_file RQ1 skill-production: direction matches Hodges-Lehmann sign
+  OK  churn_commits_per_file RQ1 skill-test: direction matches Hodges-Lehmann sign
+  OK  churn_commits_per_file RQ1 production-test: direction matches Hodges-Lehmann sign
+  OK  churn_commits_per_file RQ2 production_post_minus_pre: direction matches Hodges-Lehmann sign
+  OK  churn_commits_per_file RQ2 test_post_minus_pre: direction matches Hodges-Lehmann sign
+  OK  churn_churn_per_file RQ1 skill-production: direction matches Hodges-Lehmann sign
+  OK  churn_churn_per_file RQ1 skill-test: direction matches Hodges-Lehmann sign
+  OK  churn_churn_per_file RQ1 production-test: direction matches Hodges-Lehmann sign
+  OK  churn_churn_per_file RQ2 production_post_minus_pre: direction matches Hodges-Lehmann sign
+  OK  churn_churn_per_file RQ2 test_post_minus_pre: direction matches Hodges-Lehmann sign
+  OK  churn_commit_share RQ1 skill-production: direction matches Hodges-Lehmann sign
+  OK  churn_commit_share RQ1 skill-test: direction matches Hodges-Lehmann sign
+  OK  churn_commit_share RQ1 production-test: direction matches Hodges-Lehmann sign
+  OK  churn_commit_share RQ2 production_post_minus_pre: direction matches Hodges-Lehmann sign
+  OK  churn_commit_share RQ2 test_post_minus_pre: direction matches Hodges-Lehmann sign
+  OK  skill_content_clusters RQ1 skill-production: direction matches Hodges-Lehmann sign
+  OK  skill_content_clusters RQ1 skill-test: direction matches Hodges-Lehmann sign
+  OK  skill_content_clusters RQ1 production-test: direction matches Hodges-Lehmann sign
+  OK  skill_content_clusters RQ2 production_post_minus_pre: direction matches Hodges-Lehmann sign
+  OK  skill_content_clusters RQ2 test_post_minus_pre: direction matches Hodges-Lehmann sign
+  OK  bots_excluded RQ1 skill-production: direction matches Hodges-Lehmann sign
+  OK  bots_excluded RQ1 skill-test: direction matches Hodges-Lehmann sign
+  OK  bots_excluded RQ1 production-test: direction matches Hodges-Lehmann sign
+  OK  bots_excluded RQ2 production_post_minus_pre: direction matches Hodges-Lehmann sign
+  OK  bots_excluded RQ2 test_post_minus_pre: direction matches Hodges-Lehmann sign
+  OK  churn_commits_per_file bootstrap median: CI low <= high
+  OK  churn_commits_per_file bootstrap median: CI low <= high
+  OK  churn_commits_per_file bootstrap median: CI low <= high
+  OK  churn_commits_per_file bootstrap median: CI low <= high
+  OK  churn_commits_per_file bootstrap median: CI low <= high
+  OK  churn_commits_per_file bootstrap median_difference: CI low <= high
+  OK  churn_commits_per_file bootstrap median_difference: CI low <= high
+  OK  churn_commits_per_file bootstrap hodges_lehmann: CI low <= high
+  OK  churn_commits_per_file bootstrap hodges_lehmann: CI low <= high
+  OK  churn_commits_per_file bootstrap hodges_lehmann: CI low <= high
+  OK  churn_commits_per_file bootstrap hodges_lehmann: CI low <= high
+  OK  churn_commits_per_file bootstrap hodges_lehmann: CI low <= high
+  OK  churn_churn_per_file bootstrap median: CI low <= high
+  OK  churn_churn_per_file bootstrap median: CI low <= high
+  OK  churn_churn_per_file bootstrap median: CI low <= high
+  OK  churn_churn_per_file bootstrap median: CI low <= high
+  OK  churn_churn_per_file bootstrap median: CI low <= high
+  OK  churn_churn_per_file bootstrap median_difference: CI low <= high
+  OK  churn_churn_per_file bootstrap median_difference: CI low <= high
+  OK  churn_churn_per_file bootstrap hodges_lehmann: CI low <= high
+  OK  churn_churn_per_file bootstrap hodges_lehmann: CI low <= high
+  OK  churn_churn_per_file bootstrap hodges_lehmann: CI low <= high
+  OK  churn_churn_per_file bootstrap hodges_lehmann: CI low <= high
+  OK  churn_churn_per_file bootstrap hodges_lehmann: CI low <= high
+  OK  churn_commit_share bootstrap median: CI low <= high
+  OK  churn_commit_share bootstrap median: CI low <= high
+  OK  churn_commit_share bootstrap median: CI low <= high
+  OK  churn_commit_share bootstrap median: CI low <= high
+  OK  churn_commit_share bootstrap median: CI low <= high
+  OK  churn_commit_share bootstrap median_difference: CI low <= high
+  OK  churn_commit_share bootstrap median_difference: CI low <= high
+  OK  churn_commit_share bootstrap hodges_lehmann: CI low <= high
+  OK  churn_commit_share bootstrap hodges_lehmann: CI low <= high
+  OK  churn_commit_share bootstrap hodges_lehmann: CI low <= high
+  OK  churn_commit_share bootstrap hodges_lehmann: CI low <= high
+  OK  churn_commit_share bootstrap hodges_lehmann: CI low <= high
+  OK  skill_content_clusters bootstrap median: CI low <= high
+  OK  skill_content_clusters bootstrap median: CI low <= high
+  OK  skill_content_clusters bootstrap median: CI low <= high
+  OK  skill_content_clusters bootstrap median: CI low <= high
+  OK  skill_content_clusters bootstrap median: CI low <= high
+  OK  skill_content_clusters bootstrap median_difference: CI low <= high
+  OK  skill_content_clusters bootstrap median_difference: CI low <= high
+  OK  skill_content_clusters bootstrap hodges_lehmann: CI low <= high
+  OK  skill_content_clusters bootstrap hodges_lehmann: CI low <= high
+  OK  skill_content_clusters bootstrap hodges_lehmann: CI low <= high
+  OK  skill_content_clusters bootstrap hodges_lehmann: CI low <= high
+  OK  skill_content_clusters bootstrap hodges_lehmann: CI low <= high
+  OK  bots_excluded bootstrap median: CI low <= high
+  OK  bots_excluded bootstrap median: CI low <= high
+  OK  bots_excluded bootstrap median: CI low <= high
+  OK  bots_excluded bootstrap median: CI low <= high
+  OK  bots_excluded bootstrap median: CI low <= high
+  OK  bots_excluded bootstrap median_difference: CI low <= high
+  OK  bots_excluded bootstrap median_difference: CI low <= high
+  OK  bots_excluded bootstrap hodges_lehmann: CI low <= high
+  OK  bots_excluded bootstrap hodges_lehmann: CI low <= high
+  OK  bots_excluded bootstrap hodges_lehmann: CI low <= high
+  OK  bots_excluded bootstrap hodges_lehmann: CI low <= high
+  OK  bots_excluded bootstrap hodges_lehmann: CI low <= high
+  OK  churn_commits_per_file sign skill-production: adjusted p-value >= raw p-value
+  OK  churn_commits_per_file sign skill-test: adjusted p-value >= raw p-value
+  OK  churn_commits_per_file sign production-test: adjusted p-value >= raw p-value
+  OK  churn_commits_per_file sign production_post_minus_pre: adjusted p-value >= raw p-value
+  OK  churn_commits_per_file sign test_post_minus_pre: adjusted p-value >= raw p-value
+  OK  churn_churn_per_file sign skill-production: adjusted p-value >= raw p-value
+  OK  churn_churn_per_file sign skill-test: adjusted p-value >= raw p-value
+  OK  churn_churn_per_file sign production-test: adjusted p-value >= raw p-value
+  OK  churn_churn_per_file sign production_post_minus_pre: adjusted p-value >= raw p-value
+  OK  churn_churn_per_file sign test_post_minus_pre: adjusted p-value >= raw p-value
+  OK  churn_commit_share sign skill-production: adjusted p-value >= raw p-value
+  OK  churn_commit_share sign skill-test: adjusted p-value >= raw p-value
+  OK  churn_commit_share sign production-test: adjusted p-value >= raw p-value
+  OK  churn_commit_share sign production_post_minus_pre: adjusted p-value >= raw p-value
+  OK  churn_commit_share sign test_post_minus_pre: adjusted p-value >= raw p-value
+  OK  skill_content_clusters sign skill-production: adjusted p-value >= raw p-value
+  OK  skill_content_clusters sign skill-test: adjusted p-value >= raw p-value
+  OK  skill_content_clusters sign production-test: adjusted p-value >= raw p-value
+  OK  skill_content_clusters sign production_post_minus_pre: adjusted p-value >= raw p-value
+  OK  skill_content_clusters sign test_post_minus_pre: adjusted p-value >= raw p-value
+  OK  bots_excluded sign skill-production: adjusted p-value >= raw p-value
+  OK  bots_excluded sign skill-test: adjusted p-value >= raw p-value
+  OK  bots_excluded sign production-test: adjusted p-value >= raw p-value
+  OK  bots_excluded sign production_post_minus_pre: adjusted p-value >= raw p-value
+  OK  bots_excluded sign test_post_minus_pre: adjusted p-value >= raw p-value
+
+All p-values, effect sizes and intervals are reconstructed from the
+preserved CSV inputs; no value is copied from the manuscript.

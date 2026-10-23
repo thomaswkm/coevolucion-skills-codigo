@@ -1,0 +1,26 @@
+sensitivity,rq,comparison,first,second,n_nonzero,median_first,median_second,rank_biserial,hodges_lehmann,direction,note
+churn_commits_per_file,RQ1,skill-production,skill,production,108,0.0,0.21286972938955318,-0.2609582059123344,-0.34531923641142914,skill_greater_than_production,positive effect = second category has more post-adoption commits
+churn_commits_per_file,RQ1,skill-test,skill,test,103,0.0,0.36062612883804934,-0.07169529499626587,0.0,no_difference,positive effect = second category has more post-adoption commits
+churn_commits_per_file,RQ1,production-test,production,test,107,0.21286972938955318,0.36062612883804934,0.5347871235721703,0.19221698113207547,test_greater_than_production,positive effect = second category has more post-adoption commits
+churn_commits_per_file,RQ2,production_post_minus_pre,pre,post,118,0.35471491228070173,0.21286972938955318,-0.06053268765133172,-0.02122641509433959,pre_greater_than_post,positive effect = activity increases after adoption
+churn_commits_per_file,RQ2,test_post_minus_pre,pre,post,113,0.3887966804979253,0.36062612883804934,0.18770377270610153,0.125,post_greater_than_pre,positive effect = activity increases after adoption
+churn_churn_per_file,RQ1,skill-production,skill,production,107,0.0,45.297601744186046,0.16164762893734858,13.540558929763884,production_greater_than_skill,positive effect = second category has more post-adoption commits
+churn_churn_per_file,RQ1,skill-test,skill,test,103,0.0,46.276234567901234,0.21994025392083644,17.57375103853977,test_greater_than_skill,positive effect = second category has more post-adoption commits
+churn_churn_per_file,RQ1,production-test,production,test,108,45.297601744186046,46.276234567901234,0.22290180088345227,8.613527841206414,test_greater_than_production,positive effect = second category has more post-adoption commits
+churn_churn_per_file,RQ2,production_post_minus_pre,pre,post,118,90.057465667667,45.297601744186046,-0.0029910269192422734,-0.1551898289852578,pre_greater_than_post,positive effect = activity increases after adoption
+churn_churn_per_file,RQ2,test_post_minus_pre,pre,post,114,93.23487796250443,46.276234567901234,0.09717772692601068,14.107554200542001,post_greater_than_pre,positive effect = activity increases after adoption
+churn_commit_share,RQ1,skill-production,skill,production,107,0.0,0.5238095238095238,0.9702319141571478,0.4411764705882353,production_greater_than_skill,positive effect = second category has more post-adoption commits
+churn_commit_share,RQ1,skill-test,skill,test,104,0.0,0.30178571428571427,0.9122710622710622,0.2621212121212121,test_greater_than_skill,positive effect = second category has more post-adoption commits
+churn_commit_share,RQ1,production-test,production,test,94,0.5238095238095238,0.30178571428571427,-0.8096304591265397,-0.12903225806451615,production_greater_than_test,positive effect = second category has more post-adoption commits
+churn_commit_share,RQ2,production_post_minus_pre,pre,post,118,0.5611482188295165,0.5238095238095238,-0.12975359635379577,-0.027342706454819024,pre_greater_than_post,positive effect = activity increases after adoption
+churn_commit_share,RQ2,test_post_minus_pre,pre,post,115,0.21754385964912282,0.30178571428571427,0.19985007496251875,0.04358701715241947,post_greater_than_pre,positive effect = activity increases after adoption
+skill_content_clusters,RQ1,skill-production,skill,production,106,0.0,17.0,0.9857168047963322,31.0,production_greater_than_skill,positive effect = second category has more post-adoption commits
+skill_content_clusters,RQ1,skill-test,skill,test,103,0.0,9.0,0.9100074682598954,17.0,test_greater_than_skill,positive effect = second category has more post-adoption commits
+skill_content_clusters,RQ1,production-test,production,test,93,17.0,9.0,-0.7838023335621139,-7.5,production_greater_than_test,positive effect = second category has more post-adoption commits
+skill_content_clusters,RQ2,production_post_minus_pre,pre,post,117,27.0,17.0,-0.01970157902361292,-0.5,pre_greater_than_post,positive effect = activity increases after adoption
+skill_content_clusters,RQ2,test_post_minus_pre,pre,post,112,10.0,9.0,0.15786978508217447,2.5,post_greater_than_pre,positive effect = activity increases after adoption
+bots_excluded,RQ1,skill-production,skill,production,105,0.0,16.5,0.9859838274932614,30.5,production_greater_than_skill,positive effect = second category has more post-adoption commits
+bots_excluded,RQ1,skill-test,skill,test,103,0.0,9.0,0.9100074682598954,16.5,test_greater_than_skill,positive effect = second category has more post-adoption commits
+bots_excluded,RQ1,production-test,production,test,90,16.5,9.0,-0.7836385836385836,-7.0,production_greater_than_test,positive effect = second category has more post-adoption commits
+bots_excluded,RQ2,production_post_minus_pre,pre,post,118,27.0,16.5,-0.05526278307933343,-1.5,pre_greater_than_post,positive effect = activity increases after adoption
+bots_excluded,RQ2,test_post_minus_pre,pre,post,113,10.0,9.0,0.1265331470268592,2.0,post_greater_than_pre,positive effect = activity increases after adoption
