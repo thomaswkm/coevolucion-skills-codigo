@@ -14,7 +14,7 @@ elaboran por separado.
 |---|---|
 | Repositorio | [thomaswkm/coevolucion-skills-codigo](https://github.com/thomaswkm/coevolucion-skills-codigo) |
 | Versión (etiqueta) | `v1.0-etapa3` |
-| DOI de versión (Zenodo) | `[DOI-PENDIENTE]` |
+| DOI de versión (Zenodo) | 10.5281/zenodo.23587751 |
 
 La versión de Etapa 3 corresponde a la etiqueta `v1.0-etapa3` de este
 repositorio y a su release en GitHub. Su DOI de versión en Zenodo se añadirá
